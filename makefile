@@ -1,5 +1,3 @@
-
-
 start:
 	npm run start
 
