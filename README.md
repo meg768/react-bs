@@ -1,6 +1,6 @@
 # react-mbs
 
-A *m*inimalistic **B**oot**s**trap layer for React.
+A **m**inimalistic **B**oot**s**trap layer for React.
 
 ## Installation
 
