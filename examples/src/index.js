@@ -1,4 +1,5 @@
-import './bootstrap/original/bootstrap.min.css';
+//import 'bootswatch/dist/materia/bootstrap.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
 
 import React from 'react';
 import {render} from 'react-dom';
