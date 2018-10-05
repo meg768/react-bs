@@ -1,5 +1,5 @@
 import React from 'react';
-import {Component, Container} from '../../src';
+import {Component, Container} from '../../../src/index.js';
 
 
 export class Page extends Component {

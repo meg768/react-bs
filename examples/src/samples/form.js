@@ -1,7 +1,5 @@
 import React from 'react';
-import { render} from 'react-dom';
-import {Component, Container, Form, Button, ButtonRow} from '../../src';
-import {Page} from './page.js';
+import {Component, Container, Form, Button, ButtonRow} from '../../../src/index.js';
 
 
 export default class Sample extends Component {
@@ -34,9 +32,8 @@ export default class Sample extends Component {
 
     render() {
         return (
+            <div>
 
-
-            <Page>
                 <Form>
                     <Form.Group>
                         <Form.Label for="symbol">Symbol</Form.Label>
@@ -60,7 +57,7 @@ export default class Sample extends Component {
                     </Form.Row>
                     <Form.Row>
                         <Form.Group md={6}>
-                            <Form.Label for="exchange">Börs</Form.Label>
+                            <Form.Label for="exchange">Exchange</Form.Label>
                             <Form.Input id='exchange' type="text" disabled={this.state.loading} value={this.state.stock.exchange} placeholder="Industry" onChange={this.onChange}/>
                         </Form.Group>
                         <Form.Group md={6}>
@@ -72,8 +69,8 @@ export default class Sample extends Component {
                 <ButtonRow style={{textAlign:"right"}}>
                     <Button>OK</Button>
                 </ButtonRow>
-            </Page>
 
+            </div>
         );
     }
 }
