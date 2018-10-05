@@ -6,8 +6,8 @@ start:
 build:
 	npm run build
 
-demo:
-	npm run deploy
+demo: build
+	npm run demo
 
 transpile:
 	npm run transpile

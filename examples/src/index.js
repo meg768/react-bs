@@ -69,14 +69,6 @@ class Sample extends Component {
                             <Form.Input id='type' type="text" disabled={this.state.loading} value={this.state.stock.type} placeholder="Industri" onChange={this.onChange}/>
                         </Form.Group>
                     </Form.Row>
-                    <Form.Row style={{textAlign:'right'}}>
-                        <Button style={{display:'inline'}}>OK</Button>
-                    </Form.Row>
-                    <Form.Row style={{textAlign:"right"}}>
-                        <ButtonRow style={{textAlign:"right"}}>
-                            <Button>OK</Button>
-                        </ButtonRow>
-                    </Form.Row>
                 </Form>
                 <ButtonRow style={{textAlign:"right"}}>
                     <Button>OK</Button>
