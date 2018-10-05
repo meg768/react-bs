@@ -1,4 +1,4 @@
-import './bootstrap/litera/bootstrap.min.css';
+import './bootstrap/original/bootstrap.min.css';
 
 import React from 'react';
 import {render} from 'react-dom';

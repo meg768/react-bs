@@ -66,9 +66,6 @@ export default class Sample extends Component {
                         </Form.Group>
                     </Form.Row>
                 </Form>
-                <ButtonRow style={{textAlign:"right"}}>
-                    <Button>OK</Button>
-                </ButtonRow>
 
             </div>
         );

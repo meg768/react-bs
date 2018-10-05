@@ -12,7 +12,7 @@ export class Section extends Component {
 
         return (
             <div style={style}>
-                <h1>{title}</h1>
+                <h3>{title}</h3>
                 {this.props.children}
             </div>
 

@@ -15,14 +15,11 @@ function IncreasePackageVersion() {
     var package = JSON.parse(fs.readFileSync(fileName));
 
     versionA = package.version;
-
-
-    versionA = package.version;
     package.version = increaseVersion(package.version);
     versionB = package.version;
 
-    console.log('Increased package version from', versionA, 'to', versionB);
     fs.writeFileSync(fileName, JSON.stringify(package, null, '\t'));
+    console.log('Increased package version from', versionA, 'to', versionB);
 
 }
 

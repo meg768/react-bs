@@ -7,6 +7,7 @@ export default class Sample extends Component {
 
 
     render() {
+        var olle = "<Alert color='primary'>";
         return (
             <div>
                 <Alert color='primary'>
@@ -21,6 +22,7 @@ export default class Sample extends Component {
                 <Alert color='light'>
                     Light alert
                 </Alert>
+
             </div>
         );
     }
