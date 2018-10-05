@@ -22,7 +22,7 @@ function IncreasePackageVersion() {
     versionB = package.version;
 
     console.log('Increased package version from', versionA, 'to', versionB);
-//    fs.writeFileSync(packageFileName, JSON.stringify(package, null, '\t'));
+    fs.writeFileSync(fileName, JSON.stringify(package, null, '\t'));
 
 }
 
