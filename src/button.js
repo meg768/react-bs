@@ -1,5 +1,4 @@
-import React from 'react';
-import Component from './component.js';
+import React, {Component} from 'react';
 import classNames from 'classnames';
 import PropTypes from "prop-types";
 

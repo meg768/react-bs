@@ -1,13 +1,12 @@
 {
   "name": "react-bs",
-  "version": "1.0.4",
+  "version": "1.0.9",
   "description": "react-bs",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
     "transpile": "babel src -d dist --copy-files",
-    "prepublishOnly": "npm run transpile",
     "build": "webpack --mode production",
     "deploy": "gh-pages -d examples/dist",
     "publish-demo": "npm run build && npm run deploy"
@@ -47,6 +46,9 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.6.2",
+    "react-onclickoutside": "^6.7.1",
+    "react-popper": "^1.0.2",
+    "react-spinners": "^0.4.5"
   }
 }
