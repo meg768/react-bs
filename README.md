@@ -1,4 +1,4 @@
-# react-mbs
+# react-bootify
 
 A **M**inimalistic **B**oot**S**trap layer for React.
 
@@ -6,13 +6,13 @@ A **M**inimalistic **B**oot**S**trap layer for React.
 
 
 ````bash
-    npm install react-mbs --save
+    npm install react-bootify --save
 ````
 
 Bootstrap styles need to be installed.
 
 ## Demo
-- Live demo - https://meg768.github.io/react-mbs/
+- Live demo - https://meg768.github.io/react-bootify/
 
 
 ## Links
