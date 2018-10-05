@@ -1,6 +1,10 @@
-import React from 'react';
 import './styles.css';
-const MyComponent = () => (
-    <h1>Hello from My Component</h1>
-);
-export default MyComponent;
+
+import React from 'react';
+import Button from './button.js';
+
+
+
+export {
+    Button
+};

@@ -1,7 +1,10 @@
 import React from 'react';
 import { render} from 'react-dom';
-import MyComponent from '../../src';
+import {Button} from '../../src';
+
+import './bootstrap/materia/bootstrap.min.css';
+
 const App = () => (
-    <MyComponent />
+    <Button>Hej</Button>
 );
 render(<App />, document.getElementById("root"));
