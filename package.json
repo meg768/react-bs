@@ -1,6 +1,6 @@
 {
   "name": "react-mbs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "react-mbs",
   "main": "dist/index.js",
   "scripts": {
@@ -8,8 +8,7 @@
     "start": "webpack-dev-server --mode development",
     "transpile": "babel src -d dist --copy-files",
     "build": "webpack --mode production",
-    "deploy": "gh-pages -d examples/dist",
-    "publish-demo": "npm run build && npm run deploy"
+    "demo": "gh-pages -d examples/dist"
   },
   "repository": {
     "type": "git",

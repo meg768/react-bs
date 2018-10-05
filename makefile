@@ -1,12 +1,16 @@
 
 
-run:
+start:
 	npm run start
 
-demo:
+build:
 	npm run build
+
+demo:
 	npm run deploy
 
-publish:
+transpile:
 	npm run transpile
+
+publish: transpile
 	npm publish

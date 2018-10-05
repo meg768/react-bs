@@ -10,12 +10,13 @@ import Jumbotron from './jumbotron.js';
 import Alert from './alert.js';
 import Table from './table.js';
 import Container from './container.js';
+import Component from './component.js';
 
 var Row = Container.Row;
 var Col = Container.Col;
 
 export {
-    Glyph, Icon, Popup, Spinner, Dropdown, ButtonRow, Button, Form,
+    Component, Glyph, Icon, Popup, Spinner, Dropdown, ButtonRow, Button, Form,
     Jumbotron, Alert, Table, Container, Row, Col
 
 };
