@@ -1,15 +1,14 @@
 # react-bootify
 
-A **M**inimalistic **B**oot**S**trap layer for React.
+A minimalistic Bootstrap layer for React.
 
 ## Installation
-
 
 ````bash
     npm install react-bootify --save
 ````
 
-Bootstrap styles need to be installed.
+Bootstrap styles need to be installed separately.
 
 ## Demo
 - Live demo - https://meg768.github.io/react-bootify/
