@@ -8,7 +8,7 @@ A minimalistic Bootstrap layer for React.
     npm install react-bootify --save
 ````
 
-Bootstrap styles need to be installed separately.
+Bootstrap css-styles need to be installed separately.
 
 ## Demo
 - Live demo - https://meg768.github.io/react-bootify/
