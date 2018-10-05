@@ -21,31 +21,7 @@ class Sample extends Component {
 
 
     render() {
-/*
-        return (
-            <Page>
-                <Section name='Alerts'>
-                    <AlertSample/>
-                </Section>
 
-            </Page>
-
-
-        );
-
-*/
-/*
-        return (
-            <Page>
-                <Section name='Form'>
-                    <FormSample/>
-                </Section>
-
-            </Page>
-
-
-        );
-*/
         return (
             <Page>
                 <Section title='Alerts'>
