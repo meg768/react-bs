@@ -3,6 +3,9 @@
 start:
 	npm run start
 
+increase-package-version:
+	node ./scripts/increase-package-version.js
+
 build:
 	npm run build
 
@@ -12,5 +15,5 @@ demo: build
 transpile:
 	npm run transpile
 
-publish: transpile
+publish: transpile increase-package-version
 	npm publish
