@@ -24,10 +24,10 @@ class Sample extends Component {
 
         return (
             <Page>
-                <Section title='Alerts - A'>
+                <Section title='Alerts'>
                     <AlertSample/>
                 </Section>
-                <Section title='Forms - B'>
+                <Section title='Forms'>
                     <FormSample/>
                 </Section>
 
