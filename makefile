@@ -1,18 +1,18 @@
 
-run:
-	webpack-dev-server --mode development
+start:
+	npm run start
 
 increase-package-version:
-	node ./scripts/increase-package-version.js
+	npm run increase-package-version
 
 build:
-	webpack --mode production
+	npm run build
 
 demo: build
-	gh-pages -d examples/dist
+	npm run demo
 
 transpile:
-	babel src -d dist --copy-files
+	npm run transpile
 
 publish: transpile increase-package-version
 	npm publish
