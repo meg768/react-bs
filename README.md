@@ -1,6 +1,6 @@
 # react-mbs
 
-A minimalistic layer on top of Bootstrap for React.
+A **m**inimalistic **B**oot**s**trap layer for React.
 
 ## Installation
 
