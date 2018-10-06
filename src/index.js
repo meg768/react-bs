@@ -1,7 +1,6 @@
 import Popup from './popup.js';
 import Glyph from './glyph.js';
 import Icon from './icon.js';
-import Spinner from './spinner.js';
 import Dropdown from './dropdown.js';
 import ButtonRow from './button-row.js';
 import Button from './button.js';
@@ -16,7 +15,7 @@ var Row = Container.Row;
 var Col = Container.Col;
 
 export {
-    Component, Glyph, Icon, Popup, Spinner, Dropdown, ButtonRow, Button, Form,
+    Component, Glyph, Icon, Popup, Dropdown, ButtonRow, Button, Form,
     Jumbotron, Alert, Table, Container, Row, Col
 
 };

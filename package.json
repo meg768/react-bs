@@ -1,6 +1,6 @@
 {
 	"name": "react-bootify",
-	"version": "0.0.7",
+	"version": "0.0.9",
 	"description": "react-bootify",
 	"main": "lib/bootify.js",
 	"scripts": {
@@ -9,7 +9,7 @@
 		"build": "webpack --mode production",
 		"demo": "gh-pages -d examples/dist",
 		"transpile-old": "babel src -d dist --copy-files",
-		"transpile": "babel src --out-file lib/bootify.js",
+		"transpile": "babel src -d lib --copy-files",
 		"increase-package-version": "node ./scripts/increase-package-version.js"
 	},
 	"repository": {
@@ -51,7 +51,6 @@
 		"classnames": "^2.2.6",
 		"prop-types": "^15.6.2",
 		"react-onclickoutside": "^6.7.1",
-		"react-popper": "^1.0.2",
-		"react-spinners": "^0.4.5"
+		"react-popper": "^1.0.2"
 	}
 }
