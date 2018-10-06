@@ -1,123 +1,128 @@
-
-// NOTE: This component requires React 16 or newer.
-
-// Usage:
-/*
-<Position
-    parent={<div>Parent element</div>}
-    target={ (style) => (
-        <div style={style}>Popper element</div>
-    )}
-    options={{
-        placement : 'top'
-    }}
-/>
-*/
-
-import React, { Component } from 'react';
+import classnames from "classnames";
+import React from "react";
 import ReactDOM from 'react-dom';
-import PopperJS from 'popper.js';
+import PropTypes from "prop-types";
+import ClickOutside from './click-outside.js';
+import { Manager as PopperManager, Reference as PopperReference, Popper as PopperPopper } from "react-popper";
 
-class Parent extends Component {
-    render(){
-        return this.props.children;
-    }
+function debug() {
+    console.log.apply(null, arguments);
 }
 
-class Target extends Component {
-    render(){
-        return this.props.children(this.props.style);
-    }
-}
+export default class Popper extends React.Component {
 
-class PopperComponent extends Component {
-
-    state = {}
-
-    componentDidMount() {
-        if ( ReactDOM.findDOMNode(this.target) ) { this.initPopper() }
+    constructor(props) {
+        super(props);
     }
 
-    componentDidUpdate(){
-        if ( this.popperInstance ) {
-            this.popperInstance.update();
-        }
-    }
-
-    componentWillUnmount() {
-        if ( this.popperInstance ) {
-            this.popperInstance.destroy();
-        }
-    }
-
-    initPopper() {
-
-        if ( !ReactDOM.findDOMNode(this.target) ) { return }
-
-        // Add position absolute to the popper element for proper positioning.
-        ReactDOM.findDOMNode(this.target).setAttribute('style','position:absolute');
-
-        this.popperInstance = new PopperJS(
-            ReactDOM.findDOMNode(this.parent),
-            ReactDOM.findDOMNode(this.target),
-            {
-                ...this.props.options, // Spread the options provided to the component
-                modifiers : {
-                    applyStyle: {enabled : false},
-                    updateStateWithStyle: {
-                        enabled : true,
-                        fn : this.update,
-                    }
-                }
-            }
+    render() {
+        return (
+            <PopperManager>
+                {this.props.children}
+            </PopperManager>
         );
     }
+}
 
-    update = (data) => {
-        this.setState(data);
-        return data; // Important! Return data to popper
+
+
+Popper.Target = class extends React.Component {
+
+    constructor(props) {
+        super(props);
     }
 
-    getStyle = (data) => {
+    render() {
+        return (
+            <PopperReference>
+                {({ ref, style }) => (
+                    <div ref={ref} style={style}>
+                        {this.props.children}
+                    </div>
+                )}
+            </PopperReference>
+        );
 
-        if ( !data || !data.offsets || !data.offsets.popper ) { return }
-
-        const left = data.offsets.popper.left;
-        const top = data.offsets.popper.top;
-        const transform = `translate3d(${left}px, ${top}px, 0)`;
-
-        return {
-            position: data.offsets.popper.position,
-            transform,
-            WebkitTransform: transform,
-            top: 0,
-            left: 0,
-            willChange: 'transform'
-        }
-
-    }
-
-
-    render(){
-        return ([
-
-            <Parent
-                ref={ (el) => this.parent = el }
-                key={0}
-            >
-                {this.props.parent}
-            </Parent>,
-
-            <Target
-                ref={ (el) => this.target = el }
-                key={1}
-                style={this.getStyle(this.state)}
-            >
-                {this.props.target}
-            </Target>,
-
-        ])
     }
 }
 
-export default PopperComponent;
+
+Popper.Content = class extends React.Component {
+
+
+    static propTypes = {
+        className  : PropTypes.string,
+        isOpen     : PropTypes.bool,
+        toggle     : PropTypes.func.isRequired,
+        persist    : PropTypes.bool,
+        modifiers  : PropTypes.object,
+        placement  : PropTypes.string
+    };
+
+    constructor(props) {
+        super(props);
+
+    }
+
+    static get defaultProps() {
+        return {
+            isOpen: false,
+            persist: false,
+            modifiers: {
+                flip: {
+                    enabled:true,
+                    boundariesElement: "viewport"
+                },
+                preventOverflow: {
+                    enabled: true,
+                    escapeWithReference: true,
+                    boundariesElement: "scrollParent"
+                }
+            },
+            placement: "bottom-start"
+        };
+    }
+
+    renderPopper() {
+
+        return (
+            <PopperPopper modifiers={this.props.modifiers} placement={this.props.placement}>
+            {
+                ({ref, style, placement, arrowProps}) => {
+
+                    console.log('arrowProps', arrowProps);
+                    console.log('placement', placement);
+
+                    return (
+                        <div ref={ref} style={Object.assign({}, style, {zIndex:1000})} data-placement={placement}>
+                            {this.props.children}
+                        </div>
+
+                    );
+                }
+            }
+            </PopperPopper>
+
+        );
+    }
+    render() {
+
+        if (this.props.isOpen) {
+
+            if (this.props.persist)
+                return this.renderPopper();
+
+            return (
+                <ClickOutside onClickOutside={this.props.toggle}>
+                    {this.renderPopper()}
+                </ClickOutside>
+            );
+        }
+        else {
+            return null;
+        }
+
+
+    }
+
+}
