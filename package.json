@@ -1,14 +1,15 @@
 {
 	"name": "react-bootify",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "react-bootify",
-	"main": "dist/index.js",
+	"main": "lib/bootify.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "webpack-dev-server --mode development",
 		"build": "webpack --mode production",
 		"demo": "gh-pages -d examples/dist",
-		"transpile": "babel src -d dist --copy-files",
+		"transpile-old": "babel src -d dist --copy-files",
+		"transpile": "babel src --out-file lib/bootify.js",
 		"increase-package-version": "node ./scripts/increase-package-version.js"
 	},
 	"repository": {
