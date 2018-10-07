@@ -2,43 +2,25 @@
 import 'bootstrap-css-only/css/bootstrap.min.css';
 
 import React from 'react';
-import {render} from 'react-dom';
-import {Component, Container, Form, Button, ButtonRow} from '../../src';
-import {Page} from './components/page.js';
-import {Section} from './components/section.js';
+import ReactDOM from 'react-dom';
+import Router from './components/router.js';
+import Page from './components/page.js';
 
-
-import AlertSample from './samples/alert.js';
-import FormSample from './samples/form.js';
-
-class Sample extends Component {
+export default class App extends React.Component {
 
 
     constructor(props) {
         super(props);
     }
 
-
-
     render() {
-
         return (
             <Page>
-                <Section title='Alerts'>
-                    <AlertSample/>
-                </Section>
-                <Section title='Forms'>
-                    <FormSample/>
-                </Section>
-
+                <Router/>
             </Page>
-
-
         );
-
-
     }
 }
 
 
-render(<Sample/>, document.getElementById("app"));
+ReactDOM.render(<App/>, document.getElementById('app'));

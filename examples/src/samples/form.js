@@ -1,6 +1,7 @@
 import React from 'react';
-import {Component, Container, Form, Button, ButtonRow} from '../../../src/index.js';
-
+import ReactDOM from 'react-dom';
+import {Form, Component} from '../../../src/index.js';
+import Page from '../components/page.js'
 
 export default class Sample extends Component {
 
@@ -32,8 +33,6 @@ export default class Sample extends Component {
 
     render() {
         return (
-            <div>
-
                 <Form>
                     <Form.Group>
                         <Form.Label for="symbol">Symbol</Form.Label>
@@ -66,8 +65,6 @@ export default class Sample extends Component {
                         </Form.Group>
                     </Form.Row>
                 </Form>
-
-            </div>
         );
     }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import {Component, Container} from '../../../src/index.js';
 
 
-export class Page extends Component {
+export default class Page extends Component {
 
     render() {
         var style = {margin:'1em'};

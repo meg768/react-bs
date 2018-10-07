@@ -1,128 +1,190 @@
-import classnames from "classnames";
-import React from "react";
+import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from "prop-types";
-import ClickOutside from './click-outside.js';
-import { Manager as PopperManager, Reference as PopperReference, Popper as PopperPopper } from "react-popper";
+import classNames from 'classnames';
+import PopperJs from 'popper.js';
+
 
 function debug() {
-    console.log.apply(null, arguments);
+    //console.log.apply(null, arguments);
 }
 
 export default class Popper extends React.Component {
 
-    constructor(props) {
-        super(props);
+    constructor(args) {
+        super(args);
+
+        this.state = {popper:null};
+
+        this.popper = null;
+        this.referenceNode = null;
+        this.popupNode = null;
+
+        this.onCreate = this.onCreate.bind(this);
+        this.onUpdate = this.onUpdate.bind(this);
     }
-
-    render() {
-        return (
-            <PopperManager>
-                {this.props.children}
-            </PopperManager>
-        );
-    }
-}
-
-
-
-Popper.Target = class extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <PopperReference>
-                {({ ref, style }) => (
-                    <div ref={ref} style={style}>
-                        {this.props.children}
-                    </div>
-                )}
-            </PopperReference>
-        );
-
-    }
-}
-
-
-Popper.Content = class extends React.Component {
-
 
     static propTypes = {
-        className  : PropTypes.string,
-        isOpen     : PropTypes.bool,
-        toggle     : PropTypes.func.isRequired,
-        persist    : PropTypes.bool,
-        modifiers  : PropTypes.object,
-        placement  : PropTypes.string
+        popup : PropTypes.element.isRequired,
+        placement : PropTypes.string
     };
-
-    constructor(props) {
-        super(props);
-
-    }
 
     static get defaultProps() {
         return {
-            isOpen: false,
-            persist: false,
+            placement: 'bottom-start',
             modifiers: {
-                flip: {
-                    enabled:true,
-                    boundariesElement: "viewport"
-                },
                 preventOverflow: {
-                    enabled: true,
-                    escapeWithReference: true,
-                    boundariesElement: "scrollParent"
+                    boundariesElement: 'viewport',
                 }
-            },
-            placement: "bottom-start"
+            }
         };
     }
 
-    renderPopper() {
-
-        return (
-            <PopperPopper modifiers={this.props.modifiers} placement={this.props.placement}>
-            {
-                ({ref, style, placement, arrowProps}) => {
-
-                    console.log('arrowProps', arrowProps);
-                    console.log('placement', placement);
-
-                    return (
-                        <div ref={ref} style={Object.assign({}, style, {zIndex:1000})} data-placement={placement}>
-                            {this.props.children}
-                        </div>
-
-                    );
-                }
-            }
-            </PopperPopper>
-
-        );
+    componentDidMount() {
+        this.instantiatePopper();
     }
-    render() {
 
-        if (this.props.isOpen) {
+    componentWillReceiveProps() {
+        if (!this.popper) {
+            this.instantiatePopper();
+        }
+        this.updatePopper();
+    }
 
-            if (this.props.persist)
-                return this.renderPopper();
+    componentWillUnmount() {
+        if (this.popper) {
+            this.popper.destroy();
+        }
+    }
 
-            return (
-                <ClickOutside onClickOutside={this.props.toggle}>
-                    {this.renderPopper()}
-                </ClickOutside>
-            );
+    instantiatePopper() {
+
+        var options = {
+            placement : this.props.placement,
+            modifiers : this.props.modifiers,
+            onCreate  : this.onCreate,
+            onUpdate  : this.onUpdate
+
+        };
+
+        this.popper = new PopperJs(this.referenceNode, this.popupNode, options);
+
+        this.updatePopper();
+    }
+
+    onCreate(state) {
+        this.setState({popper:state});
+    }
+
+    onUpdate(state) {
+        this.setState({popper:state});
+    }
+
+    updatePopper() {
+        requestAnimationFrame(() => {
+            if (this.popper) {
+                this.popper.update();
+            }
+        });
+    }
+
+
+    getPopupStyle() {
+
+        var style = {};
+        var unit = '0.2rem';
+
+        if (!this.state.popper)
+            return {};
+
+        debug(this.state.popper);
+        style.display = this.props.isOpen ? 'block' : 'none';
+
+        switch(this.state.popper.placement) {
+            case 'bottom-start': {
+                style.marginTop = unit;
+                break;
+            }
+        }
+
+        return style;
+    }
+
+    renderReference() {
+
+        if (this.props.reference) {
+            return (React.cloneElement(this.props.reference, {ref:(element) => {this.referenceNode = ReactDOM.findDOMNode(element)}}));
         }
         else {
-            return null;
-        }
+            var children = React.Children.toArray(this.props.children);
 
+            if (children.length > 1) {
+
+                return (
+                    <div ref={(element) => {this.referenceNode = ReactDOM.findDOMNode(element)}}>
+                        {children}
+                    </div>
+
+                );
+            }
+            else {
+                return (React.cloneElement(children[0], {ref:(element) => {this.referenceNode = ReactDOM.findDOMNode(element)}}));
+
+            }
+
+        }
+    }
+
+
+
+    renderPopup() {
+        if (this.props.popup)
+            return (React.cloneElement(this.props.popup, {style:this.getPopupStyle(), ref:(element) => {this.popupNode = ReactDOM.findDOMNode(element)}}));
+        else
+            return null;
 
     }
 
+
+    render() {
+        return (
+            <div>
+                {this.renderReference()}
+                {this.renderPopup()}
+            </div>
+        );
+
+    }
+}
+
+
+
+Popper.Reference = class extends React.Component {
+
+    constructor(args) {
+        super(args);
+
+    }
+
+    render() {
+        return (
+            <div/>
+        );
+    }
+
+}
+
+
+Popper.Popup = class extends React.Component {
+
+    constructor(args) {
+        super(args);
+
+    }
+
+    render() {
+        return (
+            <div/>
+        );
+    }
 }
