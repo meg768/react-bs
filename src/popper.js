@@ -23,6 +23,7 @@ export default class Popper extends React.Component {
 
         this.onCreate = this.onCreate.bind(this);
         this.onUpdate = this.onUpdate.bind(this);
+        this.onDocumentClick = this.onDocumentClick.bind(this);
     }
 
     static propTypes = {
@@ -43,6 +44,7 @@ export default class Popper extends React.Component {
     }
 
     componentDidMount() {
+        document.addEventListener('click', this.onDocumentClick, true);
         this.instantiatePopper();
     }
 
@@ -54,6 +56,8 @@ export default class Popper extends React.Component {
     }
 
     componentWillUnmount() {
+        document.removeEventListener('click', this.onDocumentClick, true);
+
         if (this.popper) {
             this.popper.destroy();
         }
@@ -80,6 +84,19 @@ export default class Popper extends React.Component {
 
     onUpdate(state) {
         this.setState({popper:state});
+    }
+
+
+    onDocumentClick(event) {
+
+        console.log('Click', event);
+        if (this.props.isOpen) {
+            console.log('isopen');
+            if (this.props.toggle && !this.popupNode.contains(event.target)) {
+                this.props.toggle();
+            }
+
+        }
     }
 
     updatePopper() {
@@ -150,15 +167,6 @@ export default class Popper extends React.Component {
 
     renderPopup() {
         if (this.props.popup) {
-            if (this.props.isOpen && this.props.toggle) {
-                return (
-                    <ClickOutside onClick={this.props.toggle}>
-                        {this.renderPopupElement()}
-                    </ClickOutside>
-                );
-
-            }
-
             return this.renderPopupElement();
 
         }
