@@ -64,7 +64,7 @@ class DropdownSample extends React.Component {
         return (
             <div>
                 <Popper toggle={this.toggle} isOpen={this.state.isOpen} placement='bottom-start' modifiers={modifiers} popup={this.renderPopup()}>
-                    {this.renderReference('Inline')}
+                    {this.renderReference('Button')}
                 </Popper>
             </div>
         );
