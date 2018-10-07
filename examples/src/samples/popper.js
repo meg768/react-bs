@@ -63,7 +63,7 @@ class DropdownSample extends React.Component {
 }
 
 
-
+/*
 
 export default class MinimalPopperExample extends React.Component {
 
@@ -102,7 +102,8 @@ export default class MinimalPopperExample extends React.Component {
 
 }
 
-/*
+*/
+
 export default class Module extends React.Component {
 
 
@@ -134,4 +135,3 @@ export default class Module extends React.Component {
 
     }
 }
-*/
