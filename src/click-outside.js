@@ -3,7 +3,7 @@ import Component from './component.js';
 import onClickOutside from 'react-onclickoutside';
 
 
-class MyComponent extends Component {
+class ClickOutside extends Component {
 
 
     constructor(props) {
@@ -13,7 +13,9 @@ class MyComponent extends Component {
 
 
     handleClickOutside() {
-        this.props.onClickOutside();
+        if (this.props.onClick) {
+            this.props.onClick();
+        }
     }
 
 
@@ -22,4 +24,4 @@ class MyComponent extends Component {
     }
 }
 
-export default onClickOutside(MyComponent);
+export default onClickOutside(ClickOutside);

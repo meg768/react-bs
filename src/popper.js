@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import PropTypes from "prop-types";
 import classNames from 'classnames';
 import PopperJs from 'popper.js';
+import ClickOutside from './click-outside.js';
 
 
 function debug() {
-    //console.log.apply(null, arguments);
+    console.log.apply(null, arguments);
 }
 
 export default class Popper extends React.Component {
@@ -26,7 +27,8 @@ export default class Popper extends React.Component {
 
     static propTypes = {
         popup : PropTypes.element.isRequired,
-        placement : PropTypes.string
+        placement : PropTypes.string,
+        toggle : PropTypes.func
     };
 
     static get defaultProps() {
@@ -136,10 +138,30 @@ export default class Popper extends React.Component {
     }
 
 
+    renderPopupElement() {
+        if (this.props.popup) {
+            return (React.cloneElement(this.props.popup, {style:this.getPopupStyle(), ref:(element) => {this.popupNode = ReactDOM.findDOMNode(element)}}));
+        }
+        else
+            return null;
+
+    }
+
 
     renderPopup() {
-        if (this.props.popup)
-            return (React.cloneElement(this.props.popup, {style:this.getPopupStyle(), ref:(element) => {this.popupNode = ReactDOM.findDOMNode(element)}}));
+        if (this.props.popup) {
+            if (this.props.isOpen && this.props.toggle) {
+                return (
+                    <ClickOutside onClick={this.props.toggle}>
+                        {this.renderPopupElement()}
+                    </ClickOutside>
+                );
+
+            }
+
+            return this.renderPopupElement();
+
+        }
         else
             return null;
 
@@ -147,6 +169,7 @@ export default class Popper extends React.Component {
 
 
     render() {
+        debug('ref', this.referenceNode);
         return (
             <div>
                 {this.renderReference()}
