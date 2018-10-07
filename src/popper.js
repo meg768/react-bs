@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import PropTypes from "prop-types";
 import classNames from 'classnames';
 import PopperJs from 'popper.js';
-import ClickOutside from './click-outside.js';
-
 
 function debug() {
     console.log.apply(null, arguments);
@@ -44,7 +42,9 @@ export default class Popper extends React.Component {
     }
 
     componentDidMount() {
-        document.addEventListener('click', this.onDocumentClick, true);
+        if (this.props.toggle)
+            document.addEventListener('click', this.onDocumentClick, true);
+
         this.instantiatePopper();
     }
 

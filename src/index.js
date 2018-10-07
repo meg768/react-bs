@@ -9,13 +9,12 @@ import Alert from './alert.js';
 import Table from './table.js';
 import Container from './container.js';
 import Component from './component.js';
-import ClickOutside from './click-outside.js';
 
 var Row = Container.Row;
 var Col = Container.Col;
 
 export {
     Component, Glyph, Icon, Popper, ButtonRow, Button, Form,
-    Jumbotron, Alert, Table, Container, Row, Col, ClickOutside
+    Jumbotron, Alert, Table, Container, Row, Col
 
 };
