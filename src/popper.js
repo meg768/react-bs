@@ -119,8 +119,16 @@ export default class Popper extends React.Component {
         style = Object.assign({}, this.props.popup.props.style, style);
 
         switch(this.state.popper.placement) {
-            case 'bottom-start': {
-                style.marginTop = unit;
+            case 'right-start':
+            case 'right-end':
+            case 'right': {
+                style.marginLeft = unit;
+                break;
+            }
+            case 'left-start':
+            case 'left-end':
+            case 'left': {
+                style.marginRight = unit;
                 break;
             }
         }
