@@ -89,9 +89,7 @@ export default class Popper extends React.Component {
 
     onDocumentClick(event) {
 
-        console.log('Click', event);
         if (this.props.isOpen) {
-            console.log('isopen');
             if (this.props.toggle && !this.popupNode.contains(event.target)) {
                 this.props.toggle();
             }
@@ -110,14 +108,15 @@ export default class Popper extends React.Component {
 
     getPopupStyle() {
 
-        var style = {};
         var unit = '0.2rem';
 
         if (!this.state.popper)
             return {};
 
-        debug(this.state.popper);
+        var style = {};
         style.display = this.props.isOpen ? 'block' : 'none';
+
+        style = Object.assign({}, this.props.popup.props.style, style);
 
         switch(this.state.popper.placement) {
             case 'bottom-start': {
@@ -177,7 +176,6 @@ export default class Popper extends React.Component {
 
 
     render() {
-        debug('ref', this.referenceNode);
         return (
             <div>
                 {this.renderReference()}
