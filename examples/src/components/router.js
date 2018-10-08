@@ -6,6 +6,7 @@ import FormSample from '../samples/form.js';
 import PopperSample from '../samples/popper.js';
 import PopoverSample from '../samples/popover.js';
 import DropdownSample from '../samples/dropdown.js';
+import TableSample from '../samples/table.js';
 
 export default class Module extends Component {
     render() {
@@ -18,6 +19,7 @@ export default class Module extends Component {
                     <Route path="/alert" component={AlertSample} />
                     <Route path="/popover" component={PopoverSample} />
                     <Route path="/dropdown" component={DropdownSample} />
+                    <Route path="/Table" component={TableSample} />
                 </div>
             </Router>
         );

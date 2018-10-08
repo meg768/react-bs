@@ -47,3 +47,57 @@ export default class Table extends Component  {
         );
     }
 };
+
+Table.Row = class extends Component  {
+
+    render() {
+        return (
+            <tr>
+                {this.props.children}
+            </tr>
+        );
+    }
+}
+
+Table.Col = class extends Component  {
+
+    render() {
+        if (this.props.header) {
+            return (
+                <th>
+                    {this.props.children}
+                </th>
+            );
+
+        }
+        return (
+            <td>
+                {this.props.children}
+            </td>
+        );
+    }
+}
+
+
+Table.Header = class extends Component  {
+
+    render() {
+        return (
+            <thead>
+                {this.props.children}
+            </thead>
+        );
+    }
+}
+
+
+Table.Body = class extends Component  {
+
+    render() {
+        return (
+            <tbody>
+                {this.props.children}
+            </tbody>
+        );
+    }
+}
