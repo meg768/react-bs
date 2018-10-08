@@ -10,12 +10,12 @@ A minimalistic Bootstrap layer for React.
 
 Bootstrap css-styles need to be installed separately.
 
+## Comment
+This module is not ready for public use, but take a look at the code on GitHub if you like...
+
 ## Demo
-- Live demo - https://meg768.github.io/react-bootify/
-
-### Popper
-
+- https://meg768.github.io/react-bootify/
 
 
 ## Links
-- Inspired by - https://medium.com/dailyjs/building-a-react-component-with-webpack-publish-to-npm-deploy-to-github-guide-6927f60b3220
+- https://medium.com/dailyjs/building-a-react-component-with-webpack-publish-to-npm-deploy-to-github-guide-6927f60b3220

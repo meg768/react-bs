@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Form, Container, Component, Row, Col, Popper, Button} from '../../../src/index.js';
+import {Form, Container, Component, Row, Col, Popper, Button, Dropdown} from '../../../src/index.js';
 
 
 function debug() {
@@ -26,31 +26,27 @@ class DropdownSample extends React.Component {
 
 
     render() {
-        var target = (
-            <Button onClick={this.toggle}>
-                {this.props.name}
-            </Button>
-
-        );
 
         return  (
-            <Popper toggle={this.toggle} isOpen={this.state.isOpen} placement={this.props.placement} target={target}>
-                <div className="dropdown-menu" >
-                    <h3>Hej</h3>
-                    <p>Olle</p>
-                </div>
-            </Popper>
-
-        );
-
-        return  (
-            <Popper toggle={this.toggle} isOpen={this.state.isOpen} placement={this.props.placement} target={target}>
-                <div className="dropdown-menu show" role='menu'>
-                  <a className="dropdown-item" onClick={this.toggle}>Action</a>
-                  <a className="dropdown-item" onClick={this.toggle}>Another action</a>
-                  <a className="dropdown-item" onClick={this.toggle}>Something else here</a>
-                </div>
-            </Popper>
+            <Dropdown toggle={this.toggle} isOpen={this.state.isOpen} placement={this.props.placement}>
+                <Dropdown.Target>
+                    <Button onClick={this.toggle}>
+                        {this.props.name}
+                    </Button>
+                </Dropdown.Target>
+                <Dropdown.Menu>
+                    <Dropdown.Item onClick={this.toggle}>
+                        HEJ MEG
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        laksdjf
+                    </Dropdown.Item>
+                    <Dropdown.Separator/>
+                    <Dropdown.Item onClick={this.toggle}>
+                        Another action
+                    </Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
 
         );
 
@@ -90,7 +86,7 @@ export default class Module extends React.Component {
                         <DropdownSample name='Bottom Start' placement='bottom-start'/>
                     </Col>
                     <Col md={2}>
-                        <DropdownSample name='Button End' placement='bottom-start'/>
+                        <DropdownSample name='Button End' placement='bottom-end'/>
                     </Col>
                 </Row>
             </Container>

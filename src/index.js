@@ -1,4 +1,3 @@
-import Popper from './popper.js';
 import Glyph from './glyph.js';
 import Icon from './icon.js';
 import ButtonRow from './button-row.js';
@@ -9,12 +8,15 @@ import Alert from './alert.js';
 import Table from './table.js';
 import Container from './container.js';
 import Component from './component.js';
+import Popover from './popover.js';
+import Popper from './popper.js';
+import Dropdown from './dropdown.js';
 
 var Row = Container.Row;
 var Col = Container.Col;
 
 export {
     Component, Glyph, Icon, Popper, ButtonRow, Button, Form,
-    Jumbotron, Alert, Table, Container, Row, Col
+    Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown
 
 };

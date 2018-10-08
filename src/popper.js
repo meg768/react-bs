@@ -16,22 +16,21 @@ export default class Popper extends React.Component {
         this.state = {popper:null};
 
         this.popper = null;
-        this.referenceNode = null;
+        this.targetNode = null;
         this.popupNode = null;
 
-        this.onCreate = this.onCreate.bind(this);
-        this.onUpdate = this.onUpdate.bind(this);
         this.onDocumentClick = this.onDocumentClick.bind(this);
     }
 
     static propTypes = {
-        popup : PropTypes.element.isRequired,
+        target    : PropTypes.element.isRequired,
         placement : PropTypes.string,
-        toggle : PropTypes.func
+        toggle    : PropTypes.func
     };
 
     static get defaultProps() {
         return {
+            isOpen: false,
             placement: 'bottom-start',
             modifiers: {
                 preventOverflow: {
@@ -45,12 +44,12 @@ export default class Popper extends React.Component {
         if (this.props.toggle)
             document.addEventListener('click', this.onDocumentClick, true);
 
-        this.instantiatePopper();
+        this.createPopper();
     }
 
     componentWillReceiveProps() {
         if (!this.popper) {
-            this.instantiatePopper();
+            this.createPopper();
         }
         this.updatePopper();
     }
@@ -58,34 +57,29 @@ export default class Popper extends React.Component {
     componentWillUnmount() {
         document.removeEventListener('click', this.onDocumentClick, true);
 
-        if (this.popper) {
-            this.popper.destroy();
-        }
+        this.destroyPopper();
     }
 
-    instantiatePopper() {
-
+    createPopper() {
         var options = {
             placement : this.props.placement,
             modifiers : this.props.modifiers,
-            onCreate  : this.onCreate,
-            onUpdate  : this.onUpdate
+            onCreate  : (state) => {this.setState({popper:state})},
+            onUpdate  : (state) => {this.setState({popper:state})}
 
         };
 
-        this.popper = new PopperJs(this.referenceNode, this.popupNode, options);
+        this.popper = new PopperJs(this.targetNode, this.popupNode, options);
 
         this.updatePopper();
     }
 
-    onCreate(state) {
-        this.setState({popper:state});
-    }
+    destroyPopper() {
+        if (this.popper) {
+            this.popper.destroy();
+        }
 
-    onUpdate(state) {
-        this.setState({popper:state});
     }
-
 
     onDocumentClick(event) {
 
@@ -105,123 +99,32 @@ export default class Popper extends React.Component {
         });
     }
 
+    renderTarget() {
 
-    getPopupStyle() {
-
-        var unit = '0.2rem';
-
-        if (!this.state.popper)
-            return {};
-
-        var style = {};
-        style.display = this.props.isOpen ? 'block' : 'none';
-
-        style = Object.assign({}, this.props.popup.props.style, style);
-
-        switch(this.state.popper.placement) {
-            case 'right-start':
-            case 'right-end':
-            case 'right': {
-                style.marginLeft = unit;
-                break;
-            }
-            case 'left-start':
-            case 'left-end':
-            case 'left': {
-                style.marginRight = unit;
-                break;
-            }
-        }
-
-        return style;
-    }
-
-    renderReference() {
-
-        if (this.props.reference) {
-            return (React.cloneElement(this.props.reference, {ref:(element) => {this.referenceNode = ReactDOM.findDOMNode(element)}}));
-        }
-        else {
-            var children = React.Children.toArray(this.props.children);
-
-            if (children.length > 1) {
-
-                return (
-                    <div ref={(element) => {this.referenceNode = ReactDOM.findDOMNode(element)}}>
-                        {children}
-                    </div>
-
-                );
-            }
-            else {
-                return (React.cloneElement(children[0], {ref:(element) => {this.referenceNode = ReactDOM.findDOMNode(element)}}));
-
-            }
-
-        }
-    }
-
-
-    renderPopupElement() {
-        if (this.props.popup) {
-            return (React.cloneElement(this.props.popup, {style:this.getPopupStyle(), ref:(element) => {this.popupNode = ReactDOM.findDOMNode(element)}}));
-        }
-        else
-            return null;
-
+        return (React.cloneElement(this.props.target, {ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
     }
 
 
     renderPopup() {
-        if (this.props.popup) {
-            return this.renderPopupElement();
 
+        var children = React.Children.toArray(this.props.children);
+
+        if (children.length == 1) {
+            var child = children[0];
+            var style = Object.assign({}, child.props.style, {display: this.state.popper && this.props.isOpen ? 'block' : 'none'});
+
+            return React.cloneElement(child, {style:style, ref:(element) => {this.popupNode = ReactDOM.findDOMNode(element)}});
         }
-        else
-            return null;
-
     }
 
-
     render() {
+
         return (
             <div>
-                {this.renderReference()}
+                {this.renderTarget()}
                 {this.renderPopup()}
             </div>
         );
 
-    }
-}
-
-
-
-Popper.Reference = class extends React.Component {
-
-    constructor(args) {
-        super(args);
-
-    }
-
-    render() {
-        return (
-            <div/>
-        );
-    }
-
-}
-
-
-Popper.Popup = class extends React.Component {
-
-    constructor(args) {
-        super(args);
-
-    }
-
-    render() {
-        return (
-            <div/>
-        );
     }
 }
