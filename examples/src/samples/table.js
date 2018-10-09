@@ -9,9 +9,9 @@ export default class Sample extends Component {
     render() {
         return (
             <Page>
-                <Table>
+                <Table style={{background:'red'}}>
                     <Table.Body>
-                        <Table.Row>
+                        <Table.Row style={{background:'red'}}>
                             <Table.Col>
                                 A
                             </Table.Col>

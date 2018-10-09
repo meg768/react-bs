@@ -1,8 +1,9 @@
 import React from 'react';
-import Component from './component.js';
 import PropTypes from "prop-types";
 import classNames from 'classnames';
 
+import Component from './component.js';
+import Tag from './tag.js';
 
 export default class Table extends Component  {
 
@@ -48,56 +49,22 @@ export default class Table extends Component  {
     }
 };
 
-Table.Row = class extends Component  {
 
-    render() {
-        return (
-            <tr>
-                {this.props.children}
-            </tr>
-        );
-    }
+Table.Row = (props) => {
+    return <Tag tag='tr' {...props}/>
 }
 
-Table.Col = class extends Component  {
+Table.Col = function(props)  {
 
-    render() {
-        if (this.props.header) {
-            return (
-                <th>
-                    {this.props.children}
-                </th>
-            );
+    const {header, ...other} = props;
 
-        }
-        return (
-            <td>
-                {this.props.children}
-            </td>
-        );
-    }
+    return header ? <Tag tag='th' {...other}/> : <Tag tag='td' {...other}/>;
 }
 
-
-Table.Header = class extends Component  {
-
-    render() {
-        return (
-            <thead>
-                {this.props.children}
-            </thead>
-        );
-    }
+Table.Header = function(props)  {
+    return <Tag tag='thead' {...props}/>
 }
 
-
-Table.Body = class extends Component  {
-
-    render() {
-        return (
-            <tbody>
-                {this.props.children}
-            </tbody>
-        );
-    }
+Table.Body = function(props)  {
+    return <Tag tag='tbody' {...props}/>
 }
