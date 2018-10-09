@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
+import classNames from 'classnames';
 
 export default class Glyph extends Component {
 
     render() {
-        var {name, glyph, icon, ...props} = this.props;
+        var {className, name, glyph, icon, ...props} = this.props;
 
         if (icon && !name)
             name = icon;
@@ -12,7 +13,7 @@ export default class Glyph extends Component {
             name = glyph;
 
         return (
-            <i className={'icon-'+name} {...props}/>
+            <i className={classNames(className, 'icon-'+name)} {...props}/>
         );
 
     }

@@ -55,9 +55,7 @@ Table.Row = (props) => {
 }
 
 Table.Col = function(props)  {
-
     const {header, ...other} = props;
-
     return header ? <Tag tag='th' {...other}/> : <Tag tag='td' {...other}/>;
 }
 
