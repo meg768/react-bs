@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import PropTypes from "prop-types";
 import classNames from 'classnames';
 import PopperJs from 'popper.js';
-
+import Tag from './tag.js';
+import Component from './component.js'
 function debug() {
     console.log.apply(null, arguments);
 }
 
-export default class Dropdown extends React.Component {
+export default class Dropdown extends Component {
 
     constructor(args) {
         super(args);
@@ -115,19 +116,16 @@ export default class Dropdown extends React.Component {
 
     renderDropdownTarget() {
         var target = this.getDropdownTarget();
-        console.log('target', target);
         return (React.cloneElement(target, {ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
     }
 
     renderDropdownMenu() {
         var menu = this.getDropdownMenu();
-        console.log('menu', menu);
         return (React.cloneElement(menu, {isOpen:this.props.isOpen, ref:(element) => {this.dropdownNode = ReactDOM.findDOMNode(element)}}));
     }
 
 
     render() {
-
 
         return (
             <div>
@@ -170,48 +168,40 @@ Dropdown.Menu = class extends React.Component {
 
     render() {
 
-        var {style, isOpen, className, ...props} = this.props;
+        var {tag = 'div', style, isOpen, className, ...props} = this.props;
 
         className = classNames(className, 'dropdown-menu show');
         style = Object.assign({}, style, {display:isOpen ? 'block' : 'none'});
 
         return (
-            <div style={style} className={className} {...props}>
-                {this.props.children}
-            </div>
+            <Tag tag={tag} style={style} className={className} {...props}/>
         );
 
     }
 }
 
 
-Dropdown.Item = class extends React.Component {
 
+Dropdown.Item = function(props) {
 
-    render() {
+    var {tag = 'div', style, className, ...other} = props;
 
-        var {style, className, ...props} = this.props;
+    className = classNames(className, 'dropdown-item');
+    style = Object.assign({}, style, {cursor:'pointer'});
 
-        className = classNames(className, 'dropdown-item');
-        style = Object.assign({}, {cursor: 'pointer'});
-
-        return (
-            <div style={style} className={className} {...props}>
-                {this.props.children}
-            </div>
-        );
-
-    }
+    return (
+        <Tag tag={tag} style={style} className={className} {...other}/>
+    );
 }
 
 
-Dropdown.Separator = class extends React.Component {
+Dropdown.Separator = function(props) {
 
+    var {tag = 'div', className, ...other} = props;
 
-    render() {
-        return (
-            <div className="dropdown-divider"></div>
-        );
+    className = classNames(className, 'dropdown-divider');
 
-    }
+    return (
+        <Tag tag={tag} className={className} {...other}/>
+    );
 }
