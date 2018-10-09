@@ -193,7 +193,7 @@ Dropdown.Item = function(props) {
         <Tag tag={tag} style={style} className={className} {...other}/>
     );
 }
-
+//Dropdown.Item.defaultStyle = {};
 
 Dropdown.Separator = function(props) {
 
