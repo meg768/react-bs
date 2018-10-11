@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import classNames from 'classnames';
 import PopperJs from 'popper.js';
 import Tag from './tag.js';
+
 import Component from './component.js'
 function debug() {
     console.log.apply(null, arguments);
@@ -24,10 +25,17 @@ export default class Dropdown extends Component {
 
     }
 
-    static get defaultProps() {
+    static propTypes = {
+        dismiss : PropTypes.func,
+        isOpen  : PropTypes.bool
+    };
+
+    static defaultProps() {
         return {
             placement: 'bottom-start',
             isOpen : false,
+            toggle : null,
+            dismiss : null,
             modifiers: {
                 preventOverflow: {
                     boundariesElement: 'viewport',
@@ -39,7 +47,7 @@ export default class Dropdown extends Component {
 
     componentDidMount() {
 
-        if (this.props.toggle)
+        if (this.props.dismiss)
             document.addEventListener('click', this.onDocumentClick, true);
 
         this.createPopper();
@@ -54,7 +62,7 @@ export default class Dropdown extends Component {
 
     componentWillUnmount() {
 
-        if (this.props.toggle)
+        if (this.props.dismiss)
             document.removeEventListener('click', this.onDocumentClick, true);
 
         this.destroyPopper();
@@ -63,10 +71,11 @@ export default class Dropdown extends Component {
     onDocumentClick(event) {
 
         if (this.props.isOpen) {
-            if (this.props.toggle && !this.dropdownNode.contains(event.target)) {
-                this.props.toggle();
+            if (!this.dropdownNode.contains(event.target)) {
+                if (this.props.dismiss) {
+                    this.props.dismiss();
+                }
             }
-
         }
     }
 
@@ -126,12 +135,13 @@ export default class Dropdown extends Component {
 
 
     render() {
+        var {tag = 'div', placement, modifiers, isOpen, toggle, dismiss, ...props} = this.props;
 
         return (
-            <div>
+            <Tag tag={tag} {...props}>
                 {this.renderDropdownTarget()}
                 {this.renderDropdownMenu()}
-            </div>
+            </Tag>
         );
 
     }
@@ -182,6 +192,7 @@ Dropdown.Menu = class extends React.Component {
 
 
 
+
 Dropdown.Item = function(props) {
 
     var {tag = 'div', style, className, ...other} = props;
@@ -190,10 +201,9 @@ Dropdown.Item = function(props) {
     style = Object.assign({}, style, {cursor:'pointer'});
 
     return (
-        <Tag tag={tag} style={style} className={className} {...other}/>
+        <Tag tag={tag} tabIndex={1} style={style} className={className} {...other}/>
     );
 }
-//Dropdown.Item.defaultStyle = {};
 
 Dropdown.Separator = function(props) {
 
