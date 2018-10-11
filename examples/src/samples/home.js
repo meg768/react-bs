@@ -20,6 +20,7 @@ export default class Sample extends Component {
             <Page>
                 <AlertSample/>
                 <FormSample/>
+                <TableSample/>
             </Page>
         )
     }

@@ -2,15 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button, Container, Row, Col, Component} from '../../../src/index.js';
 
-require('bootstrap-css-only/css/bootstrap.min.css');
 
 
-class JsonDump extends React.Component {
 
-    render() {
-        return <pre>{JSON.stringify(this.props.children, null, 4)}</pre>
-    }
-}
 
 export default class Page extends Component {
 
