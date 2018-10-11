@@ -63,6 +63,8 @@ export default class Alert extends Component  {
     }
 };
 
+///////////////////////////////////////////////////////////////////////////////
+
 
 Alert.Heading = function(props) {
 
@@ -74,5 +76,34 @@ Alert.Heading = function(props) {
 }
 
 Alert.Heading.defaultProps = {
-    tag: 'h4'
+    tag: 'h5'
 };
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+Alert.Separator = function(props) {
+
+    var {tag, ...other} = props;
+
+    return <Tag tag={tag} {...other}/>;
+}
+
+Alert.Separator.defaultProps = {
+    tag: 'hr'
+};
+
+///////////////////////////////////////////////////////////////////////////////
+
+Alert.Body = function(props) {
+
+    var {tag, ...other} = props;
+
+    return <Tag tag={tag} {...other}/>;
+}
+
+Alert.Body.defaultProps = {
+    tag: 'div'
+};
+
+///////////////////////////////////////////////////////////////////////////////

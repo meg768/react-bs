@@ -1,6 +1,16 @@
 import React from 'react';
-import {Button, Component, Container} from '../../../src/index.js';
-import Theme from './theme.js';
+import ReactDOM from 'react-dom';
+import {Button, Container, Row, Col, Component} from '../../../src/index.js';
+
+require('bootstrap-css-only/css/bootstrap.min.css');
+
+
+class JsonDump extends React.Component {
+
+    render() {
+        return <pre>{JSON.stringify(this.props.children, null, 4)}</pre>
+    }
+}
 
 export default class Page extends Component {
 
@@ -10,27 +20,51 @@ export default class Page extends Component {
         this.state = {};
         this.state.theme = 'materia';
 
-        this.changeTheme = this.changeTheme.bind(this);
     }
 
-    changeTheme() {
-        console.log('Changing to darkly');
-        this.setState({theme:'darkly'});
-    }
     render() {
         var style = {margin:'1em'};
-        console.log('theme:', this.state.theme);
         return (
-            <Theme name={this.state.theme}>
-                <div style={style}>
-                    <Container>
-                        {this.props.children}
-                    </Container>
-                    <Button onClick={this.changeTheme}>
-                        Change Theme
-                    </Button>
-                </div>
-            </Theme>
+            <div style={style}>
+                {this.props.children}
+            </div>
         );
     }
 }
+
+Page.Title = function(props) {
+    return (
+        <h4>
+            {props.children}
+        </h4>
+    );
+}
+
+
+Page.Example = class extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {};
+    }
+
+    componentDidMount() {
+      }
+
+
+    render() {
+        var style = {
+            border: '0.1rem solid rgba(0, 0, 0, 0.1)',
+            borderRadius: '0.2rem',
+            padding:'2rem'
+        };
+    
+        return (
+            <div>
+                    {this.props.children}    
+            </div>
+        )
+    }
+}
+
