@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Router from './components/router.js';
 import Page from './components/page.js';
 
+
 export default class App extends React.Component {
 
 
@@ -13,6 +14,7 @@ export default class App extends React.Component {
 
     render() {
         return (
+
             <Page>
                 <Router/>
             </Page>

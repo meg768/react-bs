@@ -45,7 +45,7 @@ export default class Alert extends Component  {
 
         if (dismissable) {
             dismiss = (
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" onClick={this.onDismiss}>
+                <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={this.onDismiss}>
                     <span aria-hidden="true">&times;</span>
                 </button>
             );

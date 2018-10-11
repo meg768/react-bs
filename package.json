@@ -1,6 +1,6 @@
 {
 	"name": "react-bootify",
-	"version": "0.0.45",
+	"version": "0.0.46",
 	"description": "react-bootify",
 	"main": "lib/index.js",
 	"scripts": {
@@ -10,7 +10,7 @@
 		"demo": "gh-pages -d examples/dist",
 		"transpile": "babel src -d lib --copy-files",
 		"increase-package-version": "node ./scripts/increase-package-version.js",
-		"npm": "npm publish"
+		"publish-to-npm": "npm run increase-package-version && npm run transpile && npm publish"
 	},
 	"repository": {
 		"type": "git",
