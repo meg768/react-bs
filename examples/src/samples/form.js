@@ -45,8 +45,8 @@ export default class Sample extends Component {
                     </Form.Group>
 
                     <Form.Group>
-                        <Form.Label >Namn</Form.Label>
-                        <Form.Input id='name' type="text" disabled={this.state.loading} value={this.state.stock.name} placeholder="Namn" onChange={this.onChange}/>
+                        <Form.Label >Name</Form.Label>
+                        <Form.Input id='name' type="text" disabled={this.state.loading} value={this.state.stock.name} placeholder="Name" onChange={this.onChange}/>
                     </Form.Group>
 
                     <Form.Row>
