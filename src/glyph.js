@@ -13,9 +13,6 @@ export default function(props) {
     if (glyph && !name)
         name = glyph;
 
-
-
-        
     return (
         <Tag tag={tag} className={classNames(className, 'icon-'+name)} {...props}/>
     );
