@@ -1,6 +1,6 @@
 # react-bootify
 
-A minimalistic Bootstrap layer for React.
+Yet another minimalistic Bootstrap layer for React.
 
 ## Installation
 
