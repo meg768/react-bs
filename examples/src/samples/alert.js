@@ -14,7 +14,7 @@ export default class Sample extends Component {
                 </Page.Title>
 
 
-                <Page.Example>
+                <Page.Example title='General alerts'>
                     <Alert color='primary'>
                         A simple primary alert—check it out!
                     </Alert>
@@ -50,17 +50,31 @@ export default class Sample extends Component {
 
                 </Page.Example>
 
-                <Page.Example>
+                <Page.Example title='Alert header'>
                     <Alert>
                         <Alert.Heading>
-                            sdfg
+                            Alert header
                         </Alert.Heading>
                         <Alert.Separator/>
                         <Alert.Body>
-                            söadkf
+                            Lorem ipsum dolor sit amet, possit commodo similique nam at. Exerci nonumy qualisque at per. Petentium explicari neglegentur id nec.
                         </Alert.Body>
                     </Alert>
                 </Page.Example>
+
+                <Page.Example title='Dismissable alert'>
+                    <Alert color='warning' dismissable>
+                        <Alert.Heading>
+                            A dismissable alert header
+                        </Alert.Heading>
+                        <Alert.Separator/>
+                        <Alert.Body>
+                            Lorem ipsum dolor sit amet, falli libris causae ei eam, nec eu unum putant, natum prima maiestatis et vix ne.
+                        </Alert.Body>
+                    </Alert>
+                </Page.Example>
+
+
             </Page>
         );
     }

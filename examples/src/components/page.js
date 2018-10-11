@@ -34,9 +34,9 @@ export default class Page extends Component {
 
 Page.Title = function(props) {
     return (
-        <h4>
+        <h2>
             {props.children}
-        </h4>
+        </h2>
     );
 }
 
@@ -61,8 +61,14 @@ Page.Example = class extends Component {
         };
     
         return (
-            <div>
+            <div style={{margin: '1rem'}}>
+                <h3>
+                    {this.props.title}
+                </h3>
+                <div style={style}>
                     {this.props.children}    
+
+                </div>
             </div>
         )
     }
