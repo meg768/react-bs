@@ -7,6 +7,8 @@ export default class Sample extends Component {
 
 
     render() {
+
+
         return (
             <Page>
                 <Page.Title>
@@ -34,6 +36,7 @@ export default class Sample extends Component {
                         </Jumbotron.Body>
                     </Jumbotron>
                 </Page.Example>
+
             </Page>
         );
     }
