@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import classNames from 'classnames';
 import PopperJs from 'popper.js';
 import Tag from './tag.js';
-
 import Component from './component.js'
 function debug() {
     console.log.apply(null, arguments);
