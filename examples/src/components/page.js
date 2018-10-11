@@ -50,7 +50,7 @@ Page.Example = class extends Component {
     render() {
         var style = {
             border: '0.1rem solid rgba(0, 0, 0, 0.1)',
-            borderRadius: '0.2rem',
+            borderRadius: '0.5rem',
             padding:'2rem'
         };
     

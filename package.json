@@ -1,6 +1,6 @@
 {
 	"name": "react-bootify",
-	"version": "0.0.48",
+	"version": "0.0.49",
 	"description": "react-bootify",
 	"main": "lib/index.js",
 	"scripts": {
@@ -11,6 +11,8 @@
 		"commit": "git add -A && git commit -m '-'",
 		"increase-package-version": "node ./scripts/increase-package-version.js",
 		"publish-to-github": "npm run build && gh-pages -d examples/dist",
+		"goto-github": "open https://github.com/meg768/react-bootify",
+		"goto-npm": "open https://www.npmjs.com/package/react-bootify",
 		"publish-to-npm": "npm run increase-package-version && npm run transpile && npm publish && npm run commit"
 	},
 	"repository": {
