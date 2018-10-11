@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Component, Table} from '../../../src/index.js';
+import {Container, Component, Table} from '../../../src/index.js';
 import Page from '../components/page.js'
 
 export default class Sample extends Component {
