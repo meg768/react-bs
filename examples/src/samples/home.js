@@ -11,6 +11,7 @@ import PopperSample from '../samples/popper.js';
 import PopoverSample from '../samples/popover.js';
 import DropdownSample from '../samples/dropdown.js';
 import TableSample from '../samples/table.js';
+import JumbotronSample from '../samples/jumbotron.js';
 
 export default class Sample extends Component {
 
@@ -21,6 +22,7 @@ export default class Sample extends Component {
                 <AlertSample/>
                 <FormSample/>
                 <TableSample/>
+                <JumbotronSample/>
             </Page>
         )
     }

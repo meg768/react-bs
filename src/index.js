@@ -1,5 +1,4 @@
 import Glyph from './glyph.js';
-import ButtonRow from './button-row.js';
 import Button from './button.js';
 import Form from './form.js';
 import Jumbotron from './jumbotron.js';
@@ -16,7 +15,7 @@ var Row = Container.Row;
 var Col = Container.Col;
 
 export {
-    Tag, Component, Glyph, Popper, ButtonRow, Button, Form,
+    Tag, Component, Glyph, Popper, Button, Form,
     Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown
 
 };
