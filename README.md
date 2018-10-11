@@ -11,7 +11,7 @@ A minimalistic Bootstrap layer for React.
 Bootstrap css-styles need to be installed separately.
 
 ## Comment
-This module is not ready for public use, but take a look at the code on GitHub if you like...
+This module is not ready for public use.
 
 ## Demo
 - https://meg768.github.io/react-bootify/
