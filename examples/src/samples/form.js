@@ -33,6 +33,11 @@ export default class Sample extends Component {
 
     render() {
         return (
+            <Page>
+                <Page.Title>
+                    Forms
+                </Page.Title>
+                <Page.Example>
                 <Form>
                     <Form.Group>
                         <Form.Label >Symbol</Form.Label>
@@ -65,6 +70,10 @@ export default class Sample extends Component {
                         </Form.Group>
                     </Form.Row>
                 </Form>
+
+                </Page.Example>
+
+            </Page>
         );
     }
 }

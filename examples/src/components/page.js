@@ -62,9 +62,9 @@ Page.Example = class extends Component {
     
         return (
             <div style={{margin: '1rem'}}>
-                <h3>
+                <h4>
                     {this.props.title}
-                </h3>
+                </h4>
                 <div style={style}>
                     {this.props.children}    
 
