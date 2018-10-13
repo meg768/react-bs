@@ -15,7 +15,7 @@
 		"goto-npm": "open https://www.npmjs.com/package/react-bootify",
 		"publish-to-npm": "npm run increase-package-version && npm run transpile && npm publish && npm run commit",
 		"styleguide": "styleguidist server",
-		"styleguide:build": "styleguidist build"		
+		"styleguide:build": "styleguidist build"
 	},
 	"repository": {
 		"type": "git",
@@ -40,8 +40,6 @@
 		"@babel/preset-react": "^7.0.0",
 		"babel-core": "^6.26.3",
 		"babel-loader": "^8.0.4",
-		"bootstrap-css-only": "^4.1.1",
-		"bootswatch": "^4.1.3",
 		"css-loader": "^1.0.0",
 		"gh-pages": "^2.0.1",
 		"html-loader": "^0.5.5",
