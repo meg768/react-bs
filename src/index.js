@@ -10,6 +10,7 @@ import Popover from './popover.js';
 import Popper from './popper.js';
 import Dropdown from './dropdown.js';
 import Tag from './tag.js';
+import ListGroup from './list-group.js';
 
 //import '../bootstrap/bootstrap.min.css';
 
@@ -17,7 +18,7 @@ var Row = Container.Row;
 var Col = Container.Col;
 
 export {
-    Tag, Component, Glyph, Popper, Button, Form,
+    Tag, Component, Glyph, Popper, Button, Form, ListGroup,
     Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown
 
 };

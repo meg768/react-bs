@@ -18,13 +18,12 @@ export default class Table extends Component  {
 
     static get defaultProps() {
         return {
-            striped    : true,
+            striped    : false,
             dark       : false,
             bordered   : false,
             borderless : false,
             responsive : false,
-            size       : 'md',
-            style      : {width:'100%'}
+            size       : 'md'
         };
     }
 
