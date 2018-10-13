@@ -12,7 +12,6 @@ import Dropdown from './dropdown.js';
 import Tag from './tag.js';
 import ListGroup from './list-group.js';
 
-//import '../bootstrap/bootstrap.min.css';
 
 var Row = Container.Row;
 var Col = Container.Col;

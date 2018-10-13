@@ -5,7 +5,7 @@ import Tag from './tag.js';
 
 export default function(props) {
 
-    var {tag = 'i', className, name, glyph, icon, ...props} = props;
+    var {tag = 'i', className, name, glyph, icon, ...other} = props;
 
     if (icon && !name)
         name = icon;
@@ -14,6 +14,6 @@ export default function(props) {
         name = glyph;
 
     return (
-        <Tag tag={tag} className={classNames(className, 'icon-'+name)} {...props}/>
+        <Tag tag={tag} className={classNames(className, 'icon-'+name)} {...other}/>
     );
 }

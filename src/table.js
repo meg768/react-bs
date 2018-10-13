@@ -66,7 +66,7 @@ Table.Row = (props) => {
 
     className = classNames(className, {[`table-${color}`]:color});
 
-    return <Tag tag='tr' className={className} {...other}/>
+    return <Tag tag='tr' style={{textAlign:'left'}} className={className} {...other}/>
 }
 
 Table.Col = function(props)  {
