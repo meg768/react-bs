@@ -3,7 +3,7 @@
 ```js
 
 
-class Sample extends Component {
+class Sample extends React.Component {
 
 
     constructor(props) {
@@ -92,7 +92,7 @@ Another sample
 ```js
 
 
-class Sample extends Component {
+class Sample extends React.Component {
 
 
     constructor(props) {

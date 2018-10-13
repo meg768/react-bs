@@ -1,6 +1,6 @@
 
 
-### JumbotronXYZ
+### Jumbotron
 
 ```js
 

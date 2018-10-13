@@ -72,7 +72,7 @@ You can also invert the colors—with light text on dark backgrounds—with **da
 
 ```
 
-## Table head options
+### Table header options
 
 Similar to tables and dark tables, use the property **light** or **dark** to make **Table.Header** appear light or dark gray.
 
@@ -145,7 +145,7 @@ Similar to tables and dark tables, use the property **light** or **dark** to mak
 
 ```
 
-## Striped rows
+### Striped rows
 Use **striped** property to add zebra-striping to any table row within the **Table.Body**.
 
 
@@ -219,7 +219,7 @@ Use **striped** property to add zebra-striping to any table row within the **Tab
 
 ```
 
-## Bordered table
+### Bordered table
 Add **bordered** for borders on all sides of the table and cells.
 
 
@@ -292,7 +292,7 @@ Add **bordered** for borders on all sides of the table and cells.
 
 ```
 
-## Borderless table
+### Borderless table
 Add **borderless** for a table without borders.
 
 
@@ -363,7 +363,7 @@ Add **borderless** for a table without borders.
 
 ```
 
-## Hoverable rows
+### Hoverable rows
 Add **hover** to enable a hover state on table rows within a table body.
 
 
@@ -433,3 +433,56 @@ Add **hover** to enable a hover state on table rows within a table body.
 </Table>
 
 ```
+
+### Contextual rows
+
+```js
+<Table hover>
+  <Table.Header>
+    <Table.Row>
+      <Table.Col header scope="col">Color</Table.Col>
+      <Table.Col header scope="col">Text</Table.Col>
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    <Table.Row color='active'>
+      <Table.Col >Active</Table.Col>
+      <Table.Col >Te vel elit accumsan.</Table.Col>
+    </Table.Row>
+    <Table.Row color='primary'>
+      <Table.Col >Primary</Table.Col>
+      <Table.Col >Mei aliquip philosophia ei.</Table.Col>
+    </Table.Row>
+    <Table.Row color='secondary'>
+      <Table.Col >Secondary</Table.Col>
+      <Table.Col >Cu indoctum vulputate vis.</Table.Col>
+    </Table.Row>
+    <Table.Row color='success'>
+      <Table.Col>Success</Table.Col>
+      <Table.Col>Hinc nobis soluta nec.</Table.Col>
+    </Table.Row>
+    <Table.Row color='danger'>
+      <Table.Col>Danger</Table.Col>
+      <Table.Col>Noster euismod molestie nec.</Table.Col>
+    </Table.Row>
+    <Table.Row color='warning'>
+      <Table.Col>Warning</Table.Col>
+      <Table.Col>Vix alia pertinax in.</Table.Col>
+    </Table.Row>
+    <Table.Row color='info'>
+      <Table.Col>Info</Table.Col>
+      <Table.Col>Vis cu duis fabulas.</Table.Col>
+    </Table.Row>
+    <Table.Row color='light'>
+      <Table.Col>Light</Table.Col>
+      <Table.Col>Sit ei ridens possit.</Table.Col>
+    </Table.Row>
+    <Table.Row color='dark'>
+      <Table.Col>Dark</Table.Col>
+      <Table.Col>Ius te propriae accusamus.</Table.Col>
+    </Table.Row>
+  </Table.Body>
+</Table>
+
+```
+
