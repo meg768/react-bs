@@ -1,52 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Form, Component} from '../../../src/index.js';
-import Page from '../components/page.js'
+## Formadfssdlkldfkn
 
-var readme = require('./form.md');
-
-const XX = 
-`
-# Title
-## SUbtitle
-`;
-
-console.log('XXXXX', XX.length, XX);
-
-class Markdown extends Component {
+```js
 
 
-    constructor(props) {
-        super(props);
-
-        var Markdown = require('markdown-it');
-        this.markdown = new Markdown(); 
-
-        var children = this.props.children;
-//        debugger;
-    }
-
-    render() {
-        var children = this.props.children;
-        console.log('child', this.props.children);
-        console.log('html', this.markdown.render(this.props.children));
-        return (
-            <div dangerouslySetInnerHTML={{ __html: this.markdown.render(XX)}}></div>
-        );
-
-    }
-}
-
-function markdown(text) {
-    var Markdown = require('markdown-it');
-    var md = new Markdown(); 
-    return (
-        <div dangerouslySetInnerHTML={{ __html: text}}></div>
-    );
-
-}
-
-export default class Sample extends Component {
+class Sample extends Component {
 
 
     constructor(props) {
@@ -76,19 +33,6 @@ export default class Sample extends Component {
 
     render() {
         return (
-            <Page>
- 
-                <Markdown> 
-                `
-                    # A
-                    ## B
-                `
-                </Markdown>
-
-                <Page.Title>
-                    Forms
-                </Page.Title>
-                <Page.Example>
                 <Form>
                     <Form.Group>
                         <Form.Label >Symbol</Form.Label>
@@ -121,10 +65,79 @@ export default class Sample extends Component {
                         </Form.Group>
                     </Form.Row>
                 </Form>
-
-                </Page.Example>
-
-            </Page>
         );
     }
 }
+
+
+<Sample/>
+```
+
+
+
+
+
+
+
+Another sample
+
+
+
+
+
+
+
+
+
+```js
+
+
+class Sample extends Component {
+
+
+    constructor(props) {
+        super(props);
+
+        this.state = {};
+        this.state.stock = {};
+        this.state.stock.symbol   = 'AAPL';
+        this.state.stock.name     = '';
+        this.state.stock.industry = '';
+        this.state.stock.exchange = '';
+        this.state.stock.sector   = '';
+
+        this.state.loading = false;
+
+
+        this.onChange = this.onChange.bind(this);
+
+
+    }
+
+    onChange(event) {
+        var stock = this.state.stock;
+        stock[event.target.id] = event.target.value;
+        this.setState({stock:stock});
+    }
+
+    render() {
+        return (
+                <Form>
+                    <Form.Group>
+                        <Form.Label >Symbol</Form.Label>
+                        <Form.Input type="text" readOnly plainText id="symbol" value={this.state.stock.symbol}/>
+                    </Form.Group>
+
+                    <Form.Group>
+                        <Form.Label >Name</Form.Label>
+                        <Form.Input id='name' type="text" disabled={this.state.loading} value={this.state.stock.name} placeholder="Name" onChange={this.onChange}/>
+                    </Form.Group>
+
+                </Form>
+        );
+    }
+}
+
+
+<Sample/>
+```

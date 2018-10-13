@@ -7,11 +7,13 @@ import Tag from './tag.js';
 
 var _uniqueID = 0;
 
-function getUniqueID() {
-    return 'A' + _uniqueID++;
-}
 
-
+/**
+ * 
+ * Form XX
+ * 
+ * 
+ */
 export default class Form extends Component  {
 
     static get defaultProps() {

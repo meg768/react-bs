@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import Component from './component.js';
 import Tag from './tag.js';
 
-
 export default class Alert extends Component  {
 
     constructor(props) {
@@ -17,7 +16,9 @@ export default class Alert extends Component  {
     }
 
     static propTypes = {
-        color : PropTypes.string
+        color       : PropTypes.string,
+        dismissable : PropTypes.bool,
+        tag         : PropTypes.string
     };
 
     static defaultProps = {
@@ -63,47 +64,99 @@ export default class Alert extends Component  {
     }
 };
 
-///////////////////////////////////////////////////////////////////////////////
+/**
+ * Alert Header
+ */
+Alert.Header = class extends Component  {
 
+    constructor(props) {
+        super(props);
+    }
 
-Alert.Heading = function(props) {
+    static propTypes = {
+        tag: PropTypes.string
+    };
 
-    var {tag, className, ...other} = props;
+    static defaultProps = {
+        tag: 'h5'
+    };
 
-    className = classNames(className, 'alert-heading');
+    render() {
+        var {tag, className, ...other} = this.props;
 
-    return <Tag tag={tag} className={className} {...other}/>;
-}
+        className = classNames(className, 'alert-heading');
+    
+        return <Tag tag={tag} className={className} {...other}/>;
+    }        
 
-Alert.Heading.defaultProps = {
-    tag: 'h5'
 };
 
-///////////////////////////////////////////////////////////////////////////////
+
+Alert.Body = class extends Component  {
+
+    constructor(props) {
+        super(props);
+        this.displayName = 'Alarm.Body';
+
+    }
+    static propTypes = {
+        tag: PropTypes.string
+    };
+
+    static defaultProps = {
+        tag: 'div'
+    };
 
 
-Alert.Separator = function(props) {
+    render() {
+        var {tag, ...other} = this.props;
+        return <Tag tag={tag} {...other}/>;
+    }
+};
+    
+/*   
 
+
+    
+
+var Module = function(props)  {
     var {tag, ...other} = props;
-
     return <Tag tag={tag} {...other}/>;
-}
-
-Alert.Separator.defaultProps = {
-    tag: 'hr'
 };
 
-///////////////////////////////////////////////////////////////////////////////
+Module.propTypes = {
+    tag: PropTypes.string
+};
 
-Alert.Body = function(props) {
 
-    var {tag, ...other} = props;
-
-    return <Tag tag={tag} {...other}/>;
-}
-
-Alert.Body.defaultProps = {
+Module.defaultProps = {
     tag: 'div'
 };
 
-///////////////////////////////////////////////////////////////////////////////
+Module.displayName = 'Alert.Body';
+
+Alert.Body = Module;
+export default Module;
+
+
+*/
+
+Alert.Separator = class extends Component  {
+
+ 
+    static propTypes = {
+        tag: PropTypes.string
+    };
+
+    static defaultProps = {
+        tag: 'hr'
+    };
+
+    render() {
+        var {tag, ...other} = this.props;
+
+        return <Tag tag={tag}  {...other}/>;
+    }        
+
+};
+

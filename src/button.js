@@ -3,6 +3,12 @@ import classNames from 'classnames';
 import PropTypes from "prop-types";
 import Tag from './tag.js';
 
+/**
+
+A simple button
+
+*/
+
 export default class Button extends Component  {
 
     constructor(args) {
@@ -11,17 +17,30 @@ export default class Button extends Component  {
         this.onClick = this.onClick.bind(this);
     }
 
+
+
     static propTypes = {
-        color      : PropTypes.string,
+        color : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']),
+
+        /** Desired tag */
         tag        : PropTypes.string,
+
+        /** Click handler */
         onClick    : PropTypes.func,
+
+        /** Creates an outlined button */
+        outline    : PropTypes.bool,
+
+        /** Enabled/disabled */
         disabled   : PropTypes.bool
     };
 
     static defaultProps = {
         color    : 'primary',
         tag      : 'button',
-        disabled : true
+        outline  : false,
+        onClick  : null,
+        disabled : false
     }
 
     onClick(event) {
@@ -55,7 +74,6 @@ export default class Button extends Component  {
 
         return (
             <Tag tag={tag} {...props} className={className} onClick={this.onClick}>
-                {this.props.children}
             </Tag>
 
         );

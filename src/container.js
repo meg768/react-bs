@@ -11,10 +11,8 @@ export default class Container extends Component  {
         fluid : PropTypes.bool
     };
 
-    static get defaultProps() {
-        return {
-            fluid: false
-        };
+    static defaultProps = {
+        fluid: false
     }
 
     render() {
@@ -78,6 +76,31 @@ Container.Col = class extends Component {
             <div className={className} {...props}>
                 {this.props.children}
             </div>
+        );
+    }
+}
+
+Container.Row = class extends Component {
+
+
+    static propTypes = {
+        tag: PropTypes.string,
+        className: PropTypes.string
+    };
+    
+    static defaultProps = {
+        tag: 'div',
+        className: 'row'
+    };
+
+    render() {
+        var {tag, className, ...props} = this.props;
+
+        className = classNames(className, this.props.className);
+
+        return (
+            <Tag tag={tag} className={className} {...props}>
+            </Tag>
         );
     }
 }

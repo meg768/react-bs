@@ -1,10 +1,17 @@
 import React from 'react';
+import PropTypes from "prop-types";
+
 import Tag from './tag.js';
 
 export default function Jumbotron(props)  {
     var {tag, className, ...other} = props;
     return <Tag tag={tag} className={className} {...other}/>;
 };
+
+Jumbotron.propTypes = {
+    className: PropTypes.string,
+    tag: PropTypes.string
+}
 
 Jumbotron.defaultProps = {
     className: 'jumbotron',
@@ -32,3 +39,4 @@ Jumbotron.Body = function(props) {
 Jumbotron.Body.defaultProps = {
     tag: 'div'
 }
+

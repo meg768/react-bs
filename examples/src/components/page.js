@@ -29,7 +29,9 @@ export default class Page extends Component {
 Page.Title = function(props) {
     return (
         <h2>
+            <br/>
             {props.children}
+            <hr/>
         </h2>
     );
 }
@@ -55,16 +57,13 @@ Page.Example = class extends Component {
 
     render() {
         var style = {
-            border: '0.1rem solid rgba(0, 0, 0, 0.1)',
-            borderRadius: '0.5rem',
-            padding:'1rem'
+            xborder: '0.1rem solid rgba(0, 0, 0, 0.1)',
+            xborderRadius: '0.5rem',
+            xpadding:'1rem'
         };
 
         return (
-            <div style={{margin: '1rem'}}>
-                <h4>
-                    {this.props.title}
-                </h4>
+            <div style={{marginTop: '0rem', marginBottom:'0rem'}}>
                 <div style={style} ref={this.node}>
                     {this.props.children}    
 

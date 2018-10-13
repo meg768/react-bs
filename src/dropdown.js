@@ -134,10 +134,10 @@ export default class Dropdown extends Component {
 
 
     render() {
-        var {tag = 'div', placement, modifiers, isOpen, toggle, dismiss, ...props} = this.props;
+        var {tag = 'div', _name, placement, modifiers, isOpen, toggle, dismiss, ...props} = this.props;
 
         return (
-            <Tag tag={tag} {...props}>
+            <Tag tag={tag}  {...props}>
                 {this.renderDropdownTarget()}
                 {this.renderDropdownMenu()}
             </Tag>

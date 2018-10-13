@@ -11,6 +11,8 @@ import Popper from './popper.js';
 import Dropdown from './dropdown.js';
 import Tag from './tag.js';
 
+//import '../bootstrap/bootstrap.min.css';
+
 var Row = Container.Row;
 var Col = Container.Col;
 
