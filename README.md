@@ -1,7 +1,7 @@
 # react-bootify
-
+X
 Yet another minimalistic Bootstrap layer for React.
-kasdflökjsadölfksajdfölkjdfs
+
 ## Installation
 
 ````bash
