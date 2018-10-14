@@ -61,6 +61,19 @@ Container.Row = function(props) {
 }
 
 
+Container.Robocop = function(props) {
+
+    var {className, ...other} = props;
+
+    className = classNames(className, 'row');
+
+    return (
+        <div className={className} {...other}>
+            {props.children}
+        </div>
+    );
+}
+
 
 Container.RowX = function(props) {
 
