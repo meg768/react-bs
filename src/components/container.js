@@ -80,27 +80,23 @@ Container.Col = class extends Component {
     }
 }
 
-Container.Row = class extends Component {
+Container.Row = function(props) {
 
 
-    static propTypes = {
-        tag: PropTypes.string,
-        className: PropTypes.string
-    };
-    
-    static defaultProps = {
-        tag: 'div',
-        className: 'row'
-    };
+    var {tag, className, ...other} = props;
 
-    render() {
-        var {tag, className, ...props} = this.props;
+    className = classNames(className, 'row');
 
-        className = classNames(className, this.props.className);
-
-        return (
-            <Tag tag={tag} className={className} {...props}>
-            </Tag>
-        );
-    }
+    return (
+        <Tag tag={tag} className={className} {...props}/>
+    );
 }
+
+Container.Row.propTypes = {
+    tag: PropTypes.string,
+    className: PropTypes.string
+};
+
+Container.Row.defaultProps = {
+    tag: 'div'
+};

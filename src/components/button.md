@@ -90,3 +90,27 @@ var style = {margin:'0.2rem'};
 </div>
 
 ```
+
+
+#### Button row 
+
+```js
+
+var style = {margin:'0.2rem'};
+
+<Button.Row>
+    <Button color='primary' outline>
+        Primary
+    </Button>
+
+    <Button color='secondary' outline>
+        Secondary
+    </Button>
+
+    <Button color='success' outline>
+        Success
+    </Button>
+
+</Button.Row>
+
+```
