@@ -47,23 +47,6 @@ Container.Col = function(props) {
     );
 }
 
-
-
-Container.Col.propTypes = {
-    tag   : PropTypes.string,
-    xs    : PropTypes.number,
-    sm    : PropTypes.number,
-    md    : PropTypes.number,
-    lg    : PropTypes.number,
-    width : PropTypes.number
-};
-
-
-Container.Col.defaultProps = {
-    tag: 'div'
-};
-
-
 Container.Row = function(props) {
 
     var {className, ...other} = props;
@@ -87,4 +70,21 @@ Container.RowX = function(props) {
         </div>
     );
 }
+
+
+
+Container.Col.propTypes = {
+    tag   : PropTypes.string,
+    xs    : PropTypes.number,
+    sm    : PropTypes.number,
+    md    : PropTypes.number,
+    lg    : PropTypes.number,
+    width : PropTypes.number
+};
+
+
+Container.Col.defaultProps = {
+    tag: 'div'
+};
+
 
