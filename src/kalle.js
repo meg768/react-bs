@@ -1,10 +1,10 @@
 import React from 'react';
-import Component from './component.js';
+
 import PropTypes from "prop-types";
 import classNames from 'classnames';
 import Tag from './tag.js';
 
-export default class Kalle extends Component  {
+export default class Kalle extends React.Component  {
 
 
     static propTypes = {
