@@ -71,7 +71,9 @@ Container.Row = function(props) {
     className = classNames(className, 'row');
 
     return (
-        <Tag tag={tag} className={className} {...other}/>
+        <div className={className} {...other}>
+            {props.children}
+        </div>
     );
 }
 
