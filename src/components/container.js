@@ -66,8 +66,7 @@ Container.Col.defaultProps = {
 
 Container.Row = function(props) {
 
-
-    var {tag = 'div', className, ...other} = props;
+    var {tag, className, ...other} = props;
 
     className = classNames(className, 'row');
 
