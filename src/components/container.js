@@ -29,56 +29,40 @@ export default class Container extends Component  {
     }
 };
 
-Container.Row = class extends Component {
 
-    static get defaultProps() {
-        return {
-        };
-    }
+Container.Col = function(props) {
 
-    render() {
-        var {className, ...props} = this.props;
+    var {tag, className, xs, sm, md, lg, width, ...other} = props;
 
-        className = classNames(className, 'row');
+    className = classNames(className, 'col');
 
-        return (
-            <div className={className} {...props}>
-                {this.props.children}
-            </div>
-        );
-    }
+    className = classNames(className, {[`col-${xs}`]:width});
+    className = classNames(className, {[`col-${xs}`]:xs});
+    className = classNames(className, {[`col-sm-${sm}`]:sm});
+    className = classNames(className, {[`col-md-${md}`]:md});
+    className = classNames(className, {[`col-lg-${lg}`]:lg});
+
+    return (
+        <Tag tag={tag} className={className} {...other}/>
+    );
 }
 
-Container.Col = class extends Component {
-
-    static propTypes = {
-        xs    : PropTypes.number,
-        sm    : PropTypes.number,
-        md    : PropTypes.number,
-        lg    : PropTypes.number,
-        width : PropTypes.number
-    };
 
 
-    render() {
+Container.Col.propTypes = {
+    tag   : PropTypes.string,
+    xs    : PropTypes.number,
+    sm    : PropTypes.number,
+    md    : PropTypes.number,
+    lg    : PropTypes.number,
+    width : PropTypes.number
+};
 
-        var {className, xs, sm, md, lg, width, ...props} = this.props;
 
-        className = classNames(className, 'col');
+Container.Col.defaultProps = {
+    tag: 'div'
+};
 
-        className = classNames(className, {[`col-${xs}`]:width});
-        className = classNames(className, {[`col-${xs}`]:xs});
-        className = classNames(className, {[`col-sm-${sm}`]:sm});
-        className = classNames(className, {[`col-md-${md}`]:md});
-        className = classNames(className, {[`col-lg-${lg}`]:lg});
-
-        return (
-            <div className={className} {...props}>
-                {this.props.children}
-            </div>
-        );
-    }
-}
 
 Container.Row = function(props) {
 
@@ -88,13 +72,12 @@ Container.Row = function(props) {
     className = classNames(className, 'row');
 
     return (
-        <Tag tag={tag} className={className} {...props}/>
+        <Tag tag={tag} className={className} {...other}/>
     );
 }
 
 Container.Row.propTypes = {
-    tag: PropTypes.string,
-    className: PropTypes.string
+    tag: PropTypes.string
 };
 
 Container.Row.defaultProps = {
