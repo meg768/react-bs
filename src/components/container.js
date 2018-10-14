@@ -64,38 +64,16 @@ Container.Col.defaultProps = {
 };
 
 
-
-
 Container.Row = function(props) {
 
-    var {tag, className, xs, sm, md, lg, width, ...other} = props;
+    var {className, ...other} = props;
 
-    className = classNames(className, 'col');
-
-    className = classNames(className, {[`col-${xs}`]:width});
-    className = classNames(className, {[`col-${xs}`]:xs});
-    className = classNames(className, {[`col-sm-${sm}`]:sm});
-    className = classNames(className, {[`col-md-${md}`]:md});
-    className = classNames(className, {[`col-lg-${lg}`]:lg});
+    className = classNames(className, 'row');
 
     return (
-        <Tag tag={tag} className={className} {...other}/>
+        <div className={className} {...other}>
+            {props.children}
+        </div>
     );
 }
-
-
-
-Container.Row.propTypes = {
-    tag   : PropTypes.string,
-    xs    : PropTypes.number,
-    sm    : PropTypes.number,
-    md    : PropTypes.number,
-    lg    : PropTypes.number,
-    width : PropTypes.number
-};
-
-
-Container.Row.defaultProps = {
-    tag: 'div'
-};
 
