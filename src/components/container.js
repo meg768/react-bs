@@ -77,3 +77,14 @@ Container.Row = function(props) {
     );
 }
 
+
+
+Container.RowX = function(props) {
+
+    return (
+        <div>
+            {props.children}
+        </div>
+    );
+}
+
