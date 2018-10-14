@@ -1,7 +1,9 @@
+.babelrc
+.gitignore
 src
 examples
 scripts
 fontello
-.babelrc
-.gitignore
+styleguide
+styleguide.config.js
 webpack.config.js
