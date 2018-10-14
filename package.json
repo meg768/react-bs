@@ -1,13 +1,14 @@
 {
 	"name": "react-bootify",
-	"version": "0.0.71",
+	"version": "0.0.72",
 	"description": "react-bootify",
 	"main": "lib/index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "webpack-dev-server --mode development",
 		"build": "webpack --mode production",
-		"transpile": "babel src -d lib --copy-files",
+		"transpileX": "babel src -d lib --copy-files",
+		"transpile": "babel src/index.js -o lib/index.js",
 		"commit": "git add -A && git commit -m '-' && git push",
 		"increase-package-version": "node ./scripts/increase-package-version.js",
 		"publish-to-github": "npm run styleguide:build && gh-pages -d styleguide",
