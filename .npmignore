@@ -1,6 +1,7 @@
 src
 examples
 scripts
+fontello
 .babelrc
 .gitignore
 webpack.config.js

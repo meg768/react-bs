@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    components: 'src/*.js',
-    require: ['./bootstrap/bootstrap.min.css'],
-    ignore: ['**/src/index.js', '**/src/template.js', '**/src/component.js', '**/src/utils.js', '**/src/tag.js']    
+    components: './src/components/*.js',
+    require: ['./src/bootstrap/bootstrap.min.css'],
+    ignore: ['**/src/components/template.js', '**/src/components/component.js', '**/src/components/utils.js', '**/src/components/tag.js']    
 };

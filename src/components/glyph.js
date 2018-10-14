@@ -19,6 +19,5 @@ export default function Glyph(props) {
 }
 
 Glyph.defaultProps = {
-    tag: 'i',
     prefix: 'icon-'
 };
