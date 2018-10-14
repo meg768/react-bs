@@ -1,5 +1,5 @@
 import Glyph from './core/glyph.js';
-import Button from './core/button.js';
+import Button from './button';
 import Form from './core/form.js';
 import Jumbotron from './core/jumbotron.js';
 import Alert from './core/alert.js';

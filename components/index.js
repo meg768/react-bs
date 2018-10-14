@@ -85,7 +85,7 @@ exports.Col = exports.Row = void 0;
 
 var _glyph = _interopRequireDefault(require("./core/glyph.js"));
 
-var _button = _interopRequireDefault(require("./core/button.js"));
+var _button = _interopRequireDefault(require("./button"));
 
 var _form = _interopRequireDefault(require("./core/form.js"));
 
