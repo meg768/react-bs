@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import classNames from 'classnames';
-import Tag from './tag.js';
+import Tag from '../tag';
 
 
 export default function Glyph(props) {

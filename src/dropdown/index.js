@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import PropTypes from "prop-types";
 import classNames from 'classnames';
 import PopperJs from 'popper.js';
-import Tag from './tag.js';
-import Component from './component.js'
+import Tag from '../tag';
+
+
 function debug() {
     console.log.apply(null, arguments);
 }
 
-export default class Dropdown extends Component {
+export default class Dropdown extends React.Component {
 
     constructor(args) {
         super(args);

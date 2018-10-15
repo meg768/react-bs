@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import Component from './component.js';
-import Tag from './tag.js';
+import Tag from '../tag';
 
-export default class Table extends Component  {
+export default class Table extends React.Component  {
 
     static propTypes = {
         borderless : PropTypes.bool,

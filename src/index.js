@@ -1,16 +1,15 @@
-import Glyph from './core/glyph.js';
+import Glyph from './glyph';
 import Button from './button';
-import Form from './core/form.js';
-import Jumbotron from './core/jumbotron.js';
-import Alert from './core/alert.js';
-import Table from './core/table.js';
-import Container from './core/container.js';
-import Component from './core/component.js';
-import Popover from './core/popover.js';
-import Popper from './core/popper.js';
-import Dropdown from './core/dropdown.js';
-import Tag from './core/tag.js';
-import ListGroup from './core/list-group.js';
+import Form from './form';
+import Jumbotron from './jumbotron';
+import Alert from './alert';
+import Table from './table';
+import Container from './container';
+import Popover from './popover';
+import Popper from './popper';
+import Dropdown from './dropdown';
+import Tag from './tag';
+import ListGroup from './list-group';
 
 
 var Row = Container.Row;

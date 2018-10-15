@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-import Tag from './tag.js';
+import Tag from '../tag';
 
 export default function Jumbotron(props)  {
     var {tag, className, ...other} = props;

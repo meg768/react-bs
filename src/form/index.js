@@ -1,9 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import classNames from 'classnames';
 import PropTypes from "prop-types";
 
-import Component from './component.js';
-import Tag from './tag.js';
+import Tag from '../tag';
 
 var _uniqueID = 0;
 

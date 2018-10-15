@@ -1,10 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import classNames from 'classnames';
-import Component from './component.js';
-import Tag from './tag.js';
+import Tag from '../tag';
 
-export default class Alert extends Component  {
+export default class Alert extends React.Component  {
 
     constructor(props) {
         super(props);

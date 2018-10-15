@@ -2,6 +2,17 @@
 
 ### Jumbotron
 
+#### Usage
+```js static
+import Jumbotron from 'react-bootify/jumbotron';
+```
+
+```js static
+import {Jumbotron} from 'react-bootify/core';
+```
+
+#### alskf
+
 ```js
 
     <Jumbotron>

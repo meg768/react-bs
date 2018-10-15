@@ -28,23 +28,23 @@ export default class Popover extends React.Component {
     }
 
     static propTypes = {
-        target : PropTypes.element.isRequired,
-        arrow : PropTypes.bool,
+        target    : PropTypes.element.isRequired,
+        arrow     : PropTypes.bool,
+        isOpen    : PropTypes.bool,
+        modifiers : PropTypes.any,
         placement : PropTypes.string,
-        toggle : PropTypes.func
+        toggle    : PropTypes.func
     };
 
-    static get defaultProps() {
-        return {
-            placement: 'bottom-start',
-            isOpen : false,
-            arrow: true,
-            modifiers: {
-                preventOverflow: {
-                    boundariesElement: 'viewport',
-                }
+    static defaultProps = {
+        placement  : 'bottom-start',
+        isOpen     : false,
+        arrow      : true,
+        modifiers  : {
+            preventOverflow: {
+                boundariesElement: 'viewport',
             }
-        };
+        }
     }
 
     componentDidMount() {
@@ -110,8 +110,24 @@ export default class Popover extends React.Component {
         });
     }
 
+    getChildOfType(type) {
+        return React.Children.toArray(this.props.children).find((child) => {
+            return child.type === type;
+        })
+
+    }
+
+    getTarget() {
+        if (this.props.target)
+            return this.props.target;
+
+        return this.getChildOfType(Popover.Target);
+    }
+
+
+
     renderTarget() {
-        return (React.cloneElement(this.props.target, {ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
+        return (React.cloneElement(this.getTarget(), {ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
     }
 
 
@@ -165,10 +181,18 @@ export default class Popover extends React.Component {
                 </div>
             );
         }
+
+        var children = this.props.children;
+
+        if (this.getChildOfType(Popover.Target)) {
+            children = [];
+            children.push(this.getChildOfType(Popover.Header));
+            children.push(this.getChildOfType(Popover.Body));
+        }
         return (
             <div className={popoverClassName}  style={popoverStyle} ref={(element) => {this.popupNode = element}}>
                 {arrow}
-                {this.props.children}
+                {children}
             </div>
         );
 
@@ -214,6 +238,18 @@ Popover.Header = class extends React.Component {
             <div className={classNames(className, 'popover-header')} {...props}>
                 {this.props.children}
             </div>
+        );
+    }
+
+}
+
+
+Popover.Target = class extends React.Component {
+
+    render() {
+
+        return (
+            this.props.children
         );
     }
 

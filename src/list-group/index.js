@@ -1,10 +1,9 @@
 import React from 'react';
-import Component from './component.js';
 import PropTypes from "prop-types";
 import classNames from 'classnames';
-import Tag from './tag.js'
+import Tag from '../tag'
 
-export default class ListGroup extends Component  {
+export default class ListGroup extends React.Component  {
 
     static propTypes = {
     };
