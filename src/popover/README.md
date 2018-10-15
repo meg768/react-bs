@@ -1,11 +1,14 @@
 
 
+### Popover
 
-#### Popover
+
+**React-bootify** realies only on CSS styles from Bootstrap. No jQuery code is used. However, to make
+things happend on screen, like popups and modals, the popular library PopperJS is used (also used by reactstrap).
+
 
 
 ```js
-
 
 class Sample extends React.Component {
 

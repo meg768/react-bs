@@ -6,35 +6,35 @@
 ```js
 
     <Alert color='primary'>
-        A simple primary alert—check it out!
+        No discere nostrum vix, vim.
     </Alert>
 
     <Alert color='secondary'>
-        A simple secondary alert—check it out!
+        Cum in mundi docendi, dicat.
     </Alert>
 
     <Alert color='success'>
-        A simple success alert—check it out!
+        Noster vocent epicurei cu est, te vix.
     </Alert>
 
     <Alert color='danger'>
-        A simple primary alert—check it out!
+        Agam tempor necessitatibus id has, eu mel liber.
     </Alert>
 
     <Alert color='warning'>
-        A simple warning alert—check it out!
+        Ne eam falli dictas officiis ius.
     </Alert>
 
     <Alert color='info'>
-        A simple info alert—check it out!
+        Cibo corpora dissentiet an vis, vel appetere.
     </Alert>
 
     <Alert color='light'>
-        A simple light alert—check it out!
+        Ea eum minimum.
     </Alert>
 
     <Alert color='dark'>
-        A simple dark alert—check it out!
+        Id erat fastidii vis.
     </Alert>
 
 
