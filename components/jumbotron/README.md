@@ -5,13 +5,9 @@
 #### Usage
 ```js static
 import Jumbotron from 'react-bootify/jumbotron';
+/* or */ 
+import {Jumbotron} from 'react-bootify';
 ```
-
-```js static
-import {Jumbotron} from 'react-bootify/core';
-```
-
-#### alskf
 
 ```js
 
