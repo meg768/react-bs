@@ -12,6 +12,6 @@ Bootstrap css-styles need to be installed separately.
 ## Comment
 This module is not ready for public use.
 
-## Demo
+## Documentation
 - https://meg768.github.io/react-bootify/
 
