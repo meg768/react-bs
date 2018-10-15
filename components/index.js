@@ -45,12 +45,6 @@ Object.defineProperty(exports, "Container", {
     return _container.default;
   }
 });
-Object.defineProperty(exports, "Component", {
-  enumerable: true,
-  get: function get() {
-    return _component.default;
-  }
-});
 Object.defineProperty(exports, "Popover", {
   enumerable: true,
   get: function get() {
@@ -83,31 +77,29 @@ Object.defineProperty(exports, "ListGroup", {
 });
 exports.Col = exports.Row = void 0;
 
-var _glyph = _interopRequireDefault(require("./core/glyph.js"));
+var _glyph = _interopRequireDefault(require("./glyph"));
 
 var _button = _interopRequireDefault(require("./button"));
 
-var _form = _interopRequireDefault(require("./core/form.js"));
+var _form = _interopRequireDefault(require("./form"));
 
-var _jumbotron = _interopRequireDefault(require("./core/jumbotron.js"));
+var _jumbotron = _interopRequireDefault(require("./jumbotron"));
 
-var _alert = _interopRequireDefault(require("./core/alert.js"));
+var _alert = _interopRequireDefault(require("./alert"));
 
-var _table = _interopRequireDefault(require("./core/table.js"));
+var _table = _interopRequireDefault(require("./table"));
 
-var _container = _interopRequireDefault(require("./core/container.js"));
+var _container = _interopRequireDefault(require("./container"));
 
-var _component = _interopRequireDefault(require("./core/component.js"));
+var _popover = _interopRequireDefault(require("./popover"));
 
-var _popover = _interopRequireDefault(require("./core/popover.js"));
+var _popper = _interopRequireDefault(require("./popper"));
 
-var _popper = _interopRequireDefault(require("./core/popper.js"));
+var _dropdown = _interopRequireDefault(require("./dropdown"));
 
-var _dropdown = _interopRequireDefault(require("./core/dropdown.js"));
+var _tag = _interopRequireDefault(require("./tag"));
 
-var _tag = _interopRequireDefault(require("./core/tag.js"));
-
-var _listGroup = _interopRequireDefault(require("./core/list-group.js"));
+var _listGroup = _interopRequireDefault(require("./list-group"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

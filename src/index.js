@@ -16,7 +16,7 @@ var Row = Container.Row;
 var Col = Container.Col;
 
 export {
-    Tag, Component, Glyph, Popper, Button, Form, ListGroup,
+    Tag, Glyph, Popper, Button, Form, ListGroup,
     Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown
 
 };

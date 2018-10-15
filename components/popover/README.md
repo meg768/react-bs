@@ -1,0 +1,55 @@
+
+
+
+#### Popover
+
+
+```js
+
+
+class Sample extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {};
+        this.state.isOpen = false;
+
+        this.toggle = this.toggle.bind(this);
+    }
+
+    toggle() {
+        this.setState({isOpen: !this.state.isOpen});
+    }
+
+
+
+    render() {
+        return (
+            <div style={{display:'inline-block', margin:'0.1rem'}}>
+                <Popover placement={this.props.placement} toggle={this.toggle} isOpen={this.state.isOpen}>
+                    <Popover.Target>
+                        <Button color={this.props.color} outline={this.props.outline} onClick={this.toggle}>
+                            {this.props.text}
+                        </Button>
+                    </Popover.Target>
+                    <Popover.Header>
+                        Eos modo
+                    </Popover.Header>
+                    <Popover.Body>
+                        Te alii dicam fabulas mei. Quo graeco iuvaret scaevola no.
+                    </Popover.Body>
+                </Popover>
+            </div>
+        );
+
+    }
+}
+
+<div>
+    <Sample text='Labore' color='primary' placement='bottom'/>
+    <Sample text='Aeque' color='info' outline placement='top-start'/>
+    <Sample text='Atqui' color='warning' outline placement='bottom-start'/>
+</div>
+
+```
