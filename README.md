@@ -10,15 +10,15 @@ Yet another minimalistic Bootstrap layer for React.
 Bootstrap css-styles need to be installed separately.
 
 ## Comment
-This module is not ready for public use.
+This module is not ready for public use. Use **reactstrap***.
 
 
 ## Documentation
 - https://meg768.github.io/react-bootify/
 
 ## History
-- 2018-10-01 - Created. Nothing to see. Use **reactstrap**. 
-- 2018-10-15 - Still nothing to see. Use **reactstrap**.
-- 2018-10-15 - Added component **Fade** to fade in other components like **Dropdown.Menu** and **Popover**. Use **reactstrap**.
+- 2018-10-01 - Created. Nothing to see.
+- 2018-10-15 - Still nothing to see.
+- 2018-10-16 - Added component **Fade** to fade in components like **Dropdown.Menu** and **Popover**.
 
 

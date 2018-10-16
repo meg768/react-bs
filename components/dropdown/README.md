@@ -25,22 +25,22 @@ class DropdownSample extends React.Component {
 
     }
 
-    toggle() {
+    toggle(event) {
+        console.log('toggle');
         this.setState({isOpen:!this.state.isOpen});
-
     }
 
     render() {
         return (
             <div>
-                <Dropdown dismiss={this.toggle} isOpen={this.state.isOpen} placement='bottom-start'>
+                <Dropdown dismiss={this.toggle}  isOpen={this.state.isOpen} placement='bottom-start'>
                     /* Place your target here */
                     <Dropdown.Target >
                         <Button color='primary' onClick={this.toggle}>
                             Primary
                         </Button>
                     </Dropdown.Target>
-                    <Dropdown.Menu>
+                    <Dropdown.Menu >
                         <Dropdown.Item>
                             Go home
                         </Dropdown.Item>

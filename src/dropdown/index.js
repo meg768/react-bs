@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from "prop-types";
 import classNames from 'classnames';
 import PopperJs from 'popper.js';
+import Fade from '../fade';
 import Tag from '../tag';
 
 
@@ -30,18 +31,17 @@ export default class Dropdown extends React.Component {
         isOpen  : PropTypes.bool
     };
 
-    static defaultProps() {
-        return {
-            placement: 'bottom-start',
-            isOpen : false,
-            toggle : null,
-            dismiss : null,
-            modifiers: {
-                preventOverflow: {
-                    boundariesElement: 'viewport',
-                }
+    static defaultProps = {
+        tag : 'div',
+        placement: 'bottom-start',
+        isOpen : false,
+        toggle : null,
+        dismiss : null,
+        modifiers: {
+            preventOverflow: {
+                boundariesElement: 'viewport',
             }
-        };
+        }
     }
 
 
@@ -71,6 +71,11 @@ export default class Dropdown extends React.Component {
     onDocumentClick(event) {
 
         if (this.props.isOpen) {
+
+            if (this.targetNode.contains(event.target)) {
+                return;
+            }
+
             if (!this.dropdownNode.contains(event.target)) {
                 if (this.props.dismiss) {
                     this.props.dismiss();
@@ -135,10 +140,10 @@ export default class Dropdown extends React.Component {
 
 
     render() {
-        var {tag = 'div', _name, placement, modifiers, isOpen, toggle, dismiss, ...props} = this.props;
+        var {tag, _name, placement, modifiers, isOpen, toggle, dismiss, ...props} = this.props;
 
         return (
-            <Tag tag={tag}  {...props}>
+            <Tag tag={tag} {...props}>
                 {this.renderDropdownTarget()}
                 {this.renderDropdownMenu()}
             </Tag>
@@ -170,21 +175,23 @@ Dropdown.Menu = class extends React.Component {
     };
 
 
-    static get defaultProps() {
-        return {
-            isOpen : false
-        };
-    }
+    static defaultProps = {
+        tag : 'div',
+        isOpen : false
+    };
 
     render() {
 
-        var {tag = 'div', style, isOpen, className, ...props} = this.props;
+        var {tag, style, isOpen, className, ...props} = this.props;
 
-        className = classNames(className, 'dropdown-menu show');
+        className = classNames(className, 'dropdown-menu');
         style = Object.assign({}, style, {display:isOpen ? 'block' : 'none'});
 
+
         return (
-            <Tag tag={tag} style={style} className={className} {...props}/>
+            <Fade in={isOpen}>
+                <Tag tag={tag} style={style} className={className} {...props}/>
+            </Fade>
         );
 
     }

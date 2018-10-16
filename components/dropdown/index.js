@@ -15,6 +15,8 @@ var _classnames = _interopRequireDefault(require("classnames"));
 
 var _popper = _interopRequireDefault(require("popper.js"));
 
+var _fade = _interopRequireDefault(require("../fade"));
+
 var _tag = _interopRequireDefault(require("../tag"));
 
 var _class2, _temp;
@@ -97,6 +99,10 @@ function (_React$Component) {
     key: "onDocumentClick",
     value: function onDocumentClick(event) {
       if (this.props.isOpen) {
+        if (this.targetNode.contains(event.target)) {
+          return;
+        }
+
         if (!this.dropdownNode.contains(event.target)) {
           if (this.props.dismiss) {
             this.props.dismiss();
@@ -187,8 +193,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var _this$props = this.props,
-          _this$props$tag = _this$props.tag,
-          tag = _this$props$tag === void 0 ? 'div' : _this$props$tag,
+          tag = _this$props.tag,
           _name = _this$props._name,
           placement = _this$props.placement,
           modifiers = _this$props.modifiers,
@@ -201,21 +206,6 @@ function (_React$Component) {
         tag: tag
       }, props), this.renderDropdownTarget(), this.renderDropdownMenu());
     }
-  }], [{
-    key: "defaultProps",
-    value: function defaultProps() {
-      return {
-        placement: 'bottom-start',
-        isOpen: false,
-        toggle: null,
-        dismiss: null,
-        modifiers: {
-          preventOverflow: {
-            boundariesElement: 'viewport'
-          }
-        }
-      };
-    }
   }]);
 
   return Dropdown;
@@ -226,6 +216,19 @@ exports.default = Dropdown;
 _defineProperty(Dropdown, "propTypes", {
   dismiss: _propTypes.default.func,
   isOpen: _propTypes.default.bool
+});
+
+_defineProperty(Dropdown, "defaultProps", {
+  tag: 'div',
+  placement: 'bottom-start',
+  isOpen: false,
+  toggle: null,
+  dismiss: null,
+  modifiers: {
+    preventOverflow: {
+      boundariesElement: 'viewport'
+    }
+  }
 });
 
 Dropdown.Target =
@@ -264,35 +267,32 @@ function (_React$Component3) {
     key: "render",
     value: function render() {
       var _this$props2 = this.props,
-          _this$props2$tag = _this$props2.tag,
-          tag = _this$props2$tag === void 0 ? 'div' : _this$props2$tag,
+          tag = _this$props2.tag,
           style = _this$props2.style,
           isOpen = _this$props2.isOpen,
           className = _this$props2.className,
           props = _objectWithoutProperties(_this$props2, ["tag", "style", "isOpen", "className"]);
 
-      className = (0, _classnames.default)(className, 'dropdown-menu show');
+      className = (0, _classnames.default)(className, 'dropdown-menu');
       style = Object.assign({}, style, {
         display: isOpen ? 'block' : 'none'
       });
-      return _react.default.createElement(_tag.default, _extends({
+      return _react.default.createElement(_fade.default, {
+        in: isOpen
+      }, _react.default.createElement(_tag.default, _extends({
         tag: tag,
         style: style,
         className: className
-      }, props));
-    }
-  }], [{
-    key: "defaultProps",
-    get: function get() {
-      return {
-        isOpen: false
-      };
+      }, props)));
     }
   }]);
 
   return _class2;
 }(_react.default.Component), _defineProperty(_class2, "propTypes", {
   isOpen: _propTypes.default.bool
+}), _defineProperty(_class2, "defaultProps", {
+  tag: 'div',
+  isOpen: false
 }), _temp);
 
 Dropdown.Item = function (props) {
