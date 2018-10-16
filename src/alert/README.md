@@ -1,4 +1,12 @@
 
+### Usage
+
+```js static
+
+import {Alert} from 'react-bootify';
+/* or */
+import Alert from 'react-bootify/alert';
+```
 
 ### Simple alert
 
@@ -41,14 +49,17 @@
  ```
 ### Dismissable alerts
 
+By adding the **dismiss** property, a dismiss button will be added to the alert.
 ```js
 <div>
-    <Alert dismissable color='warning'>
+    <Alert dismiss color='warning'>
         Has cibo omittam percipitur an, no duo erat placerat oporteat.
     </Alert>
 </div>
 ```
 
+If the **dismiss** property is a function, it will be called when the dismiss 
+button is clicked and it will not dismiss itself. It is up to the **dismiss** function.
 
 
 ### Alert with a body
@@ -72,12 +83,12 @@
 
     <Alert color='primary'>
         <Alert.Header>
-            Header
+            Ei vim aeque
         </Alert.Header>
         <Alert.Separator>
         </Alert.Separator>
         <Alert.Body>
-            Body
+            In has iisque consequuntur, verear hendrerit no sea, per mandamus convenire evertitur et. Sensibus voluptatum ea has. Putant equidem scriptorem.
         </Alert.Body>
     </Alert>
 

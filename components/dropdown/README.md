@@ -1,3 +1,12 @@
+### Usage
+
+```js static
+import {Dropdown} from 'react-bootify';
+/* or */
+import Dropdown from 'react-bootify/dropdown';
+```
+
+
 ### A simple down 
 
 

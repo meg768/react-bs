@@ -1,4 +1,12 @@
 
+### Usage
+
+```js static
+import {Container} from 'react-bootify';
+/* or */
+import Container from 'react-bootify/container';
+```
+
 
 ```js
     <Container>

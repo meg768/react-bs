@@ -13,6 +13,8 @@ var _classnames = _interopRequireDefault(require("classnames"));
 
 var _tag = _interopRequireDefault(require("../tag"));
 
+var _utils = require("../utils");
+
 var _class, _temp, _class2, _temp2, _class3, _temp3;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -65,7 +67,7 @@ function (_React$Component) {
   _createClass(Alert, [{
     key: "onDismiss",
     value: function onDismiss() {
-      this.setState({
+      if ((0, _utils.isFunction)(this.props.dismiss)) this.props.dismiss();else this.setState({
         dismissed: true
       });
     }
@@ -75,25 +77,25 @@ function (_React$Component) {
       if (this.state.dismissed) return null;
 
       var _this$props = this.props,
-          dismissable = _this$props.dismissable,
+          dismiss = _this$props.dismiss,
           tag = _this$props.tag,
           color = _this$props.color,
           role = _this$props.role,
           children = _this$props.children,
           className = _this$props.className,
-          props = _objectWithoutProperties(_this$props, ["dismissable", "tag", "color", "role", "children", "className"]);
+          props = _objectWithoutProperties(_this$props, ["dismiss", "tag", "color", "role", "children", "className"]);
 
       className = (0, _classnames.default)(className, {
         'alert': true
       });
       className = (0, _classnames.default)(className, {
-        'alert-dismissible': dismissable
+        'alert-dismissible': dismiss
       });
       className = (0, _classnames.default)(className, _defineProperty({}, "alert-".concat(color), color));
-      var dismiss = null;
+      var dismissButton = null;
 
-      if (dismissable) {
-        dismiss = _react.default.createElement("button", {
+      if (dismiss) {
+        dismissButton = _react.default.createElement("button", {
           type: "button",
           className: "close",
           "data-dismiss": "alert",
@@ -108,7 +110,7 @@ function (_React$Component) {
         tag: tag,
         className: className,
         role: role
-      }, props), dismiss, children);
+      }, props), dismissButton, children);
     }
   }]);
 
@@ -119,7 +121,7 @@ exports.default = Alert;
 
 _defineProperty(Alert, "propTypes", {
   color: _propTypes.default.string,
-  dismissable: _propTypes.default.bool,
+  dismiss: _propTypes.default.oneOf([_propTypes.default.bool, _propTypes.default.func]),
   tag: _propTypes.default.string
 });
 
@@ -127,7 +129,7 @@ _defineProperty(Alert, "defaultProps", {
   color: 'info',
   role: 'alert',
   tag: 'div',
-  dismissable: false
+  dismiss: false
 });
 
 ;

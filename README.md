@@ -19,5 +19,6 @@ This module is not ready for public use.
 ## History
 - 2018-10-01 - Created. Nothing to see. Use **reactstrap**. 
 - 2018-10-15 - Still nothing to see. Use **reactstrap**.
+- 2018-10-15 - Added component **Fade** to fade in other components like **Dropdown.Menu** and **Popover**. Use **reactstrap**.
 
 

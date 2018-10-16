@@ -10,13 +10,14 @@ import Popper from './popper';
 import Dropdown from './dropdown';
 import Tag from './tag';
 import ListGroup from './list-group';
+import Fade from './fade';
 
 
 var Row = Container.Row;
 var Col = Container.Col;
 
 export {
-    Tag, Glyph, Popper, Button, Form, ListGroup,
+    Tag, Glyph, Popper, Button, Form, ListGroup, Fade,
     Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown
 
 };

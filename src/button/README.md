@@ -1,5 +1,11 @@
 
-### Example 
+#### Usage 
+
+```js static
+import {Button} from 'react-bootify';
+/* or */
+import Button from 'react-bootify/button';
+```
 
 #### Normal buttons
 

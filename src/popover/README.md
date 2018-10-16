@@ -28,14 +28,15 @@ class Sample extends React.Component {
 
 
     render() {
+        var target = (
+            <Button color={this.props.color} outline={this.props.outline} onClick={this.toggle}>
+                {this.props.text}
+            </Button>
+
+        );
         return (
             <div style={{display:'inline-block', margin:'0.1rem'}}>
-                <Popover placement={this.props.placement} toggle={this.toggle} isOpen={this.state.isOpen}>
-                    <Popover.Target>
-                        <Button color={this.props.color} outline={this.props.outline} onClick={this.toggle}>
-                            {this.props.text}
-                        </Button>
-                    </Popover.Target>
+                <Popover target={target} placement={this.props.placement} dismiss={this.toggle} isOpen={this.state.isOpen}>
                     <Popover.Header>
                         Eos modo
                     </Popover.Header>
@@ -54,5 +55,3 @@ class Sample extends React.Component {
     <Sample text='Aeque' color='info' outline placement='top-start'/>
     <Sample text='Atqui' color='warning' outline placement='bottom-start'/>
 </div>
-
-```

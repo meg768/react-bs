@@ -1,13 +1,15 @@
 
 
-### Jumbotron
 
-#### Usage
+### Usage
+
 ```js static
-import Jumbotron from 'react-bootify/jumbotron';
-/* or */ 
 import {Jumbotron} from 'react-bootify';
+/* or */ 
+import Jumbotron from 'react-bootify/jumbotron';
 ```
+
+### Example
 
 ```js
 

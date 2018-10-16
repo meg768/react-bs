@@ -68,7 +68,7 @@ function (_React$Component) {
   _createClass(Popover, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      if (this.props.toggle) document.addEventListener('click', this.onDocumentClick, true);
+      if (this.props.dismiss) document.addEventListener('click', this.onDocumentClick, true);
       this.createPopper();
     }
   }, {
@@ -124,8 +124,8 @@ function (_React$Component) {
     key: "onDocumentClick",
     value: function onDocumentClick(event) {
       if (this.props.isOpen) {
-        if (this.props.toggle && !this.popupNode.contains(event.target)) {
-          this.props.toggle();
+        if (this.props.dismiss && !this.popupNode.contains(event.target)) {
+          this.props.dismiss();
         }
       }
     }
@@ -169,8 +169,9 @@ function (_React$Component) {
     value: function renderPopup() {
       var _this5 = this;
 
-      var popoverClassName = 'popover fade show';
+      var popoverClassName = 'popover';
       var popoverStyle = {};
+      var isOpen = this.state.popper && this.props.isOpen;
 
       if (this.state.popper) {
         switch (this.state.popper.placement) {
@@ -205,12 +206,10 @@ function (_React$Component) {
               popoverClassName = (0, _classnames.default)(popoverClassName, 'bs-popover-bottom');
               break;
             }
-        }
+        } //popoverStyle.display = this.props.isOpen ? 'block' : 'none';
 
-        popoverStyle.display = this.props.isOpen ? 'block' : 'none';
-      } else {
-        popoverStyle.display = 'none';
-      }
+      } else {//popoverStyle.display = 'none';
+        }
 
       var arrow = null;
 
@@ -231,13 +230,15 @@ function (_React$Component) {
         children.push(this.getChildOfType(Popover.Body));
       }
 
-      return _react.default.createElement("div", {
+      return _react.default.createElement(Fade, {
+        in: isOpen
+      }, _react.default.createElement("div", {
         className: popoverClassName,
         style: popoverStyle,
         ref: function ref(element) {
           _this5.popupNode = element;
         }
-      }, arrow, children);
+      }, arrow, children));
     }
   }, {
     key: "render",
@@ -252,12 +253,12 @@ function (_React$Component) {
 exports.default = Popover;
 
 _defineProperty(Popover, "propTypes", {
-  target: _propTypes.default.element.isRequired,
+  target: _propTypes.default.element,
   arrow: _propTypes.default.bool,
   isOpen: _propTypes.default.bool,
   modifiers: _propTypes.default.any,
   placement: _propTypes.default.string,
-  toggle: _propTypes.default.func
+  dismiss: _propTypes.default.func
 });
 
 _defineProperty(Popover, "defaultProps", {

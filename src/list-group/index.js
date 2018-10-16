@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import classNames from 'classnames';
-import Tag from '../tag'
+import Tag from '../tag';
 
 export default class ListGroup extends React.Component  {
 

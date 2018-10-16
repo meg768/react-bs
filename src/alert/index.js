@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import classNames from 'classnames';
 import Tag from '../tag';
+import {isFunction} from '../utils';
 
 export default class Alert extends React.Component  {
 
@@ -16,7 +17,7 @@ export default class Alert extends React.Component  {
 
     static propTypes = {
         color       : PropTypes.string,
-        dismissable : PropTypes.bool,
+        dismiss     : PropTypes.oneOf([PropTypes.bool, PropTypes.func]),
         tag         : PropTypes.string
     };
 
@@ -24,27 +25,32 @@ export default class Alert extends React.Component  {
         color       : 'info',
         role        : 'alert',
         tag         : 'div',
-        dismissable : false
+        dismiss     : false
     };
 
     onDismiss() {
-        this.setState({dismissed:true});
+
+        if (isFunction(this.props.dismiss))
+            this.props.dismiss();
+        else
+            this.setState({dismissed:true});
+
     }
 
     render() {
         if (this.state.dismissed)
             return null;
 
-        var {dismissable, tag, color, role, children, className, ...props} = this.props;
+        var {dismiss, tag, color, role, children, className, ...props} = this.props;
 
         className = classNames(className, {'alert': true});
-        className = classNames(className, {'alert-dismissible': dismissable});
+        className = classNames(className, {'alert-dismissible': dismiss});
         className = classNames(className, {[`alert-${color}`]:color});
 
-        var dismiss = null;
+        var dismissButton = null;
 
-        if (dismissable) {
-            dismiss = (
+        if (dismiss) {
+            dismissButton = (
                 <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={this.onDismiss}>
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -54,7 +60,7 @@ export default class Alert extends React.Component  {
 
         return (
             <Tag tag={tag} className={className} role={role} {...props}>
-                {dismiss}
+                {dismissButton}
                 {children}
             </Tag>
 

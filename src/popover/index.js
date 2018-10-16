@@ -28,12 +28,12 @@ export default class Popover extends React.Component {
     }
 
     static propTypes = {
-        target    : PropTypes.element.isRequired,
+        target    : PropTypes.element,
         arrow     : PropTypes.bool,
         isOpen    : PropTypes.bool,
         modifiers : PropTypes.any,
         placement : PropTypes.string,
-        toggle    : PropTypes.func
+        dismiss   : PropTypes.func
     };
 
     static defaultProps = {
@@ -48,7 +48,7 @@ export default class Popover extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.toggle)
+        if (this.props.dismiss)
             document.addEventListener('click', this.onDocumentClick, true);
 
         this.createPopper();
@@ -95,8 +95,8 @@ export default class Popover extends React.Component {
     onDocumentClick(event) {
 
         if (this.props.isOpen) {
-            if (this.props.toggle && !this.popupNode.contains(event.target)) {
-                this.props.toggle();
+            if (this.props.dismiss && !this.popupNode.contains(event.target)) {
+                this.props.dismiss();
             }
 
         }
@@ -134,8 +134,9 @@ export default class Popover extends React.Component {
     renderPopup() {
 
 
-        var popoverClassName = 'popover fade show';
+        var popoverClassName = 'popover';
         var popoverStyle = {};
+        var isOpen = this.state.popper && this.props.isOpen;
 
         if (this.state.popper) {
 
@@ -166,11 +167,11 @@ export default class Popover extends React.Component {
                 }
             }
 
-            popoverStyle.display = this.props.isOpen ? 'block' : 'none';
+            //popoverStyle.display = this.props.isOpen ? 'block' : 'none';
 
         }
         else {
-            popoverStyle.display = 'none';
+            //popoverStyle.display = 'none';
         }
 
         var arrow = null;
@@ -190,10 +191,12 @@ export default class Popover extends React.Component {
             children.push(this.getChildOfType(Popover.Body));
         }
         return (
-            <div className={popoverClassName}  style={popoverStyle} ref={(element) => {this.popupNode = element}}>
-                {arrow}
-                {children}
-            </div>
+            <Fade in={isOpen}>
+                <div className={popoverClassName}  style={popoverStyle} ref={(element) => {this.popupNode = element}}>
+                    {arrow}
+                    {children}
+                </div>
+            </Fade>
         );
 
     }

@@ -1,5 +1,13 @@
 
 
+### Usage
+
+```js static
+import {ListGroup} from 'react-bootify';
+/* or */
+import ListGroup from 'react-bootify/list-group';
+```
+
 ### Basic example
 The most basic list group is an unordered list with list items. Build upon it with the options that follow, or with your own CSS as needed.
 

@@ -75,6 +75,12 @@ Object.defineProperty(exports, "ListGroup", {
     return _listGroup.default;
   }
 });
+Object.defineProperty(exports, "Fade", {
+  enumerable: true,
+  get: function get() {
+    return _fade.default;
+  }
+});
 exports.Col = exports.Row = void 0;
 
 var _glyph = _interopRequireDefault(require("./glyph"));
@@ -100,6 +106,8 @@ var _dropdown = _interopRequireDefault(require("./dropdown"));
 var _tag = _interopRequireDefault(require("./tag"));
 
 var _listGroup = _interopRequireDefault(require("./list-group"));
+
+var _fade = _interopRequireDefault(require("./fade"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

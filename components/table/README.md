@@ -1,4 +1,10 @@
+### Usage
 
+```js static
+import {Table} from 'react-bootify';
+/* or */
+import Table from 'react-bootify/table';
+```
 
 ```js
 <Table>
