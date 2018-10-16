@@ -4,6 +4,7 @@ src
 examples
 scripts
 fontello
+bootstrap
 styleguide
 styleguide.config.js
 webpack.config.js
