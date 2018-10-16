@@ -10,7 +10,7 @@ Yet another minimalistic Bootstrap layer for React.
 Bootstrap css-styles need to be installed separately.
 
 ## Comment
-This module is not ready for public use. Use **reactstrap***.
+This module is not ready for public use. Use **reactstrap**.
 
 
 ## Documentation
@@ -18,7 +18,8 @@ This module is not ready for public use. Use **reactstrap***.
 
 ## History
 - 2018-10-01 - Created. Nothing to see.
-- 2018-10-15 - Still nothing to see.
+- 2018-10-14 - Still nothing to see.
+- 2018-10-15 - Components may now be imported seperately to minimize size. 
 - 2018-10-16 - Added component **Fade** to fade in components like **Dropdown.Menu** and **Popover**.
 
 
