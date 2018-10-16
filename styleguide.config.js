@@ -4,5 +4,5 @@ module.exports = {
     components: [
         './src/*/*.js'
     ],
-    require: ['./src/bootstrap/bootstrap.min.css'],
+    require: ['./bootstrap/bootstrap.min.css'],
 };
