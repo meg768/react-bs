@@ -172,7 +172,7 @@ Form.Radio = function(props) {
     var {checked, value, disabled, ...other} =  props;
 
     return (
-        <div class="form-check" {...other}>
+        <div className="form-check" {...other}>
             <input className="form-check-input" type="radio" value={value} checked={checked} disabled={disabled}/>
             <label className="form-check-label">
                 {props.children}
@@ -187,7 +187,7 @@ Form.Checkbox = function(props) {
     var {text, checked, disabled, ...other} =  props;
 
     return (
-        <div class="form-check" {...other}>
+        <div className="form-check" {...other}>
             <input className="form-check-input" type="checkbox" checked={checked} disabled={disabled}/>
             <label className="form-check-label">
                 {props.children}

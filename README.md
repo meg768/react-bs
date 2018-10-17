@@ -22,5 +22,6 @@ This module is not ready for public use. Use **reactstrap**.
 - 2018-10-15 - Components may now be imported seperately to minimize size. 
 - 2018-10-16 - Added component **Fade** to fade in components like **Dropdown.Menu** and **Popover**.
 - 2018-10-17 - Added component **Modal** to display Bootstrap's modal dialogs.
+- 2018-10-17 - Added components **Radio** and **Checkbox** to Forms.
 
 
