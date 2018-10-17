@@ -53,6 +53,53 @@ function onClick() {
 
 ```
 
+#### Large buttons
+
+```js
+
+var style = {margin:'0.2rem'};
+
+function onClick() {
+    alert('click');
+}
+<div>
+    <Button color='primary' size='lg' style={style} onClick={onClick}>
+        Primary
+    </Button>
+
+    <Button color='secondary' size='lg' style={style}>
+        Secondary
+    </Button>
+
+    <Button color='success' size='lg' style={style}>
+        Success
+    </Button>
+
+    <Button color='danger' size='lg' style={style}>
+        Danger
+    </Button>
+
+    <Button color='warning' size='lg' style={style}>
+        Warning
+    </Button>
+
+    <Button color='info' size='lg' style={style}>
+        Info
+    </Button>
+
+    <Button color='light' size='lg' style={style}>
+        Light
+    </Button>
+
+    <Button color='dark' size='lg' style={style}>
+        Dark
+    </Button>
+
+</div>
+
+```
+
+
 
 #### Outlined buttons 
 

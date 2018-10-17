@@ -38,6 +38,7 @@ export default class Button extends Component  {
     static defaultProps = {
         color    : 'primary',
         tag      : 'button',
+        size     : undefined,
         outline  : false,
         onClick  : null,
         disabled : false
@@ -57,10 +58,11 @@ export default class Button extends Component  {
 
     render() {
 
-        var {tag, className, outline, color, ...props} = this.props;
+        var {tag, size, className, outline, color, ...props} = this.props;
 
         className = classNames(className, 'btn');
         className = classNames(className, {[`btn-${color}`]:color});
+        className = classNames(className, {[`btn-${size}`]:size});
         className = classNames(className, {[`btn-outline-${color}`]:outline});
 
         if (!tag) {
