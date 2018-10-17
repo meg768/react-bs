@@ -15,9 +15,10 @@ import Fade from './fade';
 
 var Row = Container.Row;
 var Col = Container.Col;
+var Grid = Container;
 
 export {
-    Tag, Glyph, Popper, Button, Form, ListGroup, Fade,
+    Grid, Tag, Glyph, Popper, Button, Form, ListGroup, Fade,
     Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown
 
 };
