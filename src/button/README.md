@@ -145,3 +145,47 @@ var style = {margin:'0.2rem'};
 ```
 
 
+
+
+#### Buttons in a Toolbar
+
+```js
+
+
+<Button.Toolbar>
+    <Button color='primary' outline>
+        Primary
+    </Button>
+
+    <Button color='secondary' outline>
+        Secondary
+    </Button>
+
+    <Button color='success' outline>
+        Success
+    </Button>
+
+    <Button color='danger' outline>
+        Danger
+    </Button>
+
+    <Button color='warning' outline>
+        Warning
+    </Button>
+
+    <Button color='info' outline>
+        Info
+    </Button>
+
+    <Button color='light' outline>
+        Light
+    </Button>
+
+    <Button color='dark' outline>
+        Dark
+    </Button>
+
+</Button.Toolbar>
+
+```
+

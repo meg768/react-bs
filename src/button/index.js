@@ -84,3 +84,22 @@ export default class Button extends Component  {
 };
 
 
+Button.Toolbar = function(props) {
+
+    var {tag: Tag, margin, ...other} = props;
+    
+    var children = React.Children.toArray(props.children).map((child, index) => {
+        return React.cloneElement(child, {style: {margin:margin}});
+    });
+
+    return (
+        <Tag {...other}>
+            {children}
+        </Tag>
+    );
+}
+
+Button.Toolbar.defaultProps = {
+    tag: 'div',
+    margin: '0.2rem'
+};
