@@ -140,18 +140,6 @@ Form.Input = class extends React.Component  {
 
 };
 
-Form.Label = class extends React.Component  {
-
-    render() {
-        return (
-            <label {...this.props}>
-                {this.props.children}
-            </label>
-
-        );
-    }
-
-};
 
 
 Form.Label = function(props)  {
@@ -169,14 +157,11 @@ Form.Label = function(props)  {
 
 Form.Radio = function(props) {
 
-    var {checked, onClick, onChange, value, disabled, ...other} =  props;
+    var {checked, onChange, value, disabled, ...other} =  props;
 
-    if (onChange)
-        onClick = onChange;
-    
     return (
-        <div className="form-check" {...other} onClick={onClick} {...other}>
-            <input className="form-check-input" type="radio" value={value} checked={checked} disabled={disabled}/>
+        <div className="form-check" {...other}>
+            <input className="form-check-input" type="radio" value={value} checked={checked} disabled={disabled} onChange={onChange}/>
             <label className="form-check-label">
                 {props.children}
             </label>
