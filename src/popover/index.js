@@ -135,7 +135,6 @@ export default class Popover extends React.Component {
 
 
         var popoverClassName = 'popover';
-        var popoverStyle = {};
         var isOpen = this.state.popper && this.props.isOpen;
 
         if (this.state.popper) {
@@ -167,11 +166,6 @@ export default class Popover extends React.Component {
                 }
             }
 
-            //popoverStyle.display = this.props.isOpen ? 'block' : 'none';
-
-        }
-        else {
-            //popoverStyle.display = 'none';
         }
 
         var arrow = null;
@@ -191,8 +185,8 @@ export default class Popover extends React.Component {
             children.push(this.getChildOfType(Popover.Body));
         }
         return (
-            <Fade in={isOpen}>
-                <div className={popoverClassName}  style={popoverStyle} ref={(element) => {this.popupNode = element}}>
+            <Fade show={isOpen}>
+                <div className={popoverClassName}  ref={(element) => {this.popupNode = element}}>
                     {arrow}
                     {children}
                 </div>

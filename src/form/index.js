@@ -90,22 +90,26 @@ Form.Row = class extends Component {
 
 }
 
-Form.Col = class extends Component {
+Form.Col = function(props) {
+    var {tag : Tag = 'div', className, xs, sm, md, lg, width, ...other} = props;
 
-    render() {
+    className = classNames(className, 'col');
 
-        var {className, ...props} = this.props;
-        className = classNames(className, 'col');
+    className = classNames(className, {[`col-${xs}`]:width});
+    className = classNames(className, {[`col-${xs}`]:xs});
+    className = classNames(className, {[`col-sm-${sm}`]:sm});
+    className = classNames(className, {[`col-md-${md}`]:md});
+    className = classNames(className, {[`col-lg-${lg}`]:lg});
 
-        return (
-            <div {...props} className={className}>
-                {this.props.children}
-            </div>
-
-        );
-    }
-
+    return (
+        <Tag className={className} {...other}>
+            {props.children}
+        </Tag>
+    );
 }
+
+
+
 Form.Input = class extends React.Component  {
 
 
@@ -152,10 +156,42 @@ Form.Label = class extends React.Component  {
 
 Form.Label = function(props)  {
 
-    var {tag = 'label', ...other} = props;
+    var {tag : Tag = 'label', ...other} = props;
 
     return (
-        <Tag tag={tag} {...other}/>
+        <Tag {...other}>
+            {props.children}
+        </Tag>
     );
 
 };
+
+
+Form.Radio = function(props) {
+
+    var {text, checked, disabled, ...other} =  props;
+
+    return (
+        <div class="form-check" {...other}>
+            <input class="form-check-input" type="radio" checked={checked} disabled={disabled}/>
+            <label class="form-check-label">
+                {props.children}
+            </label>
+        </div>        
+    );
+}
+
+
+Form.Checkbox = function(props) {
+
+    var {text, checked, disabled, ...other} =  props;
+
+    return (
+        <div class="form-check" {...other}>
+            <input class="form-check-input" type="checkbox" checked={checked} disabled={disabled}/>
+            <label class="form-check-label">
+                {props.children}
+            </label>
+        </div>        
+    );
+}

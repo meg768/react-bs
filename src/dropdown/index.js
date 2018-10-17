@@ -182,15 +182,13 @@ Dropdown.Menu = class extends React.Component {
 
     render() {
 
-        var {tag, style, isOpen, className, ...props} = this.props;
+        var {tag, isOpen, className, ...props} = this.props;
 
         className = classNames(className, 'dropdown-menu');
-        style = Object.assign({}, style, {display:isOpen ? 'block' : 'none'});
-
 
         return (
-            <Fade in={isOpen}>
-                <Tag tag={tag} style={style} className={className} {...props}/>
+            <Fade show={isOpen}>
+                <Tag tag={tag} className={className} {...props}/>
             </Fade>
         );
 

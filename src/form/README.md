@@ -141,3 +141,73 @@ class Sample extends React.Component {
 
 <Sample/>
 ```
+
+
+
+
+Checkboxes
+
+
+```js
+
+
+class Sample extends React.Component {
+
+
+    constructor(props) {
+        super(props);
+
+        this.state = {};
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(event) {
+        //var stock = this.state.stock;
+        //stock[event.target.id] = event.target.value;
+        //this.setState({stock:stock});
+    }
+
+    render() {
+        var colStyle = {
+            borderRadius: '0.3rem',
+            padding: '1rem',
+            border: '1px solid var(--gray)',
+            background: 'var(--light)'
+        };
+
+        return (
+                <Form>
+                    <Form.Group>
+                        <Form.Label >Symbol</Form.Label>
+                        <Form.Input type="text" value={''}/>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Row>
+                            <Form.Col xs={12} style={colStyle}>
+                                <Form.Radio checked>
+                                    The <strong>quick</strong> brown fox jumps over the lazy dog
+                                </Form.Radio>
+                                <Form.Radio >
+                                    The quick brown <strong>fox</strong> jumps over the lazy dog
+                                </Form.Radio>
+                            </Form.Col>
+                            <Form.Col  xs={12} style={colStyle}>
+                                <Form.Checkbox checked>
+                                    A am <strong>alone</strong> now.
+                                </Form.Checkbox>
+                                <Form.Checkbox>
+                                    A am <strong>alone</strong> now.
+                                </Form.Checkbox>
+                            </Form.Col>
+                        </Form.Row>
+                    </Form.Group>
+
+
+                </Form>
+        );
+    }
+}
+
+
+<Sample/>
+```

@@ -17,7 +17,7 @@ export default class Alert extends React.Component  {
 
     static propTypes = {
         color       : PropTypes.string,
-        dismiss     : PropTypes.oneOf([PropTypes.bool, PropTypes.func]),
+        dismiss     : PropTypes.any,
         tag         : PropTypes.string
     };
 

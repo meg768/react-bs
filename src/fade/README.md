@@ -23,7 +23,7 @@ class Sample extends React.Component  {
             <div>
                 <Button style={{display:'block'}} onClick={this.toggle}>Toggle</Button>
                 <br/>
-                <Fade in={this.state.show}>                
+                <Fade show={this.state.show}>                
                     <Alert dismiss={this.toggle}>
                         Pax vobiscum
                     </Alert>

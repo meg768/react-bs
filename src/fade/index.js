@@ -7,10 +7,10 @@ import {isArray} from '../utils';
 
 export default function Fade(props)  {
 
-   var {tag: Tag, children, ...other} = props;
+   var {tag: Tag, show, children, ...other} = props;
 
    return (
-        <Transition in={props.in} timeout={0}>                
+        <Transition in={show} timeout={0}>                
             {state => {
                 var child = React.Children.toArray(children);
 
@@ -18,16 +18,22 @@ export default function Fade(props)  {
                     child = child[0];
 
                 var className = child.props.className;
-                    
+                var style = Object.assign({}, child.props.style, {display:show ? 'block' : 'none'});
+                
                 className = classNames(className, {'fade': true});
                 className = classNames(className, {'show': state == 'entered'});
 
-                return React.cloneElement(child, {className: className, ...other});
+                return React.cloneElement(child, {className: className, style: style, ...other});
             }}
         </Transition>
     );
 };
 
+Fade.propTypes = {
+    show: PropTypes.bool
+};
+
 Fade.defaultProps = {
-    tag: 'div'
+    tag: 'div',
+    show: false
 };
