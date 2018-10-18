@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import PropTypes from "prop-types";
 
 import Container from '../container';
+import Tag from '../tag';
 
 var _uniqueID = 0;
 
@@ -15,9 +16,9 @@ var _uniqueID = 0;
  */
 export default class Form extends Component  {
 
-    static get defaultProps() {
-        return {
-        };
+    static defaultProps = {
+        tag: 'form',
+        inline: false
     }
 
     constructor(args) {
@@ -26,14 +27,15 @@ export default class Form extends Component  {
 
     render() {
 
-        var {className, ...props} = this.props;
+        var {className, tag, inline, ...props} = this.props;
 
-        className = classNames('form', className);
+        className = classNames(className, {'form': true});
+        className = classNames(className, {'form-inline': inline});
 
         return (
-            <form {...props} className={className}>
+            <Tag tag={tag} {...props} className={className}>
                 {this.props.children}
-            </form>
+            </Tag>
 
         );
     }
@@ -43,10 +45,12 @@ export default class Form extends Component  {
 
 Form.Group = function(props)  {
 
-    var {row, ...other} = props;
+    var {row, className, ...other} = props;
+
+    className = classNames(className, {'row': row});
 
     return (
-        <Container.Col baseClassName='form-group' row={row} {...other}>
+        <Container.Col className={className} baseClassName='form-group'  {...other}>
             {props.children}
         </Container.Col>
     );
@@ -78,48 +82,55 @@ Form.Col = function(props) {
 }
 
 
-Form.Input = class extends React.Component  {
+Form.Input = function(props)  {
 
 
-    static propTypes = {
-        plainText : PropTypes.bool
-    };
+    var {plainText, tag, size, className, ...props} = props;
 
-    static get defaultProps() {
-        return {
-            type: 'text'
-        };
-    }
+    className = classNames(className, {'form-control':true});
+    className = classNames(className, {'form-control-sm':size=='sm'});
+    className = classNames(className, {'form-control-lg':size=='lg'});
 
-    render() {
+    return (
+        <Tag tag={tag} {...props} className={className}>
+            {props.children}
+        </Tag>
 
-        var {plainText, className, ...props} = this.props;
+    );
+};
 
-        className = classNames(className, {'form-control':true});
-        className = classNames(className, {'form-control-plainText':plainText});
-
-        return (
-            <input {...props} className={className}>
-                {this.props.children}
-            </input>
-
-        );
-    }
-
+Form.Input.defaultProps = {
+    tag: 'input'
 };
 
 
 
 Form.Label = function(props)  {
 
-    var {tag : Tag = 'label', ...other} = props;
+    var {tag, className, inline, muted, ...other} = props;
 
+    className = classNames(className, {'text-muted': muted});
+    className = classNames(className, {'col-form-label': inline});
+    
     return (
-        <Tag {...other}>
+        <Tag tag={tag} className={className} {...other}>
             {props.children}
         </Tag>
     );
 
+};
+
+
+Form.Label.defaultProps = {
+    tag: 'label',
+    inline: false,
+    muted: false
+};
+
+Form.Label.propTypes = {
+    tag: PropTypes.string,
+    inline: PropTypes.bool,
+    muted: PropTypes.bool
 };
 
 

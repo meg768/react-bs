@@ -35,7 +35,7 @@ class Sample extends React.Component {
 
         );
         return (
-            <div style={{display:'inline-block', margin:'0.1rem'}}>
+            <div className='mx-1 d-inline-block'>
                 <Popover target={target} placement={this.props.placement} dismiss={this.toggle} isOpen={this.state.isOpen}>
                     <Popover.Header>
                         Eos modo

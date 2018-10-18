@@ -65,12 +65,7 @@ export default class Modal extends React.Component {
 }
 
 
-/**
- * 
- *  MODAL BDY 
- * 
- * 
-*/
+
 Modal.Body = function(props) {
 
     var {className, ...other} = props;
@@ -99,7 +94,7 @@ Modal.Header = function(props) {
     }
 
     return (
-        <div className={classNames(className, 'modal-header')} {...props}>
+        <div className={classNames(className, 'modal-header')} {...other}>
             {props.children}
             {dismissButton}
         </div>

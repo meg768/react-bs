@@ -3,6 +3,10 @@ var isType = module.exports.isType = function(obj, type) {
 	return Object.prototype.toString.call(obj) == '[object ' + type + ']';
 };
 
+module.exports.isBoolean = function(obj) {
+	return typeof obj === 'boolean';
+};
+
 module.exports.isArray = function(obj) {
 	return isType(obj, 'Array');
 };

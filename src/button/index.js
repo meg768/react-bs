@@ -75,9 +75,7 @@ export default class Button extends Component  {
         }
 
         return (
-            <Tag tag={tag} {...props} className={className} onClick={this.onClick}>
-            </Tag>
-
+            <Tag tag={tag} {...props} className={className} onClick={this.onClick}/>
         );
     }
 

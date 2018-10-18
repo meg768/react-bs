@@ -1,4 +1,128 @@
+### Sample of Inline Form
 
+```js
+
+
+class ByStockSample extends React.Component {
+
+
+    constructor(props) {
+        super(props);
+
+        this.state = {};
+        this.state.stock = {};
+        this.state.loading = false;
+        this.onChange = this.onChange.bind(this);
+
+
+    }
+
+    onChange(event) {
+        var stock = this.state.stock;
+        stock[event.target.id] = event.target.value;
+        this.setState({stock:stock});
+    }
+
+    render() {
+        return (
+                <Form>
+                    <Form.Group row>
+                        <Form.Col xs={1} sm={2} textAlign='right' >
+                            <Form.Label inline for='name' textColor='muted'>
+                                <small>Ticker</small>
+                            </Form.Label>
+                        </Form.Col>
+                        <Form.Col xs={11} sm={10}>
+                            <Form.Input type="text" id="name" placeholder="Ticker"/>
+                        </Form.Col>
+                    </Form.Group>
+
+                    <Form.Group row>
+                        <Form.Col sm={2} textAlign='right' >
+                            <Form.Label inline for='name' textColor='muted'>
+                                <small>Company name</small>
+                            </Form.Label>
+                        </Form.Col>
+                        <Form.Col sm={10}>
+                            <Form.Input type="text" id="name" placeholder="Name"/>
+                        </Form.Col>
+                    </Form.Group>
+
+
+                    <Form.Group row>
+                        <Form.Col sm={2} textAlign='right' >
+                            <Form.Label inline for='name' textColor='muted'>
+                                <small>Baught at</small>
+                            </Form.Label>
+                        </Form.Col>
+                        <Form.Col sm={10}>
+                            <Form.Input type="text" id="name" placeholder="Price"/>
+                        </Form.Col>
+                    </Form.Group>
+
+                    <Form.Group row>
+                        <Form.Col sm={2} textAlign='right' >
+                            <Form.Label inline for='name' textColor='muted'>
+                                <small>
+                                    Number of stocks
+                                </small>
+                            </Form.Label>
+                        </Form.Col>
+                        <Form.Col sm={10}>
+                            <Form.Input type="text" id="name" placeholder="Amount"/>
+                        </Form.Col>
+                    </Form.Group>
+
+
+                    <Form.Group row>
+                        <Form.Col sm={2} textAlign='right' >
+                            <Form.Label  for='name' inline textColor='muted'>
+                                <small>Stop loss</small>
+                            </Form.Label>
+                        </Form.Col>
+
+                        <Form.Col sm={10}>
+                            <Form inline  padding={{bottom:1, top:1}}>
+                                <Form.Radio type="email" id="name" placeholder="Ticker">
+                                    Dragging
+                                </Form.Radio>
+
+                                <Form.Input size='sm' margin={{left:2, right:2}} type="text" id="name" placeholder=""/>
+                            </Form>
+
+                            <Form inline  padding={{bottom:1, top:1}}>
+                                <Form.Radio type="text" id="name" placeholder="">
+                                    When price below
+                                </Form.Radio>
+                                <Form.Input size='sm' margin={{left:2, right:2}} type="text" id="name" placeholder=""/>
+                            </Form>
+                            
+                            <Form inline padding={{bottom:1, top:1}}>
+                                <Form.Radio type="email" id="name" placeholder="Ticker">
+                                    When price dropped with 
+                                </Form.Radio>
+                                <Form.Input size='sm' margin={{left:2, right:2}} type="text" id="name" placeholder=""/>
+                                <Form.Label>%</Form.Label>
+                            </Form>
+                        </Form.Col>
+                    </Form.Group>
+
+                    <Form.Group textAlign='right'>
+                        <Button color='secondary' outline margin={{right:1}}>Cancel</Button>
+                        <Button color='primary'  margin={0}>Save changes</Button>
+                    </Form.Group>
+                </Form>
+        );
+    }
+}
+
+
+<ByStockSample/>
+```
+
+
+
+### Sample of Standard Form
 
 ```js
 
@@ -74,18 +198,7 @@ class Sample extends React.Component {
 ```
 
 
-
-
-
-
-
-Another sample
-
-
-
-
-
-
+### Yet Another Sample
 
 
 
@@ -145,7 +258,7 @@ class Sample extends React.Component {
 
 
 
-Checkboxes
+### Checkboxes
 
 
 ```js

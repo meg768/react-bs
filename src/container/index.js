@@ -12,19 +12,20 @@ export default class Container extends React.Component  {
     };
 
     static defaultProps = {
+        tag: 'div',
         fluid: false
     }
 
     render() {
-        var {className, fluid, ...props} = this.props;
+        var {tag, className, fluid, ...props} = this.props;
 
         className = classNames(className, {'container' : true});
         className = classNames(className, {'container-fluid' : fluid});
 
         return (
-            <div className={className} {...props}>
+            <Tag tag={tag} className={className} {...props}>
                 {this.props.children}
-            </div>
+            </Tag>
         );
     }
 };
@@ -32,7 +33,7 @@ export default class Container extends React.Component  {
 
 Container.Col = function(props) {
 
-    var {tag: Tag, className, baseClassName, width, xs, sm, md, lg, xl, ...other} = props;
+    var {tag, className, baseClassName, width, xs, sm, md, lg, xl, ...other} = props;
 
     className = classNames(className, baseClassName);
 
@@ -60,11 +61,15 @@ Container.Col = function(props) {
 
 
     return (
-        <Tag className={className} {...other}>
+        <Tag tag={tag} className={className} {...other}>
             {props.children}
         </Tag>
     );
 }
+
+Container.Col.defaultProps = {
+    tag: 'div'
+};
 
 Container.Col.propTypes = {
     tag   : PropTypes.string,
@@ -84,16 +89,20 @@ Container.Col.defaultProps = {
 
 Container.Row = function(props) {
 
-    var {className, ...other} = props;
+    var {tag, className, ...other} = props;
 
     className = classNames(className, 'row');
 
     return (
-        <div className={className} {...other}>
+        <Tag tag={tag} className={className} {...other}>
             {props.children}
-        </div>
+        </Tag>
     );
 }
+
+Container.Row.defaultProps = {
+    tag: 'div'
+};
 
 
 
