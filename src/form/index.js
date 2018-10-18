@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import classNames from 'classnames';
 import PropTypes from "prop-types";
 
-import Tag from '../tag';
+import Container from '../container';
 
 var _uniqueID = 0;
 
@@ -41,36 +41,15 @@ export default class Form extends Component  {
 };
 
 
-Form.Group = class extends Component  {
+Form.Group = function(props)  {
 
-    static propTypes = {
-        xs    : PropTypes.number,
-        sm    : PropTypes.number,
-        md    : PropTypes.number,
-        lg    : PropTypes.number,
-        width : PropTypes.number
-    };
+    var {row, ...other} = props;
 
-    render() {
-
-        var {className, xs, sm, md, lg, width, ...props} = this.props;
-
-        className = classNames(className, 'form-group');
-
-        className = classNames(className, {width:width});
-        className = classNames(className, {[`col-${xs}`]:xs});
-        className = classNames(className, {[`col-sm-${sm}`]:sm});
-        className = classNames(className, {[`col-md-${md}`]:md});
-        className = classNames(className, {[`col-lg-${lg}`]:lg});
-
-        return (
-            <div {...props} className={className}>
-                {this.props.children}
-            </div>
-
-        );
-    }
-
+    return (
+        <Container.Col baseClassName='form-group' row={row} {...other}>
+            {props.children}
+        </Container.Col>
+    );
 }
 
 Form.Row = class extends Component {
@@ -87,27 +66,16 @@ Form.Row = class extends Component {
 
         );
     }
-
 }
 
 Form.Col = function(props) {
-    var {tag : Tag = 'div', className, xs, sm, md, lg, width, ...other} = props;
-
-    className = classNames(className, 'col');
-
-    className = classNames(className, {[`col-${xs}`]:width});
-    className = classNames(className, {[`col-${xs}`]:xs});
-    className = classNames(className, {[`col-sm-${sm}`]:sm});
-    className = classNames(className, {[`col-md-${md}`]:md});
-    className = classNames(className, {[`col-lg-${lg}`]:lg});
 
     return (
-        <Tag className={className} {...other}>
+        <Container.Col {...props}>
             {props.children}
-        </Tag>
+        </Container.Col>
     );
 }
-
 
 
 Form.Input = class extends React.Component  {

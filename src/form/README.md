@@ -170,7 +170,6 @@ class Sample extends React.Component {
     render() {
         var colStyle = {
             borderRadius: '0.3rem',
-            padding: '1rem',
             border: '1px solid var(--gray)',
             background: 'var(--light)'
         };
@@ -183,22 +182,30 @@ class Sample extends React.Component {
                     </Form.Group>
                     <Form.Group>
                         <Form.Row>
-                            <Form.Col xs={12} style={colStyle}>
-                                <Form.Radio checked>
-                                    The <strong>quick</strong> brown fox jumps over the lazy dog
-                                </Form.Radio>
-                                <Form.Radio >
-                                    The quick brown <strong>fox</strong> jumps over the lazy dog
-                                </Form.Radio>
-                            </Form.Col>
-                            <Form.Col  xs={12} style={colStyle}>
-                                <Form.Checkbox checked>
-                                    A am <strong>alone</strong> now.
-                                </Form.Checkbox>
-                                <Form.Checkbox>
-                                    A am <strong>alone</strong> now.
-                                </Form.Checkbox>
-                            </Form.Col>
+                            <Form.Group xs={12} sm={12} md={6}>
+                                <div className='card'>
+                                    <div className='card-body'>
+                                    <Form.Radio checked onChange={this.onChange}>
+                                        The <strong>quick</strong> brown fox jumps over the lazy dog
+                                    </Form.Radio>
+                                    <Form.Radio onChange={this.onChange}>
+                                        The <strong>quick</strong> brown fox jumps over the lazy dog
+                                    </Form.Radio>
+                                    </div>
+                                </div>
+                            </Form.Group>
+                            <Form.Group  xs={12} sm={12} md={6}>
+                                <div className='card'>
+                                    <div className='card-body'>
+                                        <Form.Checkbox checked>
+                                            The <strong>quick</strong> brown fox jumps over the lazy dog
+                                        </Form.Checkbox>
+                                        <Form.Checkbox>
+                                            The <strong>quick</strong> brown fox jumps over the lazy dog
+                                        </Form.Checkbox>
+                                    </div>
+                                </div>
+                            </Form.Group>
                         </Form.Row>
                     </Form.Group>
 

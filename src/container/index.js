@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import classNames from 'classnames';
 import Tag from '../tag';
+import { isObject, isNumber } from 'util';
 
 export default class Container extends React.Component  {
 
@@ -31,20 +32,55 @@ export default class Container extends React.Component  {
 
 Container.Col = function(props) {
 
-    var {tag, className, xs, sm, md, lg, width, ...other} = props;
+    var {tag: Tag, className, baseClassName, width, xs, sm, md, lg, xl, ...other} = props;
 
-    className = classNames(className, 'col');
+    className = classNames(className, baseClassName);
 
-    className = classNames(className, {[`col-${xs}`]:width});
-    className = classNames(className, {[`col-${xs}`]:xs});
-    className = classNames(className, {[`col-sm-${sm}`]:sm});
-    className = classNames(className, {[`col-md-${md}`]:md});
-    className = classNames(className, {[`col-lg-${lg}`]:lg});
+    function addClasses(type, value) {
+
+        if (isObject(value)) {
+            if (value.width)
+                className = classNames(className, {[`col-${type}-${value.width}`]:value.width});
+
+            if (value.offset)
+                className = classNames(className, {[`offset-${type}-${value.offset}`]:value.offset});
+        
+        }
+        else if (isNumber(value)) {
+            className = classNames(className, {[`col-${type}-${value}`]:value});
+        }
+    }
+
+    className = classNames(className, {[`col-`]:isObject(xs) ? xs.width : xs});
+
+    addClasses('sm', sm);
+    addClasses('md', md);
+    addClasses('lg', lg);
+    addClasses('xl', xl);
+
 
     return (
-        <Tag tag={tag} className={className} {...other}/>
+        <Tag className={className} {...other}>
+            {props.children}
+        </Tag>
     );
 }
+
+Container.Col.propTypes = {
+    tag   : PropTypes.string,
+    xs    : PropTypes.any,
+    sm    : PropTypes.any,
+    md    : PropTypes.any,
+    lg    : PropTypes.any,
+    xl    : PropTypes.any
+};
+
+
+Container.Col.defaultProps = {
+    tag: 'div',
+    baseClassName: 'col'
+};
+
 
 Container.Row = function(props) {
 
@@ -60,43 +96,8 @@ Container.Row = function(props) {
 }
 
 
-Container.Robocop = function(props) {
-
-    var {className, ...other} = props;
-
-    className = classNames(className, 'row');
-
-    return (
-        <div className={className} {...other}>
-            {props.children}
-        </div>
-    );
-}
-
-
-Container.RowX = function(props) {
-
-    return (
-        <div>
-            {props.children}
-        </div>
-    );
-}
 
 
 
-Container.Col.propTypes = {
-    tag   : PropTypes.string,
-    xs    : PropTypes.number,
-    sm    : PropTypes.number,
-    md    : PropTypes.number,
-    lg    : PropTypes.number,
-    width : PropTypes.number
-};
-
-
-Container.Col.defaultProps = {
-    tag: 'div'
-};
 
 
