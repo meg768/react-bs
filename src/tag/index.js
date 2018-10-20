@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { isObject, isNumber, isString, isBoolean } from 'util';
 
 export default function Tag(props)  {
-    var {tag : TheTag, visible, invisible, display, textAlign, verticalAlign, roundedBorder, className, textColor, backgroundColor, margin, border, borderColor, padding, children, ...other} = props;
+    var {tag : TheTag, visible, invisible, display, textAlign, float, verticalAlign, roundedBorder, className, textColor, backgroundColor, margin, border, borderColor, padding, children, ...other} = props;
 
 
     if (isObject(border)) {
@@ -65,6 +65,10 @@ export default function Tag(props)  {
         className = classNames(className, {[`align-${verticalAlign}`]:true});
     }
 
+    if (isString(float)) {
+        className = classNames(className, {[`float-${float}`]:true});
+    }
+
     if (isString(textAlign)) {
         className = classNames(className, {[`text-${textAlign}`]:true});
     }
@@ -108,9 +112,10 @@ Tag.propTypes = {
     invisible: PropTypes.bool,
     textColor: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white', 'muted']),
     backgroundColor: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white']),
-    border: PropTypes.oneOf(['left', 'top', 'right', 'bottom', 'horizontal', 'vertical', PropTypes.number]),
-    roundedBorder: PropTypes.oneOf(['top', 'left', 'right', 'bottom', 'circle', PropTypes.number]),
+    border: PropTypes.any,
+    roundedBorder: PropTypes.any,
     display: PropTypes.oneOf(['none', 'inline', 'inline-block', 'block', 'table', 'table-cell', 'table-row', 'flex', 'inline-flex']),
-    margin: PropTypes.any
+    margin: PropTypes.any,
+    float: PropTypes.oneOf(['none', 'left', 'right'])
 };
 

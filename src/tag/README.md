@@ -11,7 +11,7 @@
         Padding = 2, Margin left = 1
     </Tag>
     <br/>
-    <Tag border borderColor='warning' padding={4} rounded>
+    <Tag border borderColor='warning' padding={4} roundedBorder>
         Border warning, padding 4 and rounded corners.
     </Tag>
 

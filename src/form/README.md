@@ -52,7 +52,7 @@ class ByStockSample extends React.Component {
                     <Form.Group row>
                         <Form.Col sm={2} textAlign='right' >
                             <Form.Label inline for='name' textColor='muted'>
-                                <small>Baught at</small>
+                                <small>Bought at</small>
                             </Form.Label>
                         </Form.Col>
                         <Form.Col sm={10}>
@@ -160,7 +160,7 @@ class Sample extends React.Component {
                 <Form>
                     <Form.Group>
                         <Form.Label >Symbol</Form.Label>
-                        <Form.Input type="text" readOnly plainText id="symbol" value={this.state.stock.symbol}/>
+                        <Form.Input type="text" readOnly plainText id="symbol" value={this.state.stock.symbol} onChange={this.onChange}/>
                     </Form.Group>
 
                     <Form.Group>
@@ -238,7 +238,7 @@ class Sample extends React.Component {
                 <Form>
                     <Form.Group>
                         <Form.Label >Symbol</Form.Label>
-                        <Form.Input type="text" readOnly plainText id="symbol" value={this.state.stock.symbol}/>
+                        <Form.Input type="text" readOnly plainText id="symbol" value={this.state.stock.symbol} onChange={this.onChange}/>
                     </Form.Group>
 
                     <Form.Group>
@@ -291,7 +291,7 @@ class Sample extends React.Component {
                 <Form>
                     <Form.Group>
                         <Form.Label >Symbol</Form.Label>
-                        <Form.Input type="text" value={''}/>
+                        <Form.Input type="text" value={''} onChange={this.onChange}/>
                     </Form.Group>
                     <Form.Group>
                         <Form.Row>
@@ -310,10 +310,10 @@ class Sample extends React.Component {
                             <Form.Group  xs={12} sm={12} md={6}>
                                 <div className='card'>
                                     <div className='card-body'>
-                                        <Form.Checkbox checked>
+                                        <Form.Checkbox checked onChange={this.onChange}>
                                             The <strong>quick</strong> brown fox jumps over the lazy dog
                                         </Form.Checkbox>
-                                        <Form.Checkbox>
+                                        <Form.Checkbox onChange={this.onChange}>
                                             The <strong>quick</strong> brown fox jumps over the lazy dog
                                         </Form.Checkbox>
                                     </div>

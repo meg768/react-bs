@@ -23,9 +23,7 @@ export default class Container extends React.Component  {
         className = classNames(className, {'container-fluid' : fluid});
 
         return (
-            <Tag tag={tag} className={className} {...props}>
-                {this.props.children}
-            </Tag>
+            <Tag tag={tag} className={className} {...props}/>
         );
     }
 };
@@ -61,9 +59,7 @@ Container.Col = function(props) {
 
 
     return (
-        <Tag tag={tag} className={className} {...other}>
-            {props.children}
-        </Tag>
+        <Tag tag={tag} className={className} {...other}/>
     );
 }
 
@@ -94,9 +90,7 @@ Container.Row = function(props) {
     className = classNames(className, 'row');
 
     return (
-        <Tag tag={tag} className={className} {...other}>
-            {props.children}
-        </Tag>
+        <Tag tag={tag} className={className} {...other}/>
     );
 }
 

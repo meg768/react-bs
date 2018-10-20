@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from "prop-types";
 import classNames from 'classnames';
-import PopperJs from 'popper.js';
+import Tag from '../tag';
 
 function debug() {
     console.log.apply(null, arguments);
@@ -81,7 +81,7 @@ Modal.Body = function(props) {
 
 Modal.Header = function(props) {
 
-    var {dismiss, className, ...other} = props;
+    var {tag, dismiss, className, ...other} = props;
 
     var dismissButton = null;
 
@@ -94,22 +94,24 @@ Modal.Header = function(props) {
     }
 
     return (
-        <div className={classNames(className, 'modal-header')} {...other}>
+        <Tag tag={tag} className={classNames(className, 'modal-header')} {...other}>
             {props.children}
             {dismissButton}
-        </div>
+        </Tag>
     );
 
 }
 
+Modal.Header.defaultProps = {
+    tag: 'div'
+};
+
 Modal.Footer = function(props) {
 
-    var {className, ...other} = props;
+    var {tag = 'div', className, ...other} = props;
 
     return (
-        <div className={classNames(className, 'modal-footer')} {...other}>
-            {props.children}
-        </div>
+        <Tag tag={tag} className={classNames(className, 'modal-footer')} {...other}/>
     );
 
 }
@@ -118,12 +120,10 @@ Modal.Footer = function(props) {
 
 Modal.Title = function(props) {
 
-    var {tag : Tag = Modal.Title.defaultProps.tag, className, ...other} = props;
+    var {tag, className, ...other} = props;
 
     return (
-        <Tag className={classNames(className, 'modal-title')} {...other}>
-            {props.children}
-        </Tag>
+        <Tag tag={tag} className={classNames(className, 'modal-title')} {...other}/>
     );
 }
 

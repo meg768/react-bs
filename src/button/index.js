@@ -3,11 +3,7 @@ import classNames from 'classnames';
 import PropTypes from "prop-types";
 import Tag from '../tag';
 
-/**
 
-A simple button
-
-*/
 
 export default class Button extends Component  {
 
@@ -17,21 +13,11 @@ export default class Button extends Component  {
         this.onClick = this.onClick.bind(this);
     }
 
-
-
     static propTypes = {
-        color : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']),
-
-        /** Desired tag */
+        color      : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']),
         tag        : PropTypes.string,
-
-        /** Click handler */
         onClick    : PropTypes.func,
-
-        /** Creates an outlined button */
         outline    : PropTypes.bool,
-
-        /** Enabled/disabled */
         disabled   : PropTypes.bool
     };
 
@@ -82,22 +68,3 @@ export default class Button extends Component  {
 };
 
 
-Button.Toolbar = function(props) {
-
-    var {tag: Tag, margin, ...other} = props;
-    
-    var children = React.Children.toArray(props.children).map((child, index) => {
-        return React.cloneElement(child, {style: {margin:margin}});
-    });
-
-    return (
-        <Tag {...other}>
-            {children}
-        </Tag>
-    );
-}
-
-Button.Toolbar.defaultProps = {
-    tag: 'div',
-    margin: '0.2rem'
-};

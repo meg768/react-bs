@@ -105,38 +105,36 @@ function onClick() {
 
 ```js
 
-var style = {margin:'0.2rem'};
-
 <div>
-    <Button color='primary' outline style={style}>
+    <Button color='primary' outline margin={{horizontal:1}}>
         Primary
     </Button>
 
-    <Button color='secondary' outline style={style}>
+    <Button color='secondary' outline margin={{horizontal:1}}>
         Secondary
     </Button>
 
-    <Button color='success' outline style={style}>
+    <Button color='success' outline margin={{horizontal:1}}>
         Success
     </Button>
 
-    <Button color='danger' outline style={style}>
+    <Button color='danger' outline margin={{horizontal:1}}>
         Danger
     </Button>
 
-    <Button color='warning' outline style={style}>
+    <Button color='warning' outline margin={{horizontal:1}}>
         Warning
     </Button>
 
-    <Button color='info' outline style={style}>
+    <Button color='info' outline margin={{horizontal:1}}>
         Info
     </Button>
 
-    <Button color='light' outline style={style}>
+    <Button color='light' outline margin={{horizontal:1}}>
         Light
     </Button>
 
-    <Button color='dark' outline style={style}>
+    <Button color='dark' outline margin={{horizontal:1}}>
         Dark
     </Button>
 
@@ -144,48 +142,4 @@ var style = {margin:'0.2rem'};
 
 ```
 
-
-
-
-#### Buttons in a Toolbar
-
-```js
-
-
-<Button.Toolbar>
-    <Button color='primary' outline>
-        Primary
-    </Button>
-
-    <Button color='secondary' outline>
-        Secondary
-    </Button>
-
-    <Button color='success' outline>
-        Success
-    </Button>
-
-    <Button color='danger' outline>
-        Danger
-    </Button>
-
-    <Button color='warning' outline>
-        Warning
-    </Button>
-
-    <Button color='info' outline>
-        Info
-    </Button>
-
-    <Button color='light' outline>
-        Light
-    </Button>
-
-    <Button color='dark' outline>
-        Dark
-    </Button>
-
-</Button.Toolbar>
-
-```
 
