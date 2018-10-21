@@ -154,7 +154,9 @@ export default class Popover extends React.Component {
 
 
     renderTarget() {
-        return (React.cloneElement(this.getTarget(), {onClick:this.onTargetClick, ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
+        var target = this.getTarget();
+        var style = Object.assign({}, {cursor:'pointer'}, target.props.style);
+        return (React.cloneElement(target, {style:style, onClick:this.onTargetClick, ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
     }
 
 

@@ -57,3 +57,46 @@ class Sample extends React.Component {
     <Sample text='Aeque' color='info' outline placement='bottom-end'/>
     <Sample text='Atqui' color='warning' outline placement='bottom-start'/>
 </div>
+```
+
+
+```js
+
+class Sample extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {};
+    }
+
+    render() {
+
+        return (
+            <Tag margin={{horizontal:1}} display='inline-block'>
+                <Popover  placement={this.props.placement} >
+                    <Popover.Target>
+                        <Tag tag='span' textColor={this.props.color}>
+                            {this.props.text}
+                        </Tag>
+                    </Popover.Target>
+                    <Popover.Header>
+                        Eos modo
+                    </Popover.Header>
+                    <Popover.Body>
+                        Te alii dicam fabulas mei. Quo graeco iuvaret scaevola no.
+                    </Popover.Body>
+                </Popover>
+            </Tag>
+        );
+
+    }
+}
+
+<div>
+    <Sample text='Labore' color='primary' placement='bottom'/>
+    <Sample text='Aeque' color='info' outline placement='bottom-end'/>
+    <Sample text='Atqui' color='warning' outline placement='bottom-start'/>
+</div>
+
+```
