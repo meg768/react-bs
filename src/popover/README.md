@@ -35,7 +35,9 @@ class Sample extends React.Component {
             <Tag margin={{horizontal:1}} display='inline-block'>
                 <Popover  placement={this.props.placement} >
                     <Popover.Target>
-                        {target}
+                        <Button color={this.props.color} outline={this.props.outline}>
+                            {this.props.text}
+                        </Button>
                     </Popover.Target>
                     <Popover.Header>
                         Eos modo

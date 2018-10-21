@@ -66,7 +66,6 @@ export default class Popover extends React.Component {
     }
 
     onTargetClick(event) { 
-        console.log('CLICK!')
         this.togglePopper();
     }
 
