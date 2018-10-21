@@ -16,9 +16,6 @@ class Sample extends React.Component {
         super(props);
 
         this.state = {};
-        this.state.isOpen = false;
-
-        this.toggle = this.toggle.bind(this);
     }
 
     toggle() {
@@ -29,14 +26,17 @@ class Sample extends React.Component {
 
     render() {
         var target = (
-            <Button color={this.props.color} outline={this.props.outline} onClick={this.toggle}>
+            <Button color={this.props.color} outline={this.props.outline}>
                 {this.props.text}
             </Button>
 
         );
         return (
-            <div className='mx-1 d-inline-block'>
-                <Popover target={target} placement={this.props.placement} dismiss={this.toggle} isOpen={this.state.isOpen}>
+            <Tag margin={{horizontal:1}} display='inline-block'>
+                <Popover  placement={this.props.placement} >
+                    <Popover.Target>
+                        {target}
+                    </Popover.Target>
                     <Popover.Header>
                         Eos modo
                     </Popover.Header>
@@ -44,7 +44,7 @@ class Sample extends React.Component {
                         Te alii dicam fabulas mei. Quo graeco iuvaret scaevola no.
                     </Popover.Body>
                 </Popover>
-            </div>
+            </Tag>
         );
 
     }
@@ -52,6 +52,6 @@ class Sample extends React.Component {
 
 <div>
     <Sample text='Labore' color='primary' placement='bottom'/>
-    <Sample text='Aeque' color='info' outline placement='top-start'/>
+    <Sample text='Aeque' color='info' outline placement='bottom-end'/>
     <Sample text='Atqui' color='warning' outline placement='bottom-start'/>
 </div>
