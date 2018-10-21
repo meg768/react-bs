@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from "prop-types";
 import classNames from 'classnames';
 import PopperJs from 'popper.js';
+import Fade from '../fade';
 
 function debug() {
     console.log.apply(null, arguments);

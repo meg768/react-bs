@@ -107,7 +107,7 @@ Tag.defaultProps = {
 };
 
 Tag.propTypes = {
-    tag: PropTypes.any,
+    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     visible: PropTypes.bool,
     invisible: PropTypes.bool,
     textColor: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white', 'muted']),

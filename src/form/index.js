@@ -17,7 +17,7 @@ var _uniqueID = 0;
 export default class Form extends Component  {
 
     static defaultProps = {
-        tag: 'form',
+        tag: 'div',
         inline: false
     }
 
@@ -43,6 +43,7 @@ export default class Form extends Component  {
 };
 
 
+
 Form.Group = function(props)  {
 
     var {row, className, ...other} = props;
@@ -56,20 +57,17 @@ Form.Group = function(props)  {
     );
 }
 
-Form.Row = class extends Component {
+Form.Row = function(props) {
 
-    render() {
+    var {tag = 'div', className, ...other} = props;
+    className = classNames(className, 'form-row');
 
-        var {className, ...props} = this.props;
-        className = classNames(className, 'form-row');
+    return (
+        <Tag tag={tag} {...other} className={className}>
+            {props.children}
+        </Tag>
 
-        return (
-            <div {...props} className={className}>
-                {this.props.children}
-            </div>
-
-        );
-    }
+    );
 }
 
 Form.Col = function(props) {
@@ -91,6 +89,7 @@ Form.Input = class extends React.Component  {
         className = classNames(className, {'form-control':true});
         className = classNames(className, {'form-control-sm':size=='sm'});
         className = classNames(className, {'form-control-lg':size=='lg'});
+        className = classNames(className, {'form-control-plaintext':plainText});
     
         return (
             <Tag tag={tag} {...props} className={className}>
@@ -131,7 +130,7 @@ Form.Label.defaultProps = {
 };
 
 Form.Label.propTypes = {
-    tag: PropTypes.string,
+    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     inline: PropTypes.bool,
     muted: PropTypes.bool
 };

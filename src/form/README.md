@@ -3,7 +3,7 @@
 ```js
 
 
-class ByStockSample extends React.Component {
+class FormSampleOne extends React.Component {
 
 
     constructor(props) {
@@ -28,7 +28,7 @@ class ByStockSample extends React.Component {
                 <Form>
                     <Form.Group row>
                         <Form.Col xs={1} sm={2} textAlign='right' >
-                            <Form.Label inline for='name' textColor='muted'>
+                            <Form.Label inline textColor='muted'>
                                 <small>Ticker</small>
                             </Form.Label>
                         </Form.Col>
@@ -39,7 +39,7 @@ class ByStockSample extends React.Component {
 
                     <Form.Group row>
                         <Form.Col sm={2} textAlign='right' >
-                            <Form.Label inline for='name' textColor='muted'>
+                            <Form.Label inline textColor='muted'>
                                 <small>Company name</small>
                             </Form.Label>
                         </Form.Col>
@@ -51,7 +51,7 @@ class ByStockSample extends React.Component {
 
                     <Form.Group row>
                         <Form.Col sm={2} textAlign='right' >
-                            <Form.Label inline for='name' textColor='muted'>
+                            <Form.Label inline textColor='muted'>
                                 <small>Bought at</small>
                             </Form.Label>
                         </Form.Col>
@@ -62,7 +62,7 @@ class ByStockSample extends React.Component {
 
                     <Form.Group row>
                         <Form.Col sm={2} textAlign='right' >
-                            <Form.Label inline for='name' textColor='muted'>
+                            <Form.Label inline textColor='muted'>
                                 <small>
                                     Number of stocks
                                 </small>
@@ -76,13 +76,13 @@ class ByStockSample extends React.Component {
 
                     <Form.Group row>
                         <Form.Col sm={2} textAlign='right' >
-                            <Form.Label  for='name' inline textColor='muted'>
-                                <small>Stop loss</small>
+                            <Form.Label  inline textColor='muted'>
+                                <small>Stop lossXXX</small>
                             </Form.Label>
                         </Form.Col>
 
                         <Form.Col sm={10}>
-                            <Form inline  padding={{bottom:1, top:1}}>
+                            <Form inline padding={{bottom:1, top:1}}>
                                 <Form.Radio type="email" id="name" placeholder="Ticker">
                                     Dragging
                                 </Form.Radio>
@@ -117,7 +117,7 @@ class ByStockSample extends React.Component {
 }
 
 
-<ByStockSample/>
+<FormSampleOne/>
 ```
 
 
@@ -127,7 +127,7 @@ class ByStockSample extends React.Component {
 ```js
 
 
-class Sample extends React.Component {
+class FormSampleTwo extends React.Component {
 
 
     constructor(props) {
@@ -194,7 +194,7 @@ class Sample extends React.Component {
 }
 
 
-<Sample/>
+<FormSampleTwo/>
 ```
 
 
@@ -205,7 +205,7 @@ class Sample extends React.Component {
 ```js
 
 
-class Sample extends React.Component {
+class FormSampleThree extends React.Component {
 
 
     constructor(props) {
@@ -252,7 +252,7 @@ class Sample extends React.Component {
 }
 
 
-<Sample/>
+<FormSampleThree/>
 ```
 
 
@@ -264,7 +264,7 @@ class Sample extends React.Component {
 ```js
 
 
-class Sample extends React.Component {
+class FormSampleCheckboxes extends React.Component {
 
 
     constructor(props) {
@@ -329,5 +329,5 @@ class Sample extends React.Component {
 }
 
 
-<Sample/>
+<FormSampleCheckboxes/>
 ```
