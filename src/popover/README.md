@@ -53,9 +53,10 @@ class Sample extends React.Component {
 }
 
 <div>
-    <Sample text='Labore' color='primary' placement='bottom'/>
-    <Sample text='Aeque' color='info' outline placement='bottom-end'/>
-    <Sample text='Atqui' color='warning' outline placement='bottom-start'/>
+    <Sample text='Left' color='primary' placement='left'/>
+    <Sample text='Top' color='info' outline placement='top'/>
+    <Sample text='Bottom' color='warning' outline placement='bottom'/>
+    <Sample text='Right' color='danger' outline placement='right'/>
 </div>
 ```
 
@@ -94,9 +95,10 @@ class Sample extends React.Component {
 }
 
 <div>
-    <Sample text='Labore' color='primary' placement='bottom'/>
-    <Sample text='Aeque' color='info' outline placement='bottom-end'/>
-    <Sample text='Atqui' color='warning' outline placement='bottom-start'/>
+    <Sample text='Left' color='primary' placement='left'/>
+    <Sample text='Top' color='info' outline placement='top'/>
+    <Sample text='Bottom' color='warning' outline placement='bottom'/>
+    <Sample text='Right' color='dark' outline placement='right'/>
 </div>
 
 ```
