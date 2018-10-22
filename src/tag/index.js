@@ -15,6 +15,9 @@ export default class Tag extends React.Component  {
             className = classNames(className, {'border-right':border.right});
             className = classNames(className, {'border-bottom':border.bottom});
         }
+        else if (isString(border)) {
+            className = classNames(className, {[`border-${border}`]:true});
+        }
         else if (border) {
             className = classNames(className, {'border':true});
     

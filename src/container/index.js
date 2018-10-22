@@ -50,8 +50,16 @@ Container.Col = function(props) {
         }
     }
 
-    className = classNames(className, {[`col-`]:isObject(xs) ? xs.width : xs});
+    if (isObject(xs)) {
+        className = classNames(className, {[`col-${xs.width}`]:xs.width});
 
+    }
+    else if (isNumber(xs)) {
+        className = classNames(className, {[`col-${xs}`]:xs});
+
+    }
+
+    
     addClasses('sm', sm);
     addClasses('md', md);
     addClasses('lg', lg);
