@@ -20,28 +20,28 @@ class DropdownSample extends React.Component {
         super(props);
 
         this.state = {};
-        this.state.isOpen = false;
-        this.toggle = this.toggle.bind(this);
+
 
     }
 
-    toggle(event) {
-        console.log('toggle');
-        this.setState({isOpen:!this.state.isOpen});
-    }
+render() {
+        var target = (
+            <Button color='primary' >
+                Primary
+            </Button>
+        );
 
-    render() {
+        var goHome = () => {
+            console.log('Go home');
+        }
         return (
             <div>
-                <Dropdown dismiss={this.toggle}  isOpen={this.state.isOpen} placement='bottom-start'>
-                    /* Place your target here */
-                    <Dropdown.Target >
-                        <Button color='primary' onClick={this.toggle}>
-                            Primary
-                        </Button>
+                <Dropdown placement='bottom-start'>
+                    <Dropdown.Target>
+                        {target}
                     </Dropdown.Target>
                     <Dropdown.Menu >
-                        <Dropdown.Item>
+                        <Dropdown.Item onClick={goHome}>
                             Go home
                         </Dropdown.Item>
                         <Dropdown.Separator/>
