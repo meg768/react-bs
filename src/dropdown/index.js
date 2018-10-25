@@ -165,8 +165,9 @@ export default class Dropdown extends React.Component {
 
     renderTarget() {
         var target = this.getTarget();
+        var style = Object.assign({}, target.props.style, {cursor:'pointer'});
 
-        return (React.cloneElement(target, {onClick:this.onTargetClick, ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
+        return (React.cloneElement(target, {style:style, onClick:this.onTargetClick, ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
     }
 
     renderMenu() {
