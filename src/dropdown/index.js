@@ -266,3 +266,16 @@ Dropdown.Separator = function(props) {
     );
 }
 
+
+
+Dropdown.Header = function(props) {
+
+    var {tag = 'div', className, ...other} = props;
+
+    className = classNames(className, 'dropdown-header');
+
+    return (
+        <Tag tag={tag} className={className} {...other}/>
+    );
+}
+

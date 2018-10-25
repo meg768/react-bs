@@ -20,37 +20,42 @@ class DropdownSample extends React.Component {
         super(props);
 
         this.state = {};
-
-
+        this.state.text = '';
     }
 
-render() {
-        var target = (
-            <Button color='primary' >
-                Primary
-            </Button>
-        );
+    setText(text) {
+        this.setState({text:text});
+    }
 
-        var goHome = () => {
-            console.log('Go home');
-        }
+    render() {
         return (
-            <div>
-                <Dropdown placement='bottom-start'>
-                    <Dropdown.Target>
-                        {target}
-                    </Dropdown.Target>
-                    <Dropdown.Menu >
-                        <Dropdown.Item onClick={goHome}>
-                            Go home
-                        </Dropdown.Item>
-                        <Dropdown.Separator/>
-                        <Dropdown.Item>
-                            Go back
-                        </Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-            </div>
+            <Form padding={{horizontal:2}}>
+                <Form.Group row>
+                    <Dropdown placement='bottom-start'>
+                        <Dropdown.Target>
+                            <Button outline color='primary'>
+                                Primary
+                            </Button>
+                        </Dropdown.Target>
+                        <Dropdown.Menu >
+                            <Dropdown.Item onClick={this.setText.bind(this, 'Gone home.')}>
+                                Go home
+                            </Dropdown.Item>
+                            <Dropdown.Item onClick={this.setText.bind(this, 'Went back.')}>
+                                Go back
+                            </Dropdown.Item>
+                            <Dropdown.Separator/>
+                            <Dropdown.Item onClick={this.setText.bind(this, '')}>
+                                Never mind
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    <Form.Label float='right' textColor='muted' margin={{left:2}} inline>
+                        {this.state.text}
+                    </Form.Label>
+
+                </Form.Group>
+            </Form>
         );
 
     }
