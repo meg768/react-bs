@@ -2,6 +2,46 @@
 
 ```js
 
+    <form className="form-inline">
+        <div className="form-group">
+            <label >Password</label>
+            <input type="password" className="form-control mx-sm-3" aria-describedby="passwordHelpInline"/>
+            <small id="passwordHelpInline" className="text-muted">
+                Must be 8-20 characters long.
+            </small>
+        </div>
+    </form>
+
+```
+
+
+```js
+
+
+    <Form >
+        <Form.Group row>
+            <Form.Col sm={2} textAlign='right'>
+                <Form.Label inline ><small>Company name</small></Form.Label>
+            </Form.Col>
+            <Form.Col sm={10}>
+                <Form.Input type="text"/>
+            </Form.Col>
+        </Form.Group>
+
+        <Form.Group row>
+            <Form.Col sm={2} textAlign='right'>
+                <Form.Label inline ><small>Bought at</small></Form.Label>
+            </Form.Col>
+            <Form.Col sm={10}>
+                <Form.Input type="text"/>
+            </Form.Col>
+        </Form.Group>
+    </Form>
+
+```
+
+```js
+
 
 class FormSampleOne extends React.Component {
 
@@ -25,14 +65,15 @@ class FormSampleOne extends React.Component {
 
     render() {
         return (
-                <Form>
+
+                <Form >
                     <Form.Group row>
-                        <Form.Col xs={1} sm={2} textAlign='right' >
+                        <Form.Col sm={2} textAlign='right' >
                             <Form.Label inline textColor='muted'>
                                 <small>Ticker</small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col xs={11} sm={10}>
+                        <Form.Col sm={10} textAlign='right' >
                             <Form.Input type="text" id="name" placeholder="Ticker"/>
                         </Form.Col>
                     </Form.Group>
@@ -56,7 +97,7 @@ class FormSampleOne extends React.Component {
                             </Form.Label>
                         </Form.Col>
                         <Form.Col sm={10}>
-                            <Form.Input type="text" id="name" placeholder="Price"/>
+                            <Form.Input type="text" placeholder="Price"/>
                         </Form.Col>
                     </Form.Group>
 
@@ -69,40 +110,41 @@ class FormSampleOne extends React.Component {
                             </Form.Label>
                         </Form.Col>
                         <Form.Col sm={10}>
-                            <Form.Input type="text" id="name" placeholder="Amount"/>
+                            <Form.Input type="text" placeholder="Amount"/>
                         </Form.Col>
                     </Form.Group>
 
 
-                    <Form.Group row>
-                        <Form.Col sm={2} textAlign='right' >
+                    <Form.Group row >
+                        <Form.Col sm={2} textAlign='right' padding={{vertical:0}}>
                             <Form.Label  inline textColor='muted'>
-                                <small>Stop lossXXX</small>
+                                <small>Stop loss</small>
                             </Form.Label>
                         </Form.Col>
 
                         <Form.Col sm={10}>
-                            <Form inline padding={{bottom:1, top:1}}>
-                                <Form.Radio type="email" id="name" placeholder="Ticker">
-                                    Dragging
+                            <Form inline padding={{vertical:1}}>
+                                <Form.Radio type="text" placeholder="Ticker" textColor='muted'>
+                                    <small>Continous stop loss</small>
                                 </Form.Radio>
 
-                                <Form.Input size='sm' margin={{left:2, right:2}} type="text" id="name" placeholder=""/>
+                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
+                                <Form.Label textColor='muted'>%</Form.Label>
                             </Form>
 
-                            <Form inline  padding={{bottom:1, top:1}}>
-                                <Form.Radio type="text" id="name" placeholder="">
-                                    When price below
+                            <Form inline padding={{vertical:1}}>
+                                <Form.Radio type="text" id="name" placeholder="" textColor='muted'>
+                                    <small>When price below</small>
                                 </Form.Radio>
-                                <Form.Input size='sm' margin={{left:2, right:2}} type="text" id="name" placeholder=""/>
+                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                             </Form>
                             
-                            <Form inline padding={{bottom:1, top:1}}>
-                                <Form.Radio type="email" id="name" placeholder="Ticker">
-                                    When price dropped with 
+                            <Form inline padding={{vertical:1}}>
+                                <Form.Radio type="text" id="name" placeholder="Ticker" textColor='muted'>
+                                    <small>When price dropped with more than</small> 
                                 </Form.Radio>
-                                <Form.Input size='sm' margin={{left:2, right:2}} type="text" id="name" placeholder=""/>
-                                <Form.Label>%</Form.Label>
+                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" id="name" placeholder=""/>
+                                <Form.Label textColor='muted'>%</Form.Label>
                             </Form>
                         </Form.Col>
                     </Form.Group>
@@ -196,66 +238,6 @@ class FormSampleTwo extends React.Component {
 
 <FormSampleTwo/>
 ```
-
-
-### Yet Another Sample
-
-
-
-```js
-
-
-class FormSampleThree extends React.Component {
-
-
-    constructor(props) {
-        super(props);
-
-        this.state = {};
-        this.state.stock = {};
-        this.state.stock.symbol   = 'AAPL';
-        this.state.stock.name     = '';
-        this.state.stock.industry = '';
-        this.state.stock.exchange = '';
-        this.state.stock.sector   = '';
-
-        this.state.loading = false;
-
-
-        this.onChange = this.onChange.bind(this);
-
-
-    }
-
-    onChange(event) {
-        var stock = this.state.stock;
-        stock[event.target.id] = event.target.value;
-        this.setState({stock:stock});
-    }
-
-    render() {
-        return (
-                <Form>
-                    <Form.Group>
-                        <Form.Label >Symbol</Form.Label>
-                        <Form.Input type="text" readOnly plainText id="symbol" value={this.state.stock.symbol} onChange={this.onChange}/>
-                    </Form.Group>
-
-                    <Form.Group>
-                        <Form.Label >Name</Form.Label>
-                        <Form.Input id='name' type="text" disabled={this.state.loading} value={this.state.stock.name} placeholder="Name" onChange={this.onChange}/>
-                    </Form.Group>
-
-                </Form>
-        );
-    }
-}
-
-
-<FormSampleThree/>
-```
-
-
 
 
 ### Checkboxes

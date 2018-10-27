@@ -5,6 +5,7 @@ examples
 scripts
 fontello
 styleguide
+styleguide.css
 styleguide.config.js
 webpack.config.js
 README.md
