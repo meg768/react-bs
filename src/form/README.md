@@ -74,7 +74,7 @@ class FormSampleOne extends React.Component {
                             </Form.Label>
                         </Form.Col>
                         <Form.Col sm={10} textAlign='right' >
-                            <Form.Input type="text" id="name" placeholder="Ticker"/>
+                            <Form.Input type="text"  placeholder="Ticker"/>
                         </Form.Col>
                     </Form.Group>
 
@@ -85,7 +85,7 @@ class FormSampleOne extends React.Component {
                             </Form.Label>
                         </Form.Col>
                         <Form.Col sm={10}>
-                            <Form.Input type="text" id="name" placeholder="Name"/>
+                            <Form.Input type="text" placeholder="Name"/>
                         </Form.Col>
                     </Form.Group>
 
@@ -133,17 +133,17 @@ class FormSampleOne extends React.Component {
                             </Form>
 
                             <Form inline padding={{vertical:1}}>
-                                <Form.Radio type="text" id="name" placeholder="" textColor='muted'>
+                                <Form.Radio type="text" placeholder="" textColor='muted'>
                                     <small>When price below</small>
                                 </Form.Radio>
                                 <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                             </Form>
                             
                             <Form inline padding={{vertical:1}}>
-                                <Form.Radio type="text" id="name" placeholder="Ticker" textColor='muted'>
+                                <Form.Radio type="text" placeholder="Ticker" textColor='muted'>
                                     <small>When price dropped with more than</small> 
                                 </Form.Radio>
-                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" id="name" placeholder=""/>
+                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                                 <Form.Label textColor='muted'>%</Form.Label>
                             </Form>
                         </Form.Col>
@@ -207,7 +207,7 @@ class FormSampleTwo extends React.Component {
 
                     <Form.Group>
                         <Form.Label >Name</Form.Label>
-                        <Form.Input id='name' type="text" disabled={this.state.loading} value={this.state.stock.name} placeholder="Name" onChange={this.onChange}/>
+                        <Form.Input type="text" disabled={this.state.loading} value={this.state.stock.name} placeholder="Name" onChange={this.onChange}/>
                     </Form.Group>
 
                     <Form.Row>
