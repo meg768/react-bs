@@ -2,10 +2,11 @@ import React from 'react';
 import classNames from 'classnames';
 import Tag from '../tag';
 
+var _glyphs = [];
 
 export default function Glyph(props) {
 
-    var {tag = 'i', className, name, glyph, icon, ...other} = props;
+    var {tag, className, name, glyph, icon, ...other} = props;
 
     if (icon && !name)
         name = icon;
@@ -22,3 +23,4 @@ Glyph.defaultProps = {
     tag: 'i',
     prefix: 'icon-'
 };
+

@@ -3,17 +3,24 @@
 ```js
 
 
-    <Tag border borderColor='primary' roundedBorder padding={1} backgroundColor='warning' margin={{bottom:1, top:1}}>
-        Padding left = 1
+    <Tag border='primary' rounded textColor='light' backgroundColor='info' padding={{left:3, right:3, bottom:2, top:2}}>
+        Primary border, rounded borders, light text color, info background color and some padding 
     </Tag>
-    <br/>
-    <Tag border={true} roundedBorder={{top:true}} borderColor='secondary' padding={2} margin={{left:0}}>
-        Padding = 2, Margin left = 1
+    <hr/>
+    <Tag border='dark' rounded={{top:true}} backgroundColor='light' padding={2}>
+        Dark border, rounded top, light background color, padding 2
     </Tag>
-    <br/>
-    <Tag border borderColor='warning' padding={4} roundedBorder>
-        Border warning, padding 4 and rounded corners.
+    <hr/>
+    <Tag border='warning' padding={{left:3, right:3}} rounded margin={2}>
+        Border warning, left and right padding 3 and rounded corners.
     </Tag>
+    <hr/>
+
+    <Tag border='secondary' padding={3} textAlign='right'>
+        Border secondary, padding 3 and text aligned right.
+    </Tag>
+    <hr/>
+
 
 ```
 

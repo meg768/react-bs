@@ -6,7 +6,7 @@ import { isObject, isNumber, isString, isBoolean } from 'util';
 export default class Tag extends React.Component  {
 
     render() {
-        var {tag : TheTag, visible, invisible, display, textAlign, float, verticalAlign, roundedBorder, className, textColor, backgroundColor, margin, border, borderColor, padding, children, ...other} = this.props;
+        var {tag : TheTag, visible, invisible, display, textAlign, float, verticalAlign, rounded, className, textColor, backgroundColor, margin, border, borderColor, padding, children, ...other} = this.props;
 
 
         if (isObject(border)) {
@@ -14,17 +14,19 @@ export default class Tag extends React.Component  {
             className = classNames(className, {'border-top':border.top});
             className = classNames(className, {'border-right':border.right});
             className = classNames(className, {'border-bottom':border.bottom});
+            className = classNames(className, {'border':true});
         }
         else if (isString(border)) {
             className = classNames(className, {[`border-${border}`]:true});
+            className = classNames(className, {'border':true});
         }
         else if (border) {
             className = classNames(className, {'border':true});
-    
         }
     
         if (isString(borderColor)) {
             className = classNames(className, {[`border-${borderColor}`]:true});
+            className = classNames(className, {'border':true});
         }
     
     
@@ -78,20 +80,20 @@ export default class Tag extends React.Component  {
             className = classNames(className, {[`text-${textAlign}`]:true});
         }
     
-        if (isBoolean(roundedBorder)) {
-            className = classNames(className, {[`rounded`]:roundedBorder});
+        if (isBoolean(rounded)) {
+            className = classNames(className, {[`rounded`]:rounded});
         }
-        else if (isString(roundedBorder)) {
-            className = classNames(className, {[`rounded-${roundedBorder}`]:roundedBorder});
+        else if (isString(rounded)) {
+            className = classNames(className, {[`rounded-${rounded}`]:rounded});
         }
-        else if (isNumber(roundedBorder)) {
-            className = classNames(className, {[`rounded-${roundedBorder}`]:true});
+        else if (isNumber(rounded)) {
+            className = classNames(className, {[`rounded-${rounded}`]:true});
         }
-        else if (isObject(roundedBorder)) {
-            className = classNames(className, {'rounded-left':roundedBorder.left});
-            className = classNames(className, {'rounded-top':roundedBorder.top});
-            className = classNames(className, {'rounded-right':roundedBorder.right});
-            className = classNames(className, {'rounded-bottom':roundedBorder.bottom});
+        else if (isObject(rounded)) {
+            className = classNames(className, {'rounded-left':rounded.left});
+            className = classNames(className, {'rounded-top':rounded.top});
+            className = classNames(className, {'rounded-right':rounded.right});
+            className = classNames(className, {'rounded-bottom':rounded.bottom});
     
         }
     
@@ -120,7 +122,7 @@ Tag.propTypes = {
     textColor: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white', 'muted']),
     backgroundColor: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white']),
     border: PropTypes.any,
-    roundedBorder: PropTypes.any,
+    rounded: PropTypes.any,
     display: PropTypes.oneOf(['none', 'inline', 'inline-block', 'block', 'table', 'table-cell', 'table-row', 'flex', 'inline-flex']),
     margin: PropTypes.any,
     float: PropTypes.oneOf(['none', 'left', 'right'])

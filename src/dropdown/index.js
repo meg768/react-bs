@@ -16,28 +16,28 @@ export default class Dropdown extends React.Component {
     constructor(args) {
         super(args);
 
-        this.state = {popper:null};
+        this.state = {};
+        this.state.popper = null;
+        this.state.isOpen = false;
 
         this.popper     = null;
         this.targetNode = null;
         this.dropdownNode  = null;
 
         this.onDocumentClick = this.onDocumentClick.bind(this);
+        this.onTargetClick = this.onTargetClick.bind(this);
 
     }
 
     static propTypes = {
-        dismiss : PropTypes.func,
-        isOpen  : PropTypes.bool
+        target: PropTypes.any
     };
 
     static defaultProps = {
-        tag : 'div',
-        placement: 'bottom-start',
-        isOpen : false,
-        toggle : null,
-        dismiss : null,
-        modifiers: {
+        tag       : 'div',
+        target    : null,
+        placement : 'bottom-start',
+        modifiers : {
             preventOverflow: {
                 boundariesElement: 'viewport',
             }
@@ -46,65 +46,86 @@ export default class Dropdown extends React.Component {
 
 
     componentDidMount() {
-
-        if (this.props.dismiss)
-            document.addEventListener('click', this.onDocumentClick, true);
-
-        this.createPopper();
-    }
-
-    componentWillReceiveProps() {
-        if (!this.popper) {
-            this.createPopper();
-        }
-        this.updatePopper();
     }
 
     componentWillUnmount() {
-
-        if (this.props.dismiss)
-            document.removeEventListener('click', this.onDocumentClick, true);
-
         this.destroyPopper();
     }
 
     onDocumentClick(event) {
 
-        if (this.props.isOpen) {
+        if (this.state.isOpen) {
+
+            console.log('target', event.target);
 
             if (this.targetNode.contains(event.target)) {
-                return;
+                console.log('Inside target', event.target);
+            }
+            else if (this.dropdownNode.contains(event.target)) {
+                console.log('Inside dropdown', event.target);
+                this.hidePopper();
+                
             }
 
-            if (!this.dropdownNode.contains(event.target)) {
-                if (this.props.dismiss) {
-                    this.props.dismiss();
-                }
+            else  {
+                console.log('Both outside target and dropdown', event.target);
+                this.hidePopper();
             }
+
         }
     }
 
+
+    onTargetClick(event) { 
+        console.log('Target click');
+        this.togglePopper();
+    }
+
     createPopper() {
-        var options = {
-            placement : this.props.placement,
-            modifiers : this.props.modifiers,
-            onCreate  : (state) => {this.setState({popper:state})},
-            onUpdate  : (state) => {this.setState({popper:state})}
 
-        };
+        if (this.popper == null) {
+            document.addEventListener('click', this.onDocumentClick, true);
 
-        this.popper = new PopperJs(this.targetNode, this.dropdownNode, options);
-
-        this.updatePopper();
+            var options = {
+                placement : this.props.placement,
+                modifiers : this.props.modifiers,
+                onCreate  : (state) => {this.setState({popper:state})},
+                onUpdate  : (state) => {this.setState({popper:state})}
+    
+            };
+    
+            this.popper = new PopperJs(this.targetNode, this.dropdownNode, options);
+            this.updatePopper();
+        }
     }
 
     destroyPopper() {
         if (this.popper) {
+            document.removeEventListener('click', this.onDocumentClick, true);
             this.popper.destroy();
         }
 
+        this.popper = null;
+
     }
 
+
+    togglePopper() {
+        if (this.state.isOpen)
+            this.hidePopper();
+        else
+            this.showPopper();
+    }
+
+    showPopper() {
+        this.createPopper();
+        this.setState({isOpen:true});
+    }
+
+    hidePopper() {
+        this.destroyPopper();
+        this.setState({isOpen:false});
+    }
 
     updatePopper() {
         requestAnimationFrame(() => {
@@ -115,27 +136,43 @@ export default class Dropdown extends React.Component {
     }
 
 
-    getDropdownTarget() {
+    getChildOfType(type) {
         return React.Children.toArray(this.props.children).find((child) => {
-            return child.type === Dropdown.Target;
+            return child.type === type;
         })
     }
 
-    getDropdownMenu() {
-        return React.Children.toArray(this.props.children).find((child) => {
-            return child.type === Dropdown.Menu;
-        });
+    getTarget() {
+        var target = null;
+
+        if (this.props.target)
+            target = this.props.target;
+        else {
+            var dropdownTarget = this.getChildOfType(Dropdown.Target);
+            
+            if (dropdownTarget)
+                target = dropdownTarget.props.children;
+        }
+
+        return target;
     }
 
 
-    renderDropdownTarget() {
-        var target = this.getDropdownTarget();
-        return (React.cloneElement(target, {ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
+    getMenu() {
+        return this.getChildOfType(Dropdown.Menu);
     }
 
-    renderDropdownMenu() {
-        var menu = this.getDropdownMenu();
-        return (React.cloneElement(menu, {isOpen:this.props.isOpen, ref:(element) => {this.dropdownNode = ReactDOM.findDOMNode(element)}}));
+
+    renderTarget() {
+        var target = this.getTarget();
+        var style = Object.assign({}, target.props.style, {cursor:'pointer'});
+
+        return (React.cloneElement(target, {style:style, onClick:this.onTargetClick, ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
+    }
+
+    renderMenu() {
+        var menu = this.getMenu();
+        return (React.cloneElement(menu, {isOpen:this.state.isOpen, ref:(element) => {this.dropdownNode = ReactDOM.findDOMNode(element)}}));
     }
 
 
@@ -144,8 +181,8 @@ export default class Dropdown extends React.Component {
 
         return (
             <Tag tag={tag} {...props}>
-                {this.renderDropdownTarget()}
-                {this.renderDropdownMenu()}
+                {this.renderTarget()}
+                {this.renderMenu()}
             </Tag>
         );
 
@@ -198,16 +235,24 @@ Dropdown.Menu = class extends React.Component {
 
 
 
-Dropdown.Item = function(props) {
+Dropdown.Item = class extends React.Component {
 
-    var {tag = 'div', style, className, ...other} = props;
+    constructor(props) {
+        super(props);
+    }
 
-    className = classNames(className, 'dropdown-item');
-    style = Object.assign({}, style, {cursor:'pointer'});
+    render() {
+        var {tag = 'div', style, className, ...other} = this.props;
 
-    return (
-        <Tag tag={tag} tabIndex={1} style={style} className={className} {...other}/>
-    );
+        className = classNames(className, 'dropdown-item');
+        style = Object.assign({}, style, {cursor:'pointer'});
+
+
+        return (
+            <Tag tag={tag} tabIndex={1} style={style} className={className} {...other}/>
+        );
+    
+    }
 }
 
 Dropdown.Separator = function(props) {
@@ -220,3 +265,17 @@ Dropdown.Separator = function(props) {
         <Tag tag={tag} className={className} {...other}/>
     );
 }
+
+
+
+Dropdown.Header = function(props) {
+
+    var {tag = 'div', className, ...other} = props;
+
+    className = classNames(className, 'dropdown-header');
+
+    return (
+        <Tag tag={tag} className={className} {...other}/>
+    );
+}
+
