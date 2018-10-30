@@ -6,7 +6,7 @@ import { isObject, isNumber, isString, isBoolean } from 'util';
 export default class Tag extends React.Component  {
 
     render() {
-        var {tag : TheTag, visible, invisible, display, textAlign, float, verticalAlign, rounded, className, textColor, backgroundColor, margin, border, borderColor, padding, children, ...other} = this.props;
+        var {tag : TheTag, visible, invisible, display, textAlign, float, verticalAlign, rounded, className, textColor, backgroundColor, margin, border, padding, children, ...other} = this.props;
 
 
         if (isObject(border)) {
@@ -23,13 +23,7 @@ export default class Tag extends React.Component  {
         else if (border) {
             className = classNames(className, {'border':true});
         }
-    
-        if (isString(borderColor)) {
-            className = classNames(className, {[`border-${borderColor}`]:true});
-            className = classNames(className, {'border':true});
-        }
-    
-    
+        
         if (isNumber(padding)) {
             className = classNames(className, {[`p-${padding}`]:padding});
     
@@ -116,15 +110,16 @@ Tag.defaultProps = {
 };
 
 Tag.propTypes = {
-    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    visible: PropTypes.bool,
-    invisible: PropTypes.bool,
-    textColor: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white', 'muted']),
-    backgroundColor: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white']),
-    border: PropTypes.any,
-    rounded: PropTypes.any,
-    display: PropTypes.oneOf(['none', 'inline', 'inline-block', 'block', 'table', 'table-cell', 'table-row', 'flex', 'inline-flex']),
-    margin: PropTypes.any,
-    float: PropTypes.oneOf(['none', 'left', 'right'])
+    tag              : PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    visible          : PropTypes.bool,
+    invisible        : PropTypes.bool,
+    textColor        : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white', 'muted']),
+    backgroundColor  : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white']),
+    border           : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]),
+    rounded          : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]),
+    display          : PropTypes.oneOf(['none', 'inline', 'inline-block', 'block', 'table', 'table-cell', 'table-row', 'flex', 'inline-flex']),
+    margin           : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]),
+    padding          : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.number]),
+    float            : PropTypes.oneOf(['none', 'left', 'right'])
 };
 
