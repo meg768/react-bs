@@ -1,8 +1,8 @@
 
 
 The **Tag** has a number of properties that map to the Bootrap Utility classes.
-
-This includes
+It is simply a **div** tag but also parses a number of properties that 
+creates Bootstrap class names. This includes
 
 * Borders - https://getbootstrap.com/docs/4.1/utilities/borders
 * Flex - https://getbootstrap.com/docs/4.1/utilities/flex
@@ -31,14 +31,16 @@ This is using the Bootstrap classes **align-items-start** and **justify-content-
 
 ```js
 
-    <Tag border='primary' rounded={true} style={{height:'6rem'}} alignItems='start' justifyContent='end' padding={2} >
-        <Button color='primary'  margin={{horizontal:1}}>
+    var color = 'primary';
+
+    <Tag border={color} rounded={true} style={{height:'6rem'}} alignItems='start' justifyContent='end' padding={2} >
+        <Button color={color}  margin={{horizontal:1}}>
             Pax vobiscum
         </Button>
-        <Button color='primary'  margin={{horizontal:1}}>
+        <Button color={color}  margin={{horizontal:1}}>
             Nosa dostra
         </Button>
-        <Button color='primary'  margin={{horizontal:1}}>
+        <Button color={color}  margin={{horizontal:1}}>
             Quantala predum
         </Button>
     </Tag>
@@ -52,14 +54,16 @@ This is using the Bootstrap classes **align-items-end** and **justify-content-st
 
 ```js
 
-    <Tag border='danger' rounded={true} style={{height:'6rem'}} alignItems='end' justifyContent='start' padding={2} >
-        <Button color='danger'  margin={{horizontal:1}}>
+    var color = 'danger';
+
+    <Tag border={color} rounded={true} style={{height:'6rem'}} alignItems='end' justifyContent='start' padding={2} >
+        <Button color={color}  margin={{horizontal:1}}>
             Pax vobiscum
         </Button>
-        <Button color='danger'  margin={{horizontal:1}}>
+        <Button color={color}  margin={{horizontal:1}}>
             Nosa dostra
         </Button>
-        <Button color='danger'  margin={{horizontal:1}}>
+        <Button color={color}  margin={{horizontal:1}}>
             Quantala predum
         </Button>
     </Tag>
@@ -72,14 +76,16 @@ This is using the Bootstrap classes **align-items-center** and **justify-content
 
 ```js
 
-    <Tag border='secondary' rounded={true} style={{height:'6rem'}} alignItems='center' justifyContent='center' padding={2} >
-        <Button color='secondary'  margin={{horizontal:1}}>
+    var color = 'secondary';
+
+    <Tag border={color} rounded={true} style={{height:'6rem'}} alignItems='center' justifyContent='center' padding={2} >
+        <Button color={color}  margin={{horizontal:1}}>
             Pax vobiscum
         </Button>
-        <Button color='secondary'  margin={{horizontal:1}}>
+        <Button color={color}  margin={{horizontal:1}}>
             Nosa dostra
         </Button>
-        <Button color='secondary'  margin={{horizontal:1}}>
+        <Button color={color}  margin={{horizontal:1}}>
             Quantala predum
         </Button>
     </Tag>

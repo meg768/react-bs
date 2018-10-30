@@ -1,6 +1,6 @@
 {
 	"name": "react-bootify",
-	"version": "0.0.119",
+	"version": "0.0.120",
 	"description": "react-bootify",
 	"main": "components/index.js",
 	"scripts": {
@@ -21,6 +21,7 @@
 		"bootstrap",
 		"bootswatch",
 		"react",
+		"reactstrap",
 		"components"
 	],
 	"repository": {
