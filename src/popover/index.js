@@ -14,8 +14,8 @@ function debug() {
 
 export default class Popover extends React.Component {
 
-    constructor(args) {
-        super(args);
+    constructor(props) {
+        super(props);
 
         this.state = {};
         this.state.popper = null;
@@ -27,36 +27,51 @@ export default class Popover extends React.Component {
         this.arrowNode  = null;
 
         this.onDocumentClick = this.onDocumentClick.bind(this);
-        this.onTargetClick   = this.onTargetClick.bind(this);
 
     }
 
     static propTypes = {
-        target    : PropTypes.element,
-        arrow     : PropTypes.bool,
-        modifiers : PropTypes.any,
-        placement : PropTypes.string
+        target      : PropTypes.element,
+        toggle      : PropTypes.func,
+        isOpen      : PropTypes.bool,
+        arrow       : PropTypes.bool,
+        modifiers   : PropTypes.any,
+        placement   : PropTypes.string
     };
 
     static defaultProps = {
-        placement  : 'bottom-start',
-        arrow      : true,
-        modifiers  : {
+        placement   : 'bottom-start',
+        isOpen      : false,
+        arrow       : true,
+        modifiers   : {
             preventOverflow: {
                 boundariesElement: 'viewport',
             }
         }
     }
 
-    togglePopper() {
-        if (this.state.isOpen)
-            this.hidePopper();
+
+    isOpen() {
+        if (this.props.toggle != undefined)
+            return this.props.isOpen;
         else
-            this.showPopper();
+            return this.state.isOpen;
+    }
+
+    togglePopper() {
+        if (this.props.toggle)
+            this.props.toggle();
+        else {
+            if (this.isOpen())
+                this.hidePopper();
+            else
+                this.showPopper();
+
+        }
     }
 
     showPopper() {
-        this.createPopper();
+        this.createPopper();      
         this.setState({isOpen:true});
     }
 
@@ -65,19 +80,22 @@ export default class Popover extends React.Component {
         this.setState({isOpen:false});
     }
 
-    onTargetClick(event) { 
-        this.togglePopper();
-    }
-
     componentDidMount() {
         document.addEventListener('click', this.onDocumentClick, true);
-
     }
 
     componentWillReceiveProps() {
     }
 
     componentDidUpdate(previousProps, previousState) {
+        if (this.props.toggle) {
+            if (previousProps.isOpen != this.props.isOpen) {
+                if (this.isOpen())
+                    this.showPopper();
+                else
+                    this.hidePopper();    
+            }
+        }
     }
 
     componentWillUnmount() {
@@ -98,6 +116,7 @@ export default class Popover extends React.Component {
             onCreate  : (state) => {this.setState({popper:state})},
             onUpdate  : (state) => {this.setState({popper:state})}
         };
+
 
         if (!this.popper) {
             this.popper = new PopperJs(this.targetNode, this.popupNode, options);
@@ -123,9 +142,9 @@ export default class Popover extends React.Component {
 
 
     onDocumentClick(event) {
-        if (this.state.isOpen) {
+        if (this.isOpen()) {
             if (!this.targetNode.contains(event.target) && !this.popupNode.contains(event.target)) {
-                this.hidePopper();
+                this.togglePopper();
             }
         }
     }
@@ -155,8 +174,25 @@ export default class Popover extends React.Component {
 
     renderTarget() {
         var target = this.getTarget();
+
+        // Add some styles
         var style = Object.assign({}, {cursor:'pointer'}, target.props.style);
-        return (React.cloneElement(target, {style:style, onClick:this.onTargetClick, ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
+
+        var onClick = () => {
+            this.togglePopper();
+
+            if (!this.props.toggle && target.props.onClick) {
+                target.props.onClick();
+
+            }
+        }
+
+        return (React.cloneElement(target, {style:style, onClick:onClick, ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
+
+
+//        var style = Object.assign({}, {cursor:'pointer'}, target.props.style);
+
+  //      return (React.cloneElement(target, {style:style, onClick:this.togglePopper.bind(this), ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
     }
 
 
@@ -164,7 +200,7 @@ export default class Popover extends React.Component {
 
 
         var popoverClassName = 'popover';
-        var isOpen = this.state.popper && this.state.isOpen;
+        var isOpen = this.state.popper && this.isOpen();
 
         if (this.state.popper) {
 

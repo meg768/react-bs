@@ -16,34 +16,37 @@ class Sample extends React.Component {
         super(props);
 
         this.state = {};
+        this.state.isOpen = false;
+        this.toggle = this.toggle.bind(this);
     }
+
 
     toggle() {
         this.setState({isOpen: !this.state.isOpen});
     }
 
-
-
     render() {
-        var target = (
-            <Button color={this.props.color} outline={this.props.outline}>
-                {this.props.text}
-            </Button>
 
-        );
         return (
             <Tag margin={{horizontal:1}} display='inline-block'>
-                <Popover  placement={this.props.placement} >
+                <Popover isOpen={this.state.isOpen} placement={this.props.placement} toggle={this.toggle}>
                     <Popover.Target>
-                        <Button color={this.props.color} outline={this.props.outline}>
+                        <Button color={this.props.color} outline={this.props.outline} onClick={this.toggle} >
                             {this.props.text}
                         </Button>
                     </Popover.Target>
                     <Popover.Header>
-                        Eos modo
+                        Popover Header
                     </Popover.Header>
                     <Popover.Body>
-                        Te alii dicam fabulas mei. Quo graeco iuvaret scaevola no.
+                        <span>
+                            Sed posuere consectetur est at lobortis. Aenean eu leo quam. 
+                            Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                        </span>
+                        <hr/>
+                        <Tag textAlign='right'>
+                            <Button size='sm' onClick={this.toggle}>Dismiss</Button>
+                        </Tag>
                     </Popover.Body>
                 </Popover>
             </Tag>
@@ -67,17 +70,20 @@ class Sample extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.state = {};
     }
 
     render() {
 
+        function onClick(text) {
+            console.log('Clicked', text);
+        }
+        
         return (
             <Tag margin={{horizontal:1}} display='inline-block'>
                 <Popover  placement={this.props.placement} >
                     <Popover.Target>
-                        <Tag tag='span' textColor={this.props.color}>
+                        <Tag tag='span' textColor={this.props.color} onClick={onClick.bind(this, this.props.text)}>
                             {this.props.text}
                         </Tag>
                     </Popover.Target>
@@ -85,7 +91,8 @@ class Sample extends React.Component {
                         Eos modo
                     </Popover.Header>
                     <Popover.Body>
-                        Te alii dicam fabulas mei. Quo graeco iuvaret scaevola no.
+                        Sed posuere consectetur est at lobortis. Aenean eu leo quam. 
+                        Pellentesque ornare sem lacinia quam venenatis vestibulum.
                     </Popover.Body>
                 </Popover>
             </Tag>
