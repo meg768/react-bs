@@ -8,7 +8,7 @@ import Tag from '../tag';
 
 
 function debug() {
-    console.log.apply(null, arguments);
+    //console.log.apply(null, arguments);
 }
 
 export default class Dropdown extends React.Component {
@@ -56,19 +56,17 @@ export default class Dropdown extends React.Component {
 
         if (this.state.isOpen) {
 
-            console.log('target', event.target);
-
             if (this.targetNode.contains(event.target)) {
-                console.log('Inside target', event.target);
+                debug('Inside target', event.target);
             }
             else if (this.dropdownNode.contains(event.target)) {
-                console.log('Inside dropdown', event.target);
+                debug('Inside dropdown', event.target);
                 this.hidePopper();
                 
             }
 
             else  {
-                console.log('Both outside target and dropdown', event.target);
+                debug('Both outside target and dropdown', event.target);
                 this.hidePopper();
             }
 
@@ -77,7 +75,6 @@ export default class Dropdown extends React.Component {
 
 
     onTargetClick(event) { 
-        console.log('Target click');
         this.togglePopper();
     }
 

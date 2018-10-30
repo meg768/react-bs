@@ -81,7 +81,6 @@ export default class Popover extends React.Component {
     }
 
     componentDidMount() {
-        document.addEventListener('click', this.onDocumentClick, true);
     }
 
     componentWillReceiveProps() {
@@ -99,26 +98,25 @@ export default class Popover extends React.Component {
     }
 
     componentWillUnmount() {
-        document.removeEventListener('click', this.onDocumentClick, true);
-
         this.destroyPopper();
     }
 
     createPopper() {
 
-        var modifiers = {
-            arrow: {element:this.arrowNode}
-        };
-
-        var options = {
-            placement : this.props.placement,
-            modifiers : modifiers,
-            onCreate  : (state) => {this.setState({popper:state})},
-            onUpdate  : (state) => {this.setState({popper:state})}
-        };
-
-
         if (!this.popper) {
+            var modifiers = {
+                arrow: {element:this.arrowNode}
+            };
+
+            var options = {
+                placement : this.props.placement,
+                modifiers : modifiers,
+                onCreate  : (state) => {this.setState({popper:state})},
+                onUpdate  : (state) => {this.setState({popper:state})}
+            };
+
+            document.addEventListener('click', this.onDocumentClick, true);
+
             this.popper = new PopperJs(this.targetNode, this.popupNode, options);
             this.updatePopper();
         }
@@ -127,6 +125,8 @@ export default class Popover extends React.Component {
 
     destroyPopper() {
         if (this.popper) {
+            document.removeEventListener('click', this.onDocumentClick, true);
+
             this.popper.destroy();
         }
         this.popper = null;
@@ -188,11 +188,6 @@ export default class Popover extends React.Component {
         }
 
         return (React.cloneElement(target, {style:style, onClick:onClick, ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
-
-
-//        var style = Object.assign({}, {cursor:'pointer'}, target.props.style);
-
-  //      return (React.cloneElement(target, {style:style, onClick:this.togglePopper.bind(this), ref:(element) => {this.targetNode = ReactDOM.findDOMNode(element)}}));
     }
 
 

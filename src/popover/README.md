@@ -63,6 +63,9 @@ class Sample extends React.Component {
 </div>
 ```
 
+Popovers may also be used without an internal state and the popover will
+display and hide itself. However, the popover may then not be toggled from
+within the popover.
 
 ```js
 
