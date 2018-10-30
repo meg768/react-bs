@@ -38,6 +38,8 @@ export default class Tag extends React.Component  {
             className = classNames(className, {[`px-${padding.horizontal}`]:padding.horizontal});
             className = classNames(className, {[`py-${padding.vertical}`]:padding.vertical});
         }
+
+        ///////////////////////////////////////////////////////////////////////
     
         if (isNumber(margin)) {
             className = classNames(className, {[`m-${margin}`]:margin});
@@ -174,7 +176,7 @@ Tag.propTypes = {
     border           : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]),
     rounded          : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]),
     display          : PropTypes.oneOf(['none', 'inline', 'inline-block', 'block', 'table', 'table-cell', 'table-row', 'flex', 'inline-flex']),
-    margin           : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]),
+    margin           : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.number]),
     padding          : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.number]),
     float            : PropTypes.oneOf(['none', 'left', 'right'])
 };

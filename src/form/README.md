@@ -1,3 +1,12 @@
+### Usage 
+
+```js static
+import {Form} from 'react-bootify';
+/* or */
+import Form from 'react-bootify/form';
+```
+
+
 ### Sample of Inline Form
 
 ```js
