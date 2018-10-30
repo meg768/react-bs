@@ -1,5 +1,118 @@
 
 
+The **Tag** has a number of properties that map to the Bootrap Utility classes.
+
+This includes
+
+* Borders - https://getbootstrap.com/docs/4.1/utilities/borders
+* Flex - https://getbootstrap.com/docs/4.1/utilities/flex
+* Vertical alignment - https://getbootstrap.com/docs/4.1/utilities/vertical-align
+* Spacing - https://getbootstrap.com/docs/4.1/utilities/spacing
+* Visibility - https://getbootstrap.com/docs/4.1/utilities/visibility
+* Display - https://getbootstrap.com/docs/4.1/utilities/display
+* Text alignment - https://getbootstrap.com/docs/4.1/utilities/text
+
+Every class in this library is based upon this tag. So, when using a **Table**, **Propover** or a **Container**
+you may also use the **Tag** properies.
+
+When using a **Tag** it defaults to a **div**-tag but this may be changed to a **span** like this
+
+```js static
+
+    <Tag tag='span' margin={1}>
+        Hello
+    </Tag>
+```
+
+### Aligning items at top right
+
+This is using the Bootstrap classes **align-items-start** and **justify-content-end**.
+
+
+```js
+
+    <Tag border='primary' rounded={true} style={{height:'6rem'}} alignItems='start' justifyContent='end' padding={2} >
+        <Button color='primary'  margin={{horizontal:1}}>
+            Pax vobiscum
+        </Button>
+        <Button color='primary'  margin={{horizontal:1}}>
+            Nosa dostra
+        </Button>
+        <Button color='primary'  margin={{horizontal:1}}>
+            Quantala predum
+        </Button>
+    </Tag>
+
+```
+
+
+### Aligning items at bottom left
+
+This is using the Bootstrap classes **align-items-end** and **justify-content-start**.
+
+```js
+
+    <Tag border='danger' rounded={true} style={{height:'6rem'}} alignItems='end' justifyContent='start' padding={2} >
+        <Button color='danger'  margin={{horizontal:1}}>
+            Pax vobiscum
+        </Button>
+        <Button color='danger'  margin={{horizontal:1}}>
+            Nosa dostra
+        </Button>
+        <Button color='danger'  margin={{horizontal:1}}>
+            Quantala predum
+        </Button>
+    </Tag>
+
+```
+
+### Aligning items centered
+
+This is using the Bootstrap classes **align-items-center** and **justify-content-center**.
+
+```js
+
+    <Tag border='secondary' rounded={true} style={{height:'6rem'}} alignItems='center' justifyContent='center' padding={2} >
+        <Button color='secondary'  margin={{horizontal:1}}>
+            Pax vobiscum
+        </Button>
+        <Button color='secondary'  margin={{horizontal:1}}>
+            Nosa dostra
+        </Button>
+        <Button color='secondary'  margin={{horizontal:1}}>
+            Quantala predum
+        </Button>
+    </Tag>
+
+```
+
+### Aligning items centered vertically and right aligned
+
+This is using the Bootstrap classes **align-items-center** and **justify-content-center**.
+
+```js
+
+    var color = 'warning';
+
+    <Tag border={color} rounded={true} style={{height:'6rem'}} alignItems='center' justifyContent='end' padding={2} >
+        <Button color={color}  margin={{horizontal:1}}>
+            Pax vobiscum
+        </Button>
+        <Button color={color}  margin={{horizontal:1}}>
+            Nosa dostra
+        </Button>
+        <Button color={color}  margin={{horizontal:1}}>
+            Quantala predum
+        </Button>
+    </Tag>
+
+```
+
+
+### Example of borders
+
+Here is an example of different border styles, padding, margin and colors.
+
 ```js
 
 
@@ -16,11 +129,10 @@
     </Tag>
     <hr/>
 
-    <Tag border='secondary' padding={3} textAlign='right'>
+    <Tag border='secondary' padding={3} textAlign='right' backgroundColor='light'>
         Border secondary, padding 3 and text aligned right.
     </Tag>
     <hr/>
 
 
 ```
-

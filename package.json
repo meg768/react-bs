@@ -16,7 +16,14 @@
 		"publish-to-npm": "npm run increase-package-version && npm run transpile &&  npm run commit && npm publish",
 		"styleguide": "styleguidist server",
 		"styleguide:build": "styleguidist build"
-	},
+    },
+    "keywords": [
+        "bootstrap",
+        "bootswatch",
+        "react",
+        "components"
+      ],
+        
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meg768/react-bootify.git"

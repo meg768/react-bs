@@ -1,5 +1,5 @@
 # react-bootify
-Yet another minimalistic Bootstrap layer for React.
+Another minimalistic Bootstrap layer for React.
 
 ## Installation
 
@@ -13,7 +13,7 @@ Bootstrap css-styles need to be installed separately.
 This module is not ready for public use. Use **reactstrap**.
 
 
-## Documentation
+## Documentation with examples
 - https://meg768.github.io/react-bootify/
 
 ## History
@@ -24,5 +24,7 @@ This module is not ready for public use. Use **reactstrap**.
 - 2018-10-17 - Added component **Modal** to display Bootstrap's modal dialogs.
 - 2018-10-17 - Added components **Radio** and **Checkbox** to Forms.
 - 2018-10-22 - Added component **Card**.
+- 2018-10-30 - Added additional functionality to **Popover** and added some examples in the documentation.
+
 
 

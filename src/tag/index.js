@@ -6,7 +6,7 @@ import { isObject, isNumber, isString, isBoolean } from 'util';
 export default class Tag extends React.Component  {
 
     render() {
-        var {tag : TheTag, visible, invisible, display, textAlign, float, verticalAlign, rounded, className, textColor, backgroundColor, margin, border, padding, children, ...other} = this.props;
+        var {tag : TheTag, justifyContent, visible, invisible, display, alignItems, alignContent, textAlign, float, verticalAlign, rounded, className, textColor, backgroundColor, margin, border, padding, children, ...other} = this.props;
 
 
         if (isObject(border)) {
@@ -24,6 +24,8 @@ export default class Tag extends React.Component  {
             className = classNames(className, {'border':true});
         }
         
+        ///////////////////////////////////////////////////////////////////////
+
         if (isNumber(padding)) {
             className = classNames(className, {[`p-${padding}`]:padding});
     
@@ -39,7 +41,6 @@ export default class Tag extends React.Component  {
     
         if (isNumber(margin)) {
             className = classNames(className, {[`m-${margin}`]:margin});
-    
         }
         else if (isObject(margin)) {
             className = classNames(className, {[`ml-${margin.left}`]:margin.left});
@@ -49,31 +50,79 @@ export default class Tag extends React.Component  {
             className = classNames(className, {[`mx-${margin.horizontal}`]:margin.horizontal});
             className = classNames(className, {[`my-${margin.vertical}`]:margin.vertical});
         }
-    
+        
+        ///////////////////////////////////////////////////////////////////////
+
+
+        if (alignItems != undefined) {
+            if (isString(alignItems)) {
+                className = classNames(className, {[`d-flex`]:true});
+                className = classNames(className, {[`align-items-${alignItems}`]:true});
+
+            }
+        }
+
+        ///////////////////////////////////////////////////////////////////////
+
+
+        if (alignContent != undefined) {
+            if (isString(alignItems)) {
+                className = classNames(className, {[`d-flex`]:true});
+                className = classNames(className, {[`align-content-${alignContent}`]:true});
+
+            }
+        }
+        
+        
+        ///////////////////////////////////////////////////////////////////////
+
+
+        if (justifyContent != undefined) {
+            if (isString(justifyContent)) {
+                className = classNames(className, {[`d-flex`]:true});
+                className = classNames(className, {[`justify-content-${justifyContent}`]:true});
+
+            }
+        }
+
+        ///////////////////////////////////////////////////////////////////////
+
         if (isString(textColor)) {
             className = classNames(className, {[`text-${textColor}`]:true});
         }
+
+        ///////////////////////////////////////////////////////////////////////
     
         if (isString(backgroundColor)) {
             className = classNames(className, {[`bg-${backgroundColor}`]:true});
         }
     
+        ///////////////////////////////////////////////////////////////////////
+
         if (isString(display)) {
             className = classNames(className, {[`d-${display}`]:true});
         }
     
+        ///////////////////////////////////////////////////////////////////////
+
         if (isString(verticalAlign)) {
             className = classNames(className, {[`align-${verticalAlign}`]:true});
         }
     
+        ///////////////////////////////////////////////////////////////////////
+
         if (isString(float)) {
             className = classNames(className, {[`float-${float}`]:true});
         }
     
+        ///////////////////////////////////////////////////////////////////////
+
         if (isString(textAlign)) {
             className = classNames(className, {[`text-${textAlign}`]:true});
         }
-    
+        
+        ///////////////////////////////////////////////////////////////////////
+
         if (isBoolean(rounded)) {
             className = classNames(className, {[`rounded`]:rounded});
         }
@@ -90,8 +139,13 @@ export default class Tag extends React.Component  {
             className = classNames(className, {'rounded-bottom':rounded.bottom});
     
         }
+
+        ///////////////////////////////////////////////////////////////////////
     
         className = classNames(className, {'visible':visible});
+
+        ///////////////////////////////////////////////////////////////////////
+
         className = classNames(className, {'invisible':invisible});
     
     
@@ -114,6 +168,8 @@ Tag.propTypes = {
     visible          : PropTypes.bool,
     invisible        : PropTypes.bool,
     textColor        : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white', 'muted']),
+    textAlign        : PropTypes.oneOf(['left', 'right', 'center']),
+    verticalAlign    : PropTypes.oneOf(['top', 'middle', 'bottom', 'baseline', 'text-top', 'text-bottom']),
     backgroundColor  : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white']),
     border           : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]),
     rounded          : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]),
