@@ -35,6 +35,7 @@ export default class Popover extends React.Component {
         toggle      : PropTypes.func,
         isOpen      : PropTypes.bool,
         arrow       : PropTypes.bool,
+        sticky      : PropTypes.bool,
         modifiers   : PropTypes.any,
         placement   : PropTypes.string
     };
@@ -43,6 +44,7 @@ export default class Popover extends React.Component {
         placement   : 'bottom-start',
         isOpen      : false,
         arrow       : true,
+        sticky      : false,
         modifiers   : {
             preventOverflow: {
                 boundariesElement: 'viewport',
@@ -143,9 +145,13 @@ export default class Popover extends React.Component {
 
     onDocumentClick(event) {
         if (this.isOpen()) {
-            if (!this.targetNode.contains(event.target) && !this.popupNode.contains(event.target)) {
-                this.togglePopper();
+            if (!this.props.sticky) {
+                if (!this.targetNode.contains(event.target) && !this.popupNode.contains(event.target)) {
+                    this.togglePopper();
+                }    
             }
+
+
         }
     }
 
