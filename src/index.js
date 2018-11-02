@@ -11,6 +11,7 @@ import Dropdown from './dropdown';
 import Tag from './tag';
 import ListGroup from './list-group';
 import Fade from './fade';
+import Collapse from './collapse';
 
 
 var Row = Container.Row;
@@ -18,7 +19,7 @@ var Col = Container.Col;
 var Grid = Container;
 
 export {
-    Grid, Tag, Glyph, Popper, Button, Form, ListGroup, Fade,
+    Grid, Tag, Glyph, Popper, Button, Form, ListGroup, Fade, Collapse,
     Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown
 
 };

@@ -9,8 +9,9 @@ export default function Fade(props)  {
 
    var {tag: Tag, show, children, ...other} = props;
 
+
    return (
-        <Transition in={show} timeout={0}>                
+        <Transition in={show} timeout={150}>                
             {state => {
                 var child = React.Children.toArray(children);
 
