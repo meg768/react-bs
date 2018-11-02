@@ -30,10 +30,11 @@ export default class Collapse extends React.Component  {
     }
 
     onExiting(node) {
-        this.setState({style:{}});
+        this.setState({style:{height:0}});
     }
 
     onExited(node) {
+        this.setState({style:{}});
     }
     
     render() {
@@ -60,6 +61,7 @@ export default class Collapse extends React.Component  {
                     className = classNames(className, {'collapsing'    : state == 'entering'});
                     className = classNames(className, {'collapsing'    : state == 'exiting'});
                     className = classNames(className, {'collapse'      : state == 'exited'});
+                    className = classNames(className, {'fade'          : (state == 'entering' || state == 'exiting') && this.props.fade});
 
                     return React.cloneElement(child, {className: className, style: style, ...other});
                  }}
@@ -70,10 +72,12 @@ export default class Collapse extends React.Component  {
 
 Collapse.propTypes = {
     show: PropTypes.bool,
+    fade: PropTypes.bool,
     timeout: PropTypes.number
 };
 
 Collapse.defaultProps = {
-    timeout: 350,
+    timeout: 300,
+    fade: false,
     show: false
 };

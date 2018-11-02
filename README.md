@@ -25,6 +25,7 @@ This module is not ready for public use. Use **reactstrap**.
 - 2018-10-17 - Added components **Radio** and **Checkbox** to Forms.
 - 2018-10-22 - Added component **Card**.
 - 2018-10-30 - Added additional functionality to **Popover** and added some examples in the documentation.
+- 2018-11-02 - Added **Collapse** component.
 
 
 
