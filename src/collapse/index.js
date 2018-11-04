@@ -12,7 +12,6 @@ export default class Collapse extends React.Component  {
         super(props)
 
         this.state = {};
-        this.state = {};
         this.state.height = null;
 
         
@@ -25,9 +24,9 @@ export default class Collapse extends React.Component  {
     }
 
     onEnter(node) {
-        var state = {};
+        var state = {height:node.scrollHeight};
         this.setState(state);
-        console.log('onEnter state', state, node.scrollHeight);
+        console.log('onEnter state', state);
     }
 
 
@@ -83,19 +82,18 @@ export default class Collapse extends React.Component  {
                     
                     switch (state) {
                         case 'entering': {
-                            if (this.state.height) {
-                                style = {...style, ...{transition:'height 0.35s ease, opacity 0.35s ease'}};
-                                style = {...style, ...{height:this.state.height}};
-    
-                            }
+                            style = {...style, ...{position:'ralative', overflow:'hidden'}};
+                            style = {...style, ...{transition:'height 0.35s ease'}};
+                            style = {...style, ...{height:this.state.height}};
                             break;
                         };
                         case 'entered': {
                             break;
                         };
                         case 'exiting': {
-                            style = {...style, ...{transition:'height 0.35s ease, opacity 0.35s ease'}};
-                            style = {...style, ...{height:0}};
+                            style = {...style, ...{position:'ralative', overflow:'hidden'}};
+                            style = {...style, ...{transition:'height 0.35s ease'}};
+                            style = {...style, ...{height:this.state.height}};
                             break;
                         };
                         case 'exited': {
