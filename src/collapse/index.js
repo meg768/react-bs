@@ -59,10 +59,44 @@ export default class Collapse extends React.Component  {
         this.setState({height:null, opacity:null});
     }
 
+
+    collapsingStyle(style) {
+        style = {...style, ...{position:'ralative', overflow:'hidden'}};
+
+        if (this.props.fade) {
+            style = {...style, ...{transition:`height ${timeout / 1000}s ease, opacity ${timeout / 1000}s ease`}};
+            style = {...style, ...{height:this.state.height, opacity:this.state.opacity}};
+        }
+        else {
+            style = {...style, ...{transition:`height ${timeout / 1000}s ease`}};
+            style = {...style, ...{height:this.state.height}};
+        }
+
+        return style;
+    }
+
+
+
     
     render() {
         var {show, fade, timeout, children, ...other} = this.props;
 
+        var collapsingStyle = () => {
+            var style = {};
+            style = {...style, ...{position:'ralative', overflow:'hidden'}};
+    
+            if (this.props.fade) {
+                style = {...style, ...{transition:`height ${timeout / 1000}s ease, opacity ${timeout / 1000}s ease`}};
+                style = {...style, ...{height:this.state.height, opacity:this.state.opacity}};
+            }
+            else {
+                style = {...style, ...{transition:`height ${timeout / 1000}s ease`}};
+                style = {...style, ...{height:this.state.height}};
+            }
+    
+            return style;
+        }
+    
         return (
              <Transition in={show} timeout={timeout} onEnter={this.onEnter} onEntering={this.onEntering} onEntered={this.onEntered}  onExit={this.onExit} onExiting={this.onExiting} onExited={this.onExited} >                
                  {state => {
@@ -71,25 +105,20 @@ export default class Collapse extends React.Component  {
                     if (isArray(child))
                         child = child[0];
      
-                    var className = child.props.className;
                     var style = child.props.style || {};
 
                     switch (state) {
                         case 'entering': {                
-                            style = {...style, ...{position:'ralative', overflow:'hidden'}};
-                            style = {...style, ...{transition:`height ${timeout / 1000}s ease, opacity ${timeout / 1000}s ease`}};
-                            style = {...style, ...{height:this.state.height, opacity:this.state.opacity}};
-    
+                            style = {...style, ...collapsingStyle()};
                             break;
                         };
 
                         case 'entered': {
                             break;
                         };
+
                         case 'exiting': {
-                            style = {...style, ...{position:'ralative', overflow:'hidden'}};
-                            style = {...style, ...{transition:`height ${timeout / 1000}s ease, opacity ${timeout / 1000}s ease`}};
-                            style = {...style, ...{height:this.state.height, opacity:this.state.opacity}};
+                            style = {...style, ...collapsingStyle()};
                             break;
                         };
 
@@ -101,7 +130,7 @@ export default class Collapse extends React.Component  {
  
                     debug('Style for state', state, style);
 
-                    return React.cloneElement(child, {className: className, style: style, ...other});
+                    return React.cloneElement(child, {style: style, ...other});
                  }}
              </Transition>
         );     
@@ -109,13 +138,13 @@ export default class Collapse extends React.Component  {
 };
 
 Collapse.propTypes = {
-    show: PropTypes.bool,
-    fade: PropTypes.bool,
-    timeout: PropTypes.number
+    show    : PropTypes.bool,
+    fade    : PropTypes.bool,
+    timeout : PropTypes.number
 };
 
 Collapse.defaultProps = {
-    timeout: 300,
-    fade: false,
-    show: false
+    timeout : 350,
+    fade    : false,
+    show    : false
 };
