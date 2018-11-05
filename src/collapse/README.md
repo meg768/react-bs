@@ -20,7 +20,7 @@ class Sample extends React.Component  {
     render() {
         return (
             <div>
-                <Button onClick={this.toggle}>Toggle Test</Button>
+                <Button onClick={this.toggle}>Toggle</Button>
                 <Collapse show={this.state.show}>
                     <Card margin={{top:1}}>
                         <Card.Header>
