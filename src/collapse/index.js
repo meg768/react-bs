@@ -5,6 +5,10 @@ import classNames from 'classnames';
 import Transition from 'react-transition-group/Transition';
 import {isArray} from '../utils';
 
+function debug() {
+   console.log.apply(null, arguments);
+}
+
 
 export default class Collapse extends React.Component  {
 
@@ -12,58 +16,121 @@ export default class Collapse extends React.Component  {
         super(props)
 
         this.state = {};
-        this.state.style = null;
-
+        this.state.height = null;
+        this.state.opacity = null;
+        
         this.onEntering = this.onEntering.bind(this);
-        this.onEntered = this.onEntered.bind(this);
-        this.onExiting = this.onExiting.bind(this);
-        this.onExited = this.onExited.bind(this);
+        this.onEntered  = this.onEntered.bind(this);
+        this.onExiting  = this.onExiting.bind(this);
+        this.onExited   = this.onExited.bind(this);
+        this.onExit     = this.onExit.bind(this);
+        this.onEnter    = this.onEnter.bind(this);
     }
 
-
+    onEnter(node) {
+        debug('onEnter state');
+        this.setState({height:0, opacity:0});
+    }
 
     onEntering(node, isAppearing) {
-        this.setState({style:{height:node.scrollHeight}});
+        debug('onEntering');
+        this.setState({height:node.scrollHeight, opacity:1});
     }
 
     onEntered(node, isAppearing) {
+        debug('onEntered');
+    }
+
+    onExit(node) {
+        debug('onExit');
     }
 
     onExiting(node) {
-        this.setState({style:{height:0}});
+        debug('onExiting');
+
+        // Getting this variable triggers a reflow
+        const _unused = node.offsetHeight; // eslint-disable-line no-unused-vars
+
+        this.setState({height:0, opacity:0});
     }
 
     onExited(node) {
-        this.setState({style:{}});
+        debug('onExited');
+        this.setState({height:null, opacity:null});
     }
+
+
+    collapsingStyle(style) {
+        style = {...style, ...{position:'ralative', overflow:'hidden'}};
+
+        if (this.props.fade) {
+            style = {...style, ...{transition:`height ${timeout / 1000}s ease, opacity ${timeout / 1000}s ease`}};
+            style = {...style, ...{height:this.state.height, opacity:this.state.opacity}};
+        }
+        else {
+            style = {...style, ...{transition:`height ${timeout / 1000}s ease`}};
+            style = {...style, ...{height:this.state.height}};
+        }
+
+        return style;
+    }
+
+
+
     
     render() {
-        var {show, children, ...other} = this.props;
+        var {show, fade, timeout, children, ...other} = this.props;
 
+        var collapsingStyle = () => {
+            var style = {};
+            style = {...style, ...{position:'ralative', overflow:'hidden'}};
+    
+            if (this.props.fade) {
+                style = {...style, ...{transition:`height ${timeout / 1000}s ease, opacity ${timeout / 1000}s ease`}};
+                style = {...style, ...{height:this.state.height, opacity:this.state.opacity}};
+            }
+            else {
+                style = {...style, ...{transition:`height ${timeout / 1000}s ease`}};
+                style = {...style, ...{height:this.state.height}};
+            }
+    
+            return style;
+        }
+    
         return (
-             <Transition in={show} timeout={this.props.timeout} onEntering={this.onEntering} onEntered={this.onEntered}  onExiting={this.onExiting} onExited={this.onExited}>                
+             <Transition in={show} timeout={timeout} onEnter={this.onEnter} onEntering={this.onEntering} onEntered={this.onEntered}  onExit={this.onExit} onExiting={this.onExiting} onExited={this.onExited} >                
                  {state => {
                     var child = React.Children.toArray(children);
      
                     if (isArray(child))
                         child = child[0];
      
-                    var className = child.props.className;
                     var style = child.props.style || {};
-                     
-                    if (this.state.style != null) {
-                        style = {...style, ...this.state.style};
+
+                    switch (state) {
+                        case 'entering': {                
+                            style = {...style, ...collapsingStyle()};
+                            break;
+                        };
+
+                        case 'entered': {
+                            break;
+                        };
+
+                        case 'exiting': {
+                            style = {...style, ...collapsingStyle()};
+                            break;
+                        };
+
+                        case 'exited': {
+                            style = {...style, ...{display:'none'}};
+                            break;
+                        };
                     }
+ 
+                    debug('Style for state', state, style);
 
-                    console.log('style at', state, this.state.style);
-
-                    className = classNames(className, {'collapse show' : state == 'entered'});
-                    className = classNames(className, {'collapsing'    : state == 'entering'});
-                    className = classNames(className, {'collapsing'    : state == 'exiting'});
-                    className = classNames(className, {'collapse'      : state == 'exited'});
-                    className = classNames(className, {'fade'          : (state == 'entering' || state == 'exiting') && this.props.fade});
-
-                    return React.cloneElement(child, {className: className, style: style, ...other});
+                    return React.cloneElement(child, {style: style, ...other});
                  }}
              </Transition>
         );     
@@ -71,13 +138,13 @@ export default class Collapse extends React.Component  {
 };
 
 Collapse.propTypes = {
-    show: PropTypes.bool,
-    fade: PropTypes.bool,
-    timeout: PropTypes.number
+    show    : PropTypes.bool,
+    fade    : PropTypes.bool,
+    timeout : PropTypes.number
 };
 
 Collapse.defaultProps = {
-    timeout: 300,
-    fade: false,
-    show: false
+    timeout : 350,
+    fade    : false,
+    show    : false
 };

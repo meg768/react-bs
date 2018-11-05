@@ -21,8 +21,8 @@ class Sample extends React.Component  {
         return (
             <div>
                 <Button onClick={this.toggle}>Toggle</Button>
-                <Collapse show={this.state.show}>
-                    <Card margin={{top:1}}>
+                <Collapse show={this.state.show} fade={true} timeout={1000}>
+                    <Card margin={{top:1}} backgroundColor='warning' textColor='light'>
                         <Card.Header>
                             Header
                         </Card.Header>
