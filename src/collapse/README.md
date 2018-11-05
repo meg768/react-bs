@@ -89,10 +89,10 @@ class SampleX extends React.Component  {
         return (
             <div>
                 <Button onClick={this.toggle}>Toggle</Button>
-                <Form margin={{top:1}}>
-                    <Form.Row>
-                       <Form.Col>
-                            <Card padding={2}>
+                <Form margin={{top:2, bottom:2}}>
+                    <Card padding={2}>
+                        <Form.Row>
+                            <Form.Col padding={2}>
                                 <Form.Radio id='primary' checked={this.state.type == 'primary'} onChange={this.onRadioChanged.bind(this)}>
                                     Primary
                                 </Form.Radio>
@@ -102,11 +102,9 @@ class SampleX extends React.Component  {
                                 <Form.Radio id='success' checked={this.state.type == 'success'} onChange={this.onRadioChanged.bind(this)}>
                                     Success
                                 </Form.Radio>
-                            </Card>
-                        </Form.Col>
+                            </Form.Col>
 
-                        <Form.Col>
-                            <Card padding={2}>
+                            <Form.Col padding={2}>
                                 <Form.Radio id='danger' checked={this.state.type == 'danger'} onChange={this.onRadioChanged.bind(this)}>
                                     Danger
                                 </Form.Radio>
@@ -116,16 +114,13 @@ class SampleX extends React.Component  {
                                 <Form.Radio id='light' checked={this.state.type == 'light'} onChange={this.onRadioChanged.bind(this)}>
                                     Light
                                 </Form.Radio>
-                            </Card>
-                        </Form.Col>
- 
-                    </Form.Row>
+                            </Form.Col>
 
-                    <Card margin={{top:2}} padding={2}>
-                        <Form.Radio id='dark' checked={this.state.type == 'dark'} onChange={this.onRadioChanged.bind(this)}>
-                                Dark
-                        </Form.Radio>
+                        </Form.Row>
                     </Card>
+
+ 
+
                 </Form>
                 <Collapse show={this.state.show} fade={true} timeout={1000}>
                     <Card margin={{top:1}} backgroundColor={this.state.type} textColor={textColor[this.state.type]}>
