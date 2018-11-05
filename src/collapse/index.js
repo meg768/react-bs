@@ -6,7 +6,7 @@ import Transition from 'react-transition-group/Transition';
 import {isArray} from '../utils';
 
 function debug() {
-   console.log.apply(null, arguments);
+   //console.log.apply(null, arguments);
 }
 
 

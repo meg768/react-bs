@@ -138,13 +138,13 @@ Form.Label.propTypes = {
 
 Form.Radio = function(props) {
 
-    var {checked, onChange, value, disabled, ...other} =  props;
+    var {children, ...other} = props;
 
     return (
-        <Tag tag='div' className="form-check" {...other}>
-            <input className="form-check-input" type="radio" value={value} checked={checked} disabled={disabled} onChange={onChange}/>
+        <Tag tag='div' className="form-check">
+            <input className="form-check-input" type="radio" {...other}/>
             <label className="form-check-label">
-                {props.children}
+                {children}
             </label>
         </Tag>        
     );
