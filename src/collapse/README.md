@@ -53,7 +53,7 @@ class SampleX extends React.Component  {
         super(props);
         this.state = {};
         this.state.show = false;
-        this.state.type = 'info';
+        this.state.type = 'primary';
 
         this.toggle = this.toggle.bind(this);
     }
@@ -68,8 +68,6 @@ class SampleX extends React.Component  {
         this.setState(state);
     }
 
-      // color      : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']),
- 
     render() {
 
         var textColor = {};
