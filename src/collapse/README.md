@@ -1,5 +1,12 @@
 
 
+#### Usage 
+
+```js static
+import {Collaspe} from 'react-bootify';
+/* or */
+import Collaspe from 'react-bootify/collaspe';
+```
 
 
 ```js
@@ -82,31 +89,44 @@ class SampleX extends React.Component  {
         return (
             <div>
                 <Button onClick={this.toggle}>Toggle</Button>
-                <Card margin={{top:2}}>
-                    <Form margin={2}>
-                        <Form.Radio id='primary' checked={this.state.type == 'primary'} onChange={this.onRadioChanged.bind(this)}>
-                            Primary
-                        </Form.Radio>
-                        <Form.Radio id='secondary' checked={this.state.type == 'secondary'} onChange={this.onRadioChanged.bind(this)}>
-                            Secondary
-                        </Form.Radio>
-                        <Form.Radio id='success' checked={this.state.type == 'success'} onChange={this.onRadioChanged.bind(this)}>
-                            Success
-                        </Form.Radio>
-                        <Form.Radio id='danger' checked={this.state.type == 'danger'} onChange={this.onRadioChanged.bind(this)}>
-                            Danger
-                        </Form.Radio>
-                        <Form.Radio id='info' checked={this.state.type == 'info'} onChange={this.onRadioChanged.bind(this)}>
-                            Info
-                        </Form.Radio>
-                        <Form.Radio id='light' checked={this.state.type == 'light'} onChange={this.onRadioChanged.bind(this)}>
-                            Light
-                        </Form.Radio>
+                <Form margin={{top:1}}>
+                    <Form.Row>
+                       <Form.Col>
+                            <Card padding={2}>
+                                <Form.Radio id='primary' checked={this.state.type == 'primary'} onChange={this.onRadioChanged.bind(this)}>
+                                    Primary
+                                </Form.Radio>
+                                <Form.Radio id='secondary' checked={this.state.type == 'secondary'} onChange={this.onRadioChanged.bind(this)}>
+                                    Secondary
+                                </Form.Radio>
+                                <Form.Radio id='success' checked={this.state.type == 'success'} onChange={this.onRadioChanged.bind(this)}>
+                                    Success
+                                </Form.Radio>
+                            </Card>
+                        </Form.Col>
+
+                        <Form.Col>
+                            <Card padding={2}>
+                                <Form.Radio id='danger' checked={this.state.type == 'danger'} onChange={this.onRadioChanged.bind(this)}>
+                                    Danger
+                                </Form.Radio>
+                                <Form.Radio id='info' checked={this.state.type == 'info'} onChange={this.onRadioChanged.bind(this)}>
+                                    Info
+                                </Form.Radio>
+                                <Form.Radio id='light' checked={this.state.type == 'light'} onChange={this.onRadioChanged.bind(this)}>
+                                    Light
+                                </Form.Radio>
+                            </Card>
+                        </Form.Col>
+ 
+                    </Form.Row>
+
+                    <Card margin={{top:2}} padding={2}>
                         <Form.Radio id='dark' checked={this.state.type == 'dark'} onChange={this.onRadioChanged.bind(this)}>
-                            Dark
+                                Dark
                         </Form.Radio>
-                    </Form>
-                </Card>
+                    </Card>
+                </Form>
                 <Collapse show={this.state.show} fade={true} timeout={1000}>
                     <Card margin={{top:1}} backgroundColor={this.state.type} textColor={textColor[this.state.type]}>
                         <Card.Header>
