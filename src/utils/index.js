@@ -1,4 +1,10 @@
 
+var _uniqueID = 100;
+
+module.exports.uniqueID = function() {
+	return 'UI' + _uniqueID++;
+};
+
 var isType = module.exports.isType = function(obj, type) {
 	return Object.prototype.toString.call(obj) == '[object ' + type + ']';
 };

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import Container from '../container';
 import Tag from '../tag';
+import {uniqueID} from '../utils';
 
 var _uniqueID = 0;
 
@@ -138,12 +139,12 @@ Form.Label.propTypes = {
 
 Form.Radio = function(props) {
 
-    var {children, ...other} = props;
+    var {children, id, ...other} = props;
 
     return (
         <Tag tag='div' className="form-check">
-            <input className="form-check-input" type="radio" {...other}/>
-            <label className="form-check-label">
+            <input id={id} className="form-check-input" type="radio"  {...other}/>
+            <label className="form-check-label" for={id}>
                 {children}
             </label>
         </Tag>        
@@ -153,6 +154,8 @@ Form.Radio = function(props) {
 Form.Checkbox = function(props) {
 
     var {checked, onChange, value, disabled, ...other} =  props;
+
+    var id = uniqueID();
 
     return (
         <Tag tag='div' className="form-check" {...other}>
