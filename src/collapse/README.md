@@ -104,7 +104,7 @@ class SampleX extends React.Component  {
                                 </Form.Radio>
                             </Form.Col>
 
-                            <Form.Col padding={2}>
+                            <Form.Col padding={2} border={{left:'warning'}}>
                                 <Form.Radio id='danger' checked={this.state.type == 'danger'} onChange={this.onRadioChanged.bind(this)}>
                                     Danger
                                 </Form.Radio>
