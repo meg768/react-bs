@@ -133,8 +133,8 @@ class FormSampleOne extends React.Component {
 
                         <Form.Col sm={10}>
                             <Form inline padding={{vertical:1}}>
-                                <Form.Radio type="text" placeholder="Ticker" textColor='muted'>
-                                    <small>Continous stop loss</small>
+                                <Form.Radio placeholder="Ticker" textColor='muted'>
+                                    Continous stop loss
                                 </Form.Radio>
 
                                 <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
@@ -142,15 +142,15 @@ class FormSampleOne extends React.Component {
                             </Form>
 
                             <Form inline padding={{vertical:1}}>
-                                <Form.Radio type="text" placeholder="" textColor='muted'>
-                                    <small>When price below</small>
+                                <Form.Radio placeholder="" textColor='muted'>
+                                    When price below
                                 </Form.Radio>
                                 <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                             </Form>
                             
                             <Form inline padding={{vertical:1}}>
-                                <Form.Radio type="text" placeholder="Ticker" textColor='muted'>
-                                    <small>When price dropped with more than</small> 
+                                <Form.Radio placeholder="Ticker" textColor='muted'>
+                                    When price dropped with more than 
                                 </Form.Radio>
                                 <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                                 <Form.Label textColor='muted'>%</Form.Label>
