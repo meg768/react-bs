@@ -13,6 +13,7 @@ export default class Collapse extends React.Component  {
 
         this.state = {};
         this.state.height = null;
+        this.state.opacity = 0;
         
         this.onEntering = this.onEntering.bind(this);
         this.onEntered = this.onEntered.bind(this);
@@ -23,36 +24,53 @@ export default class Collapse extends React.Component  {
     }
 
     onEnter(node) {
+        this.setState({height:0, opactity:0});
         console.log('onEnter state');
     }
 
 
-    onExit(node) {
-        console.log('onExit');
-    }
+
     
     onEntering(node, isAppearing) {
-        this.setState({height:node.scrollHeight});
+        this.setState({height:node.scrollHeight, opacity:1});
         console.log('onEntering');
     }
 
     onEntered(node, isAppearing) {
-        this.setState({height:null});
         console.log('onEntered');
+    }
+
+    onExit(node) {
+        console.log('onExit');
     }
 
     onExiting(node) {
         // getting this variable triggers a reflow
         const _unused = node.offsetHeight; // eslint-disable-line no-unused-vars
-        this.setState({height:0});
+        this.setState({height:0, opacity:0});
         console.log('onExiting');
     }
 
     onExited(node) {
-        this.setState({height:null});
+        this.setState({height:null, opacity:0});
         console.log('onExited');
     }
-    
+    /*
+    onEntering(node, isAppearing) {
+        this.setState({style:{height:node.scrollHeight}});
+    }
+
+    onEntered(node, isAppearing) {
+    }
+
+    onExiting(node) {
+        this.setState({style:{height:0}});
+    }
+
+    onExited(node) {
+        this.setState({style:{}});
+    }
+*/
     render() {
         var {show, fade, timeout, children, ...other} = this.props;
 
@@ -67,32 +85,35 @@ export default class Collapse extends React.Component  {
                     var className = child.props.className;
                     var style = child.props.style || {};
                     
-                    if (this.state.height != null) {
-                        style = {...style, ...{height:this.state.height}};
-                    }
+//                    if (this.state.height != null) {
+  //                      style = {...style, ...{height:this.state.height}};
+    //                }
                     
                     switch (state) {
                         case 'entering': {                
-                            className = classNames(className, 'collapsing');                
-                            //style = {...style, ...{position:'ralative', overflow:'hidden'}};
-                            //style = {...style, ...{transition:'height 0.35s ease'}};
+                            //className = classNames(className, 'collapsing');                
+                            style = {...style, ...{position:'ralative', overflow:'hidden'}};
+                            style = {...style, ...{transition:`height ${timeout / 1000}s ease, opacity ${timeout / 1000}s ease`}};
+                            style = {...style, ...{height:this.state.height, opacity:this.state.opacity}};
+    
                             break;
                         };
 
                         case 'entered': {
-                            className = classNames(className, 'collapse show');                
+                            //className = classNames(className, 'collapse show');                
                             break;
                         };
                         case 'exiting': {
-                            className = classNames(className, 'collapsing');                
-                            //style = {...style, ...{position:'ralative', overflow:'hidden'}};
-                            //style = {...style, ...{transition:'height 0.35s ease'}};
+                            //className = classNames(className, 'collapsing');                
+                            style = {...style, ...{position:'ralative', overflow:'hidden'}};
+                            style = {...style, ...{transition:`height ${timeout / 1000}s ease, opacity ${timeout / 1000}s ease`}};
+                            style = {...style, ...{height:this.state.height, opacity:this.state.opacity}};
                             break;
                         };
 
                         case 'exited': {
-                            className = classNames(className, 'collapse');                
-                            //style = {...style, ...{display:'none', height:0}};
+                            //className = classNames(className, 'collapse');                
+                            style = {...style, ...{display:'none'}};
                             break;
                         };
                     }
