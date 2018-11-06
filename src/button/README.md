@@ -14,8 +14,8 @@ import Button from 'react-bootify/button';
 var style = {margin:'0.2rem'};
 
 function onClick() {
-    alert('click');
 }
+
 <div>
     <Button color='primary' style={style} onClick={onClick}>
         Primary

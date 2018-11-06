@@ -153,15 +153,13 @@ Form.Radio = function(props) {
 
 Form.Checkbox = function(props) {
 
-    var {checked, onChange, value, disabled, ...other} =  props;
-
-    var id = uniqueID();
+    var {children, id, ...other} = props;
 
     return (
-        <Tag tag='div' className="form-check" {...other}>
-            <input className="form-check-input" type="checkbox" value={value} checked={checked} disabled={disabled} onChange={onChange}/>
-            <label className="form-check-label">
-                {props.children}
+        <Tag tag='div' className="form-check" >
+            <input id={id} className="form-check-input" type="checkbox" {...other}/>
+            <label className="form-check-label" for={id}>
+                {children}
             </label>
         </Tag>   
     );

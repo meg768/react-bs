@@ -11,7 +11,7 @@ export default function Fade(props)  {
 
 
    return (
-        <Transition in={show} timeout={150}>                
+        <Transition in={show} timeout={0}>                
             {state => {
                 var child = React.Children.toArray(children);
 

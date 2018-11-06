@@ -104,17 +104,6 @@ class SampleX extends React.Component  {
                                 </Form.Radio>
                             </Form.Col>
 
-                            <Form.Col padding={2} border={{left:'warning'}}>
-                                <Form.Radio id='danger' checked={this.state.type == 'danger'} onChange={this.onRadioChanged.bind(this)}>
-                                    Danger
-                                </Form.Radio>
-                                <Form.Radio id='info' checked={this.state.type == 'info'} onChange={this.onRadioChanged.bind(this)}>
-                                    Info
-                                </Form.Radio>
-                                <Form.Radio id='light' checked={this.state.type == 'light'} onChange={this.onRadioChanged.bind(this)}>
-                                    Light
-                                </Form.Radio>
-                            </Form.Col>
 
                         </Form.Row>
                     </Card>
