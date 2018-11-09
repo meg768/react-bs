@@ -60,7 +60,6 @@ function onClick() {
 var style = {margin:'0.2rem'};
 
 function onClick() {
-    alert('click');
 }
 <div>
     <Button color='primary' size='lg' style={style} onClick={onClick}>

@@ -107,9 +107,6 @@ class SampleX extends React.Component  {
 
                         </Form.Row>
                     </Card>
-
- 
-
                 </Form>
                 <Collapse show={this.state.show} fade={true} timeout={1000}>
                     <Card margin={{top:1}} backgroundColor={this.state.type} textColor={textColor[this.state.type]}>
