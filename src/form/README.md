@@ -60,6 +60,7 @@ class FormSampleOne extends React.Component {
 
         this.state = {};
         this.state.stock = {};
+        this.state.source = undefined;
         this.state.loading = false;
         this.onChange = this.onChange.bind(this);
 
@@ -70,6 +71,10 @@ class FormSampleOne extends React.Component {
         var stock = this.state.stock;
         stock[event.target.id] = event.target.value;
         this.setState({stock:stock});
+    }
+
+    selectSource(source) {
+        this.setState({source:source});
     }
 
     render() {
@@ -120,6 +125,40 @@ class FormSampleOne extends React.Component {
                         </Form.Col>
                         <Form.Col sm={10}>
                             <Form.Input type="text" placeholder="Amount"/>
+                        </Form.Col>
+                    </Form.Group>
+
+                    <Form.Group row>
+                        <Form.Col sm={2} textAlign='right' >
+                            <Form.Label inline textColor='muted'>
+                                <small>
+                                    Source
+                                </small>
+                            </Form.Label>
+                        </Form.Col>
+                        <Form.Col sm={10}>
+                            <Dropdown placement='bottom-start'>
+                                <Dropdown.Target>
+                                    <Button outline color='secondary'>
+                                        {this.state.source == undefined ? 'Select source' : this.state.source}
+                                    </Button>
+                                </Dropdown.Target>
+                                <Dropdown.Menu >
+                                    <Dropdown.Item onClick={this.selectSource.bind(this, 'Twitter')}>
+                                        Twitter
+                                    </Dropdown.Item>
+                                    <Dropdown.Item onClick={this.selectSource.bind(this, 'Facebook')}>
+                                        Facebook
+                                    </Dropdown.Item>
+                                    <Dropdown.Item onClick={this.selectSource.bind(this, 'Pinterest')}>
+                                        Pinterest
+                                    </Dropdown.Item>
+                                    <Dropdown.Separator/>
+                                    <Dropdown.Item onClick={this.selectSource.bind(this, undefined)}>
+                                        Reset
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </Form.Col>
                     </Form.Group>
 
