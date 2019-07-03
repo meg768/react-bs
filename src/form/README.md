@@ -60,21 +60,23 @@ class FormSampleOne extends React.Component {
 
         this.state = {};
         this.state.stock = {};
-        this.state.source = undefined;
         this.state.loading = false;
-        this.onChange = this.onChange.bind(this);
-
-
     }
 
-    onChange(event) {
+    onTextChange(event) {
         var stock = this.state.stock;
         stock[event.target.id] = event.target.value;
         this.setState({stock:stock});
     }
 
-    selectSource(source) {
-        this.setState({source:source});
+    onSourceChange(source) {
+        var stock = this.state.stock;
+        stock.source = source;
+        this.setState({stock:stock});
+    }
+
+    onSaveChanges() {
+        console.log(this.state.stock);
     }
 
     render() {
@@ -88,7 +90,7 @@ class FormSampleOne extends React.Component {
                             </Form.Label>
                         </Form.Col>
                         <Form.Col sm={10} textAlign='right' >
-                            <Form.Input type="text"  placeholder="Ticker"/>
+                            <Form.Input type="text" id="ticker" placeholder="Ticker" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Group>
 
@@ -99,7 +101,7 @@ class FormSampleOne extends React.Component {
                             </Form.Label>
                         </Form.Col>
                         <Form.Col sm={10}>
-                            <Form.Input type="text" placeholder="Name"/>
+                            <Form.Input type="text" id="name" placeholder="Name" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Group>
 
@@ -111,7 +113,7 @@ class FormSampleOne extends React.Component {
                             </Form.Label>
                         </Form.Col>
                         <Form.Col sm={10}>
-                            <Form.Input type="text" placeholder="Price"/>
+                            <Form.Input type="text" id="price" placeholder="Price" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Group>
 
@@ -124,7 +126,7 @@ class FormSampleOne extends React.Component {
                             </Form.Label>
                         </Form.Col>
                         <Form.Col sm={10}>
-                            <Form.Input type="text" placeholder="Amount"/>
+                            <Form.Input type="text" id="amount" placeholder="Amount" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Group>
 
@@ -140,21 +142,21 @@ class FormSampleOne extends React.Component {
                             <Dropdown placement='bottom-start'>
                                 <Dropdown.Target>
                                     <Button outline color='secondary'>
-                                        {this.state.source == undefined ? 'Select source' : this.state.source}
+                                        {this.state.stock.source == undefined ? 'Select source' : this.state.stock.source}
                                     </Button>
                                 </Dropdown.Target>
                                 <Dropdown.Menu >
-                                    <Dropdown.Item onClick={this.selectSource.bind(this, 'Twitter')}>
+                                    <Dropdown.Item onClick={this.onSourceChange.bind(this, 'Twitter')}>
                                         Twitter
                                     </Dropdown.Item>
-                                    <Dropdown.Item onClick={this.selectSource.bind(this, 'Facebook')}>
+                                    <Dropdown.Item onClick={this.onSourceChange.bind(this, 'Facebook')}>
                                         Facebook
                                     </Dropdown.Item>
-                                    <Dropdown.Item onClick={this.selectSource.bind(this, 'Pinterest')}>
+                                    <Dropdown.Item onClick={this.onSourceChange.bind(this, 'Pinterest')}>
                                         Pinterest
                                     </Dropdown.Item>
                                     <Dropdown.Separator/>
-                                    <Dropdown.Item onClick={this.selectSource.bind(this, undefined)}>
+                                    <Dropdown.Item onClick={this.onSourceChange.bind(this, undefined)}>
                                         Reset
                                     </Dropdown.Item>
                                 </Dropdown.Menu>
@@ -199,7 +201,7 @@ class FormSampleOne extends React.Component {
 
                     <Form.Group textAlign='right'>
                         <Button color='secondary' outline margin={{right:1}}>Cancel</Button>
-                        <Button color='primary'  margin={0}>Save changes</Button>
+                        <Button color='primary' margin={0} onClick={this.onSaveChanges.bind(this)} >Save changes</Button>
                     </Form.Group>
                 </Form>
         );
