@@ -144,7 +144,7 @@ Form.Radio = function(props) {
     return (
         <Tag tag='div' className="form-check">
             <input id={id} className="form-check-input" type="radio"  {...other}/>
-            <label className="form-check-label" for={id}>
+            <label className="form-check-label" htmlFor={id}>
                 {children}
             </label>
         </Tag>        
@@ -158,7 +158,7 @@ Form.Checkbox = function(props) {
     return (
         <Tag tag='div' className="form-check" >
             <input id={id} className="form-check-input" type="checkbox" {...other}/>
-            <label className="form-check-label" for={id}>
+            <label className="form-check-label" htmlFor={id}>
                 {children}
             </label>
         </Tag>   
