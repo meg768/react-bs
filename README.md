@@ -7,7 +7,7 @@ Another minimalistic Bootstrap layer for React.
     npm install react-bootify --save
 ````
 
-Bootstrap css-styles need to be installed separately.
+Bootstrap css-styles should to be installed separately. Versions 4.1.3 and 4.2.1 are supported.
 
 ## Comment
 This module is not ready for public use. Use **reactstrap**.
@@ -26,6 +26,8 @@ This module is not ready for public use. Use **reactstrap**.
 - 2018-10-22 - Added component **Card**.
 - 2018-10-30 - Added additional functionality to **Popover** and added some examples in the documentation.
 - 2018-11-02 - Added **Collapse** component.
+- 2019-07-14 - Added **Spinner** component.
+- 2019-07-14 - Bug fix when using Bootstrap 4.3.1 regarding button text colors.
 
 
 

@@ -12,6 +12,7 @@ import Tag from './tag';
 import ListGroup from './list-group';
 import Fade from './fade';
 import Collapse from './collapse';
+import Spinner from './spinner';
 
 
 var Row = Container.Row;
@@ -20,6 +21,8 @@ var Grid = Container;
 
 export {
     Grid, Tag, Glyph, Popper, Button, Form, ListGroup, Fade, Collapse,
-    Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown
+    Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown,
+    Spinner
+
 
 };

@@ -47,7 +47,7 @@ export default class Button extends Component  {
         var {tag, size, className, outline, color, ...props} = this.props;
 
         className = classNames(className, 'btn');
-        className = classNames(className, {[`btn-${color}`]:color});
+        className = classNames(className, {[`btn-${color}`]:color && !outline});
         className = classNames(className, {[`btn-${size}`]:size});
         className = classNames(className, {[`btn-outline-${color}`]:outline});
 
