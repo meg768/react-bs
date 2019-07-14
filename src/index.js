@@ -14,7 +14,6 @@ import Fade from './fade';
 import Collapse from './collapse';
 import Spinner from './spinner';
 
-
 var Row = Container.Row;
 var Col = Container.Col;
 var Grid = Container;
