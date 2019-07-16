@@ -23,20 +23,20 @@ class Sample extends React.Component {
         super(props);
 
         this.state = {};
-        this.state.isOpen = false;
+        this.state.show = false;
         this.toggle = this.toggle.bind(this);
     }
 
 
     toggle() {
-        this.setState({isOpen: !this.state.isOpen});
+        this.setState({show: !this.state.show});
     }
 
     render() {
 
         return (
             <Tag margin={{horizontal:1}} display='inline-block'>
-                <Popover isOpen={this.state.isOpen} placement={this.props.placement} toggle={this.toggle}>
+                <Popover show={this.state.show} placement={this.props.placement} toggle={this.toggle}>
                     <Popover.Target>
                         <Button color={this.props.color} outline={this.props.outline} onClick={this.toggle} >
                             {this.props.text}

@@ -15,11 +15,16 @@ function debug() {
 export default class Popover extends React.Component {
 
     constructor(props) {
+
         super(props);
+
+        if (this.props.isOpen) {
+            console.error('Property isOpen obsolete. Use show instead.');
+        }
 
         this.state = {};
         this.state.popper = null;
-        this.state.isOpen = false;
+        this.state.show   = false;
         
         this.popper     = null;
         this.targetNode = null;
@@ -33,7 +38,7 @@ export default class Popover extends React.Component {
     static propTypes = {
         target      : PropTypes.element,
         toggle      : PropTypes.func,
-        isOpen      : PropTypes.bool,
+        show        : PropTypes.bool,
         arrow       : PropTypes.bool,
         sticky      : PropTypes.bool,
         modifiers   : PropTypes.any,
@@ -42,7 +47,7 @@ export default class Popover extends React.Component {
 
     static defaultProps = {
         placement   : 'bottom-start',
-        isOpen      : false,
+        show        : false,
         arrow       : true,
         sticky      : false,
         modifiers   : {
@@ -55,9 +60,9 @@ export default class Popover extends React.Component {
 
     isOpen() {
         if (this.props.toggle != undefined)
-            return this.props.isOpen;
+            return this.props.show || this.props.isOpen;
         else
-            return this.state.isOpen;
+            return this.state.show;
     }
 
     togglePopper() {
@@ -74,28 +79,35 @@ export default class Popover extends React.Component {
 
     showPopper() {
         this.createPopper();      
-        this.setState({isOpen:true});
+        this.setState({show:true});
     }
 
     hidePopper() {
         this.destroyPopper();
-        this.setState({isOpen:false});
+        this.setState({show:false});
     }
 
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps() {
-    }
 
     componentDidUpdate(previousProps, previousState) {
         if (this.props.toggle) {
+            
+            
+            if (previousProps.show != this.props.show) {
+                if (this.isOpen())
+                    this.showPopper();
+                else
+                    this.hidePopper();    
+            }
+
+            // Be compatible with name change
             if (previousProps.isOpen != this.props.isOpen) {
                 if (this.isOpen())
                     this.showPopper();
                 else
                     this.hidePopper();    
             }
+
+
         }
     }
 
@@ -201,7 +213,7 @@ export default class Popover extends React.Component {
 
 
         var popoverClassName = 'popover';
-        var isOpen = this.state.popper && this.isOpen();
+        var show = this.state.popper && this.isOpen();
 
         if (this.state.popper) {
 
@@ -252,7 +264,7 @@ export default class Popover extends React.Component {
         }
 
         return (
-            <Fade show={isOpen}>
+            <Fade show={show}>
                 <div className={popoverClassName}  ref={(element) => {this.popupNode = element}}>
                     {arrow}
                     {children}

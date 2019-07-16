@@ -28,6 +28,9 @@ This module is not ready for public use. Use **reactstrap**.
 - 2018-11-02 - Added **Collapse** component.
 - 2019-07-14 - Added **Spinner** component.
 - 2019-07-14 - Bug fix when using Bootstrap 4.3.1 regarding button text colors.
+- 2019-07-16 - Added **Toast** component.
+- 2019-07-16 - Property name change from **isOpen** to **show** in **Modal** and **Popover** to reflect class names to Bootstrap.
+
 
 
 
