@@ -15,13 +15,13 @@ class Sample extends React.Component {
         super(props);
 
         this.state = {};
-        this.state.isOpen = false;
+        this.state.show = false;
 
         this.toggle = this.toggle.bind(this);
     }
 
     toggle() {
-        this.setState({isOpen: !this.state.isOpen});
+        this.setState({show: !this.state.show});
     }
 
     render() {
@@ -29,7 +29,7 @@ class Sample extends React.Component {
             <div>
                 <Button onClick={this.toggle}>Launch modal dialog</Button>
 
-                <Modal isOpen={this.state.isOpen} centered>
+                <Modal show={this.state.show} centered>
                     <Modal.Header dismiss={this.toggle}>
                         <Modal.Title>
                             Title

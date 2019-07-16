@@ -20,36 +20,32 @@ export default class Modal extends React.Component {
     }
 
     static propTypes = {
-        isOpen: PropTypes.bool,
+        show     : PropTypes.bool,
         centered : PropTypes.bool,
-        role : PropTypes.string
+        role     : PropTypes.string
     };
 
     static defaultProps = {
-        isOpen : false,
+        show     : false,
         centered : false,
-        role: 'dialog'
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps() {
-    }
-
-    componentWillUnmount() {
+        role     : 'dialog'
     }
 
 
     render() {
-        var {className, centered, style, isOpen, ...props } = this.props;
+        var {className, centered, style, show, isOpen, ...props } = this.props;
+
+        if (isOpen != undefined) {
+            show = isOpen;
+            console.error('Property isOpen is obsolete. Use show instead.');
+        }
 
         className = classNames(className, {'modal': true});
 
         style = Object.assign({}, {backgroundColor:'rgba(0, 0, 0, 0.5)'}, style);
 
         return (
-            <Fade show={isOpen}>
+            <Fade show={show}>
                 <div style={style} className={className} {...props}>
                     <div className={classNames('modal-dialog', {'modal-dialog-centered': centered})}>
                         <div className='modal-content'>
