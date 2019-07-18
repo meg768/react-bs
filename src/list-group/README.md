@@ -14,7 +14,7 @@ The most basic list group is an unordered list with list items. Build upon it wi
 ```js
 
 <ListGroup>
-    <ListGroup.Item padding={0}>
+    <ListGroup.Item>
         Cras justo odio
     </ListGroup.Item>
     <ListGroup.Item>
