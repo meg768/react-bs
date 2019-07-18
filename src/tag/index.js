@@ -3,160 +3,212 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { isObject, isNumber, isString, isBoolean } from 'util';
 
-export default class Tag extends React.Component  {
+class TagX extends React.Component  {
 
     render() {
-        var {tag : TheTag, justifyContent, visible, invisible, display, alignItems, alignContent, textAlign, float, verticalAlign, rounded, className, textColor, backgroundColor, margin, border, padding, children, ...other} = this.props;
+        var {tag : TheTag, className, style = {}, opacity, left, top, right, bottom, width, height, fixed, position, justifyContent, visible, invisible, display, alignItems, alignContent, textAlign, float, align, verticalAlign, rounded, color, textColor, backgroundColor, margin, border, padding, children, ...props} = this.props;
+
+        function addStyle(name, value) {
+            if (value != undefined)
+                style[name] = value;
+        }
+
+        function addClass(name, condition) {
+            if (condition)
+                className = classNames(className, name);
+        }
 
 
+        ///////////////////////////////////////////////////////////////////////
+
+        addClass(`border`, isBoolean(border) || isString(border));
+        addClass(`border-${border}`, isString(border));
+ 
         if (isObject(border)) {
-            className = classNames(className, {'border-left':border.left});
-            className = classNames(className, {'border-top':border.top});
-            className = classNames(className, {'border-right':border.right});
-            className = classNames(className, {'border-bottom':border.bottom});
-        }
-        else if (isString(border)) {
-            className = classNames(className, {[`border-${border}`]:true});
-            className = classNames(className, {[`border`]:true});
-        }
-        else if (border) {
-            className = classNames(className, {'border':true});
+            addClass(`border-left`, border.left);
+            addClass(`border-top`, border.top);
+            addClass(`border-right`, border.right);
+            addClass(`border-bottom`, border.bottom);
         }
         
         ///////////////////////////////////////////////////////////////////////
 
-        if (isNumber(padding)) {
-            className = classNames(className, {[`p-${padding}`]:padding});
-    
-        }
-        else if (isObject(padding)) {
-            className = classNames(className, {[`pl-${padding.left}`]:padding.left});
-            className = classNames(className, {[`pr-${padding.right}`]:padding.right});
-            className = classNames(className, {[`pt-${padding.top}`]:padding.top});
-            className = classNames(className, {[`pb-${padding.bottom}`]:padding.bottom});
-            className = classNames(className, {[`px-${padding.horizontal}`]:padding.horizontal});
-            className = classNames(className, {[`py-${padding.vertical}`]:padding.vertical});
+        addClass(`p-${padding}`, isString(padding) || isNumber(padding));
+
+        if (isObject(padding)) {
+            addClass(`pl-${padding.left}`, padding.left != undefined);
+            addClass(`pt-${padding.top}`, padding.top != undefined);
+            addClass(`pr-${padding.right}`, padding.right != undefined);
+            addClass(`pb-${padding.bottom}`, padding.bottom != undefined);
+            addClass(`px-${padding.horizontal}`, padding.horizontal != undefined);
+            addClass(`py-${padding.vertical}`, padding.vertical != undefined);
         }
 
         ///////////////////////////////////////////////////////////////////////
-    
-        if (isNumber(margin)) {
-            className = classNames(className, {[`m-${margin}`]:margin});
-        }
-        else if (isObject(margin)) {
-            className = classNames(className, {[`ml-${margin.left}`]:margin.left});
-            className = classNames(className, {[`mr-${margin.right}`]:margin.right});
-            className = classNames(className, {[`mt-${margin.top}`]:margin.top});
-            className = classNames(className, {[`mb-${margin.bottom}`]:margin.bottom});
-            className = classNames(className, {[`mx-${margin.horizontal}`]:margin.horizontal});
-            className = classNames(className, {[`my-${margin.vertical}`]:margin.vertical});
+
+        addClass(`m-${margin}`, isString(margin) || isNumber(margin));
+
+        if (isObject(margin)) {
+            addClass(`ml-${margin.left}`, margin.left != undefined);
+            addClass(`mt-${margin.top}`, margin.top != undefined);
+            addClass(`mr-${margin.right}`, margin.right != undefined);
+            addClass(`mb-${margin.bottom}`, margin.bottom != undefined);
+            addClass(`mx-${margin.horizontal}`, margin.horizontal != undefined);
+            addClass(`my-${margin.vertical}`, margin.vertical != undefined);
         }
         
         ///////////////////////////////////////////////////////////////////////
 
+        addClass(`rounded-${rounded}`, isString(rounded) || isNumber(rounded));
 
-        if (alignItems != undefined) {
-            if (isString(alignItems)) {
-                className = classNames(className, {[`d-flex`]:true});
-                className = classNames(className, {[`align-items-${alignItems}`]:true});
-
-            }
+        if (isObject(rounded)) {
+            addClass(`rounded-left`, rounded.left);
+            addClass(`rounded-top`, rounded.top);
+            addClass(`rounded-right`, rounded.right);
+            addClass(`rounded-bottom`, rounded.bottom);
         }
 
         ///////////////////////////////////////////////////////////////////////
 
-
-        if (alignContent != undefined) {
-            if (isString(alignItems)) {
-                className = classNames(className, {[`d-flex`]:true});
-                className = classNames(className, {[`align-content-${alignContent}`]:true});
-
-            }
-        }
-        
-        
-        ///////////////////////////////////////////////////////////////////////
-
-
-        if (justifyContent != undefined) {
-            if (isString(justifyContent)) {
-                className = classNames(className, {[`d-flex`]:true});
-                className = classNames(className, {[`justify-content-${justifyContent}`]:true});
-
-            }
-        }
+        addClass(`justify-content-${justifyContent}`, isString(justifyContent));
+        addClass(`align-content-${alignContent}`, isString(alignContent));
+        addClass(`text-${textColor}`, isString(textColor));
+        addClass(`text-${color}`, isString(color));
+        addClass(`bg-${backgroundColor}`, isString(backgroundColor));
+        addClass(`d-${display}`, isString(display));
+        addClass(`align-${verticalAlign}`, isString(verticalAlign));
+        addClass(`align-${align}`, isString(align));
+        addClass(`position-${position}`, isString(position));
+        addClass(`float-${float}`, isString(float));
+        addClass(`fixed-${fixed}`, isString(fixed));
+        addClass(`align-items-${alignItems}`, isString(alignItems));
+        addClass(`text-${textAlign}`, isString(textAlign));
+        addClass(`rounded`, isBoolean(rounded));
+        addClass(`visible`, visible);
+        addClass(`invisible`, invisible);
 
         ///////////////////////////////////////////////////////////////////////
 
-        if (isString(textColor)) {
-            className = classNames(className, {[`text-${textColor}`]:true});
-        }
+        addStyle('width', width);
+        addStyle('height', height);
+        addStyle('left', left);
+        addStyle('top', top);
+        addStyle('right', right);
+        addStyle('bottom', bottom);
+        addStyle('opacity', opacity);
 
-        ///////////////////////////////////////////////////////////////////////
     
-        if (isString(backgroundColor)) {
-            className = classNames(className, {[`bg-${backgroundColor}`]:true});
-        }
-    
-        ///////////////////////////////////////////////////////////////////////
-
-        if (isString(display)) {
-            className = classNames(className, {[`d-${display}`]:true});
-        }
-    
-        ///////////////////////////////////////////////////////////////////////
-
-        if (isString(verticalAlign)) {
-            className = classNames(className, {[`align-${verticalAlign}`]:true});
-        }
-    
-        ///////////////////////////////////////////////////////////////////////
-
-        if (isString(float)) {
-            className = classNames(className, {[`float-${float}`]:true});
-        }
-    
-        ///////////////////////////////////////////////////////////////////////
-
-        if (isString(textAlign)) {
-            className = classNames(className, {[`text-${textAlign}`]:true});
-        }
-        
-        ///////////////////////////////////////////////////////////////////////
-
-        if (isBoolean(rounded)) {
-            className = classNames(className, {[`rounded`]:rounded});
-        }
-        else if (isString(rounded)) {
-            className = classNames(className, {[`rounded-${rounded}`]:rounded});
-        }
-        else if (isNumber(rounded)) {
-            className = classNames(className, {[`rounded-${rounded}`]:true});
-        }
-        else if (isObject(rounded)) {
-            className = classNames(className, {'rounded-left':rounded.left});
-            className = classNames(className, {'rounded-top':rounded.top});
-            className = classNames(className, {'rounded-right':rounded.right});
-            className = classNames(className, {'rounded-bottom':rounded.bottom});
-    
-        }
-
-        ///////////////////////////////////////////////////////////////////////
-    
-        className = classNames(className, {'visible':visible});
-
-        ///////////////////////////////////////////////////////////////////////
-
-        className = classNames(className, {'invisible':invisible});
-    
-    
+    console.log(style);
         return (
-            <TheTag className={className} {...other}>
+            <TheTag className={className} style={style} {...props}>
                 {children}
             </TheTag>
         );
     
     }
+}
+
+
+export default function Tag(props) {
+
+    var {tag : TheTag, className, style = {}, opacity, left, top, right, bottom, width, height, fixed, position, justifyContent, visible, invisible, display, alignItems, alignContent, textAlign, float, align, verticalAlign, rounded, color, textColor, backgroundColor, margin, border, padding, children, ...props} = props;
+
+    function addStyle(name, value) {
+        if (value != undefined)
+            style[name] = value;
+    }
+
+    function addClass(name, condition) {
+        if (condition)
+            className = classNames(className, name);
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////
+
+    addClass(`border`, isBoolean(border) || isString(border));
+    addClass(`border-${border}`, isString(border));
+
+    if (isObject(border)) {
+        addClass(`border-left`, border.left);
+        addClass(`border-top`, border.top);
+        addClass(`border-right`, border.right);
+        addClass(`border-bottom`, border.bottom);
+    }
+    
+    ///////////////////////////////////////////////////////////////////////
+
+    addClass(`p-${padding}`, isString(padding) || isNumber(padding));
+
+    if (isObject(padding)) {
+        addClass(`pl-${padding.left}`, padding.left != undefined);
+        addClass(`pt-${padding.top}`, padding.top != undefined);
+        addClass(`pr-${padding.right}`, padding.right != undefined);
+        addClass(`pb-${padding.bottom}`, padding.bottom != undefined);
+        addClass(`px-${padding.horizontal}`, padding.horizontal != undefined);
+        addClass(`py-${padding.vertical}`, padding.vertical != undefined);
+    }
+
+    ///////////////////////////////////////////////////////////////////////
+
+    addClass(`m-${margin}`, isString(margin) || isNumber(margin));
+
+    if (isObject(margin)) {
+        addClass(`ml-${margin.left}`, margin.left != undefined);
+        addClass(`mt-${margin.top}`, margin.top != undefined);
+        addClass(`mr-${margin.right}`, margin.right != undefined);
+        addClass(`mb-${margin.bottom}`, margin.bottom != undefined);
+        addClass(`mx-${margin.horizontal}`, margin.horizontal != undefined);
+        addClass(`my-${margin.vertical}`, margin.vertical != undefined);
+    }
+    
+    ///////////////////////////////////////////////////////////////////////
+
+    addClass(`rounded-${rounded}`, isString(rounded) || isNumber(rounded));
+
+    if (isObject(rounded)) {
+        addClass(`rounded-left`, rounded.left);
+        addClass(`rounded-top`, rounded.top);
+        addClass(`rounded-right`, rounded.right);
+        addClass(`rounded-bottom`, rounded.bottom);
+    }
+
+    ///////////////////////////////////////////////////////////////////////
+
+    addClass(`justify-content-${justifyContent}`, isString(justifyContent));
+    addClass(`align-content-${alignContent}`, isString(alignContent));
+    addClass(`text-${textColor}`, isString(textColor));
+    addClass(`text-${color}`, isString(color));
+    addClass(`bg-${backgroundColor}`, isString(backgroundColor));
+    addClass(`d-${display}`, isString(display));
+    addClass(`align-${verticalAlign}`, isString(verticalAlign));
+    addClass(`align-${align}`, isString(align));
+    addClass(`position-${position}`, isString(position));
+    addClass(`float-${float}`, isString(float));
+    addClass(`fixed-${fixed}`, isString(fixed));
+    addClass(`align-items-${alignItems}`, isString(alignItems));
+    addClass(`text-${textAlign}`, isString(textAlign));
+    addClass(`rounded`, isBoolean(rounded));
+    addClass(`visible`, visible);
+    addClass(`invisible`, invisible);
+
+    ///////////////////////////////////////////////////////////////////////
+
+    addStyle('width', width);
+    addStyle('height', height);
+    addStyle('left', left);
+    addStyle('top', top);
+    addStyle('right', right);
+    addStyle('bottom', bottom);
+    addStyle('opacity', opacity);
+
+
+    return (
+        <TheTag className={className} style={style} {...props}>
+            {children}
+        </TheTag>
+    );
+    
 }
 
 Tag.defaultProps = {
@@ -169,6 +221,7 @@ Tag.propTypes = {
     visible          : PropTypes.bool,
     invisible        : PropTypes.bool,
     textColor        : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white', 'muted']),
+    color            : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white', 'muted']),
     textAlign        : PropTypes.oneOf(['left', 'right', 'center']),
     verticalAlign    : PropTypes.oneOf(['top', 'middle', 'bottom', 'baseline', 'text-top', 'text-bottom']),
     backgroundColor  : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white']),

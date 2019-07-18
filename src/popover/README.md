@@ -92,7 +92,7 @@ class Sample extends React.Component {
         
         return (
             <Tag margin={{horizontal:1}} display='inline-block'>
-                <Popover  placement={this.props.placement} >
+                <Popover placement={this.props.placement} >
                     <Popover.Target>
                         <Tag tag='span' textColor={this.props.color} onClick={onClick.bind(this, this.props.text)}>
                             {this.props.text}

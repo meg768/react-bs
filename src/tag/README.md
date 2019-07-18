@@ -17,12 +17,14 @@ you may also use the **Tag** properies.
 
 When using a **Tag** it defaults to a **div**-tag but this may be changed to a **span** like this
 
+
 ```js static
 
     <Tag tag='span' margin={1}>
         Hello
     </Tag>
 ```
+
 
 ### Aligning items at top right
 
@@ -33,7 +35,7 @@ This is using the Bootstrap classes **align-items-start** and **justify-content-
 
     var color = 'primary';
 
-    <Tag border={color} rounded={true} style={{height:'6rem'}} alignItems='start' justifyContent='end' padding={2} >
+    <Tag border={color} rounded={true} height='6rem' display='flex' alignItems='start' justifyContent='end' padding={2} >
         <Button color={color}  margin={{horizontal:1}}>
             Pax vobiscum
         </Button>
@@ -56,14 +58,14 @@ This is using the Bootstrap classes **align-items-end** and **justify-content-st
 
     var color = 'danger';
 
-    <Tag border={color} rounded={true} style={{height:'6rem'}} alignItems='end' justifyContent='start' padding={2} >
-        <Button color={color}  margin={{horizontal:1}}>
+    <Tag border={color} rounded={true} height='6rem' display='flex' alignItems='end' justifyContent='start' padding={2} >
+        <Button color={color} margin={{horizontal:1}}>
             Pax vobiscum
         </Button>
-        <Button color={color}  margin={{horizontal:1}}>
+        <Button color={color} margin={{horizontal:1}}>
             Nosa dostra
         </Button>
-        <Button color={color}  margin={{horizontal:1}}>
+        <Button color={color} margin={{horizontal:1}}>
             Quantala predum
         </Button>
     </Tag>
@@ -78,29 +80,7 @@ This is using the Bootstrap classes **align-items-center** and **justify-content
 
     var color = 'secondary';
 
-    <Tag border={color} rounded={true} style={{height:'6rem'}} alignItems='center' justifyContent='center' padding={2} >
-        <Button color={color}  margin={{horizontal:1}}>
-            Pax vobiscum
-        </Button>
-        <Button color={color}  margin={{horizontal:1}}>
-            Nosa dostra
-        </Button>
-        <Button color={color}  margin={{horizontal:1}}>
-            Quantala predum
-        </Button>
-    </Tag>
-
-```
-
-### Aligning items centered vertically and right aligned
-
-This is using the Bootstrap classes **align-items-center** and **justify-content-center**.
-
-```js
-
-    var color = 'warning';
-
-    <Tag border={color} rounded={true} style={{height:'6rem'}} alignItems='center' justifyContent='end' padding={2} >
+    <Tag border={color} rounded={true} height='6rem' display='flex' alignItems='center' justifyContent='center' padding={2} >
         <Button color={color}  margin={{horizontal:1}}>
             Pax vobiscum
         </Button>
@@ -121,8 +101,7 @@ Here is an example of different border styles, padding, margin and colors.
 
 ```js
 
-
-    <Tag border='primary' rounded textColor='light' backgroundColor='info' padding={{left:3, right:3, bottom:2, top:2}}>
+    <Tag border='primary' rounded={true} textColor='light' backgroundColor='info' padding={{left:3, right:3, bottom:2, top:2}}>
         Primary border, rounded borders, light text color, info background color and some padding 
     </Tag>
     <hr/>

@@ -4,45 +4,28 @@ import PropTypes from "prop-types";
 
 import Container from '../container';
 import Tag from '../tag';
-import {uniqueID} from '../utils';
-
-var _uniqueID = 0;
 
 
-/**
- * 
- * Form
- * 
- * 
- */
-export default class Form extends Component  {
+export default function Form(props)  {
 
-    static defaultProps = {
-        tag: 'div',
-        inline: false
-    }
+    var {className, tag, inline, ...props} = props;
 
-    constructor(args) {
-        super(args);
-    }
+    className = classNames(className, {'form': true});
+    className = classNames(className, {'form-inline': inline});
 
-    render() {
+    return (
+        <Tag tag={tag} {...props} className={className}>
+            {props.children}
+        </Tag>
 
-        var {className, tag, inline, ...props} = this.props;
-
-        className = classNames(className, {'form': true});
-        className = classNames(className, {'form-inline': inline});
-
-        return (
-            <Tag tag={tag} {...props} className={className}>
-                {this.props.children}
-            </Tag>
-
-        );
-    }
+    );
 
 };
 
+Form.defaultProps = {
+    tag: 'div',
+    inline: false
+}
 
 
 Form.Group = function(props)  {
@@ -81,25 +64,23 @@ Form.Col = function(props) {
 }
 
 
-Form.Input = class extends React.Component  {
+Form.Input = function(props)  {
 
-    render() {
 
-        var {plainText, tag, size, className, ...props} = this.props;
+    var {plainText, tag, size, className, ...props} = props;
 
-        className = classNames(className, {'form-control':true});
-        className = classNames(className, {'form-control-sm':size=='sm'});
-        className = classNames(className, {'form-control-lg':size=='lg'});
-        className = classNames(className, {'form-control-plaintext':plainText});
-    
-        return (
-            <Tag tag={tag} {...props} className={className}>
-                {this.props.children}
-            </Tag>
-    
-        );
-    
-    }
+    className = classNames(className, {'form-control':true});
+    className = classNames(className, {'form-control-sm':size=='sm'});
+    className = classNames(className, {'form-control-lg':size=='lg'});
+    className = classNames(className, {'form-control-plaintext':plainText});
+
+    return (
+        <Tag tag={tag} className={className} {...props}>
+            {props.children}
+        </Tag>
+
+    );
+
 };
 
 Form.Input.defaultProps = {
@@ -110,13 +91,12 @@ Form.Input.defaultProps = {
 
 Form.Label = function(props)  {
 
-    var {tag, className, inline, muted, ...other} = props;
+    var {tag, className, inline, ...props} = props;
 
-    className = classNames(className, {'text-muted': muted});
     className = classNames(className, {'col-form-label': inline});
     
     return (
-        <Tag tag={tag} className={className} {...other}>
+        <Tag tag={tag} className={className} {...props}>
             {props.children}
         </Tag>
     );
@@ -126,24 +106,22 @@ Form.Label = function(props)  {
 
 Form.Label.defaultProps = {
     tag: 'label',
-    inline: false,
-    muted: false
+    inline: false
 };
 
 Form.Label.propTypes = {
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    inline: PropTypes.bool,
-    muted: PropTypes.bool
+    inline: PropTypes.bool
 };
 
 
 Form.Radio = function(props) {
 
-    var {children, id, ...other} = props;
-
+    var {children, id, ...props} = props;
+    
     return (
-        <Tag tag='div' className="form-check">
-            <input id={id} className="form-check-input" type="radio"  {...other}/>
+        <Tag tag='div' className="form-check" {...props}>
+            <input id={id} className="form-check-input" type="radio"/>
             <label className="form-check-label" htmlFor={id}>
                 {children}
             </label>
@@ -153,11 +131,11 @@ Form.Radio = function(props) {
 
 Form.Checkbox = function(props) {
 
-    var {children, id, ...other} = props;
+    var {children, id, ...props} = props;
 
     return (
-        <Tag tag='div' className="form-check" >
-            <input id={id} className="form-check-input" type="checkbox" {...other}/>
+        <Tag tag='div' className="form-check" {...props}>
+            <input id={id} className="form-check-input" type="checkbox"/>
             <label className="form-check-label" htmlFor={id}>
                 {children}
             </label>

@@ -8,21 +8,22 @@ import Fade from '../fade';
 
 export default function Toast(props) {
 
-    var {className, show, style, children, tag, ...props} = props;
+    var {show, children, className, tag, ...props} = props;
 
-    className = classNames(className, show ? 'show' : undefined);
+    className = classNames(className, 'toast');
 
     return (
-        <Tag tag={tag} role="alert" aria-live="assertive" aria-atomic="true" style={style} className={className} {...props} >
-            {children}
-        </Tag>
+        <Fade show={show}>
+            <Tag tag={tag} role="alert" aria-live="assertive" aria-atomic="true"  className={className} {...props} >
+                {children}
+            </Tag>
+        </Fade>
 
     );
 };
 
 Toast.defaultProps = {
     tag       : 'div',
-    className : 'toast',
     show      : 'true'
 };
 
@@ -35,6 +36,7 @@ Toast.Header = function(props) {
             <span aria-hidden="true">&times;</span>
         </button>
     );
+
 
     return (
         <Tag className='toast-header' {...props}>

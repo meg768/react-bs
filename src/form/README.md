@@ -11,15 +11,17 @@ import Form from 'react-bootify/form';
 
 ```js
 
-    <form className="form-inline">
-        <div className="form-group">
-            <label >Password</label>
-            <input type="password" className="form-control mx-sm-3" aria-describedby="passwordHelpInline"/>
-            <small id="passwordHelpInline" className="text-muted">
+    <Form inline>
+        <Form.Group>
+            <Form.Label>
+                Password
+            </Form.Label>
+            <Form.Input type="password" margin={{left:3, right:3}}/>
+            <Tag tag='small' textColor='muted' id="passwordHelpInline">
                 Must be 8-20 characters long.
-            </small>
-        </div>
-    </form>
+            </Tag>
+        </Form.Group>
+    </Form>
 
 ```
 
@@ -52,7 +54,7 @@ import Form from 'react-bootify/form';
 ```js
 
 
-class FormSampleOne extends React.Component {
+class Sample extends React.Component {
 
 
     constructor(props) {
@@ -178,7 +180,7 @@ class FormSampleOne extends React.Component {
                                     Continous stop loss
                                 </Form.Radio>
 
-                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
+                                <Form.Input width='5rem' margin={{left:2, right:2}} type="text" placeholder=""/>
                                 <Form.Label textColor='muted'>%</Form.Label>
                             </Form>
 
@@ -186,14 +188,14 @@ class FormSampleOne extends React.Component {
                                 <Form.Radio placeholder="" textColor='muted'>
                                     When price below
                                 </Form.Radio>
-                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
+                                <Form.Input width='5rem' margin={{left:2, right:2}} type="text" placeholder=""/>
                             </Form>
                             
                             <Form inline padding={{vertical:1}}>
                                 <Form.Radio placeholder="Ticker" textColor='muted'>
                                     When price dropped with more than 
                                 </Form.Radio>
-                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
+                                <Form.Input width='5rem' margin={{left:2, right:2}} type="text" placeholder=""/>
                                 <Form.Label textColor='muted'>%</Form.Label>
                             </Form>
                         </Form.Col>
@@ -209,7 +211,7 @@ class FormSampleOne extends React.Component {
 }
 
 
-<FormSampleOne/>
+<Sample/>
 ```
 
 
@@ -219,7 +221,7 @@ class FormSampleOne extends React.Component {
 ```js
 
 
-class FormSampleTwo extends React.Component {
+class Sample extends React.Component {
 
 
     constructor(props) {
@@ -251,12 +253,12 @@ class FormSampleTwo extends React.Component {
         return (
                 <Form>
                     <Form.Group>
-                        <Form.Label >Symbol</Form.Label>
+                        <Form.Label>Symbol</Form.Label>
                         <Form.Input type="text" readOnly plainText id="symbol" value={this.state.stock.symbol} onChange={this.onChange}/>
                     </Form.Group>
 
                     <Form.Group>
-                        <Form.Label >Name</Form.Label>
+                        <Form.Label>Name</Form.Label>
                         <Form.Input type="text" disabled={this.state.loading} value={this.state.stock.name} placeholder="Name" onChange={this.onChange}/>
                     </Form.Group>
 
@@ -270,6 +272,7 @@ class FormSampleTwo extends React.Component {
                             <Form.Input id='sector' type="text" disabled={this.state.loading} value={this.state.stock.sector} placeholder="Sector" onChange={this.onChange}/>
                         </Form.Group>
                     </Form.Row>
+
                     <Form.Row>
                         <Form.Group md={6}>
                             <Form.Label >Exchange</Form.Label>
@@ -286,7 +289,7 @@ class FormSampleTwo extends React.Component {
 }
 
 
-<FormSampleTwo/>
+<Sample/>
 ```
 
 
@@ -296,7 +299,7 @@ class FormSampleTwo extends React.Component {
 ```js
 
 
-class FormSampleCheckboxes extends React.Component {
+class Sample extends React.Component {
 
 
     constructor(props) {
@@ -313,11 +316,6 @@ class FormSampleCheckboxes extends React.Component {
     }
 
     render() {
-        var colStyle = {
-            borderRadius: '0.3rem',
-            border: '1px solid var(--gray)',
-            background: 'var(--light)'
-        };
 
         return (
                 <Form>
@@ -328,28 +326,28 @@ class FormSampleCheckboxes extends React.Component {
                     <Form.Group>
                         <Form.Row>
                             <Form.Group xs={12} sm={12} md={6}>
-                                <div className='card'>
-                                    <div className='card-body'>
-                                    <Form.Radio checked onChange={this.onChange}>
-                                        The <strong>quick</strong> brown fox jumps over the lazy dog
-                                    </Form.Radio>
-                                    <Form.Radio onChange={this.onChange}>
-                                        The <strong>quick</strong> brown fox jumps over the lazy dog
-                                    </Form.Radio>
-                                    </div>
-                                </div>
+                                <Card>
+                                    <Card.Body>
+                                        <Form.Radio checked onChange={this.onChange}>
+                                            The <strong>quick</strong> brown fox jumps over the lazy dog
+                                        </Form.Radio>
+                                        <Form.Radio onChange={this.onChange}>
+                                            The <strong>quick</strong> brown fox jumps over the lazy dog
+                                        </Form.Radio>
+                                    </Card.Body>
+                                </Card>
                             </Form.Group>
-                            <Form.Group  xs={12} sm={12} md={6}>
-                                <div className='card'>
-                                    <div className='card-body'>
+                            <Form.Group xs={12} sm={12} md={6}>
+                                <Card>
+                                    <Card.Body>
                                         <Form.Checkbox checked onChange={this.onChange}>
                                             The <strong>quick</strong> brown fox jumps over the lazy dog
                                         </Form.Checkbox>
                                         <Form.Checkbox onChange={this.onChange}>
                                             The <strong>quick</strong> brown fox jumps over the lazy dog
                                         </Form.Checkbox>
-                                    </div>
-                                </div>
+                                    </Card.Body>
+                                </Card>
                             </Form.Group>
                         </Form.Row>
                     </Form.Group>
@@ -361,5 +359,5 @@ class FormSampleCheckboxes extends React.Component {
 }
 
 
-<FormSampleCheckboxes/>
+<Sample/>
 ```
