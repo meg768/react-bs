@@ -1,6 +1,6 @@
 {
 	"name": "react-bootify",
-	"version": "0.0.144",
+	"version": "0.0.145",
 	"description": "react-bootify",
 	"main": "components/index.js",
 	"scripts": {
@@ -13,7 +13,7 @@
 		"publish-styleguide": "npm run styleguide:build && gh-pages -d styleguide",
 		"goto-github": "open https://github.com/meg768/react-bootify",
 		"goto-npm": "open https://www.npmjs.com/package/react-bootify",
-		"publish-to-npm": "npm run increase-package-version && npm run transpile &&  npm run commit && npm publish",
+		"publish-to-npm": "npm run increase-package-version && npm run transpile && npm run publish-styleguide && npm run commit && npm publish",
 		"styleguide": "styleguidist server",
 		"styleguide:build": "styleguidist build"
 	},
