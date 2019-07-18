@@ -121,3 +121,27 @@ Here is an example of different border styles, padding, margin and colors.
 
 
 ```
+
+### Shadows
+
+```js
+
+    <Tag shadow="none" border='muted' rounded="pill" margin={2} padding={{left:4, right:4, vertical:2}}>
+        No shadow
+    </Tag>
+
+    <Tag shadow="sm" border='muted' rounded="pill" margin={2} padding={{left:4, right:4, vertical:2}}>
+        Small shadow
+    </Tag>
+
+    <Tag shadow={true} border='muted' rounded="pill" margin={2} padding={{left:4, right:4, vertical:2}}>
+        Default shadow
+    </Tag>
+
+    <Tag shadow="lg" border='muted' rounded="pill" margin={2} padding={{left:4, right:4, vertical:2}}>
+        Large shadow
+    </Tag>
+
+
+```
+
