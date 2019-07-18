@@ -33,16 +33,16 @@ This is using the Bootstrap classes **align-items-start** and **justify-content-
 
 ```js
 
-    var color = 'primary';
+    var props = {color:'primary', margin:{horizontal:1}};
 
-    <Tag border={color} rounded={true} height='6rem' display='flex' alignItems='start' justifyContent='end' padding={2} >
-        <Button color={color}  margin={{horizontal:1}}>
+    <Tag border={props.color} rounded={true} height='6rem' display='flex' alignItems='start' justifyContent='end' padding={2} >
+        <Button {...props}>
             Pax vobiscum
         </Button>
-        <Button color={color}  margin={{horizontal:1}}>
+        <Button {...props}>
             Nosa dostra
         </Button>
-        <Button color={color}  margin={{horizontal:1}}>
+        <Button {...props}>
             Quantala predum
         </Button>
     </Tag>
