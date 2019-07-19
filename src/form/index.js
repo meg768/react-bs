@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import Container from '../container';
 import Tag from '../tag';
-
+import {uniqueID} from '../utils';
 
 export default function Form(props)  {
 
@@ -118,7 +118,9 @@ Form.Label.propTypes = {
 Form.Radio = function(props) {
 
     var {children, id, ...props} = props;
-    
+
+    id = (id == undefined) ? uniqueID() : id;
+
     return (
         <Tag tag='div' className="form-check" {...props}>
             <input id={id} className="form-check-input" type="radio"/>
@@ -131,12 +133,30 @@ Form.Radio = function(props) {
 
 Form.Checkbox = function(props) {
 
-    var {children, id, ...props} = props;
+    var {children, tag = 'div', id, ...props} = props;
+
+    id = (id == undefined) ? uniqueID() : id;
 
     return (
-        <Tag tag='div' className="form-check" {...props}>
+        <Tag tag={tag} className="form-check" {...props}>
             <input id={id} className="form-check-input" type="checkbox"/>
             <label className="form-check-label" htmlFor={id}>
+                {children}
+            </label>
+        </Tag>   
+    );
+}
+
+Form.Switch = function(props) {
+
+    var {children, tag = 'div', id, ...props} = props;
+
+    id = (id == undefined) ? uniqueID() : id;
+
+    return (
+        <Tag tag={tag} className="custom-control custom-switch" {...props}>
+            <input id={id} className="custom-control-input" type="checkbox"/>
+            <label className="custom-control-label" htmlFor={id}>
                 {children}
             </label>
         </Tag>   

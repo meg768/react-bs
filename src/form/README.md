@@ -361,3 +361,59 @@ class Sample extends React.Component {
 
 <Sample/>
 ```
+
+
+### Switches
+
+
+```js
+
+class Sample extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+
+    render() {
+
+        return (
+                <Form>
+                    <Form.Group>
+                        <Form.Row>
+                            <Form.Group xs={12} sm={12} md={6}>
+                                <Card padding={2}>
+                                    <Form.Col>
+                                        <Form.Switch textColor='success'>Enable autopilot</Form.Switch>
+                                        <Form.Switch textColor='info'>Avoid debris</Form.Switch>
+                                    </Form.Col>
+                                </Card>
+                            </Form.Group>
+
+                            <Form.Group xs={12} sm={12} md={6}>
+                                <Card padding={2}>
+                                    <Form.Col>
+                                        <Form.Switch textColor='primary'>Ignore speed warnings</Form.Switch>
+                                        <Form.Switch textColor='secondary'>Locate nearby chargers</Form.Switch>
+                                    </Form.Col>
+                                </Card>
+                            </Form.Group>
+
+                            <Form.Group xs={12} sm={12} md={6}>
+                                <Card padding={2}>
+                                    <Form.Col>
+                                        <Form.Switch textColor='warning'>Don't panic</Form.Switch>
+                                        <Form.Switch textColor='muted'>Drive safely</Form.Switch>
+                                    </Form.Col>
+                                </Card>
+                            </Form.Group>
+                     </Form.Row>
+                    </Form.Group>
+                </Form>
+        );
+    }
+}
+
+<Sample/>
+
+```
