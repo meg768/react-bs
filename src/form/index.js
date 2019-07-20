@@ -122,28 +122,28 @@ Form.Radio = function(props) {
     id = (id == undefined) ? uniqueID() : id;
 
     return (
-        <Tag tag='div' className="form-check" {...props}>
-            <input id={id} className="form-check-input" type="radio"/>
-            <label className="form-check-label" htmlFor={id}>
+        <div className="custom-control custom-radio">
+            <input type="radio" id={id} name="customRadio" className="custom-control-input" {...props}/>
+            <label className="custom-control-label" htmlFor={id}>
                 {children}
             </label>
-        </Tag>        
+        </div>
     );
 }
 
 Form.Checkbox = function(props) {
 
-    var {children, tag = 'div', id, ...props} = props;
+    var {children, id, ...props} = props;
 
     id = (id == undefined) ? uniqueID() : id;
 
     return (
-        <Tag tag={tag} className="form-check" {...props}>
-            <input id={id} className="form-check-input" type="checkbox"/>
-            <label className="form-check-label" htmlFor={id}>
+        <div className="custom-control custom-checkbox">
+            <input type="checkbox" className="custom-control-input" id={id} {...props}/>
+            <label className="custom-control-label" htmlFor={id}>
                 {children}
             </label>
-        </Tag>   
+        </div>
     );
 }
 
@@ -154,8 +154,8 @@ Form.Switch = function(props) {
     id = (id == undefined) ? uniqueID() : id;
 
     return (
-        <Tag tag={tag} className="custom-control custom-switch" {...props}>
-            <input id={id} className="custom-control-input" type="checkbox"/>
+        <Tag tag={tag} className="custom-control custom-switch">
+            <input id={id} className="custom-control-input" type="checkbox" {...props}/>
             <label className="custom-control-label" htmlFor={id}>
                 {children}
             </label>

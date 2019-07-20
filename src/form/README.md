@@ -372,6 +372,57 @@ class Sample extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {};
+        this.state.show = false;
+    }
+
+    toggle() {
+        console.log('Toggle');
+        this.setState({show: !this.state.show});
+        console.log(this.state.show);
+    }
+
+
+    render() {
+
+        return (
+            <Form>
+                <Form.Row padding={2}>
+                    <Form.Switch checked={this.state.show} onClick={this.toggle.bind(this)}>
+                        <Tag textColor={this.state.show ? 'warning' : undefined}>
+                            {this.state.show ? 'Warning displayed' : 'Display warning'}
+                        </Tag>
+                    </Form.Switch>
+                </Form.Row>
+                <Fade show={this.state.show}>
+                    <Form.Row>
+                        <Alert color='warning' dismiss={this.toggle.bind(this)}>
+                            <Alert.Header>
+                                Ei vim aeque
+                            </Alert.Header>
+                            <Alert.Separator/>
+                            <Alert.Body>
+                                In has iisque consequuntur, verear hendrerit no sea, per mandamus convenire evertitur et. Sensibus voluptatum ea has. Putant equidem scriptorem.
+                            </Alert.Body>
+                        </Alert>
+                    </Form.Row>
+                </Fade>
+            </Form>
+        );
+    }
+}
+
+<Sample/>
+
+```
+
+```js
+
+class Sample extends React.Component {
+
+    constructor(props) {
+        super(props);
     }
 
 
@@ -384,8 +435,8 @@ class Sample extends React.Component {
                             <Form.Group xs={12} sm={12} md={6}>
                                 <Card padding={2}>
                                     <Form.Col>
-                                        <Form.Switch textColor='success'>Enable autopilot</Form.Switch>
-                                        <Form.Switch textColor='info'>Avoid debris</Form.Switch>
+                                        <Form.Switch>Enable autopilot</Form.Switch>
+                                        <Form.Switch>Avoid debris</Form.Switch>
                                     </Form.Col>
                                 </Card>
                             </Form.Group>
@@ -393,20 +444,12 @@ class Sample extends React.Component {
                             <Form.Group xs={12} sm={12} md={6}>
                                 <Card padding={2}>
                                     <Form.Col>
-                                        <Form.Switch textColor='primary'>Ignore speed warnings</Form.Switch>
-                                        <Form.Switch textColor='secondary'>Locate nearby chargers</Form.Switch>
+                                        <Form.Switch>Ignore speed warnings</Form.Switch>
+                                        <Form.Switch>Locate nearby chargers</Form.Switch>
                                     </Form.Col>
                                 </Card>
                             </Form.Group>
 
-                            <Form.Group xs={12} sm={12} md={6}>
-                                <Card padding={2}>
-                                    <Form.Col>
-                                        <Form.Switch textColor='warning'>Don't panic</Form.Switch>
-                                        <Form.Switch textColor='muted'>Drive safely</Form.Switch>
-                                    </Form.Col>
-                                </Card>
-                            </Form.Group>
                      </Form.Row>
                     </Form.Group>
                 </Form>

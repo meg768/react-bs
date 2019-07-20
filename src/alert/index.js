@@ -44,7 +44,7 @@ export default class Alert extends React.Component  {
         var {dismiss, tag, color, role, children, className, ...props} = this.props;
 
         className = classNames(className, {'alert': true});
-        className = classNames(className, {'alert-dismissible': dismiss});
+        className = classNames(className, {'alert-dismissible': dismiss != undefined});
         className = classNames(className, {[`alert-${color}`]:color});
 
         var dismissButton = null;

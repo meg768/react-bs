@@ -32,6 +32,7 @@ This module is not ready for public use. Use **reactstrap**.
 - 2019-07-16 - Property name change from **isOpen** to **show** in **Modal** and **Popover** to reflect class names in Bootstrap.
 - 2019-07-18 - Added some properties to the **Tag** element. Minor bug fixes in the styleguide.
 - 2019-07-19 - Added **Form.Switch** component. Still experimental.
+- 2019-07-20 - Now using Bootstrap's custom radio and checkbox controls.
 
 
 

@@ -6,7 +6,7 @@ import { isObject, isNumber, isString, isBoolean } from 'util';
 
 export default function Tag(props) {
 
-    var {tag : TheTag, className, style = {}, opacity, left, top, right, bottom, width, height, shadow, fixed, position, justifyContent, visible, invisible, display, alignItems, alignContent, textAlign, float, align, verticalAlign, rounded, color, textColor, backgroundColor, margin, border, padding, children, ...props} = props;
+    var {tag : TheTag, className, style = {}, text, bg, opacity, left, top, right, bottom, width, height, shadow, fixed, position, justifyContent, visible, invisible, display, alignItems, alignContent, textAlign, float, align, verticalAlign, rounded, color, textColor, backgroundColor, margin, border, padding, children, ...props} = props;
 
     function addStyle(name, value) {
         if (value != undefined)
@@ -74,7 +74,9 @@ export default function Tag(props) {
     addClass(`align-content-${alignContent}`, isString(alignContent));
     addClass(`text-${textColor}`, isString(textColor));
     addClass(`text-${color}`, isString(color));
+    addClass(`text-${text}`, isString(text));
     addClass(`bg-${backgroundColor}`, isString(backgroundColor));
+    addClass(`bg-${bg}`, isString(bg));
     addClass(`d-${display}`, isString(display));
     addClass(`align-${verticalAlign}`, isString(verticalAlign));
     addClass(`align-${align}`, isString(align));
