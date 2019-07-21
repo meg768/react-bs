@@ -390,7 +390,7 @@ class Sample extends React.Component {
             <Form>
                 <Form.Row padding={2}>
                     <Form.Switch checked={this.state.show} onClick={this.toggle.bind(this)}>
-                        <Tag textColor={this.state.show ? 'warning' : undefined}>
+                        <Tag  textColor={this.state.show ? 'warning' : undefined}>
                             {this.state.show ? 'Warning displayed' : 'Display warning'}
                         </Tag>
                     </Form.Switch>
@@ -435,8 +435,8 @@ class Sample extends React.Component {
                             <Form.Group xs={12} sm={12} md={6}>
                                 <Card padding={2}>
                                     <Form.Col>
-                                        <Form.Switch>Enable autopilot</Form.Switch>
-                                        <Form.Switch>Avoid debris</Form.Switch>
+                                        <Form.Switch>Lorem ipsum dolor</Form.Switch>
+                                        <Form.Switch>Nam molestie aliquam</Form.Switch>
                                     </Form.Col>
                                 </Card>
                             </Form.Group>
@@ -444,8 +444,8 @@ class Sample extends React.Component {
                             <Form.Group xs={12} sm={12} md={6}>
                                 <Card padding={2}>
                                     <Form.Col>
-                                        <Form.Switch>Ignore speed warnings</Form.Switch>
-                                        <Form.Switch>Locate nearby chargers</Form.Switch>
+                                        <Form.Switch>Morbi eu</Form.Switch>
+                                        <Form.Switch>Pellentesque a</Form.Switch>
                                     </Form.Col>
                                 </Card>
                             </Form.Group>

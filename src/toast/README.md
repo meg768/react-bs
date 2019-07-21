@@ -38,7 +38,14 @@ class Sample extends React.Component  {
             <div>
                 <Button display="block" onClick={this.toggle}>Toggle toast</Button>
                 <Toast show={this.state.show} margin={{top:2}}>
-                    <Toast.Header title="Pax vobiscum" subtitle="A few seconds ago" dismiss={this.toggle}/>
+                    <Toast.Header dismiss={this.toggle}>
+                        <Toast.Title>
+                            Title
+                        </Toast.Title>
+                        <Toast.Subtitle>
+                            Two minutes ago
+                        </Toast.Subtitle>
+                    </Toast.Header>
                     <Toast.Body>
                         Eu his eius option accusata, an aperiri blandit ocurreret his, eam debet nemore salutatus ad.
                     </Toast.Body>
@@ -75,7 +82,14 @@ class Sample extends React.Component  {
                 <Button display="block" onClick={this.toggle}>Toggle toast upper right corner</Button>
                 <Tag display="flex" position="fixed" fixed="top" padding={2} justifyContent="end">
                     <Toast show={this.state.show}>
-                        <Toast.Header title="Pax vobiscum" subtitle="A few seconds ago" dismiss={this.toggle}/>
+                        <Toast.Header dismiss={this.toggle}>
+                            <Toast.Title text='info'>
+                                Title
+                            </Toast.Title>
+                            <Toast.Subtitle margin={{left:1}} text={['info', 'nowrap', 'truncate']}>
+                                Two minutes ago
+                            </Toast.Subtitle>
+                        </Toast.Header>
                         <Toast.Body>
                             Eu his eius option accusata, an aperiri blandit ocurreret his, eam debet nemore salutatus ad.
                         </Toast.Body>

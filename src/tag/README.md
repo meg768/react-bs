@@ -1,30 +1,99 @@
 
+The **Tag** is a central part of this library and acts like a base class for transforming properties into a valid
+series of Bootstrap class names.
 
-The **Tag** has a number of properties that map to the Bootrap Utility classes.
-It is simply a **div** tag but also parses a number of properties that 
-creates Bootstrap class names. This includes
+This includes
 
-* Borders - https://getbootstrap.com/docs/4.1/utilities/borders
-* Flex - https://getbootstrap.com/docs/4.1/utilities/flex
-* Vertical alignment - https://getbootstrap.com/docs/4.1/utilities/vertical-align
-* Spacing - https://getbootstrap.com/docs/4.1/utilities/spacing
-* Visibility - https://getbootstrap.com/docs/4.1/utilities/visibility
-* Display - https://getbootstrap.com/docs/4.1/utilities/display
-* Text alignment - https://getbootstrap.com/docs/4.1/utilities/text
+* Borders - https://getbootstrap.com/docs/4.3/utilities/borders
+* Flex - https://getbootstrap.com/docs/4.3/utilities/flex
+* Vertical alignment - https://getbootstrap.com/docs/4.3/utilities/vertical-align
+* Spacing - https://getbootstrap.com/docs/4.3/utilities/spacing
+* Visibility - https://getbootstrap.com/docs/4.3/utilities/visibility
+* Display - https://getbootstrap.com/docs/4.3/utilities/display
+* Text alignment - https://getbootstrap.com/docs/4.3/utilities/text
 
-Every class in this library is based upon this tag. So, when using a **Table**, **Propover** or a **Container**
+Every class (well almost) in this library is based upon this tag. So, when using a **Table**, **Propover** or a **Container**
 you may also use the **Tag** properies.
 
-When using a **Tag** it defaults to a **div**-tag but this may be changed to a **span** like this
+### Supported properties
 
+The **Tag** has a number of properties that map to Bootstrap class names.
+For instance all the **.text-left**, **.text-right**, **.text-center** may be written as **text={value}** as tag properties.
 
-```js static
+#### Example
 
-    <Tag tag='span' margin={1}>
-        Hello
-    </Tag>
+The following code
+
+```html static
+<Tag text="left">
+    Hello
+</Tag>
 ```
 
+Will generate the this Bootstrap code
+
+```html static
+<div class="text-left">
+    Hello
+</div>
+```
+
+To change the **div** into a **span** use the **tag** property.
+
+```html static
+<Tag tag="span" text="left">
+    Hello
+</Tag>
+```
+
+This **text** property is valid for all Bootstrap **.text-what-ever** class names.
+If you need to use several class names which start with **text-** the **text** property 
+may also be an array.
+
+
+```html static
+<Tag tag="span" text={["uppercase", "warning"]}>
+    Hello
+</Tag>
+```
+
+
+
+This generates the following.
+
+```html static
+<span class="text-uppercase text-warning">
+    Hello
+</span>
+```
+
+The following properties are supported.
+
+* tag
+* align
+* text 
+* bg
+* fontWeight
+* display 
+* margin 
+* padding
+* width
+* height
+* left
+* right
+* top 
+* bottom 
+* opacity
+* alignItems
+* justifyContent
+* rounded
+* invisible
+* visible
+* float
+* fixed
+* position
+* shadow
+* border
 
 ### Aligning items at top right
 

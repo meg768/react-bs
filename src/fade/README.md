@@ -20,15 +20,15 @@ class Sample extends React.Component  {
 
     render() {
         return (
-            <div>
-                <Button style={{display:'block'}} onClick={this.toggle}>Toggle</Button>
-                <br/>
+            <Tag>
+                <Button display='block' onClick={this.toggle}>Toggle</Button>
+                <Tag tag='br'/>
                 <Fade timeout={100} show={this.state.show}>                
                     <Alert dismiss={this.toggle}>
                         Pax vobiscum
                     </Alert>
                 </Fade>
-            </div>
+            </Tag>
         );
     }
 };

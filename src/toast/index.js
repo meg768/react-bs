@@ -8,23 +8,17 @@ import Fade from '../fade';
 
 export default function Toast(props) {
 
-    var {show, children, className, tag, ...props} = props;
-
-    className = classNames(className, 'toast');
+    var {show, className, ...props} = props;
 
     return (
         <Fade show={show}>
-            <Tag tag={tag} role="alert" aria-live="assertive" aria-atomic="true"  className={className} {...props} >
-                {children}
-            </Tag>
+            <Tag role="alert" aria-live="assertive" aria-atomic="true"  className={classNames(className, 'toast')} {...props}/>
         </Fade>
-
     );
 };
 
 Toast.defaultProps = {
-    tag       : 'div',
-    show      : 'true'
+    show : 'false'
 };
 
 Toast.Header = function(props) {
@@ -37,42 +31,40 @@ Toast.Header = function(props) {
         </button>
     );
 
-
     return (
         <Tag className='toast-header' {...props}>
             {title ? <strong className="mr-auto">{title}</strong> : undefined}
             {subtitle ? <small className="text-muted">{subtitle}</small> : undefined}
-            {dismiss ? dismissButton : undefined}
             {children}
+            {dismiss ? dismissButton : undefined}
         </Tag>
     );
 
 }
 
 Toast.Title = function(props) {
-
-    var {tag, children, ...props} = props;
-
-    return (
-        <Tag tag="strong" className="mr-auto" {...props}>
-            {children}
-        </Tag>
-
-    );
+    return <Tag  {...props}/>
 }
 
+Toast.Title.defaultProps = {
+    fontWeight : 'bold',
+    margin : {right:'auto'}
+};
+
+Toast.Subtitle = function(props) {
+    return <Tag  {...props}/>
+}
+
+Toast.Subtitle.defaultProps = {
+    tag   : 'small',
+    text  : 'muted'
+};
 
 
 Toast.Body = function(props) {
 
-    var {children, ...props} = props;
+    var {className, ...props} = props;
 
-    return (
-        <Tag className='toast-body'>
-            {children}
-        </Tag>
-    );
-
-}
-
+    return <Tag className={classNames(className, 'toast-body')} {...props}/>
+};
 

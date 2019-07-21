@@ -1,12 +1,18 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { isObject, isNumber, isString, isBoolean } from 'util';
+import { isObject, isNumber, isString, isBoolean, isArray } from 'util';
 
 
 export default function Tag(props) {
 
-    var {tag : TheTag, className, style = {}, text, bg, opacity, left, top, right, bottom, width, height, shadow, fixed, position, justifyContent, visible, invisible, display, alignItems, alignContent, textAlign, float, align, verticalAlign, rounded, color, textColor, backgroundColor, margin, border, padding, children, ...props} = props;
+    var {tag : TheTag, className, style = {}, text, bg, fontWeight, shadow, fixed, position, justifyContent, visible, invisible, display, alignItems, alignContent, float, align, rounded, margin, border, padding, children, ...props} = props;
+
+    // Styles
+    var {opacity, left, top, right, bottom, width, height, ...props} = props;
+
+    // Backward compatability
+    var {color, textColor, verticalAlign, backgroundColor, textAlign, ...props} = props;
 
     function addStyle(name, value) {
         if (value != undefined)
@@ -72,24 +78,39 @@ export default function Tag(props) {
 
     addClass(`justify-content-${justifyContent}`, isString(justifyContent));
     addClass(`align-content-${alignContent}`, isString(alignContent));
-    addClass(`text-${textColor}`, isString(textColor));
-    addClass(`text-${color}`, isString(color));
     addClass(`text-${text}`, isString(text));
-    addClass(`bg-${backgroundColor}`, isString(backgroundColor));
     addClass(`bg-${bg}`, isString(bg));
     addClass(`d-${display}`, isString(display));
-    addClass(`align-${verticalAlign}`, isString(verticalAlign));
     addClass(`align-${align}`, isString(align));
     addClass(`position-${position}`, isString(position));
     addClass(`float-${float}`, isString(float));
     addClass(`fixed-${fixed}`, isString(fixed));
     addClass(`align-items-${alignItems}`, isString(alignItems));
-    addClass(`text-${textAlign}`, isString(textAlign));
-    addClass(`rounded`, isBoolean(rounded));
+    addClass(`rounded`, isBoolean(rounded) || isString(rounded));
     addClass(`visible`, visible);
     addClass(`invisible`, invisible);
     addClass(`shadow`, isBoolean(shadow));
     addClass(`shadow-${shadow}`, isString(shadow));
+    addClass(`font-weight-${fontWeight}`, isString(fontWeight));
+
+    ///////////////////////////////////////////////////////////////////////
+
+    // Backward compatability for now...    
+    addClass(`text-${textAlign}`, isString(textAlign));
+    addClass(`text-${textColor}`, isString(textColor));
+    addClass(`bg-${backgroundColor}`, isString(backgroundColor));
+    addClass(`text-${color}`, isString(color));
+    addClass(`align-${verticalAlign}`, isString(verticalAlign));
+
+    ///////////////////////////////////////////////////////////////////////
+
+    // Special case for text...
+
+    if (isArray(text)) {
+        text.forEach((item) => {
+            addClass(`text-${item}`, isString(item));
+        });
+    }
 
     ///////////////////////////////////////////////////////////////////////
 
@@ -112,18 +133,18 @@ export default function Tag(props) {
 
 Tag.defaultProps = {
     tag: 'div'
-
 };
 
 Tag.propTypes = {
     tag              : PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     visible          : PropTypes.bool,
     invisible        : PropTypes.bool,
-    textColor        : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white', 'muted']),
-    color            : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white', 'muted']),
+    text             : PropTypes.string,
+    bg               : PropTypes.string,
+    align            : PropTypes.oneOf(['top', 'middle', 'bottom', 'baseline', 'text-top', 'text-bottom']),
+    fontWeight       : PropTypes.oneOf(['bold', 'bolder', 'normal', 'light', 'lighter']),
     textAlign        : PropTypes.oneOf(['left', 'right', 'center']),
-    verticalAlign    : PropTypes.oneOf(['top', 'middle', 'bottom', 'baseline', 'text-top', 'text-bottom']),
-    backgroundColor  : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white']),
+    bg               : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white']),
     border           : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]),
     rounded          : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]),
     display          : PropTypes.oneOf(['none', 'inline', 'inline-block', 'block', 'table', 'table-cell', 'table-row', 'flex', 'inline-flex']),
