@@ -4,6 +4,9 @@ import classNames from 'classnames';
 import Badge from '../badge';
 
 export default function Pill(props)  {
-    return <Badge className={classNames(props.className, 'badge-pill')} {...props}/>;
+
+    var {className, ...props} = props;
+
+    return <Badge className={classNames(className, 'badge-pill')} {...props}/>;
 };
 
