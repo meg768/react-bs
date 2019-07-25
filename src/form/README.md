@@ -54,7 +54,7 @@ import Form from 'react-bootify/form';
 ```js
 
 
-class Sample extends React.Component {
+class Sample1 extends React.Component {
 
 
     constructor(props) {
@@ -211,7 +211,7 @@ class Sample extends React.Component {
 }
 
 
-<Sample/>
+<Sample1/>
 ```
 
 
@@ -306,13 +306,45 @@ class Sample extends React.Component {
         super(props);
 
         this.state = {};
+        this.state.text = 'Utiquus';
+        this.state.option = 'A';
+        this.state.checkBoxA = true;
+        this.state.checkBoxB = true;
+
         this.onChange = this.onChange.bind(this);
     }
 
     onChange(event) {
-        //var stock = this.state.stock;
-        //stock[event.target.id] = event.target.value;
-        //this.setState({stock:stock});
+
+        state = this.state;
+
+        switch(event.target.id) {
+            case 'checkBoxA': {
+                state.checkBoxA = event.target.value;
+                break
+            }
+            case 'checkBoxB': {
+                console.log('checkBoxB', event.target.value);
+                state.checkBoxB = event.target.value == 'on';
+                break
+            }
+            case 'radioA': {
+                state.option = event.target.value ? 'A' : undefined;
+                break
+            }
+            case 'radioB': {
+                state.option = event.target.value ? 'B' : undefined;
+                break
+            }
+            default: {
+                if (event.target.id) {
+                    this.state[event.target.id] = event.target.value;
+                }
+            
+            }
+        }
+
+        this.setState(state);
     }
 
     render() {
@@ -320,19 +352,20 @@ class Sample extends React.Component {
         return (
                 <Form>
                     <Form.Group>
-                        <Form.Label >Symbol</Form.Label>
-                        <Form.Input type="text" value={''} onChange={this.onChange}/>
+                        <Form.Label >Utiquus</Form.Label>
+                        <Form.Input id='text' type="text" value={this.state.text} onChange={this.onChange}/>
                     </Form.Group>
+
                     <Form.Group>
                         <Form.Row>
                             <Form.Group xs={12} sm={12} md={6}>
                                 <Card>
                                     <Card.Body>
-                                        <Form.Radio checked onChange={this.onChange}>
-                                            The <strong>quick</strong> brown fox jumps over the lazy dog
+                                        <Form.Radio id='radioA' checked={this.state.option=='A'} onChange={this.onChange}>
+                                            Aenean porttitor
                                         </Form.Radio>
-                                        <Form.Radio onChange={this.onChange}>
-                                            The <strong>quick</strong> brown fox jumps over the lazy dog
+                                        <Form.Radio id='radioB' checked={this.state.option=='B'} onChange={this.onChange}>
+                                            Interdum et malesuada fames
                                         </Form.Radio>
                                     </Card.Body>
                                 </Card>
@@ -340,11 +373,11 @@ class Sample extends React.Component {
                             <Form.Group xs={12} sm={12} md={6}>
                                 <Card>
                                     <Card.Body>
-                                        <Form.Checkbox checked onChange={this.onChange}>
-                                            The <strong>quick</strong> brown fox jumps over the lazy dog
+                                        <Form.Checkbox id='checkBoxA' checked={this.state.checkBoxA} onChange={this.onChange}>
+                                            Cras eget felis
                                         </Form.Checkbox>
-                                        <Form.Checkbox onChange={this.onChange}>
-                                            The <strong>quick</strong> brown fox jumps over the lazy dog
+                                        <Form.Checkbox id='checkBoxB' checked={this.state.checkBoxB} onChange={this.onChange}>
+                                            Duis at viverra
                                         </Form.Checkbox>
                                     </Card.Body>
                                 </Card>
@@ -389,7 +422,7 @@ class Sample extends React.Component {
         return (
             <Form>
                 <Form.Row padding={2}>
-                    <Form.Switch checked={this.state.show} onClick={this.toggle.bind(this)}>
+                    <Form.Switch checked={this.state.show} onChange={this.toggle.bind(this)}>
                         <Tag  textColor={this.state.show ? 'warning' : undefined}>
                             {this.state.show ? 'Warning displayed' : 'Display warning'}
                         </Tag>

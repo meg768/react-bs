@@ -123,7 +123,7 @@ Form.Radio = function(props) {
 
     return (
         <div className="custom-control custom-radio">
-            <input type="radio" id={id} name="customRadio" className="custom-control-input" {...props}/>
+            <Tag tag='input' type="radio" id={id} className="custom-control-input" {...props}/>
             <label className="custom-control-label" htmlFor={id}>
                 {children}
             </label>
@@ -139,7 +139,7 @@ Form.Checkbox = function(props) {
 
     return (
         <div className="custom-control custom-checkbox">
-            <input type="checkbox" className="custom-control-input" id={id} {...props}/>
+            <Tag tag='input' type="checkbox" className="custom-control-input" id={id} {...props}/>
             <label className="custom-control-label" htmlFor={id}>
                 {children}
             </label>
@@ -155,7 +155,7 @@ Form.Switch = function(props) {
 
     return (
         <Tag tag={tag} className="custom-control custom-switch">
-            <input id={id} className="custom-control-input" type="checkbox" {...props}/>
+            <Tag tag='input' id={id} className="custom-control-input" type="checkbox" {...props}/>
             <label className="custom-control-label" htmlFor={id}>
                 {children}
             </label>

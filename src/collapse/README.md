@@ -35,10 +35,10 @@ class Sample extends React.Component  {
                         </Card.Header>
                         <Card.Body>
                             <Card.Title>
-                                Primary card title
+                                Title
                             </Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                                In atqui elitr his, eum et omnis diceret qualisque iudico.
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -70,7 +70,7 @@ class SampleX extends React.Component  {
     }
 
     onRadioChanged(event) {
-        var state = {};
+        var state = this.state;
         state.type = event.target.id;
         this.setState(state);
     }
@@ -115,10 +115,10 @@ class SampleX extends React.Component  {
                         </Card.Header>
                         <Card.Body>
                             <Card.Title>
-                                Primary card title
+                                Title
                             </Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                                In atqui elitr his, eum et omnis diceret qualisque iudico.
                             </Card.Text>
                         </Card.Body>
                     </Card>
