@@ -92,7 +92,6 @@ Form.Input = class extends React.Component {
         className = classNames(className, {'form-control':true});
         className = classNames(className, {'form-control-sm':size=='sm'});
         className = classNames(className, {'form-control-lg':size=='lg'});
-        className = classNames(className, {'form-control-lg':true});
         className = classNames(className, {'form-control-plaintext':plainText});
     
         return (
