@@ -57,40 +57,40 @@ function onClick() {
 
 ```js
 
-var style = {margin:'0.2rem'};
+var props = {style:{margin:'0.2rem'}};
 
 function onClick() {
 }
 <div>
-    <Button color='primary' size='lg' style={style} onClick={onClick}>
+    <Button color='primary' size='lg' {...props}>
         Primary
     </Button>
 
-    <Button color='secondary' size='lg' style={style}>
+    <Button color='secondary' size='lg' {...props}>
         Secondary
     </Button>
 
-    <Button color='success' size='lg' style={style}>
+    <Button color='success' size='lg' {...props}>
         Success
     </Button>
 
-    <Button color='danger' size='lg' style={style}>
+    <Button color='danger' size='lg' {...props}>
         Danger
     </Button>
 
-    <Button color='warning' size='lg' style={style}>
+    <Button color='warning' size='lg' {...props}>
         Warning
     </Button>
 
-    <Button color='info' size='lg' style={style}>
+    <Button color='info' size='lg' {...props}>
         Info
     </Button>
 
-    <Button color='light' size='lg' style={style}>
+    <Button color='light' size='lg' {...props}>
         Light
     </Button>
 
-    <Button color='dark' size='lg' style={style}>
+    <Button color='dark' size='lg' {...props}>
         Dark
     </Button>
 

@@ -57,7 +57,11 @@ export default class Tag extends React.Component {
 
         ///////////////////////////////////////////////////////////////////////
 
-        addClass(`m-${margin}`, isString(margin) || isNumber(margin));
+        addClass(`m-${margin}`, isNumber(margin));
+
+        if (isString(margin)) {
+            addStyle('margin', margin);
+        }
 
         if (isObject(margin)) {
             addClass(`ml-${margin.left}`, margin.left != undefined);

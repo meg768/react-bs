@@ -63,7 +63,7 @@ Form.Col = function(props) {
     );
 }
 
-
+/*
 Form.Input = function(props)  {
 
 
@@ -82,6 +82,29 @@ Form.Input = function(props)  {
     );
 
 };
+*/
+
+Form.Input = class extends React.Component {
+
+    render() {
+        var {children, plainText, tag, size, className, ...props} = this.props;
+
+        className = classNames(className, {'form-control':true});
+        className = classNames(className, {'form-control-sm':size=='sm'});
+        className = classNames(className, {'form-control-lg':size=='lg'});
+        className = classNames(className, {'form-control-plaintext':plainText});
+    
+        return (
+            <Tag tag={tag} className={className} {...props}>
+                {children}
+            </Tag>
+    
+        );
+    
+    }
+
+};
+
 
 Form.Input.defaultProps = {
     tag: 'input'
