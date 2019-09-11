@@ -14,6 +14,7 @@ import Fade from './fade';
 import Collapse from './collapse';
 import Spinner from './spinner';
 import Toast from './toast';
+import Card from './card';
 
 var Row = Container.Row;
 var Col = Container.Col;
@@ -22,5 +23,5 @@ var Grid = Container;
 export {
     Grid, Tag, Glyph, Popper, Button, Form, ListGroup, Fade, Collapse,
     Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown,
-    Spinner, Toast
+    Spinner, Toast, Card
 };
