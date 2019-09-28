@@ -51,7 +51,7 @@ Spinner.propTypes = {
     tag      : PropTypes.string,
     color    : PropTypes.string,
     children : PropTypes.string,
-    size     : PropTypes.string,
+    size     : PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     children : PropTypes.oneOfType([PropTypes.object, PropTypes.string])    
 }
 

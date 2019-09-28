@@ -60,7 +60,7 @@ Different sizes
 ```
 
 
-A bit larger and thicker...
+A bit larger and thicker...XXX
 
 ```js
     <Tag  alignItems='center' justifyContent='center' padding={2}>

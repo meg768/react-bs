@@ -1,6 +1,6 @@
 {
 	"name": "react-bootify",
-	"version": "0.0.157",
+	"version": "0.0.158",
 	"description": "react-bootify",
 	"main": "components/index.js",
 	"scripts": {
@@ -8,14 +8,14 @@
 		"start": "webpack-dev-server --mode development",
 		"build": "webpack --mode production",
 		"transpile": "babel src -d components --copy-files",
-		"commit": "git add -A && git commit -m '-' && git push",
+		"git-commit": "git add -A && git commit -m '-' && git push",
 		"increase-package-version": "node ./scripts/increase-package-version.js",
-		"publish-styleguide": "npm run styleguide:build && gh-pages -d styleguide",
+		"publish-styleguide": "npm run styleguide-build && gh-pages -d styleguide",
 		"goto-github": "open https://github.com/meg768/react-bootify",
 		"goto-npm": "open https://www.npmjs.com/package/react-bootify",
-		"publish-to-npm": "npm run increase-package-version && npm run transpile && npm run publish-styleguide && npm run commit && npm publish",
-		"styleguide": "styleguidist server",
-		"styleguide:build": "styleguidist build"
+		"publish-to-npm": "npm run increase-package-version && npm run transpile && npm run publish-styleguide && npm run git-commit && npm publish",
+		"styleguide-server": "styleguidist server",
+		"styleguide-build": "styleguidist build"
 	},
 	"keywords": [
 		"bootstrap",
