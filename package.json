@@ -13,7 +13,7 @@
 		"publish-styleguide": "npm run styleguide-build && gh-pages -d styleguide",
 		"goto-github": "open https://github.com/meg768/react-bootify",
 		"goto-npm": "open https://www.npmjs.com/package/react-bootify",
-		"publish-to-npm": "npm run increase-package-version && npm run transpile && npm run publish-styleguide && npm run git-commit && npm publish",
+		"npm-publish": "npm run increase-package-version && npm run transpile && npm run publish-styleguide && npm run git-commit && npm publish",
 		"styleguide-server": "styleguidist server",
 		"styleguide-build": "styleguidist build"
 	},
