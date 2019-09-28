@@ -30,6 +30,10 @@ export default class Tag extends React.Component {
         }
 
 
+        // The text property may have several values
+        if (isString(text))
+            text = text.split(' ');
+
         ///////////////////////////////////////////////////////////////////////
 
         addClass(`border`, isBoolean(border) || isString(border));
@@ -87,7 +91,6 @@ export default class Tag extends React.Component {
 
         addClass(`justify-content-${justifyContent}`, isString(justifyContent));
         addClass(`align-content-${alignContent}`, isString(alignContent));
-        addClass(`text-${text}`, isString(text));
         addClass(`bg-${bg}`, isString(bg));
         addClass(`d-${display}`, isString(display));
         addClass(`align-${align}`, isString(align));

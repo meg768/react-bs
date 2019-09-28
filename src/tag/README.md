@@ -48,16 +48,14 @@ To change the **div** into a **span** use the **tag** property.
 
 This **text** property is valid for all Bootstrap **.text-what-ever** class names.
 If you need to use several class names which start with **text-** the **text** property 
-may also be an array.
+may also be an array or a space separated string.
 
 
 ```html static
-<Tag tag="span" text={["uppercase", "warning"]}>
+<Tag tag="span" text="uppercase warning"}>
     Hello
 </Tag>
 ```
-
-
 
 This generates the following.
 
@@ -66,6 +64,7 @@ This generates the following.
     Hello
 </span>
 ```
+
 
 The following properties are supported.
 
