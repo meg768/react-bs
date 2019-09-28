@@ -48,13 +48,13 @@ Different sizes
 
     <Tag display='flex' alignItems='center' justifyContent='center' padding={2}>
         <Spinner color="warning" size="xs"/>
-        <Tag style={{width:"2rem"}}/>
+        <Tag width='2rem'/>
         <Spinner color="warning" size="sm"/>
-        <Tag style={{width:"2rem"}}/>
+        <Tag width='2rem'/>
         <Spinner color="warning" size="md"/>
-        <Tag style={{width:"2rem"}}/>
+        <Tag width='2rem'/>
         <Spinner color="warning" size="lg"/>
-        <Tag style={{width:"2rem"}}/>
+        <Tag width='2rem'/>
         <Spinner color="warning" size="xl"/>
     </Tag>
 ```
@@ -65,7 +65,7 @@ A bit larger and thicker
 ```js
     <Tag display='flex' alignItems='center' justifyContent='center' height='10rem' padding={2}>
         <Spinner color="warning" size={5}/>
-        <Tag style={{width:"2rem"}}/>
+        <Tag width='2rem'/>
         <Spinner type="grow" color="info" size={5}/>
     </Tag>
 ```
