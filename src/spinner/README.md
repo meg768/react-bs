@@ -46,7 +46,7 @@ Different sizes
 
 ```js
 
-    <Tag  display='flex' alignItems='center' justifyContent='center' padding={2}>
+    <Tag display='flex' alignItems='center' justifyContent='center' padding={2}>
         <Spinner color="warning" size="xs"/>
         <Tag style={{width:"2rem"}}/>
         <Spinner color="warning" size="sm"/>
