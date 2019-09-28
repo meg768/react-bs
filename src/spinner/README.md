@@ -37,7 +37,7 @@ change text color, background color etc.
 To center a spinner within a <Tag/>
 
 ```js
-    <Tag alignItems='center' justifyContent='center' padding={2}>
+    <Tag display='flex' alignItems='center' justifyContent='center' padding={2}>
         <Spinner color="danger"/>
     </Tag>
 ```
@@ -46,7 +46,7 @@ Different sizes
 
 ```js
 
-    <Tag  alignItems='center' justifyContent='center' padding={2}>
+    <Tag  display='flex' alignItems='center' justifyContent='center' padding={2}>
         <Spinner color="warning" size="xs"/>
         <Tag style={{width:"2rem"}}/>
         <Spinner color="warning" size="sm"/>
@@ -60,10 +60,10 @@ Different sizes
 ```
 
 
-A bit larger and thicker...XXX
+A bit larger and thicker
 
 ```js
-    <Tag  alignItems='center' justifyContent='center' padding={2}>
+    <Tag display='flex' alignItems='center' justifyContent='center' height='10rem' padding={2}>
         <Spinner color="warning" size={5}/>
         <Tag style={{width:"2rem"}}/>
         <Spinner type="grow" color="info" size={5}/>
