@@ -35,6 +35,7 @@ This module is not ready for public use. Use **reactstrap**.
 - 2019-07-20 - Now using Bootstrap's custom radio and checkbox controls.
 - 2019-07-21 - Added properties to **Tag** to match Bootstrap class names. Also added **Toast.Title** and **Toast.Subtitle**.
 - 2019-07-24 - Added **Badge** and **Pill** components.
+- 2020-01-16 - Added **Nav** and **NavBar** components.
 
 
 
