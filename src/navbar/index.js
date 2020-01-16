@@ -12,17 +12,16 @@ export default class NavBar extends React.Component {
 	}
 	
 	render() {
-		var {children, color, className, ...props} = this.props;
+		var {tag = 'nav', children, color, className, ...props} = this.props;
 
-		className = classNames(className, 'navbar navbar-expand-lg');
-		className = classNames(className, color ? `navbar-${color} bg-${color}` : '');
-
+		className = classNames('navbar navbar-expand-lg', className);
+		className = classNames(color ? `navbar-${color}` : '', className);
 
 		return (
 
-			<nav className={className} {...props}>
+			<Tag tag={tag} className={className} {...props}>
 				{children}
-			</nav>
+			</Tag>
 			
 		);		
 			

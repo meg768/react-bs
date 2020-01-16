@@ -26,9 +26,9 @@ class Sample extends React.Component  {
 
 	render() {
 		return (
-			<NavBar color='light'>
+			<NavBar>
 				<NavBar.Brand>
-                    <Tag tag='img' src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="2rem" height="2rem" display='inline' margin={{right:2}} align='middle' alt=""/>
+                    <Tag tag='img' src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="2rem"  display='inline' margin={{right:2}} align='middle' alt=""/>
                     <Tag display='inline' align='middle'>
                         Bootstrap
                     </Tag>
@@ -108,10 +108,10 @@ class Sample extends React.Component  {
 
 	render() {
 		return (
-			<NavBar color='light'>
+			<NavBar color='dark' bg='dark'>
 				<NavBar.Brand>
                     <Tag tag='img' src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="2rem" height="2rem" display='inline' margin={{right:2}} align='middle' alt=""/>
-                    <Tag display='inline' align='middle'>
+                    <Tag display='inline' align='middle' color='light'>
                         Bootstrap
                     </Tag>
 				</NavBar.Brand>
@@ -174,9 +174,12 @@ class Sample extends React.Component  {
 
 	render() {
 		return (
-			<NavBar color='light'>
+			<NavBar color='dark' bg='primary'>
 				<NavBar.Brand>
+					<Tag display='inline' align='middle'>
                     <Tag tag='img' src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="2rem" height="2rem" display='inline' margin={{right:2}} align='middle' alt=""/>
+
+</Tag>
                     <Tag display='inline' align='middle'>
                         Bootstrap
                     </Tag>
@@ -243,10 +246,10 @@ class Sample extends React.Component  {
 
 	render() {
 		return (
-			<NavBar color='light'>
+			<NavBar color='light' style={{backgroundColor:'#e3f2fd'}}>
 				<NavBar.Brand>
                     <Tag tag='img' src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="2rem" height="2rem" display='inline' margin={{right:2}} align='middle' alt=""/>
-                    <Tag display='inline' align='middle'>
+                    <Tag display='inline' align='middle' color='dark'>
                         Bootstrap
                     </Tag>
 				</NavBar.Brand>
