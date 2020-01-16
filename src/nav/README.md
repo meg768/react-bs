@@ -62,3 +62,7 @@ import Nav from 'react-bootify/nav';
 
 
  ```
+
+### Bootstrap Documentation
+
+See https://getbootstrap.com/docs/4.4/components/navs
