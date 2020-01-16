@@ -239,14 +239,17 @@ Dropdown.Item = class extends React.Component {
     }
 
     render() {
-        var {tag = 'div', style, className, ...other} = this.props;
+        var {tag = 'div', style, className, ...props} = this.props;
 
         className = classNames(className, 'dropdown-item');
         style = Object.assign({}, style, {cursor:'pointer'});
 
+        if (props.href) {
+            tag = 'a';
+        }
 
         return (
-            <Tag tag={tag} tabIndex={1} style={style} className={className} {...other}/>
+            <Tag tag={tag} tabIndex={1} style={style} className={className} {...props}/>
         );
     
     }
