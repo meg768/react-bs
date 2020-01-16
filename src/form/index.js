@@ -179,7 +179,7 @@ Form.Switch = function(props) {
     return (
         <Tag tag={tag} className="custom-control custom-switch">
             <Tag tag='input' id={id} className="custom-control-input" type="checkbox" {...props}/>
-            <label className="custom-control-label" htmlFor={id}>
+            <label className="custom-control-label" htmlFor={id} style={{cursor:'pointer'}}>
                 {children}
             </label>
         </Tag>   
