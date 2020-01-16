@@ -57,6 +57,8 @@ export default class Tag extends React.Component {
             addClass(`pb-${padding.bottom}`, padding.bottom != undefined);
             addClass(`px-${padding.horizontal}`, padding.horizontal != undefined);
             addClass(`py-${padding.vertical}`, padding.vertical != undefined);
+            addClass(`px-${padding.x}`, padding.x != undefined);
+            addClass(`py-${padding.y}`, padding.y != undefined);
         }
 
         ///////////////////////////////////////////////////////////////////////
