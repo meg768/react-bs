@@ -3,7 +3,7 @@ Another minimalistic Bootstrap layer for React.
 
 The objective with this project is to use Bootstrap CSS only and not using jQuery or any other dependant.
 
-All JavaScript classes and names are designed to correspond to Bootstrap's class names. Hopefully, anyone
+All JavaScript classes and names are designed to correspond with Bootstrap's class names. Hopefully, anyone
 familiar with Bootstrap will feel confortable using this module and those who may not be familiar with it
 may find it simpler than using Bootstrap's raw class names.
 
