@@ -30,7 +30,7 @@ Or maybe something like this.
     @import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css";
 ```
 
-Find out more at https://bootswatch.com.
+Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswatch.
 
 ## Documentation with examples
 - https://meg768.github.io/react-bootify/
