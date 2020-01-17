@@ -5,7 +5,7 @@
 ```js static
 import {ListGroup} from 'react-bootify';
 /* or */
-import ListGroup from 'react-bootify/list-group';
+import ListGroup from 'react-bootify/components/list-group';
 ```
 
 ### Basic example

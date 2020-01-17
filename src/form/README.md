@@ -3,7 +3,7 @@
 ```js static
 import {Form} from 'react-bootify';
 /* or */
-import Form from 'react-bootify/form';
+import Form from 'react-bootify/components/form';
 ```
 
 
@@ -168,14 +168,14 @@ class Sample1 extends React.Component {
 
 
                     <Form.Group row >
-                        <Form.Col sm={2} textAlign='right' padding={{vertical:0}}>
+                        <Form.Col sm={2} textAlign='right' padding={{y:0}}>
                             <Form.Label  inline textColor='muted'>
                                 <small>Stop loss</small>
                             </Form.Label>
                         </Form.Col>
 
                         <Form.Col sm={10}>
-                            <Form inline padding={{vertical:1}}>
+                            <Form inline padding={{y:1}}>
                                 <Form.Radio placeholder="Ticker" textColor='muted'>
                                     Continous stop loss
                                 </Form.Radio>
@@ -184,14 +184,14 @@ class Sample1 extends React.Component {
                                 <Form.Label textColor='muted'>%</Form.Label>
                             </Form>
 
-                            <Form inline padding={{vertical:1}}>
+                            <Form inline padding={{y:1}}>
                                 <Form.Radio placeholder="" textColor='muted'>
                                     When price below
                                 </Form.Radio>
                                 <Form.Input width='5rem' margin={{left:2, right:2}} type="text" placeholder=""/>
                             </Form>
                             
-                            <Form inline padding={{vertical:1}}>
+                            <Form inline padding={{y:1}}>
                                 <Form.Radio placeholder="Ticker" textColor='muted'>
                                     When price dropped with more than 
                                 </Form.Radio>

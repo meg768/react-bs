@@ -7,7 +7,7 @@
 ```js static
 import {Popover} from 'react-bootify';
 /* or */
-import Popover from 'react-bootify/popover';
+import Popover from 'react-bootify/components/popover';
 ```
 
 **React-bootify** realies only on CSS styles from Bootstrap. No jQuery code is used. However, to make
@@ -35,7 +35,7 @@ class Sample extends React.Component {
     render() {
 
         return (
-            <Tag margin={{horizontal:1}} display='inline-block'>
+            <Tag margin={{x:1}} display='inline-block'>
                 <Popover show={this.state.show} placement={this.props.placement} toggle={this.toggle}>
                     <Popover.Target>
                         <Button color={this.props.color} outline={this.props.outline} onClick={this.toggle} >
@@ -91,7 +91,7 @@ class Sample extends React.Component {
         }
         
         return (
-            <Tag margin={{horizontal:1}} display='inline-block'>
+            <Tag margin={{x:1}} display='inline-block'>
                 <Popover placement={this.props.placement} >
                     <Popover.Target>
                         <Tag tag='span' textColor={this.props.color} onClick={onClick.bind(this, this.props.text)}>
@@ -140,7 +140,7 @@ class Sample extends React.Component {
         }
         
         return (
-            <Tag margin={{horizontal:1}} display='inline-block'>
+            <Tag margin={{x:1}} display='inline-block'>
                 <Popover  sticky={true} placement={this.props.placement} >
                     <Popover.Target>
                         <Button color={this.props.color} outline={this.props.outline} onClick={this.toggle} >

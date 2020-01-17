@@ -5,7 +5,7 @@
 
 import {NavBar} from 'react-bootify';
 /* or */
-import NavBar from 'react-bootify/navbar';
+import NavBar from 'react-bootify/components/navbar';
 ```
 
 ### Example with Dropdown

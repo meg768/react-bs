@@ -36,6 +36,11 @@ This module is not ready for public use. Use **reactstrap**.
 - 2019-07-21 - Added properties to **Tag** to match Bootstrap class names. Also added **Toast.Title** and **Toast.Subtitle**.
 - 2019-07-24 - Added **Badge** and **Pill** components.
 - 2020-01-16 - Added **Nav** and **NavBar** components.
+- 2020-01-17 - Padding and margin values **horizontal** and **vertical** have been changed to **x** and **y** to better reflect Bootstrap notation.
+- 2020-01-17 - Fixed documentation error as of how you may import individual component to minimize size. 
+- 2020-01-17 - Now using Bootstrap 4.4.1. 
+
+
 
 
 

@@ -5,7 +5,7 @@
 ```js static
 import {Collaspe} from 'react-bootify';
 /* or */
-import Collaspe from 'react-bootify/collaspe';
+import Collaspe from 'react-bootify/components/collaspe';
 ```
 
 

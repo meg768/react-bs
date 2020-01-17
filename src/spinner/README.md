@@ -6,7 +6,7 @@
 ```js static
 import {Spinner} from 'react-bootify';
 /* or */ 
-import Spinner from 'react-bootify/spinner';
+import Spinner from 'react-bootify/components/spinner';
 ```
 
 ### Note

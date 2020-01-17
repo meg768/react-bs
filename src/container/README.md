@@ -4,7 +4,7 @@
 ```js static
 import {Container} from 'react-bootify';
 /* or */
-import Container from 'react-bootify/container';
+import Container from 'react-bootify/components/container';
 ```
 
 ### Plain Rows and Columns

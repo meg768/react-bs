@@ -3,7 +3,7 @@
 ```js static
 import {Badge} from 'react-bootify';
 /* or */ 
-import Badge from 'react-bootify/badge';
+import Badge from 'react-bootify/components/badge';
 ```
 
 ### Example

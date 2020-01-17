@@ -4,7 +4,7 @@
 ```js static
 import {Button} from 'react-bootify';
 /* or */
-import Button from 'react-bootify/button';
+import Button from 'react-bootify/components/button';
 ```
 
 #### Normal buttons
@@ -105,35 +105,35 @@ function onClick() {
 ```js
 
 <div>
-    <Button color='primary' outline margin={{horizontal:1}}>
+    <Button color='primary' outline margin={{x:1}}>
         Primary
     </Button>
 
-    <Button color='secondary' outline margin={{horizontal:1}}>
+    <Button color='secondary' outline margin={{x:1}}>
         Secondary
     </Button>
 
-    <Button color='success' outline margin={{horizontal:1}}>
+    <Button color='success' outline margin={{x:1}}>
         Success
     </Button>
 
-    <Button color='danger' outline margin={{horizontal:1}}>
+    <Button color='danger' outline margin={{x:1}}>
         Danger
     </Button>
 
-    <Button color='warning' outline margin={{horizontal:1}}>
+    <Button color='warning' outline margin={{x:1}}>
         Warning
     </Button>
 
-    <Button color='info' outline margin={{horizontal:1}}>
+    <Button color='info' outline margin={{x:1}}>
         Info
     </Button>
 
-    <Button color='light' outline margin={{horizontal:1}}>
+    <Button color='light' outline margin={{x:1}}>
         Light
     </Button>
 
-    <Button color='dark' outline margin={{horizontal:1}}>
+    <Button color='dark' outline margin={{x:1}}>
         Dark
     </Button>
 

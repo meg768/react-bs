@@ -3,7 +3,7 @@
 ```js static
 import {Table} from 'react-bootify';
 /* or */
-import Table from 'react-bootify/table';
+import Table from 'react-bootify/components/table';
 ```
 
 ```js

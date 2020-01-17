@@ -6,7 +6,7 @@
 ```js static
 import {Jumbotron} from 'react-bootify';
 /* or */ 
-import Jumbotron from 'react-bootify/jumbotron';
+import Jumbotron from 'react-bootify/components/jumbotron';
 ```
 
 ### Example

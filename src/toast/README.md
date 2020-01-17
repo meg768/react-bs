@@ -6,7 +6,7 @@
 ```js static
 import {Toast} from 'react-bootify';
 /* or */ 
-import Toast from 'react-bootify/toast';
+import Toast from 'react-bootify/components/toast';
 ```
 
 ### Note

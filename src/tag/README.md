@@ -101,7 +101,7 @@ This is using the Bootstrap classes **align-items-start** and **justify-content-
 
 ```js
 
-    var props = {color:'primary', margin:{horizontal:1}};
+    var props = {color:'primary', margin:{x:1}};
 
     <Tag border={props.color} rounded={true} height='6rem' display='flex' alignItems='start' justifyContent='end' padding={2} >
         <Button {...props}>
@@ -127,13 +127,13 @@ This is using the Bootstrap classes **align-items-end** and **justify-content-st
     var color = 'danger';
 
     <Tag border={color} rounded={true} height='6rem' display='flex' alignItems='end' justifyContent='start' padding={2} >
-        <Button color={color} margin={{horizontal:1}}>
+        <Button color={color} margin={{x:1}}>
             Pax vobiscum
         </Button>
-        <Button color={color} margin={{horizontal:1}}>
+        <Button color={color} margin={{x:1}}>
             Nosa dostra
         </Button>
-        <Button color={color} margin={{horizontal:1}}>
+        <Button color={color} margin={{x:1}}>
             Quantala predum
         </Button>
     </Tag>
@@ -149,13 +149,13 @@ This is using the Bootstrap classes **align-items-center** and **justify-content
     var color = 'secondary';
 
     <Tag border={color} rounded={true} height='6rem' display='flex' alignItems='center' justifyContent='center' padding={2} >
-        <Button color={color}  margin={{horizontal:1}}>
+        <Button color={color}  margin={{x:1}}>
             Pax vobiscum
         </Button>
-        <Button color={color}  margin={{horizontal:1}}>
+        <Button color={color}  margin={{x:1}}>
             Nosa dostra
         </Button>
-        <Button color={color}  margin={{horizontal:1}}>
+        <Button color={color}  margin={{x:1}}>
             Quantala predum
         </Button>
     </Tag>
@@ -194,19 +194,19 @@ Here is an example of different border styles, padding, margin and colors.
 
 ```js
 
-    <Tag shadow="none" border='muted' rounded="pill" margin={2} padding={{left:4, right:4, vertical:2}}>
+    <Tag shadow="none" border='muted' rounded="pill" margin={2} padding={{left:4, right:4, y:2}}>
         No shadow
     </Tag>
 
-    <Tag shadow="sm" border='muted' rounded="pill" margin={2} padding={{left:4, right:4, vertical:2}}>
+    <Tag shadow="sm" border='muted' rounded="pill" margin={2} padding={{left:4, right:4, y:2}}>
         Small shadow
     </Tag>
 
-    <Tag shadow={true} border='muted' rounded="pill" margin={2} padding={{left:4, right:4, vertical:2}}>
+    <Tag shadow={true} border='muted' rounded="pill" margin={2} padding={{left:4, right:4, y:2}}>
         Default shadow
     </Tag>
 
-    <Tag shadow="lg" border='muted' rounded="pill" margin={2} padding={{left:4, right:4, vertical:2}}>
+    <Tag shadow="lg" border='muted' rounded="pill" margin={2} padding={{left:4, right:4, y:2}}>
         Large shadow
     </Tag>
 

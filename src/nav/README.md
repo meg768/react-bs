@@ -5,7 +5,7 @@
 
 import {Nav} from 'react-bootify';
 /* or */
-import Nav from 'react-bootify/nav';
+import Nav from 'react-bootify/components/nav';
 ```
 
 ### Simple example

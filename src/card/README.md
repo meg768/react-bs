@@ -4,7 +4,7 @@
 ```js static
 import {Card} from 'react-bootify';
 /* or */
-import Card from 'react-bootify/card';
+import Card from 'react-bootify/components/card';
 ```
 
 

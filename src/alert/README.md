@@ -5,7 +5,7 @@
 
 import {Alert} from 'react-bootify';
 /* or */
-import Alert from 'react-bootify/alert';
+import Alert from 'react-bootify/components/alert';
 ```
 
 ### Simple alert

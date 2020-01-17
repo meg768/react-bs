@@ -3,7 +3,7 @@
 ```js static
 import {Dropdown} from 'react-bootify';
 /* or */
-import Dropdown from 'react-bootify/dropdown';
+import Dropdown from 'react-bootify/components/dropdown';
 ```
 
 
@@ -29,7 +29,7 @@ class DropdownSample extends React.Component {
 
     render() {
         return (
-            <Form padding={{horizontal:2}}>
+            <Form padding={{x:2}}>
                 <Form.Group row>
                     <Dropdown placement='bottom-start'>
                         <Dropdown.Target>

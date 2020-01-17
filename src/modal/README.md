@@ -2,7 +2,7 @@
 ```js static
 import {Modal} from 'react-bootify';
 /* or */
-import Modal from 'react-bootify/modal';
+import Modal from 'react-bootify/components/modal';
 ```
 
 The sample below includes a modal header, modal body (required for padding), and modal footer (optional). Include modal headers with dismiss actions whenever possible, or provide another explicit dismiss action.

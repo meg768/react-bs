@@ -3,7 +3,7 @@
 ```js static
 import {Pill} from 'react-bootify';
 /* or */ 
-import Pill from 'react-bootify/pill';
+import Pill from 'react-bootify/components/pill';
 ```
 
 ### Example
