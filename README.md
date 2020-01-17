@@ -10,22 +10,24 @@ Another minimalistic Bootstrap layer for React.
 ## Comment
 This module is still not ready for public use. Use **reactstrap**.
 
-
 ## Bootstrap
-
 This package does not include Bootstrap CSS. Simply import the Bootstrap version
-you require into your project. 
+you require into your project's css-file. 
 
 ```css
     @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
 ```
 
 ## Bootswatch
-
-Bootswatch is a great and free alternative. Replace your css with something like this
+**Bootswatch** is a great and free alternative. Replace your CSS with something like this.
 
 ```css
     @import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css";
+```
+Or maybe something like this.
+
+```css
+    @import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css";
 ```
 
 Find out more at https://bootswatch.com.
@@ -56,7 +58,6 @@ Find out more at https://bootswatch.com.
 - 2020-01-17 - Padding and margin values **horizontal** and **vertical** have been changed to **x** and **y** to better reflect Bootstrap notation.
 - 2020-01-17 - Fixed documentation error as of how you may import individual component to minimize size. 
 - 2020-01-17 - Now using Bootstrap 4.4.1. 
-- 2020-01-17 - Added Bootstrap CSS to the project, no need to require it from other places. 
 
 
 
