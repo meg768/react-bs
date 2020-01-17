@@ -18,8 +18,6 @@ If you are using it commercialilly, look into https://www.npmjs.com/package/reac
     npm install react-bootify --save
 ````
 
-## Comment
-
 ## Bootstrap
 This package does not include Bootstrap CSS. Simply import the Bootstrap version
 you require into your project's css-file. 
