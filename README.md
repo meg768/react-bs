@@ -1,7 +1,7 @@
 # react-bootify
 Another minimalistic Bootstrap layer for React.
 
-The objective with this project is to use Bootstrap CSS only and not using jQuery or any other dependants.
+The objective with this project is to use Bootstrap CSS only and not using jQuery or any other dependant.
 
 All JavaScript classes and names are designed to correspond to Bootstrap's class names. Hopefully, anyone
 familiar with Bootstrap will feel confortable using this module and those who may not be familiar with it
