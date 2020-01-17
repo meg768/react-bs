@@ -55,8 +55,6 @@ export default class Tag extends React.Component {
             addClass(`pt-${padding.top}`, padding.top != undefined);
             addClass(`pr-${padding.right}`, padding.right != undefined);
             addClass(`pb-${padding.bottom}`, padding.bottom != undefined);
-            addClass(`px-${padding.horizontal}`, padding.horizontal != undefined);
-            addClass(`py-${padding.vertical}`, padding.vertical != undefined);
             addClass(`px-${padding.x}`, padding.x != undefined);
             addClass(`py-${padding.y}`, padding.y != undefined);
         }
@@ -74,8 +72,8 @@ export default class Tag extends React.Component {
             addClass(`mt-${margin.top}`, margin.top != undefined);
             addClass(`mr-${margin.right}`, margin.right != undefined);
             addClass(`mb-${margin.bottom}`, margin.bottom != undefined);
-            addClass(`mx-${margin.horizontal}`, margin.horizontal != undefined);
-            addClass(`my-${margin.vertical}`, margin.vertical != undefined);
+            addClass(`mx-${margin.x}`, margin.x != undefined);
+            addClass(`my-${margin.y}`, margin.y != undefined);
         }
         
         ///////////////////////////////////////////////////////////////////////
