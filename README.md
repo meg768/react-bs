@@ -39,7 +39,7 @@ Or Materia
 
 Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswatch.
 
-## Documentation with examples
+## Documentation with examples (Bootstrap 4.4.1)
 - https://meg768.github.io/react-bootify/
 
 ## History
