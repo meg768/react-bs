@@ -7,11 +7,28 @@ Another minimalistic Bootstrap layer for React.
     npm install react-bootify --save
 ````
 
-Bootstrap css-styles should to be installed separately. Versions 4.1.3 and 4.2.1 are supported.
-
 ## Comment
-This module is not ready for public use. Use **reactstrap**.
+This module is still not ready for public use. Use **reactstrap**.
 
+
+## Bootstrap
+
+This package does not include Bootstrap CSS. Simply import the Bootstrap version
+you require into your project. 
+
+```css
+    @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
+```
+
+## Bootswatch
+
+Bootswatch is a great and free alternative. Replace your css with something like this
+
+```css
+    @import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css";
+```
+
+Find out more at https://bootswatch.com.
 
 ## Documentation with examples
 - https://meg768.github.io/react-bootify/
@@ -39,6 +56,8 @@ This module is not ready for public use. Use **reactstrap**.
 - 2020-01-17 - Padding and margin values **horizontal** and **vertical** have been changed to **x** and **y** to better reflect Bootstrap notation.
 - 2020-01-17 - Fixed documentation error as of how you may import individual component to minimize size. 
 - 2020-01-17 - Now using Bootstrap 4.4.1. 
+- 2020-01-17 - Added Bootstrap CSS to the project, no need to require it from other places. 
+
 
 
 
