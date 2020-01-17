@@ -24,10 +24,17 @@ you require into your project's css-file.
 ```css
     @import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css";
 ```
+
 Or maybe something like this.
 
 ```css
     @import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css";
+```
+
+Or Materia
+
+```css
+    @import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/materia/bootstrap.min.css";
 ```
 
 Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswatch.
