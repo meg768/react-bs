@@ -1,6 +1,17 @@
 # react-bootify
 Another minimalistic Bootstrap layer for React.
 
+The objective with this project is to use Bootstrap CSS only and not using jQuery or any other dependants.
+
+All JavaScript classes and names are designed to correspond to Bootstrap's class names. Hopefully, anyone
+familiar with Bootstrap will feel confortable using this module and those who may not be familiar with it
+may find it simpler than using Bootstrap's raw class names.
+
+Anyway, the documentation is sparse but there are alot of examples...
+
+This module is still not ready for public use, but feel free to use the source code. 
+If you are using it commercialilly, look into https://www.npmjs.com/package/reactstrap, it may be a better choice.
+
 ## Installation
 
 ````bash
@@ -8,7 +19,6 @@ Another minimalistic Bootstrap layer for React.
 ````
 
 ## Comment
-This module is still not ready for public use. Use **reactstrap**.
 
 ## Bootstrap
 This package does not include Bootstrap CSS. Simply import the Bootstrap version
@@ -31,7 +41,7 @@ Or maybe something like this.
     @import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css";
 ```
 
-Or Materia
+Or my favorite, **materia**
 
 ```css
     @import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/materia/bootstrap.min.css";
