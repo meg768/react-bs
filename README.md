@@ -7,15 +7,15 @@ All JavaScript classes and names are designed to correspond with Bootstrap's cla
 familiar with Bootstrap will feel confortable using this module and those who may not be familiar with it
 may find it simpler than using Bootstrap's raw class names.
 
-Anyway, the documentation is sparse but there are alot of examples...
+Documentation is sparse but there are alot of examples...
 
-This module is still not ready for public use, but feel free to use the source code. 
-If you are using it commercialilly, look into https://www.npmjs.com/package/reactstrap, it may be a better choice.
+This module is still not ready for public use and may change in the future.
+If you are using it commercially, look into https://www.npmjs.com/package/reactstrap, it may be a better choice.
 
 ## Installation
 
 ````bash
-    npm install react-bootify --save
+npm install react-bootify --save
 ````
 
 ## Bootstrap
@@ -23,26 +23,26 @@ This package does not include Bootstrap CSS. Simply import the Bootstrap version
 you require into your project's css-file. 
 
 ```css
-    @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
 ```
 
 ## Bootswatch
 **Bootswatch** is a great and free alternative. Replace your CSS with something like this.
 
 ```css
-    @import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css";
+@import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css";
 ```
 
 Or maybe something like this.
 
 ```css
-    @import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css";
+@import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css";
 ```
 
-Or my favorite, **materia**
+Or maybe **materia**.
 
 ```css
-    @import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/materia/bootstrap.min.css";
+@import "https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/materia/bootstrap.min.css";
 ```
 
 Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswatch.
