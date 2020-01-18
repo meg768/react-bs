@@ -172,6 +172,24 @@ Form.Checkbox = function(props) {
 
 Form.Switch = function(props) {
 
+    var {className, children, tag = 'div', id, ...props} = props;
+    
+	className = classNames(className, 'custom-control custom-switch');
+
+    id = (id == undefined) ? uniqueID() : id;
+
+    return (
+        <Tag tag={tag} className={className} style={{display:'inherit'}}>
+            <Tag tag='input' id={id} className="custom-control-input" type="checkbox" {...props}/>
+            <label className="custom-control-label" htmlFor={id} style={{cursor:'pointer'}}>
+                {children || <span>&nbsp;</span>}
+            </label>
+        </Tag>   
+	);
+}
+/*
+Form.Switch = function(props) {
+
     var {children, tag = 'div', id, ...props} = props;
 
     id = (id == undefined) ? uniqueID() : id;
@@ -185,3 +203,4 @@ Form.Switch = function(props) {
         </Tag>   
     );
 }
+*/
