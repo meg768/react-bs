@@ -10,7 +10,8 @@ may find it simpler than using Bootstrap's raw class names.
 Documentation is sparse but there are alot of examples...
 
 This module is still not ready for public use and may change in the future.
-If you are using it commercially, look into https://www.npmjs.com/package/reactstrap, it may be a better choice.
+If planning something commercially, please look into https://www.npmjs.com/package/reactstrap 
+or https://www.npmjs.com/package/react-bootstrap.
 
 ## Installation
 
