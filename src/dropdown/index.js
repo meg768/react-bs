@@ -210,18 +210,19 @@ Dropdown.Menu = class extends React.Component {
 
 
     static defaultProps = {
-        tag : 'div',
-        show : false
+        tag     : 'div',
+        show    : false,
+        timeout : 50
     };
 
     render() {
 
-        var {tag, show, className, ...props} = this.props;
+        var {tag, timeout, show, className, ...props} = this.props;
 
         className = classNames(className, 'dropdown-menu');
 
         return (
-            <Fade show={show}>
+            <Fade timeout={timeout} show={show}>
                 <Tag tag={tag} className={className} {...props}/>
             </Fade>
         );

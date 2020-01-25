@@ -31,7 +31,7 @@ import Form from 'react-bootify/components/form';
 
     <Form >
         <Form.Group row>
-            <Form.Col sm={2} textAlign='right'>
+            <Form.Col sm={2} text='right'>
                 <Form.Label inline ><small>Company name</small></Form.Label>
             </Form.Col>
             <Form.Col sm={10}>
@@ -40,7 +40,7 @@ import Form from 'react-bootify/components/form';
         </Form.Group>
 
         <Form.Group row>
-            <Form.Col sm={2} textAlign='right'>
+            <Form.Col sm={2} text='right'>
                 <Form.Label inline ><small>Bought at</small></Form.Label>
             </Form.Col>
             <Form.Col sm={10}>
@@ -86,18 +86,18 @@ class Sample1 extends React.Component {
 
                 <Form >
                     <Form.Group row>
-                        <Form.Col sm={2} textAlign='right' >
+                        <Form.Col sm={2} text='right' >
                             <Form.Label inline textColor='muted'>
                                 <small>Ticker</small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col sm={10} textAlign='right' >
+                        <Form.Col sm={10} text='right' >
                             <Form.Input type="text" id="ticker" placeholder="Ticker" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Group>
 
                     <Form.Group row>
-                        <Form.Col sm={2} textAlign='right' >
+                        <Form.Col sm={2} text='right' >
                             <Form.Label inline textColor='muted'>
                                 <small>Company name</small>
                             </Form.Label>
@@ -109,7 +109,7 @@ class Sample1 extends React.Component {
 
 
                     <Form.Group row>
-                        <Form.Col sm={2} textAlign='right' >
+                        <Form.Col sm={2} text='right' >
                             <Form.Label inline textColor='muted'>
                                 <small>Bought at</small>
                             </Form.Label>
@@ -120,7 +120,7 @@ class Sample1 extends React.Component {
                     </Form.Group>
 
                     <Form.Group row>
-                        <Form.Col sm={2} textAlign='right' >
+                        <Form.Col sm={2} text='right' >
                             <Form.Label inline textColor='muted'>
                                 <small>
                                     Number of stocks
@@ -133,7 +133,7 @@ class Sample1 extends React.Component {
                     </Form.Group>
 
                     <Form.Group row>
-                        <Form.Col sm={2} textAlign='right' >
+                        <Form.Col sm={2} text='right' >
                             <Form.Label inline textColor='muted'>
                                 <small>
                                     Source
@@ -168,7 +168,7 @@ class Sample1 extends React.Component {
 
 
                     <Form.Group row >
-                        <Form.Col sm={2} textAlign='right' padding={{y:0}}>
+                        <Form.Col sm={2} text='right' padding={{y:0}}>
                             <Form.Label  inline textColor='muted'>
                                 <small>Stop loss</small>
                             </Form.Label>
@@ -180,7 +180,7 @@ class Sample1 extends React.Component {
                                     Continous stop loss
                                 </Form.Radio>
 
-                                <Form.Input width='5rem' margin={{left:2, right:2}} type="text" placeholder=""/>
+                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                                 <Form.Label textColor='muted'>%</Form.Label>
                             </Form>
 
@@ -188,20 +188,20 @@ class Sample1 extends React.Component {
                                 <Form.Radio placeholder="" textColor='muted'>
                                     When price below
                                 </Form.Radio>
-                                <Form.Input width='5rem' margin={{left:2, right:2}} type="text" placeholder=""/>
+                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                             </Form>
                             
                             <Form inline padding={{y:1}}>
                                 <Form.Radio placeholder="Ticker" textColor='muted'>
                                     When price dropped with more than 
                                 </Form.Radio>
-                                <Form.Input width='5rem' margin={{left:2, right:2}} type="text" placeholder=""/>
+                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                                 <Form.Label textColor='muted'>%</Form.Label>
                             </Form>
                         </Form.Col>
                     </Form.Group>
 
-                    <Form.Group textAlign='right'>
+                    <Form.Group text='right'>
                         <Button color='secondary' outline margin={{right:1}}>Cancel</Button>
                         <Button color='primary' margin={0} onClick={this.onSaveChanges.bind(this)} >Save changes</Button>
                     </Form.Group>

@@ -51,7 +51,7 @@ class Sample extends React.Component {
                             Pellentesque ornare sem lacinia quam venenatis vestibulum.
                         </span>
                         <hr/>
-                        <Tag textAlign='right'>
+                        <Tag text='right'>
                             <Button size='sm' onClick={this.toggle}>Dismiss</Button>
                         </Tag>
                     </Popover.Body>

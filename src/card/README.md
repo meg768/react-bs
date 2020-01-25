@@ -36,7 +36,7 @@ import Card from 'react-bootify/components/card';
     <Container>
         <Container.Row>
             <Container.Col xs={12} sm={6}>
-                <Card margin={{bottom:1}} textColor='white' backgroundColor='primary'>
+                <Card margin={{bottom:1}} text='white' bg='primary'>
                     <Card.Header>
                         Header
                     </Card.Header>
@@ -79,7 +79,7 @@ import Card from 'react-bootify/components/card';
     <Container>
         <Container.Row>
             <Container.Col xs={12} sm={6}>
-                <Card margin={{bottom:1}} textColor='white' backgroundColor='secondary'>
+                <Card margin={{bottom:1}} text='white' bg='secondary'>
                     <Card.Header>
                         Header
                     </Card.Header>
@@ -119,7 +119,7 @@ import Card from 'react-bootify/components/card';
     <Container>
         <Container.Row>
             <Container.Col xs={12} sm={6}>
-                <Card margin={{bottom:1}} textColor='white' backgroundColor='success'>
+                <Card margin={{bottom:1}} text='white' bg='success'>
                     <Card.Header>
                         Header
                     </Card.Header>
@@ -159,7 +159,7 @@ import Card from 'react-bootify/components/card';
     <Container>
         <Container.Row>
             <Container.Col xs={12} sm={6}>
-                <Card margin={{bottom:1}} textColor='white' backgroundColor='danger'>
+                <Card margin={{bottom:1}} text='white' bg='danger'>
                     <Card.Header>
                         Header
                     </Card.Header>
@@ -200,7 +200,7 @@ import Card from 'react-bootify/components/card';
     <Container>
         <Container.Row>
             <Container.Col xs={12} sm={6}>
-                <Card margin={{bottom:1}} textColor='white' backgroundColor='warning'>
+                <Card margin={{bottom:1}} text='white' bg='warning'>
                     <Card.Header>
                         Header
                     </Card.Header>
@@ -241,7 +241,7 @@ import Card from 'react-bootify/components/card';
     <Container>
         <Container.Row>
             <Container.Col xs={12} sm={6}>
-                <Card margin={{bottom:1}} textColor='white' backgroundColor='info'>
+                <Card margin={{bottom:1}} text='white' bg='info'>
                     <Card.Header>
                         Header
                     </Card.Header>

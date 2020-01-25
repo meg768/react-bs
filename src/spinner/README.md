@@ -31,7 +31,7 @@ Since the spinner is based on the <Tag/> element all the tag properties are avai
 change text color, background color etc.
 
 ```js
-    <Spinner color="warning" backgroundColor="primary"/>
+    <Spinner text="warning" bg="primary"/>
 ```
 
 To center a spinner within a <Tag/>
@@ -47,15 +47,15 @@ Different sizes
 ```js
 
     <Tag display='flex' alignItems='center' justifyContent='center' padding={2}>
-        <Spinner color="warning" size="xs"/>
-        <Tag width='2rem'/>
-        <Spinner color="warning" size="sm"/>
-        <Tag width='2rem'/>
-        <Spinner color="warning" size="md"/>
-        <Tag width='2rem'/>
-        <Spinner color="warning" size="lg"/>
-        <Tag width='2rem'/>
-        <Spinner color="warning" size="xl"/>
+        <Spinner text="warning" size="xs"/>
+        <Tag style={{width:'2rem'}}/>
+        <Spinner text="warning" size="sm"/>
+        <Tag style={{width:'2rem'}}/>
+        <Spinner text="warning" size="md"/>
+        <Tag style={{width:'2rem'}}/>
+        <Spinner text="warning" size="lg"/>
+        <Tag style={{width:'2rem'}}/>
+        <Spinner text="warning" size="xl"/>
     </Tag>
 ```
 
@@ -63,10 +63,10 @@ Different sizes
 A bit larger and thicker
 
 ```js
-    <Tag display='flex' alignItems='center' justifyContent='center' height='10rem' padding={2}>
-        <Spinner color="warning" size={5}/>
-        <Tag width='2rem'/>
-        <Spinner type="grow" color="info" size={5}/>
+    <Tag display='flex' alignItems='center' justifyContent='center' style={{height:'10rem'}} padding={2}>
+        <Spinner text="warning" size={5}/>
+        <Tag style={{width:'2rem'}}/>
+        <Spinner type="grow" text="info" size={5}/>
     </Tag>
 ```
 

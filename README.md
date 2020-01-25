@@ -74,6 +74,8 @@ Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswa
 - 2020-01-17 - Padding and margin values **horizontal** and **vertical** have been changed to **x** and **y** to better reflect Bootstrap notation.
 - 2020-01-17 - Fixed documentation error as of how you may import individual component to minimize size. 
 - 2020-01-17 - Now using Bootstrap 4.4.1. 
+- 2020-01-25 - Removed some obsolete properties in **Tag**. 
+- 2020-01-25 - **Tag** does no longer modify the style of an element. 
 
 
 

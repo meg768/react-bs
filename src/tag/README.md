@@ -76,13 +76,6 @@ The following properties are supported.
 * display 
 * margin 
 * padding
-* width
-* height
-* left
-* right
-* top 
-* bottom 
-* opacity
 * alignItems
 * justifyContent
 * rounded
@@ -103,7 +96,7 @@ This is using the Bootstrap classes **align-items-start** and **justify-content-
 
     var props = {color:'primary', margin:{x:1}};
 
-    <Tag border={props.color} rounded={true} height='6rem' display='flex' alignItems='start' justifyContent='end' padding={2} >
+    <Tag border={props.color} rounded={true} style={{height:'6rem'}} display='flex' alignItems='start' justifyContent='end' padding={2} >
         <Button {...props}>
             Pax vobiscum
         </Button>
@@ -126,7 +119,7 @@ This is using the Bootstrap classes **align-items-end** and **justify-content-st
 
     var color = 'danger';
 
-    <Tag border={color} rounded={true} height='6rem' display='flex' alignItems='end' justifyContent='start' padding={2} >
+    <Tag border={color} rounded={true} style={{height:'6rem'}} display='flex' alignItems='end' justifyContent='start' padding={2} >
         <Button color={color} margin={{x:1}}>
             Pax vobiscum
         </Button>
@@ -148,7 +141,7 @@ This is using the Bootstrap classes **align-items-center** and **justify-content
 
     var color = 'secondary';
 
-    <Tag border={color} rounded={true} height='6rem' display='flex' alignItems='center' justifyContent='center' padding={2} >
+    <Tag border={color} rounded={true} style={{height:'6rem'}} display='flex' alignItems='center' justifyContent='center' padding={2} >
         <Button color={color}  margin={{x:1}}>
             Pax vobiscum
         </Button>
@@ -169,11 +162,11 @@ Here is an example of different border styles, padding, margin and colors.
 
 ```js
 
-    <Tag border='primary' rounded={true} textColor='light' backgroundColor='info' padding={{left:3, right:3, bottom:2, top:2}}>
+    <Tag border='primary' rounded={true} color='light' bg='info' padding={{left:3, right:3, bottom:2, top:2}}>
         Primary border, rounded borders, light text color, info background color and some padding 
     </Tag>
     <hr/>
-    <Tag border='dark' rounded={{top:true}} backgroundColor='light' padding={2}>
+    <Tag border='dark' rounded={{top:true}} bg='light' padding={2}>
         Dark border, rounded top, light background color, padding 2
     </Tag>
     <hr/>
@@ -182,7 +175,7 @@ Here is an example of different border styles, padding, margin and colors.
     </Tag>
     <hr/>
 
-    <Tag border='secondary' padding={3} textAlign='right' backgroundColor='light'>
+    <Tag border='secondary' padding={3} text='right' bg='light'>
         Border secondary, padding 3 and text aligned right.
     </Tag>
     <hr/>

@@ -11,24 +11,12 @@ export default class Tag extends React.Component {
 
     render()
     {
-        var {tag : TheTag, className, style = {}, text, bg, fontWeight, shadow, fixed, position, justifyContent, visible, invisible, display, alignItems, alignContent, float, align, rounded, margin, border, padding, children, ...props} = this.props;
-
-        // Styles
-        var {opacity, left, top, right, bottom, width, height, ...props} = props;
-
-        // Backward compatability
-        var {color, textColor, verticalAlign, backgroundColor, textAlign, ...props} = props;
-
-        function addStyle(name, value) {
-            if (value != undefined)
-                style[name] = value;
-        }
+        var {tag : TheTag, className, text, bg, fontWeight, shadow, fixed, position, justifyContent, visible, invisible, display, alignItems, alignContent, float, align, rounded, margin, border, padding, children, ...props} = this.props;
 
         function addClass(name, condition) {
             if (condition)
                 className = classNames(className, name);
         }
-
 
         // The text property may have several values
         if (isString(text))
@@ -61,11 +49,7 @@ export default class Tag extends React.Component {
 
         ///////////////////////////////////////////////////////////////////////
 
-        addClass(`m-${margin}`, isNumber(margin));
-
-        if (isString(margin)) {
-            addStyle('margin', margin);
-        }
+        addClass(`m-${margin}`, isString(margin) || isNumber(margin));
 
         if (isObject(margin)) {
             addClass(`ml-${margin.left}`, margin.left != undefined);
@@ -107,14 +91,6 @@ export default class Tag extends React.Component {
 
         ///////////////////////////////////////////////////////////////////////
 
-        // Backward compatability for now...    
-        addClass(`text-${textAlign}`, isString(textAlign));
-        addClass(`text-${textColor}`, isString(textColor));
-        addClass(`bg-${backgroundColor}`, isString(backgroundColor));
-        addClass(`text-${color}`, isString(color));
-        addClass(`align-${verticalAlign}`, isString(verticalAlign));
-
-        ///////////////////////////////////////////////////////////////////////
 
         // Special case for text...
 
@@ -126,17 +102,8 @@ export default class Tag extends React.Component {
 
         ///////////////////////////////////////////////////////////////////////
 
-        addStyle('width', width);
-        addStyle('height', height);
-        addStyle('left', left);
-        addStyle('top', top);
-        addStyle('right', right);
-        addStyle('bottom', bottom);
-        addStyle('opacity', opacity);
-
-
         return (
-            <TheTag className={className} style={style} {...props}>
+            <TheTag className={className} {...props}>
                 {children}
             </TheTag>
         );
@@ -157,7 +124,6 @@ Tag.propTypes = {
     bg               : PropTypes.string,
     align            : PropTypes.oneOf(['top', 'middle', 'bottom', 'baseline', 'text-top', 'text-bottom']),
     fontWeight       : PropTypes.oneOf(['bold', 'bolder', 'normal', 'light', 'lighter']),
-    textAlign        : PropTypes.oneOf(['left', 'right', 'center']),
     bg               : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white']),
     border           : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]),
     rounded          : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]),
