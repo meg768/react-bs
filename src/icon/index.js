@@ -14,8 +14,17 @@ export default class Icon extends React.Component  {
 	}
 
 	render() {
-		var {innerTag, icon, ...props} = this.props;
-		var svg = require('bootstrap-icons/icons/' + icon + '.svg');
+		var {src, innerTag, icon, ...props} = this.props;
+
+		var svg = undefined;
+		
+		if (!svg && icon) {
+			svg = require('bootstrap-icons/icons/' + icon + '.svg');
+		}
+
+		if (!svg && src) {
+			svg = require(src);
+		}
 
 		var element = React.createElement(innerTag, {dangerouslySetInnerHTML: {__html:svg}});
 
