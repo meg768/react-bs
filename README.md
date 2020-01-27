@@ -76,6 +76,8 @@ Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswa
 - 2020-01-17 - Now using Bootstrap 4.4.1. 
 - 2020-01-25 - Removed some obsolete properties in **Tag**. 
 - 2020-01-25 - **Tag** does no longer modify the style of an element. 
+- 2020-01-25 - Added **Icon** to display bootstrap-icons. Experimental. Removed **Glyph** since it had no purpose.
+
 
 
 

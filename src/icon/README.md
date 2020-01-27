@@ -6,9 +6,26 @@ import {Icon} from 'react-bootify';
 import Icon from 'react-bootify/components/icon';
 ```
 
-### Example
+### Bootstrap Icons
+
+Still experimental...
 
 ```js
-    <Icon icon='alarm-fill'/>
+    var props = {};
+
+    var style = {};
+    style.width = '2em';
+    style.width = '2em';
+    style.display = 'inline-block';
+
+
+    <Tag display='inline'>
+        <Icon icon='alarm-fill' text='warning' style={style}/>
+        <Icon icon='alarm' text='info' style={style}/>
+        <Icon icon='calendar' text='dark' style={style}/>
+        <Icon icon='heart' style={{...style, color:'red'}}/>
+        <Icon icon='justify-left' style={{...style, color:'green'}}/>
+    </Tag>
+
 ```
 

@@ -1,4 +1,3 @@
-import Glyph from './glyph';
 import Button from './button';
 import Form from './form';
 import Jumbotron from './jumbotron';
@@ -24,7 +23,7 @@ var Col = Container.Col;
 var Grid = Container;
 
 export {
-    Grid, Tag, Glyph, Popper, Button, Form, ListGroup, Fade, Collapse,
+    Grid, Tag, Popper, Button, Form, ListGroup, Fade, Collapse,
     Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown,
     Spinner, Toast, Card, Nav, NavBar, Icon
 };
