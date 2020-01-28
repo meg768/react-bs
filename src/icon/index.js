@@ -103,7 +103,7 @@ function XcreateElement(tag, props) {
 export default class Icon extends React.Component  {
 
 	static defaultProps = {
-		innerTag: 'i'
+		tag: 'div'
 	};
 
 	constructor(props) {
@@ -111,7 +111,7 @@ export default class Icon extends React.Component  {
 	}
 
 	render() {
-		var {src, innerTag, icon, ...props} = this.props;
+		var {src, tag, icon, ...props} = this.props;
 
 		var svg = undefined;
 
@@ -123,7 +123,7 @@ export default class Icon extends React.Component  {
 			svg = require(src);
 		}
 
-		return createElement(innerTag, {dangerouslySetInnerHTML: {__html:svg}, ...props});
+		return createElement(tag, {dangerouslySetInnerHTML: {__html:svg}, ...props});
 	}
 
 }
