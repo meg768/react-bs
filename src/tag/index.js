@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { isObject, isNumber, isString, isBoolean, isArray } from 'util';
+import { isObject, isNumber, isString, isBoolean, isArray } from '../utils';
 
 export default class Tag extends React.Component {
 
