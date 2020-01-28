@@ -18,10 +18,6 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.svg$/,
-                loader: 'svg-inline-loader'
-            },            
-            {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"]
             }
