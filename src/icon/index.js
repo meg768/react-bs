@@ -2,20 +2,26 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Tag from '../tag';
-import {transformProps} from '../utils';
+import {isString, transformProps} from '../utils';
 
 
 export default function Icon(props) {
 
-    var {icon, children, ...props} = props;
+    var {tag, icon, children, ...props} = props;
 
-    if (!icon) {
-        icon = 'div';
-        children = 'No icon specified';
+    if (icon == undefined) {
+        tag = 'div';
+        children = 'No icon specified';    
+    }
+    else if (isString(icon)) {
+        tag = 'img';
+    }
+    else {
+        tag = icon;
     }
 
     return (
-        <Tag tag={icon} {...props}>
+        <Tag tag={tag} {...props}>
             {children}
         </Tag>
     );
@@ -27,29 +33,3 @@ Icon.defaultProps = {
 Icon.propTypes = {
     icon : PropTypes.any
 };
-
-/*
-
-export default function Icon(props) {
-
-    var {icon : TheIcon, children, ...props} = transformProps(props);
-
-    if (!TheIcon) {
-        TheIcon = 'div';
-        children = 'No icon specified';
-    }
-
-    return (
-        <TheIcon {...props}>
-            {children}
-        </TheIcon>
-    );
-};
-
-Icon.defaultProps = {
-};
-
-Icon.propTypes = {
-    icon : PropTypes.any
-};
-*/
