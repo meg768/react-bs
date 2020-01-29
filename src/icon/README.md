@@ -15,7 +15,7 @@ This example assumes you have installed the Bootstrap icons (https://icons.getbo
 npm install bootstrap-icons --save
 ```
 
-Sorry, no live samples yet, but here is an example.
+If you created your react app with **react-create-app**, this may work.
 
 ```js static
 import {ReactComponent as alarmFill} from "bootstrap-icons/icons/alarm-fill.svg";
@@ -28,6 +28,8 @@ import {ReactComponent as logo} from "./logo.svg";
     <Icon width='3em' height='3em' text='primary' icon={logo}/>
 </Tag>
  ```
+
+If you are using the **@svgr/webpack** SVG-loader in WebPack, this may work...
 
 ```js 
 var alarmFill = require("bootstrap-icons/icons/alarm-fill.svg");
