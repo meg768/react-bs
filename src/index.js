@@ -16,6 +16,7 @@ import Toast from './toast';
 import Card from './card';
 import Nav from './nav';
 import NavBar from './navbar';
+import Icon from './icon';
 
 var Row = Container.Row;
 var Col = Container.Col;
@@ -24,5 +25,5 @@ var Grid = Container;
 export {
     Grid, Tag, Popper, Button, Form, ListGroup, Fade, Collapse,
     Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown,
-    Spinner, Toast, Card, Nav, NavBar
+    Spinner, Toast, Card, Nav, NavBar, Icon
 };
