@@ -1,9 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from "prop-types";
-import classNames from 'classnames';
-import Transition from 'react-transition-group/Transition';
-import {isArray} from '../utils';
+import {React, PropTypes, Transition, isArray, classNames} from '../utils';
+
 
 export default function Fade(props)  {
 

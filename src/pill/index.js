@@ -1,6 +1,4 @@
-import React from 'react';
-import PropTypes from "prop-types";
-import classNames from 'classnames';
+import {React, classNames} from '../utils';
 import Badge from '../badge';
 
 export default function Pill(props)  {

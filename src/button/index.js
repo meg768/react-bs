@@ -1,11 +1,8 @@
-import React, {Component} from 'react';
-import classNames from 'classnames';
-import PropTypes from "prop-types";
+import {React, PropTypes, classNames} from '../utils';
 import Tag from '../tag';
 
 
-
-export default class Button extends Component  {
+export default class Button extends React.Component  {
 
     constructor(args) {
         super(args);

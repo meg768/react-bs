@@ -1,6 +1,4 @@
-import React from 'react';
-import PropTypes from "prop-types";
-import classNames from 'classnames';
+import {React, PropTypes, classNames} from '../utils';
 import Tag from '../tag';
 
 export default function Badge(props)  {

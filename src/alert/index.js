@@ -1,8 +1,5 @@
-import React, {Component} from 'react';
-import PropTypes from "prop-types";
-import classNames from 'classnames';
+import {React, PropTypes, classNames, isFunction} from '../utils';
 import Tag from '../tag';
-import {isFunction} from '../utils';
 
 export default class Alert extends React.Component  {
 
@@ -72,7 +69,7 @@ export default class Alert extends React.Component  {
 /**
  * Alert Header
  */
-Alert.Header = class extends Component  {
+Alert.Header = class extends React.Component  {
 
     constructor(props) {
         super(props);
@@ -97,7 +94,7 @@ Alert.Header = class extends Component  {
 };
 
 
-Alert.Body = class extends Component  {
+Alert.Body = class extends React.Component  {
 
     constructor(props) {
         super(props);
@@ -146,7 +143,7 @@ export default Module;
 
 */
 
-Alert.Separator = class extends Component  {
+Alert.Separator = class extends React.Component  {
 
  
     static propTypes = {

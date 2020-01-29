@@ -1,10 +1,6 @@
-import React, {Component} from 'react';
-import classNames from 'classnames';
-import PropTypes from "prop-types";
-
+import {React, classNames, PropTypes, uniqueID} from '../utils';
 import Container from '../container';
 import Tag from '../tag';
-import {uniqueID} from '../utils';
 
 export default function Form(props)  {
 

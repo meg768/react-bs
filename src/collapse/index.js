@@ -1,9 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from "prop-types";
-import classNames from 'classnames';
-import Transition from 'react-transition-group/Transition';
-import {isArray} from '../utils';
+import {React, Transition, PropTypes, isArray} from '../utils';
+
 
 function debug() {
    //console.log.apply(null, arguments);

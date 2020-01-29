@@ -1,10 +1,5 @@
-import React from 'react';
-import PropTypes from "prop-types";
-import classNames from 'classnames';
-import { isObject, isNumber, isString, isBoolean } from 'util';
-
+import {React, PropTypes, classNames, isNumber, isString} from '../utils';
 import Tag from '../tag';
-
 
 export default function Spinner(props)  {
     var {type, style, className, size, color, children, ...props} = props;

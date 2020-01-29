@@ -1,8 +1,4 @@
-import React from 'react';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import { isObject, isNumber, isString, isBoolean, isArray, transformProps} from '../utils';
-
+import {React, classNames, PropTypes, isObject, isNumber, isString, isBoolean, isArray, transformProps} from '../utils';
 
 export default class Tag extends React.Component {
 

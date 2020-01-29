@@ -1,7 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from "prop-types";
-import classNames from 'classnames';
+import {React, classNames, PropTypes} from '../utils';
 import Tag from '../tag';
 
 function debug() {

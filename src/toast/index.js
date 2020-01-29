@@ -1,7 +1,4 @@
-import React, {Component} from 'react';
-import PropTypes from "prop-types";
-import classNames from 'classnames';
-import { isObject, isNumber, isString, isBoolean } from 'util';
+import {React, classNames} from '../utils';
 import Tag from '../tag';
 import Fade from '../fade';
 

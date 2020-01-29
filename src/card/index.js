@@ -1,8 +1,5 @@
-import React from 'react';
-import PropTypes from "prop-types";
-import classNames from 'classnames';
+import {React, classNames} from '../utils';
 import Tag from '../tag';
-import { isObject, isNumber } from 'util';
 
 export default function Card(props) {
 
