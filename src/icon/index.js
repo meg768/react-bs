@@ -15,6 +15,7 @@ export default function Icon(props) {
     }
     else if (isString(icon)) {
         tag = 'img';
+        props = {src:icon, ...props};
     }
     else {
         tag = icon;
