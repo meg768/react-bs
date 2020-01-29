@@ -50,7 +50,7 @@ class DropdownSample extends React.Component {
                             </Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-                    <Form.Label float='right' textColor='muted' margin={{left:2}} inline>
+                    <Form.Label float='right' text='muted' margin={{left:2}} inline>
                         {this.state.text}
                     </Form.Label>
 

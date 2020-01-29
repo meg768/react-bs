@@ -20,7 +20,14 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"]
-            }
+            },
+            {
+                test: /\.svg$/,
+                loader: 'react-svg-loader',
+                options: {
+                    jsx: false // true outputs JSX tags
+                }                
+            }            
 
 
         ]

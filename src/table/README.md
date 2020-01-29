@@ -327,7 +327,7 @@ Add **borderless** for a table without borders.
     </Table.Row>
     <Table.Row>
       <Table.Col header scope="row">3</Table.Col>
-      <Table.Col colspan='2'>Larry the Bird</Table.Col>
+      <Table.Col colSpan='2'>Larry the Bird</Table.Col>
       <Table.Col>@twitter</Table.Col>
     </Table.Row>
   </Table.Body>
@@ -361,7 +361,7 @@ Add **borderless** for a table without borders.
     </Table.Row>
     <Table.Row>
       <Table.Col header scope="row">3</Table.Col>
-      <Table.Col colspan='2'>Larry the Bird</Table.Col>
+      <Table.Col colSpan='2'>Larry the Bird</Table.Col>
       <Table.Col>@twitter</Table.Col>
     </Table.Row>
   </Table.Body>
@@ -398,7 +398,7 @@ Add **hover** to enable a hover state on table rows within a table body.
     </Table.Row>
     <Table.Row>
       <Table.Col header scope="row">3</Table.Col>
-      <Table.Col colspan='2'>Larry the Bird</Table.Col>
+      <Table.Col colSpan='2'>Larry the Bird</Table.Col>
       <Table.Col>@twitter</Table.Col>
     </Table.Row>
   </Table.Body>
@@ -432,7 +432,7 @@ Add **hover** to enable a hover state on table rows within a table body.
     </Table.Row>
     <Table.Row>
       <Table.Col header scope="row">3</Table.Col>
-      <Table.Col colspan='2'>Larry the Bird</Table.Col>
+      <Table.Col colSpan='2'>Larry the Bird</Table.Col>
       <Table.Col>@twitter</Table.Col>
     </Table.Row>
   </Table.Body>

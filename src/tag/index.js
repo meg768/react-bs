@@ -1,7 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { isObject, isNumber, isString, isBoolean, isArray } from '../utils';
+import { isObject, isNumber, isString, isBoolean, isArray, transformProps} from '../utils';
+
 
 export default class Tag extends React.Component {
 
@@ -9,7 +10,17 @@ export default class Tag extends React.Component {
         super(props);
     }
 
-    render()
+    render() {
+        var {tag : TheTag, children, ...props} = transformProps(this.props);
+
+        return (
+            <TheTag {...props}>
+                {children}
+            </TheTag>
+        );            
+    }
+
+    renderOld()
     {
         var {tag : TheTag, className, text, bg, fontWeight, shadow, fixed, position, justifyContent, visible, invisible, display, alignItems, alignContent, float, align, rounded, margin, border, padding, children, ...props} = this.props;
 
@@ -120,7 +131,7 @@ Tag.propTypes = {
     tag              : PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     visible          : PropTypes.bool,
     invisible        : PropTypes.bool,
-    text             : PropTypes.string,
+    text             : PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     bg               : PropTypes.string,
     align            : PropTypes.oneOf(['top', 'middle', 'bottom', 'baseline', 'text-top', 'text-bottom']),
     fontWeight       : PropTypes.oneOf(['bold', 'bolder', 'normal', 'light', 'lighter']),

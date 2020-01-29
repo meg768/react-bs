@@ -17,7 +17,7 @@ import Form from 'react-bootify/components/form';
                 Password
             </Form.Label>
             <Form.Input type="password" margin={{left:3, right:3}}/>
-            <Tag tag='small' textColor='muted' id="passwordHelpInline">
+            <Tag tag='small' text='muted' id="passwordHelpInline">
                 Must be 8-20 characters long.
             </Tag>
         </Form.Group>
@@ -87,7 +87,7 @@ class Sample1 extends React.Component {
                 <Form >
                     <Form.Group row>
                         <Form.Col sm={2} text='right' >
-                            <Form.Label inline textColor='muted'>
+                            <Form.Label inline text='muted'>
                                 <small>Ticker</small>
                             </Form.Label>
                         </Form.Col>
@@ -98,7 +98,7 @@ class Sample1 extends React.Component {
 
                     <Form.Group row>
                         <Form.Col sm={2} text='right' >
-                            <Form.Label inline textColor='muted'>
+                            <Form.Label inline text='muted'>
                                 <small>Company name</small>
                             </Form.Label>
                         </Form.Col>
@@ -110,7 +110,7 @@ class Sample1 extends React.Component {
 
                     <Form.Group row>
                         <Form.Col sm={2} text='right' >
-                            <Form.Label inline textColor='muted'>
+                            <Form.Label inline text='muted'>
                                 <small>Bought at</small>
                             </Form.Label>
                         </Form.Col>
@@ -121,7 +121,7 @@ class Sample1 extends React.Component {
 
                     <Form.Group row>
                         <Form.Col sm={2} text='right' >
-                            <Form.Label inline textColor='muted'>
+                            <Form.Label inline text='muted'>
                                 <small>
                                     Number of stocks
                                 </small>
@@ -134,7 +134,7 @@ class Sample1 extends React.Component {
 
                     <Form.Group row>
                         <Form.Col sm={2} text='right' >
-                            <Form.Label inline textColor='muted'>
+                            <Form.Label inline text='muted'>
                                 <small>
                                     Source
                                 </small>
@@ -169,34 +169,34 @@ class Sample1 extends React.Component {
 
                     <Form.Group row >
                         <Form.Col sm={2} text='right' padding={{y:0}}>
-                            <Form.Label  inline textColor='muted'>
+                            <Form.Label  inline text='muted'>
                                 <small>Stop loss</small>
                             </Form.Label>
                         </Form.Col>
 
                         <Form.Col sm={10}>
                             <Form inline padding={{y:1}}>
-                                <Form.Radio placeholder="Ticker" textColor='muted'>
+                                <Form.Radio placeholder="Ticker" text='muted'>
                                     Continous stop loss
                                 </Form.Radio>
 
                                 <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
-                                <Form.Label textColor='muted'>%</Form.Label>
+                                <Form.Label text='muted'>%</Form.Label>
                             </Form>
 
                             <Form inline padding={{y:1}}>
-                                <Form.Radio placeholder="" textColor='muted'>
+                                <Form.Radio placeholder="" text='muted'>
                                     When price below
                                 </Form.Radio>
                                 <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                             </Form>
                             
                             <Form inline padding={{y:1}}>
-                                <Form.Radio placeholder="Ticker" textColor='muted'>
+                                <Form.Radio placeholder="Ticker" text='muted'>
                                     When price dropped with more than 
                                 </Form.Radio>
                                 <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
-                                <Form.Label textColor='muted'>%</Form.Label>
+                                <Form.Label text='muted'>%</Form.Label>
                             </Form>
                         </Form.Col>
                     </Form.Group>
@@ -423,7 +423,7 @@ class Sample extends React.Component {
             <Form>
                 <Form.Row padding={2}>
                     <Form.Switch checked={this.state.show} onChange={this.toggle.bind(this)}>
-                        <Tag  textColor={this.state.show ? 'warning' : undefined}>
+                        <Tag text={this.state.show ? 'warning' : undefined}>
                             {this.state.show ? 'Warning displayed' : 'Display warning'}
                         </Tag>
                     </Form.Switch>
