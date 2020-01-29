@@ -29,6 +29,18 @@ import {ReactComponent as logo} from "./logo.svg";
 </Tag>
  ```
 
+```js 
+var alarmFill = require("bootstrap-icons/icons/alarm-fill.svg");
+var alarm = require("bootstrap-icons/icons/alarm.svg");
+var calendar = require("bootstrap-icons/icons/calendar.svg");
+
+<Tag>
+    <Icon width='3em' height='3em' text='warning' icon={alarmFill}/>
+    <Icon width='3em' height='3em' text='info' icon={alarm}/>
+    <Icon width='3em' height='3em' text='dark' icon={calendar}/>
+</Tag>
+ ```
+
 ### Example with no icon specified
 
 ```js

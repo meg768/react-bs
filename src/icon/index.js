@@ -1,4 +1,4 @@
-import {React, PropTypes, isString} from '../utils';
+import {React, PropTypes, isString, isFunction} from '../utils';
 import Tag from '../tag';
 
 
@@ -6,6 +6,9 @@ export default function Icon(props) {
 
     var {tag, icon, style, width, height, children, ...props} = props;
 
+    if (icon && isFunction(icon.default))
+        icon = icon.default;
+        
     if (icon == undefined) {
         tag = 'div';
         props = {};
