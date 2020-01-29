@@ -8,5 +8,9 @@ import Icon from 'react-bootify/components/icon';
 ### Simple example
 
 ```js
-<Icon text='info' width='3em' height='3em' icon={AlarmFill}/>
+var props = {width:'3em', height:'3em'};
+<Tag>
+    <Icon text='info' icon={Icons.alarm} {...props}/>
+    <Icon text='info' icon={Icons.alarmFill} {...props}/>
+</Tag>
  ```
