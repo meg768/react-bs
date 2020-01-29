@@ -6,10 +6,17 @@ import {transformProps} from '../utils';
 
 export default function Icon(props) {
 
-    var {icon : TheIcon, ...props} = transformProps(props);
+    var {icon : TheIcon, children, ...props} = transformProps(props);
+
+    if (!TheIcon) {
+        TheIcon = 'div';
+        children = 'No icon specified';
+    }
 
     return (
-        <TheIcon {...props}/>
+        <TheIcon {...props}>
+            {children}
+        </TheIcon>
     );
 };
 

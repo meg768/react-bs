@@ -7,9 +7,9 @@ import {Icon} from 'react-bootify';
 import Icon from 'react-bootify/components/icon';
 ```
 
-### Simple example
+### Example
 
-This example assumes you have installed the bootstrap icons (https://icons.getbootstrap.com).
+This example assumes you have installed the Bootstrap icons (https://icons.getbootstrap.com).
 
 ```js static
 npm install bootstrap-icons --save
@@ -26,5 +26,13 @@ import {ReactComponent as logo} from "./logo.svg";
     <Icon width='3em' height='3em' text='info' icon={alarm}/>
     <Icon width='3em' height='3em' text='warning' icon={alarmFill}/>
     <Icon width='3em' height='3em' text='primary' icon={logo}/>
+</Tag>
+ ```
+
+### Example with no icon specified
+
+```js
+<Tag>
+    <Icon/>
 </Tag>
  ```
