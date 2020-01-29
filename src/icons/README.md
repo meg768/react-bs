@@ -1,17 +1,13 @@
+
 ### Usage
 
 ```js static
-import AlarmFill from 'react-bootify/components/icons/alarm-fill';
+import {Icon} from 'react-bootify';
+/* or */
+import Icon from 'react-bootify/components/icon';
 ```
 
 ### Simple example
-
-
-```js
-
-
- ```
-
 
 ```js
 <Icon text='info' width='3em' height='3em' icon={AlarmFill}/>
