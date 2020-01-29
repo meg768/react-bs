@@ -128,7 +128,7 @@ Tag.defaultProps = {
 };
 
 Tag.propTypes = {
-    tag              : PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    tag              : PropTypes.any,
     visible          : PropTypes.bool,
     invisible        : PropTypes.bool,
     text             : PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
