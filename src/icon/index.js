@@ -7,7 +7,7 @@ import {isString, transformProps} from '../utils';
 
 export default function Icon(props) {
 
-    var {tag, icon, children, ...props} = props;
+    var {tag, icon, style, width, height, children, ...props} = props;
 
     if (icon == undefined) {
         tag = 'div';
@@ -15,14 +15,14 @@ export default function Icon(props) {
     }
     else if (isString(icon)) {
         tag = 'img';
-        props = {src:icon, ...props};
+        props = {src:icon, style:{width:width, height:height, ...style}, ...props};
     }
     else {
         tag = icon;
     }
 
     return (
-        <Tag tag={tag} {...props}>
+        <Tag tag={tag} width={width} height={height} {...props}>
             {children}
         </Tag>
     );
