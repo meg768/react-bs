@@ -1,6 +1,6 @@
 {
 	"name": "react-bootify",
-	"version": "0.0.195",
+	"version": "0.0.196",
 	"description": "react-bootify",
 	"main": "components/index.js",
 	"scripts": {
