@@ -387,11 +387,18 @@ function renderIcons() {
     icons.push({name:'x', icon:require('bootstrap-icons/icons/x.svg')});
 
 
+    function onMouseEnter(element) {
+        //element.target.style.transform = 'scale(1.2)';
+    }
+    function onMouseLeave(element) {
+        //element.target.style.transform = 'scale(1.0)';
+    }
+
     return icons.map((icon, index) => {
         return (
             <Container.Col key={index} margin={{bottom:1}}>
-                <Tag text='center' padding={{left:1, right:1, top:3, bottom:3}} margin={1} rounded bg='light'>
-                    <Icon width='32px' height='32px' icon={icon.icon}/>
+                <Tag  text='center' padding={{left:1, right:1, top:3, bottom:3}} margin={1} rounded bg='light' >
+                    <Icon  className='zoom' style={{transition: 'all .2s ease-in-out'}} width='32px' height='32px' icon={icon.icon}/>
                 </Tag>
                 <Tag text='muted center' style={{fontSize:'0.75em'}} padding={{top:1}}>
                     {icon.name}
