@@ -1,4 +1,4 @@
-import {React, PropTypes} from '../utils';
+import {React, PropTypes, PopperJS} from '../utils';
 
 function debug() {
     console.log.apply(null, arguments);
@@ -65,7 +65,7 @@ export default class Popper extends React.Component {
 
         };
 
-        this.popper = new PopperJs(this.targetNode, this.popupNode, options);
+        this.popper = new PopperJS(this.targetNode, this.popupNode, options);
 
         this.updatePopper();
     }

@@ -1,4 +1,4 @@
-import {React, PropTypes, isObject, isNumber, classNames} from '../utils';
+import {React, PropTypes, isObject, isNumber, isString, classNames} from '../utils';
 import Tag from '../tag';
 
 export default class Container extends React.Component  {
@@ -28,9 +28,9 @@ export default class Container extends React.Component  {
 
 Container.Col = function(props) {
 
-    var {tag, className, baseClassName, width, xs, sm, md, lg, xl, ...other} = props;
+    var {tag, className, width, xs, sm, md, lg, xl, ...props} = props;
 
-    className = classNames(className, baseClassName);
+    className = classNames(className, 'col');
 
     function addClasses(type, value) {
 
@@ -47,16 +47,10 @@ Container.Col = function(props) {
         }
     }
 
-    if (isObject(xs)) {
-        className = classNames(className, {[`col-${xs.width}`]:xs.width});
+    className = classNames(className, {[`col-${width}`]:isNumber(width)});
 
-    }
-    else if (isNumber(xs)) {
-        className = classNames(className, {[`col-${xs}`]:xs});
 
-    }
-
-    
+    addClasses('xs', xs);
     addClasses('sm', sm);
     addClasses('md', md);
     addClasses('lg', lg);
@@ -64,7 +58,7 @@ Container.Col = function(props) {
 
 
     return (
-        <Tag tag={tag} className={className} {...other}/>
+        <Tag tag={tag} className={className} {...props}/>
     );
 }
 
@@ -83,19 +77,30 @@ Container.Col.propTypes = {
 
 
 Container.Col.defaultProps = {
-    tag: 'div',
-    baseClassName: 'col'
+    tag: 'div'
 };
 
 
 Container.Row = function(props) {
 
-    var {tag, className, ...other} = props;
+    var {tag, cols, className, ...props} = props;
 
     className = classNames(className, 'row');
 
+    if (isObject(cols)) {
+        className = classNames(className, cols.xs ? `row-cols-xs-${cols.xs}` : undefined);
+        className = classNames(className, cols.sm ? `row-cols-sm-${cols.sm}` : undefined);
+        className = classNames(className, cols.md ? `row-cols-md-${cols.md}` : undefined);
+        className = classNames(className, cols.lg ? `row-cols-lg-${cols.lg}` : undefined);
+        className = classNames(className, cols.xl ? `row-cols-xl-${cols.xl}` : undefined);
+    }
+
+    if (isNumber(cols)) {
+        className = classNames(className, `row-cols-${cols}`);
+    }
+
     return (
-        <Tag tag={tag} className={className} {...other}/>
+        <Tag tag={tag} className={className} {...props}/>
     );
 }
 

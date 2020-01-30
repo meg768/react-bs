@@ -1,4 +1,4 @@
-import {React, ReactDOM, PropTypes, classNames} from '../utils';
+import {React, ReactDOM, PropTypes, classNames, PopperJS} from '../utils';
 import Fade from '../fade';
 import Tag from '../tag';
 
@@ -87,7 +87,7 @@ export default class Dropdown extends React.Component {
     
             };
     
-            this.popper = new PopperJs(this.targetNode, this.dropdownNode, options);
+            this.popper = new PopperJS(this.targetNode, this.dropdownNode, options);
             this.updatePopper();
         }
     }

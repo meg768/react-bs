@@ -26,12 +26,13 @@ Form.defaultProps = {
 
 Form.Group = function(props)  {
 
-    var {row, className, ...other} = props;
+    var {row, className, ...props} = props;
 
     className = classNames(className, {'row': row});
+    className = classNames(className, {'form-group': true});
 
     return (
-        <Container.Col className={className} baseClassName='form-group'  {...other}>
+        <Container.Col className={className}  {...props}>
             {props.children}
         </Container.Col>
     );
@@ -59,26 +60,7 @@ Form.Col = function(props) {
     );
 }
 
-/*
-Form.Input = function(props)  {
 
-
-    var {plainText, tag, size, className, ...props} = props;
-
-    className = classNames(className, {'form-control':true});
-    className = classNames(className, {'form-control-sm':size=='sm'});
-    className = classNames(className, {'form-control-lg':size=='lg'});
-    className = classNames(className, {'form-control-plaintext':plainText});
-
-    return (
-        <Tag tag={tag} className={className} {...props}>
-            {props.children}
-        </Tag>
-
-    );
-
-};
-*/
 
 Form.Input = class extends React.Component {
 

@@ -77,6 +77,8 @@ Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswa
 - 2020-01-25 - Removed some obsolete properties in **Tag**. 
 - 2020-01-25 - **Tag** does no longer modify the style of an element. 
 - 2020-01-28 - Added **Icon** to display bootstrap-icons. Experimental. Removed **Glyph** since it had no purpose.
+- 2020-01-30 - Updated sample with the current icon set from [Bootstrap Icons](https://icons.getbootstrap.com)
+- 2020-01-30 - Fixed some PopperJS errors in the online samples.
 
 
 

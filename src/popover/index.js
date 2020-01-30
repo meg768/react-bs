@@ -1,4 +1,4 @@
-import {React, ReactDOM, PropTypes, classNames} from '../utils';
+import {React, ReactDOM, PropTypes, classNames, PopperJS} from '../utils';
 import Fade from '../fade';
 
 function debug() {
@@ -127,7 +127,7 @@ export default class Popover extends React.Component {
 
             document.addEventListener('click', this.onDocumentClick, true);
 
-            this.popper = new PopperJs(this.targetNode, this.popupNode, options);
+            this.popper = new PopperJS(this.targetNode, this.popupNode, options);
             this.updatePopper();
         }
 
