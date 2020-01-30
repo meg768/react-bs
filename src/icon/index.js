@@ -4,15 +4,18 @@ import Tag from '../tag';
 
 export default function Icon(props) {
 
-    var {tag, icon, style, width, height, children, ...props} = props;
+    var {tag, src, icon, style, width, height, children, ...props} = props;
 
+    if (src && !icon)
+        icon = src;
+        
     if (icon && isFunction(icon.default))
         icon = icon.default;
         
     if (icon == undefined) {
         tag = 'div';
         props = {};
-        children = 'No icon specified';
+        children = 'XXX';
     }
 
     else if (isString(icon)) {

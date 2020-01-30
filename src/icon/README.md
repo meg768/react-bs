@@ -47,6 +47,20 @@ var alertCircle = require("bootstrap-icons/icons/alert-circle.svg");
 </Tag>
  ```
 
+### Other Icons Besides Inline SVG
+
+If the **icon** property is a string the tag is converted to an **<img/>** and **src** is set to the icon value.
+Both **src** and **icon** are valid properies.
+
+```js 
+<Tag>
+    <Icon margin={2} src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width='2em' height='2em'/>
+    <Icon margin={2} icon="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width='4em' height='4em'/>
+</Tag>
+```
+
+
+
 ### Sample of Bootstrap Icons in Beta Version
 
 Here is a sample of the complete set of the Bootstrap Icons (Beta)
