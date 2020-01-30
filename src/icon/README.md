@@ -373,24 +373,23 @@ function renderIcons() {
     icons.push({name:'x', icon:require('bootstrap-icons/icons/x.svg')});
 
 
-    return icons.map((icon) => {
+    return icons.map((icon, index) => {
         return (
-            <Tag className='col mb-4'>
+            <Container.Col key={index} margin={{bottom:1}}>
                 <Tag text='center' padding={{left:1, right:1, top:3, bottom:3}} margin={1} rounded bg='light'>
                     <Icon width='32px' height='32px' icon={icon.icon}/>
                 </Tag>
                 <Tag text='muted center' style={{fontSize:'0.75em'}} padding={{top:1}}>
                     {icon.name}
                 </Tag>
-            </Tag>
+            </Container.Col>
         );
     });
 }
 
-<div>
+<Container>
     <Container.Row cols={{xs:3, sm:4, md:5, lg:6, xl:8}}>
         {renderIcons()}
     </Container.Row>
-
-</div>
+</Container>
  ```
