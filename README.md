@@ -19,6 +19,9 @@ or https://www.npmjs.com/package/react-bootstrap.
 npm install react-bootify --save
 ````
 
+## Documentation with examples (Bootstrap 4.4.1)
+- https://meg768.github.io/react-bootify/
+
 ## Bootstrap
 This package does not include Bootstrap CSS. Simply import the Bootstrap version
 you require into your project's css-file. 
@@ -47,9 +50,6 @@ Or maybe **materia**.
 ```
 
 Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswatch.
-
-## Documentation with examples (Bootstrap 4.4.1)
-- https://meg768.github.io/react-bootify/
 
 ## History
 - 2018-10-01 - Created. Nothing to see.

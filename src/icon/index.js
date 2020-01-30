@@ -8,14 +8,14 @@ export default function Icon(props) {
 
     if (src && !icon)
         icon = src;
-        
+
     if (icon && isFunction(icon.default))
         icon = icon.default;
         
     if (icon == undefined) {
         tag = 'div';
         props = {};
-        children = 'XXX';
+        children = ':(';
     }
 
     else if (isString(icon)) {
