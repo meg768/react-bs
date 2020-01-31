@@ -3,4 +3,12 @@
 
 
 
-.zoom:hover { transform: scale(1.25)}
+.zoom { 
+    transition: all .2s ease-in-out; 
+    
+
+}
+
+.zoom:hover {
+    transform: scale(1.25);
+}
