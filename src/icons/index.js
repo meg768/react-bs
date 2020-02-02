@@ -4,6 +4,7 @@ import Tag from '../tag';
 
 var Icons = {};
 
+/*
 
 Icons.alarmFill = require('bootstrap-icons/icons/alarm-fill.svg');
 Icons.alarm = require('bootstrap-icons/icons/alarm.svg');
@@ -321,4 +322,5 @@ Icons.xSquareFill = require('bootstrap-icons/icons/x-square-fill.svg');
 Icons.xSquare = require('bootstrap-icons/icons/x-square.svg');
 Icons.x = require('bootstrap-icons/icons/x.svg');
 
+*/
 export default Icons;

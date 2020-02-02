@@ -1,0 +1,1 @@
+export default require("bootstrap-icons/icons/inbox-fill.svg");

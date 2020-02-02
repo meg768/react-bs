@@ -34,7 +34,9 @@ If you are using the [@svgr/webpack](https://www.npmjs.com/package/@svgr/webpack
 or [react-svg-loader](https://www.npmjs.com/package/react-svg-loader) SVG-loaders in WebPack, this may work...
 
 ```js 
+console.log('REQIRING');
 var alarmFill = require("bootstrap-icons/icons/alarm-fill.svg");
+console.log(alarmFill);
 var alarm = require("bootstrap-icons/icons/alarm.svg");
 var calendar = require("bootstrap-icons/icons/calendar.svg");
 var alertCircle = require("bootstrap-icons/icons/alert-circle.svg");
@@ -49,13 +51,12 @@ var alertCircle = require("bootstrap-icons/icons/alert-circle.svg");
 
 ### Other Icons Besides Inline SVG
 
-If the **icon** property is a string the tag is converted to an **<img/>** and **src** is set to the icon value.
-Both **src** and **icon** are valid properies.
+Use the **src** property to display external icon files. An **<img/>** tag is used to display the icon.
 
 ```js 
 <Tag>
     <Icon margin={2} src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width='2em' height='2em'/>
-    <Icon margin={2} icon="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width='4em' height='4em'/>
+    <Icon margin={2} src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width='4em' height='4em'/>
 </Tag>
 ```
 

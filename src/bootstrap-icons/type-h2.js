@@ -1,0 +1,1 @@
+export default require("bootstrap-icons/icons/type-h2.svg");

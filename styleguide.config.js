@@ -4,7 +4,7 @@ module.exports = {
     components: [
         './src/*/*.js'
     ],
-    skipComponentsWithoutExample: false,
+    skipComponentsWithoutExample: true,
     require: ['./styleguide.css']
 };
 
