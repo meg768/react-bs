@@ -12,7 +12,7 @@ export default function Icon(props) {
     if (isString(src)) {
         tag = 'img', props = {src:src, style:{width:width, height:height, ...style}, ...props};
     }
-    else if (isFunction(icon)) {
+    else if (icon) {
         tag = icon, props = {width:width, height:height, style:style, ...props};
     }
 
