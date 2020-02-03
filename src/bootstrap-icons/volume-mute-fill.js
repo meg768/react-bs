@@ -1,1 +1,0 @@
-export default require("bootstrap-icons/icons/volume-mute-fill.svg");

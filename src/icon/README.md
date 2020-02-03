@@ -389,21 +389,21 @@ function renderIcons() {
 
     return icons.map((icon, index) => {
         return (
-            <Container.Col key={index} margin={{bottom:1}}>
+            <Col key={index} margin={{bottom:1}}>
                 <Tag  text='center' padding={{left:1, right:1, top:3, bottom:3}} margin={1} rounded bg='light' >
                     <Icon className='zoom' width='32px' height='32px' icon={icon.icon}/>
                 </Tag>
-                <Tag text='muted center' style={{fontSize:'0.75em'}} padding={{top:1}}>
+                <Tag text='muted center' style={{fontSize:'0.5em'}} padding={{top:1}}>
                     {icon.name}
                 </Tag>
-            </Container.Col>
+            </Col>
         );
     });
 }
 
 <Container>
-    <Container.Row cols={{xs:3, sm:4, md:5, lg:6, xl:8}}>
+    <Row cols={{xs:3, sm:3, md:4, lg:5, xl:6}}>
         {renderIcons()}
-    </Container.Row>
+    </Row>
 </Container>
  ```

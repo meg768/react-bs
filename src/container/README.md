@@ -57,3 +57,8 @@ import Container from 'react-bootify/components/container';
 
 
 ```
+
+
+### Bootstrap Documentation
+
+See https://getbootstrap.com/docs/4.4/layout/overview

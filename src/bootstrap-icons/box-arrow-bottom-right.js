@@ -1,1 +1,0 @@
-export default require("bootstrap-icons/icons/box-arrow-bottom-right.svg");

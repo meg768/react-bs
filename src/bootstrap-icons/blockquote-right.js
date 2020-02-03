@@ -1,1 +1,0 @@
-export default require("bootstrap-icons/icons/blockquote-right.svg");

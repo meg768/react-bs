@@ -10,18 +10,34 @@ import Badge from 'react-bootify/components/badge';
 
 ```js
 
-    var margin = {left:1, right:1};
+    class Sample extends React.Component {
 
-    <Tag>
-        <Badge color="primary" margin={margin}>Primary</Badge>
-        <Badge color="secondary" margin={margin}>Secondary</Badge>
-        <Badge color="success" margin={margin}>Success</Badge>
-        <Badge color="danger" margin={margin}>Danger</Badge>
-        <Badge color="warning" margin={margin}>Warning</Badge>
-        <Badge color="info" margin={margin}>Info</Badge>
-        <Badge color="light" margin={margin}>Light</Badge>
-        <Badge color="dark" margin={margin}>Dark</Badge>
-    </Tag>
+        constructor(props) {
+            super(props);
+        }
+
+        render() {
+            var margin = {left:1, right:1};
+
+            return (
+                <Tag>
+                    <Badge color="primary" margin={margin}>Primary</Badge>
+                    <Badge color="secondary" margin={margin}>Secondary</Badge>
+                    <Badge color="success" margin={margin}>Success</Badge>
+                    <Badge color="danger" margin={margin}>Danger</Badge>
+                    <Badge color="warning" margin={margin}>Warning</Badge>
+                    <Badge color="info" margin={margin}>Info</Badge>
+                    <Badge color="light" margin={margin}>Light</Badge>
+                    <Badge color="dark" margin={margin}>Dark</Badge>
+                </Tag>
+
+            );
+
+        }
+
+    }
+
+    <Sample/>
 ```
 
 ```js
