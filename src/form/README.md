@@ -31,7 +31,7 @@ import Form from 'react-bootify/components/form';
 
     <Form >
         <Form.Group row>
-            <Form.Col sm={2} text='right'>
+            <Form.Col width={{sm:2}} text='right'>
                 <Form.Label inline ><small>Company name</small></Form.Label>
             </Form.Col>
             <Form.Col sm={10}>
@@ -40,10 +40,10 @@ import Form from 'react-bootify/components/form';
         </Form.Group>
 
         <Form.Group row>
-            <Form.Col sm={2} text='right'>
+            <Form.Col width={{sm:2}} text='right'>
                 <Form.Label inline ><small>Bought at</small></Form.Label>
             </Form.Col>
-            <Form.Col sm={10}>
+            <Form.Col width={{sm:10}}>
                 <Form.Input type="text"/>
             </Form.Col>
         </Form.Group>
@@ -86,61 +86,61 @@ class Sample1 extends React.Component {
 
                 <Form >
                     <Form.Group row>
-                        <Form.Col sm={2} text='right' >
+                        <Form.Col width={{sm:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>Ticker</small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col sm={10} text='right' >
+                        <Form.Col width={{sm:10}} text='right' >
                             <Form.Input type="text" id="ticker" placeholder="Ticker" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Group>
 
                     <Form.Group row>
-                        <Form.Col sm={2} text='right' >
+                        <Form.Col width={{sm:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>Company name</small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col sm={10}>
+                        <Form.Col width={{sm:10}}>
                             <Form.Input type="text" id="name" placeholder="Name" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Group>
 
 
                     <Form.Group row>
-                        <Form.Col sm={2} text='right' >
+                        <Form.Col width={{sm:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>Bought at</small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col sm={10}>
+                        <Form.Col width={{sm:10}}>
                             <Form.Input type="text" id="price" placeholder="Price" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Group>
 
                     <Form.Group row>
-                        <Form.Col sm={2} text='right' >
+                        <Form.Col width={{sm:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>
                                     Number of stocks
                                 </small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col sm={10}>
+                        <Form.Col width={{sm:10}}>
                             <Form.Input type="text" id="amount" placeholder="Amount" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Group>
 
                     <Form.Group row>
-                        <Form.Col sm={2} text='right' >
+                        <Form.Col width={{sm:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>
                                     Source
                                 </small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col sm={10}>
+                        <Form.Col width={{sm:10}}>
                             <Dropdown placement='bottom-start'>
                                 <Dropdown.Target>
                                     <Button outline color='secondary'>
@@ -168,13 +168,13 @@ class Sample1 extends React.Component {
 
 
                     <Form.Group row >
-                        <Form.Col sm={2} text='right' padding={{y:0}}>
+                        <Form.Col width={{sm:2}} text='right' padding={{y:0}}>
                             <Form.Label  inline text='muted'>
                                 <small>Stop loss</small>
                             </Form.Label>
                         </Form.Col>
 
-                        <Form.Col sm={10}>
+                        <Form.Col width={{sm:10}}>
                             <Form inline padding={{y:1}}>
                                 <Form.Radio placeholder="Ticker" text='muted'>
                                     Continous stop loss
@@ -252,36 +252,50 @@ class Sample extends React.Component {
     render() {
         return (
                 <Form>
-                    <Form.Group>
-                        <Form.Label>Symbol</Form.Label>
-                        <Form.Input type="text" readOnly plainText id="symbol" value={this.state.stock.symbol} onChange={this.onChange}/>
-                    </Form.Group>
-
-                    <Form.Group>
-                        <Form.Label>Name</Form.Label>
-                        <Form.Input type="text" disabled={this.state.loading} value={this.state.stock.name} placeholder="Name" onChange={this.onChange}/>
-                    </Form.Group>
-
                     <Form.Row>
-                        <Form.Group md={6}>
-                            <Form.Label >Industry</Form.Label>
-                            <Form.Input id='industry' type="text" disabled={this.state.loading} value={this.state.stock.industry} placeholder="Industry" onChange={this.onChange}/>
-                        </Form.Group>
-                        <Form.Group md={6}>
-                            <Form.Label >Sector</Form.Label>
-                            <Form.Input id='sector' type="text" disabled={this.state.loading} value={this.state.stock.sector} placeholder="Sector" onChange={this.onChange}/>
-                        </Form.Group>
+                        <Form.Col>
+                            <Form.Group>
+                                <Form.Label>Symbol</Form.Label>
+                                <Form.Input type="text" readOnly id="symbol" value={this.state.stock.symbol} onChange={this.onChange}/>
+                            </Form.Group>
+                        </Form.Col>
+                    </Form.Row>
+                    <Form.Row>
+                        <Form.Col>
+                            <Form.Group>
+                                <Form.Label>Name</Form.Label>
+                                <Form.Input type="text" disabled={this.state.loading} value={this.state.stock.name} placeholder="Name" onChange={this.onChange}/>
+                            </Form.Group>
+                        </Form.Col>
+                    </Form.Row>
+                    <Form.Row>
+                        <Form.Col width={{md:6}}>
+                            <Form.Group>
+                                <Form.Label >Industry</Form.Label>
+                                <Form.Input id='industry' type="text" disabled={this.state.loading} value={this.state.stock.industry} placeholder="Industry" onChange={this.onChange}/>
+                            </Form.Group>
+                        </Form.Col>
+                        <Form.Col width={{md:6}}>
+                            <Form.Group>
+                                <Form.Label >Sector</Form.Label>
+                                <Form.Input id='sector' type="text" disabled={this.state.loading} value={this.state.stock.sector} placeholder="Sector" onChange={this.onChange}/>
+                            </Form.Group>
+                        </Form.Col>
                     </Form.Row>
 
                     <Form.Row>
-                        <Form.Group md={6}>
-                            <Form.Label >Exchange</Form.Label>
-                            <Form.Input id='exchange' type="text" disabled={this.state.loading} value={this.state.stock.exchange} placeholder="Industry" onChange={this.onChange}/>
-                        </Form.Group>
-                        <Form.Group md={6}>
-                            <Form.Label >Type</Form.Label>
-                            <Form.Input id='type' type="text" disabled={this.state.loading} value={this.state.stock.type} placeholder="Type" onChange={this.onChange}/>
-                        </Form.Group>
+                        <Form.Col width={{md:6}}>
+                            <Form.Group>
+                                <Form.Label >Exchange</Form.Label>
+                                <Form.Input id='exchange' type="text" disabled={this.state.loading} value={this.state.stock.exchange} placeholder="Industry" onChange={this.onChange}/>
+                            </Form.Group>
+                        </Form.Col>
+                        <Form.Col width={{md:6}}>
+                            <Form.Group>
+                                <Form.Label >Type</Form.Label>
+                                <Form.Input id='type' type="text" disabled={this.state.loading} value={this.state.stock.type} placeholder="Type" onChange={this.onChange}/>
+                            </Form.Group>
+                        </Form.Col>
                     </Form.Row>
                 </Form>
         );
@@ -351,39 +365,39 @@ class Sample extends React.Component {
 
         return (
                 <Form>
-                    <Form.Group>
-                        <Form.Label >Utiquus</Form.Label>
-                        <Form.Input id='text' type="text" value={this.state.text} onChange={this.onChange}/>
-                    </Form.Group>
+                    <Form.Row>
+                        <Form.Col>
+                            <Form.Label >Utiquus</Form.Label>
+                            <Form.Input id='text' type="text" value={this.state.text} onChange={this.onChange}/>
+                        </Form.Col>
+                    </Form.Row>
 
-                    <Form.Group>
-                        <Form.Row>
-                            <Form.Group xs={12} sm={12} md={6}>
-                                <Card>
-                                    <Card.Body>
-                                        <Form.Radio id='radioA' checked={this.state.option=='A'} onChange={this.onChange}>
-                                            Aenean porttitor
-                                        </Form.Radio>
-                                        <Form.Radio id='radioB' checked={this.state.option=='B'} onChange={this.onChange}>
-                                            Interdum et malesuada fames
-                                        </Form.Radio>
-                                    </Card.Body>
-                                </Card>
-                            </Form.Group>
-                            <Form.Group xs={12} sm={12} md={6}>
-                                <Card>
-                                    <Card.Body>
-                                        <Form.Checkbox id='checkBoxA' checked={this.state.checkBoxA} onChange={this.onChange}>
-                                            Cras eget felis
-                                        </Form.Checkbox>
-                                        <Form.Checkbox id='checkBoxB' checked={this.state.checkBoxB} onChange={this.onChange}>
-                                            Duis at viverra
-                                        </Form.Checkbox>
-                                    </Card.Body>
-                                </Card>
-                            </Form.Group>
-                        </Form.Row>
-                    </Form.Group>
+                    <Form.Row >
+                        <Form.Col padding={{top:3}} width={{xs:12, sm:12, md:8, lg:9, xl:9}}>
+                            <Card>
+                                <Card.Body>
+                                    <Form.Radio id='radioA' checked={this.state.option=='A'} onChange={this.onChange}>
+                                        Aenean porttitor
+                                    </Form.Radio>
+                                    <Form.Radio id='radioB' checked={this.state.option=='B'} onChange={this.onChange}>
+                                        Interdum et malesuada fames
+                                    </Form.Radio>
+                                </Card.Body>
+                            </Card>
+                        </Form.Col>
+                        <Form.Col padding={{top:3}} width={{xs:12, sm:12, md:4, lg:3, xl:3}}>
+                            <Card>
+                                <Card.Body>
+                                    <Form.Checkbox id='checkBoxA' checked={this.state.checkBoxA} onChange={this.onChange}>
+                                        Cras eget felis
+                                    </Form.Checkbox>
+                                    <Form.Checkbox id='checkBoxB' checked={this.state.checkBoxB} onChange={this.onChange}>
+                                        Duis at viverra
+                                    </Form.Checkbox>
+                                </Card.Body>
+                            </Card>
+                        </Form.Col>
+                    </Form.Row>
 
 
                 </Form>
@@ -422,11 +436,13 @@ class Sample extends React.Component {
         return (
             <Form>
                 <Form.Row padding={2}>
-                    <Form.Switch checked={this.state.show} onChange={this.toggle.bind(this)}>
-                        <Tag text={this.state.show ? 'warning' : undefined}>
-                            {this.state.show ? 'Warning displayed' : 'Display warning'}
-                        </Tag>
-                    </Form.Switch>
+                    <Form.Col>
+                        <Form.Switch checked={this.state.show} onChange={this.toggle.bind(this)}>
+                            <Tag text={this.state.show ? 'warning' : undefined}>
+                                {this.state.show ? 'Warning displayed' : 'Display warning'}
+                            </Tag>
+                        </Form.Switch>
+                    </Form.Col>
                 </Form.Row>
                 <Fade show={this.state.show}>
                     <Form.Row>
@@ -463,28 +479,26 @@ class Sample extends React.Component {
 
         return (
                 <Form>
-                    <Form.Group>
-                        <Form.Row>
-                            <Form.Group xs={12} sm={12} md={6}>
-                                <Card padding={2}>
-                                    <Form.Col>
-                                        <Form.Switch>Lorem ipsum dolor</Form.Switch>
-                                        <Form.Switch>Nam molestie aliquam</Form.Switch>
-                                    </Form.Col>
-                                </Card>
-                            </Form.Group>
+                    <Form.Row>
+                        <Form.Col padding={2} width={{xs:12, sm:12, md:6}}>
+                            <Card padding={3}>
+                                <Form.Col>
+                                    <Form.Switch>Lorem ipsum dolor</Form.Switch>
+                                    <Form.Switch>Nam molestie aliquam</Form.Switch>
+                                </Form.Col>
+                            </Card>
+                        </Form.Col>
 
-                            <Form.Group xs={12} sm={12} md={6}>
-                                <Card padding={2}>
-                                    <Form.Col>
-                                        <Form.Switch>Morbi eu</Form.Switch>
-                                        <Form.Switch>Pellentesque a</Form.Switch>
-                                    </Form.Col>
-                                </Card>
-                            </Form.Group>
+                        <Form.Col padding={2} width={{xs:12, sm:12, md:6}}>
+                            <Card padding={3}>
+                                <Form.Col>
+                                    <Form.Switch>Morbi eu</Form.Switch>
+                                    <Form.Switch>Pellentesque a</Form.Switch>
+                                </Form.Col>
+                            </Card>
+                        </Form.Col>
 
-                     </Form.Row>
-                    </Form.Group>
+                    </Form.Row>
                 </Form>
         );
     }

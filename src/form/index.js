@@ -32,20 +32,20 @@ Form.Group = function(props)  {
     className = classNames(className, {'form-group': true});
 
     return (
-        <Container.Col className={className}  {...props}>
+        <Tag className={className}  {...props}>
             {props.children}
-        </Container.Col>
+        </Tag>
     );
 }
 
 Form.Row = function(props) {
 
-    var {tag = 'div', className, ...other} = props;
+    var {className, children, ...props} = props;
     className = classNames(className, 'form-row');
 
     return (
-        <Tag tag={tag} {...other} className={className}>
-            {props.children}
+        <Tag className={className} {...props} >
+            {children}
         </Tag>
 
     );

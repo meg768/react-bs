@@ -11,6 +11,8 @@ export default function Col(props) {
     className = classNames(className, 'col');
 
     if (isObject(col)) {
+        className = classNames(className, col.xs ? `col-${col.xs}` : undefined);
+
         className = classNames(className, col.xs ? `col-xs-${col.xs}` : undefined);
         className = classNames(className, col.sm ? `col-sm-${col.sm}` : undefined);
         className = classNames(className, col.md ? `col-md-${col.md}` : undefined);
