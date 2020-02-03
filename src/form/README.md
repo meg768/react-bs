@@ -479,7 +479,7 @@ class Sample extends React.Component {
 
         return (
                 <Form>
-                    <Form.Row>
+                    <Form.Row group>
                         <Form.Col padding={2} width={{xs:12, sm:12, md:6}}>
                             <Card padding={3}>
                                 <Form.Col>

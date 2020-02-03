@@ -40,8 +40,9 @@ Form.Group = function(props)  {
 
 Form.Row = function(props) {
 
-    var {className, children, ...props} = props;
+    var {className, group, children, ...props} = props;
     className = classNames(className, 'form-row');
+    className = classNames(className, group ? 'form-group' : undefined);
 
     return (
         <Tag className={className} {...props} >
