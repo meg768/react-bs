@@ -70,56 +70,88 @@ function transformProps(props) {
 
     ///////////////////////////////////////////////////////////////////////
 
-    addClass(`border`, isBoolean(border) || isString(border));
-    addClass(`border-${border}`, isString(border));
+    if (border != undefined) {
+        addClass(`border`, true);
 
-    if (isObject(border)) {
-        addClass(`border-left`, border.left);
-        addClass(`border-top`, border.top);
-        addClass(`border-right`, border.right);
-        addClass(`border-bottom`, border.bottom);
+        if (isObject(border)) {
+            addClass(`border-left`, border.left);
+            addClass(`border-top`, border.top);
+            addClass(`border-right`, border.right);
+            addClass(`border-bottom`, border.bottom);
+        }
+        else {
+            addClass(`border-${border}`, border);
+        }
+    
     }
     
     ///////////////////////////////////////////////////////////////////////
 
-    addClass(`p-${padding}`, isString(padding) || isNumber(padding));
-
-    if (isObject(padding)) {
-        addClass(`pl-${padding.left}`, padding.left != undefined);
-        addClass(`pt-${padding.top}`, padding.top != undefined);
-        addClass(`pr-${padding.right}`, padding.right != undefined);
-        addClass(`pb-${padding.bottom}`, padding.bottom != undefined);
-        addClass(`px-${padding.x}`, padding.x != undefined);
-        addClass(`py-${padding.y}`, padding.y != undefined);
+    if (padding != undefined) {
+        if (isObject(padding)) {
+            addClass(`pl-${padding.left}`, padding.left != undefined);
+            addClass(`pt-${padding.top}`, padding.top != undefined);
+            addClass(`pr-${padding.right}`, padding.right != undefined);
+            addClass(`pb-${padding.bottom}`, padding.bottom != undefined);
+            addClass(`px-${padding.x}`, padding.x != undefined);
+            addClass(`py-${padding.y}`, padding.y != undefined);
+        }
+        else {
+            addClass(`p-${padding}`, isString(padding) || isNumber(padding));
+        }
     }
-
+ 
     ///////////////////////////////////////////////////////////////////////
 
-    addClass(`m-${margin}`, isString(margin) || isNumber(margin));
-
-    if (isObject(margin)) {
-        addClass(`ml-${margin.left}`, margin.left != undefined);
-        addClass(`mt-${margin.top}`, margin.top != undefined);
-        addClass(`mr-${margin.right}`, margin.right != undefined);
-        addClass(`mb-${margin.bottom}`, margin.bottom != undefined);
-        addClass(`mx-${margin.x}`, margin.x != undefined);
-        addClass(`my-${margin.y}`, margin.y != undefined);
+    if (margin != undefined) {
+        if (isObject(margin)) {
+            addClass(`ml-${margin.left}`, margin.left);
+            addClass(`mt-${margin.top}`, margin.top);
+            addClass(`mr-${margin.right}`, margin.right);
+            addClass(`mb-${margin.bottom}`, margin.bottom);
+            addClass(`mx-${margin.x}`, margin.x);
+            addClass(`my-${margin.y}`, margin.y);
+        }
+        else {
+            addClass(`m-${margin}`, margin);
+        }
     }
     
     ///////////////////////////////////////////////////////////////////////
 
-    addClass(`rounded-${rounded}`, isString(rounded) || isNumber(rounded));
+    if (rounded != undefined) {
+        if (isObject(rounded)) {
+            addClass(`rounded-left`, rounded.left);
+            addClass(`rounded-top`, rounded.top);
+            addClass(`rounded-right`, rounded.right);
+            addClass(`rounded-bottom`, rounded.bottom);
+        }
+        else if (isNumber(rounded) || isString(rounded)) {
+            addClass(`rounded-${rounded}`, rounded);
+        }
+        else if (rounded) {
+            addClass(`rounded`, true);
 
-    if (isObject(rounded)) {
-        addClass(`rounded-left`, rounded.left);
-        addClass(`rounded-top`, rounded.top);
-        addClass(`rounded-right`, rounded.right);
-        addClass(`rounded-bottom`, rounded.bottom);
+        }
     }
 
     ///////////////////////////////////////////////////////////////////////
 
-    addClass(`justify-content-${justifyContent}`, isString(justifyContent));
+    if (justifyContent != undefined) {
+        if (isObject(justifyContent)) {
+            addClass(`justify-content-sm-${justifyContent.sm}`, justifyContent.sm);
+            addClass(`justify-content-md-${justifyContent.md}`, justifyContent.md);
+            addClass(`justify-content-lg-${justifyContent.lg}`, justifyContent.lg);
+            addClass(`justify-content-xl-${justifyContent.xl}`, justifyContent.xl);
+    
+        }
+        else {
+            addClass(`justify-content-${justifyContent}`, justifyContent);
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////////////
+
     addClass(`align-content-${alignContent}`, isString(alignContent));
     addClass(`bg-${bg}`, isString(bg));
     addClass(`d-${display}`, isString(display));

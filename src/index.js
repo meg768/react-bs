@@ -20,10 +20,8 @@ import Icon from './icon';
 import Row from './row';
 import Col from './col';
 
-var Grid = Container;
-
 export {
-    Grid, Tag, Popper, Button, Form, ListGroup, Fade, Collapse,
+    Tag, Popper, Button, Form, ListGroup, Fade, Collapse,
     Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown,
     Spinner, Toast, Card, Nav, NavBar, Icon
 };

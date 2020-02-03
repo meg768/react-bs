@@ -162,7 +162,7 @@ Here is an example of different border styles, padding, margin and colors.
 
 ```js
 
-    <Tag border='primary' rounded={true} color='light' bg='info' padding={{left:3, right:3, bottom:2, top:2}}>
+    <Tag border='primary' rounded={true} text='light' bg='info' padding={{left:3, right:3, bottom:2, top:2}}>
         Primary border, rounded borders, light text color, info background color and some padding 
     </Tag>
     <hr/>
@@ -186,20 +186,20 @@ Here is an example of different border styles, padding, margin and colors.
 ### Shadows
 
 ```js
-
-    <Tag shadow="none" border='muted' rounded="pill" margin={2} padding={{left:4, right:4, y:2}}>
+ 
+    <Tag shadow="none" rounded={true} border='muted' margin={2} padding={{left:4, right:4, y:2}}>
         No shadow
     </Tag>
 
-    <Tag shadow="sm" border='muted' rounded="pill" margin={2} padding={{left:4, right:4, y:2}}>
+    <Tag shadow="sm" rounded="sm" border='muted' margin={2} padding={{left:4, right:4, y:2}}>
         Small shadow
     </Tag>
 
-    <Tag shadow={true} border='muted' rounded="pill" margin={2} padding={{left:4, right:4, y:2}}>
+    <Tag shadow="md" rounded="md" border='muted' margin={2} padding={{left:4, right:4, y:2}}>
         Default shadow
     </Tag>
 
-    <Tag shadow="lg" border='muted' rounded="pill" margin={2} padding={{left:4, right:4, y:2}}>
+    <Tag shadow="lg" rounded="lg" border='muted' margin={2} padding={{left:4, right:4, y:2}}>
         Large shadow
     </Tag>
 
