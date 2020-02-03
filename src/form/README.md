@@ -373,7 +373,7 @@ class Sample extends React.Component {
                     </Form.Row>
 
                     <Form.Row >
-                        <Form.Col padding={{top:3}} width={{xs:12, sm:12, md:8, lg:9, xl:9}}>
+                        <Form.Col padding={{top:3}} width={{default:12, xs:12, sm:12, md:8, lg:9, xl:9}}>
                             <Card>
                                 <Card.Body>
                                     <Form.Radio id='radioA' checked={this.state.option=='A'} onChange={this.onChange}>
@@ -385,7 +385,7 @@ class Sample extends React.Component {
                                 </Card.Body>
                             </Card>
                         </Form.Col>
-                        <Form.Col padding={{top:3}} width={{xs:12, sm:12, md:4, lg:3, xl:3}}>
+                        <Form.Col padding={{top:3}} width={{default:12, xs:12, sm:12, md:4, lg:3, xl:3}}>
                             <Card>
                                 <Card.Body>
                                     <Form.Checkbox id='checkBoxA' checked={this.state.checkBoxA} onChange={this.onChange}>
@@ -480,7 +480,7 @@ class Sample extends React.Component {
         return (
                 <Form>
                     <Form.Row group>
-                        <Form.Col padding={2} width={{xs:12, sm:12, md:6}}>
+                        <Form.Col padding={2} width={{default:12, xs:12, sm:12, md:6}}>
                             <Card padding={3}>
                                 <Form.Col>
                                     <Form.Switch>Lorem ipsum dolor</Form.Switch>
@@ -489,7 +489,7 @@ class Sample extends React.Component {
                             </Card>
                         </Form.Col>
 
-                        <Form.Col padding={2} width={{xs:12, sm:12, md:6}}>
+                        <Form.Col padding={2} width={{default:12, xs:12, sm:12, md:6}}>
                             <Card padding={3}>
                                 <Form.Col>
                                     <Form.Switch>Morbi eu</Form.Switch>
