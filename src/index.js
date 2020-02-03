@@ -17,9 +17,9 @@ import Card from './card';
 import Nav from './nav';
 import NavBar from './navbar';
 import Icon from './icon';
+import Row from './row';
+import Col from './col';
 
-var Row = Container.Row;
-var Col = Container.Col;
 var Grid = Container;
 
 export {

@@ -79,6 +79,8 @@ Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswa
 - 2020-01-28 - Added **Icon** to display bootstrap-icons. Experimental. Removed **Glyph** since it had no purpose.
 - 2020-01-30 - Updated sample with the current icon set from [Bootstrap Icons](https://icons.getbootstrap.com)
 - 2020-01-30 - Fixed some PopperJS errors in the online samples.
+- 2020-02-03 - Changed properties in **Row** and **Col** to better reflect Bootstrap class names.
+- 2020-02-03 - **Row** and **Col** in **Container** are now separate components. **Container.Row** and **Container.Col** still works.
 
 
 

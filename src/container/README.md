@@ -18,16 +18,16 @@ import Container from 'react-bootify/components/container';
     style.backgroundColor = 'var(--light)';
 
     <Container>
-        <Container.Row>
-            <Container.Col style={style}>One</Container.Col>
-            <Container.Col style={style}>Two</Container.Col>
-            <Container.Col style={style}>Three</Container.Col>
-        </Container.Row>
-        <Container.Row>
-            <Container.Col style={style}>Four</Container.Col>
-            <Container.Col style={style}>Five</Container.Col>
-            <Container.Col style={style}>Six</Container.Col>
-        </Container.Row>
+        <Row>
+            <Col style={style}>One</Col>
+            <Col style={style}>Two</Col>
+            <Col style={style}>Three</Col>
+        </Row>
+        <Row>
+            <Col style={style}>Four</Col>
+            <Col style={style}>Five</Col>
+            <Col style={style}>Six</Col>
+        </Row>
     </Container>
 
 
@@ -43,17 +43,16 @@ import Container from 'react-bootify/components/container';
     style.borderStyle = 'solid';
     style.backgroundColor = 'var(--light)';
 
-
     <Container>
-        <Container.Row>
-            <Container.Col style={style} md={8}>Width set to 8</Container.Col>
-            <Container.Col style={style} md={2}>Width set to 2</Container.Col>
-            <Container.Col style={style} md={2}>Width set to 2</Container.Col>
-        </Container.Row>
-        <Container.Row>
-            <Container.Col style={style} md={{width:4, offset:4}}>Width set to 4 and offset by 4</Container.Col>
-            <Container.Col style={style} md={4}>Width set to 4</Container.Col>
-        </Container.Row>
+        <Row>
+            <Col style={style} width={8}>Width set to 8</Col>
+            <Col style={style} width={2}>Width set to 2</Col>
+            <Col style={style} width={2}>Width set to 2</Col>
+        </Row>
+        <Row>
+            <Col style={style} width={{md:4}} offset={{md:4}}>Width set to 4 and offset by 4</Col>
+            <Col style={style} width={{md:4}}>Width set to 4</Col>
+        </Row>
     </Container>
 
 
