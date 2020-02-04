@@ -7,7 +7,7 @@ All JavaScript classes and names are designed to correspond with Bootstrap's cla
 familiar with Bootstrap will feel confortable using this module and those who may not be familiar with it
 may find it simpler than using Bootstrap's raw class names.
 
-Documentation is sparse but there are alot of examples...
+Documentation is sparse but there are alot of examples.
 
 This module is still not ready for public use and may change in the future.
 If planning something commercially, please look into https://www.npmjs.com/package/reactstrap 
@@ -53,7 +53,7 @@ Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswa
 
 ## Road Map
 - Implement Bootstrap **Progress** and **Tooltip** components.
-- Better document properties and methods for each class.
+- Better documentation for properties and methods for each class.
 
 ## History
 - 2018-10-01 - Created. Nothing to see.

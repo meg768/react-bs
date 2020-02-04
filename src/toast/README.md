@@ -90,7 +90,7 @@ class Sample extends React.Component  {
                             <Toast.Title text='info'>
                                 Title
                             </Toast.Title>
-                            <Toast.Subtitle margin={{left:1}} text={['info', 'nowrap', 'truncate']}>
+                            <Toast.Subtitle margin={{left:1}} text="info nowrap truncate">
                                 Two minutes ago
                             </Toast.Subtitle>
                         </Toast.Header>

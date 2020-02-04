@@ -1,5 +1,6 @@
 import {React, classNames, PropTypes} from '../utils';
 import Tag from '../tag';
+import Fade from '../fade';
 
 function debug() {
     console.log.apply(null, arguments);

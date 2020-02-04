@@ -13,7 +13,7 @@ import Jumbotron from 'react-bootify/components/jumbotron';
 
 ```js
 
-import {Button} from 'react-bootify';
+import {Tag, Button} from 'react-bootify';
 
 <Jumbotron>
     <Jumbotron.Header>
@@ -21,11 +21,11 @@ import {Button} from 'react-bootify';
     </Jumbotron.Header>
     <Jumbotron.Body>
         <p>
-            Lorem ipsum dolor sit amet, iriure mnesarchum eos no. Et sea maiorum qualisque voluptatum, regione integre epicurei mel eu. Eu decore evertitur pertinacia eos, his an modo invidunt. Unum noster eum ad. Suas commune ea qui, mel detracto maluisset prodesset te, sit eu sensibus oportere. Ut nam vidit antiopam recteque.
+            Lorem ipsum dolor sit amet, iriure mnesarchum eos no. Et sea maiorum qualisque voluptatum, regione integre epicurei mel eu. Eu decore evertitur pertinacia eos, his an modo invidunt. Unum noster eum ad. Suas commune ea qui, mel detracto malux isset prodesset te, sit eu sensibus oportere. Ut nam vidit antiopam recteque.
         </p>
         <hr/>
         <p>
-            Ex mei epicuri invidunt voluptatum, qui et omnesque eloquentiam, ad.
+           Ex mei epicuri invidunt voluptatum, qui et omnesque eloquentiam, ad.
         </p>
         <p>
             <Button color="primary">Learn More</Button>

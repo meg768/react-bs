@@ -5,17 +5,22 @@ import Fade from '../fade';
 
 export default function Toast(props) {
 
-    var {show, className, ...props} = props;
+    var {show, role, ariaLive, ariaAtomic, className, ...props} = props;
 
     return (
         <Fade show={show}>
-            <Tag role="alert" aria-live="assertive" aria-atomic="true"  className={classNames(className, 'toast')} {...props}/>
+            <Tag role={role} aria-live={ariaLive} aria-atomic={ariaAtomic} className={classNames(className, 'toast')} {...props}/>
         </Fade>
     );
 };
 
 Toast.defaultProps = {
-    show : 'false'
+    show : 'false',
+    role: 'alert',
+    ariaLive: 'assertive',
+    ariaAtomic: true
+    
+
 };
 
 Toast.Header = function(props) {
@@ -38,6 +43,9 @@ Toast.Header = function(props) {
     );
 
 }
+Toast.Header.defaultProps = {
+    dismiss: undefined
+};
 
 Toast.Title = function(props) {
     return <Tag  {...props}/>
