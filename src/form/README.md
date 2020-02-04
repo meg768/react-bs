@@ -170,7 +170,7 @@ class Sample1 extends React.Component {
                     <Form.Row group >
 
                         <Form.Col width={{default:4, sm:2}} text='right' padding={{y:0}}>
-                            <Form.Label  inline text='muted' xpadding={{top:3}}>
+                            <Form.Label  inline text='muted'>
                                 <Tag tag='small' align="baseline">Stop loss</Tag>
                             </Form.Label>
                         </Form.Col>
