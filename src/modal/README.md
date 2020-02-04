@@ -9,6 +9,8 @@ The sample below includes a modal header, modal body (required for padding), and
 
 ```js
 
+import {Tag, Button} from 'react-bootify';
+
 class Sample extends React.Component {
 
     constructor(props) {
@@ -26,7 +28,7 @@ class Sample extends React.Component {
 
     render() {
         return (
-            <div>
+            <Tag>
                 <Button onClick={this.toggle}>Launch modal dialog</Button>
 
                 <Modal show={this.state.show} centered>
@@ -43,7 +45,7 @@ class Sample extends React.Component {
                         <Button onClick={this.toggle}>Save changes</Button>
                     </Modal.Footer>
                 </Modal>
-            </div>
+            </Tag>
         );
     }
 }

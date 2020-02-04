@@ -11,17 +11,19 @@ import Form from 'react-bootify/components/form';
 
 ```js
 
-    <Form inline>
-        <Form.Group>
-            <Form.Label>
-                Password
-            </Form.Label>
-            <Form.Input type="password" margin={{left:3, right:3}}/>
-            <Tag tag='small' text='muted' id="passwordHelpInline">
-                Must be 8-20 characters long.
-            </Tag>
-        </Form.Group>
-    </Form>
+import {Tag} from 'react-bootify';
+
+<Form inline>
+    <Form.Group>
+        <Form.Label>
+            Password
+        </Form.Label>
+        <Form.Input type="password" margin={{left:3, right:3}}/>
+        <Tag tag='small' text='muted' id="passwordHelpInline">
+            Must be 8-20 characters long.
+        </Tag>
+    </Form.Group>
+</Form>
 
 ```
 
@@ -29,30 +31,31 @@ import Form from 'react-bootify/components/form';
 ```js
 
 
-    <Form >
-        <Form.Row group>
-            <Form.Col text='right'>
-                <Form.Label inline ><small>Company name</small></Form.Label>
-            </Form.Col>
-            <Form.Col>
-                <Form.Input type="text"/>
-            </Form.Col>
-        </Form.Row>
+<Form >
+    <Form.Row group>
+        <Form.Col text='right'>
+            <Form.Label inline ><small>Company name</small></Form.Label>
+        </Form.Col>
+        <Form.Col>
+            <Form.Input type="text"/>
+        </Form.Col>
+    </Form.Row>
 
-        <Form.Row group>
-            <Form.Col text='right'>
-                <Form.Label inline ><small>Bought at</small></Form.Label>
-            </Form.Col>
-            <Form.Col>
-                <Form.Input type="text"/>
-            </Form.Col>
-        </Form.Row>
-    </Form>
+    <Form.Row group>
+        <Form.Col text='right'>
+            <Form.Label inline ><small>Bought at</small></Form.Label>
+        </Form.Col>
+        <Form.Col>
+            <Form.Input type="text"/>
+        </Form.Col>
+    </Form.Row>
+</Form>
 
 ```
 
 ```js
 
+import {Tag, Dropdown, Button} from 'react-bootify';
 
 class Sample1 extends React.Component {
 
@@ -314,6 +317,7 @@ class Sample extends React.Component {
 
 ```js
 
+import {Tag, Card} from 'react-bootify';
 
 class Sample extends React.Component {
 
@@ -417,6 +421,8 @@ class Sample extends React.Component {
 
 ```js
 
+import {Tag, Fade, Alert} from 'react-bootify';
+
 class Sample extends React.Component {
 
     constructor(props) {
@@ -427,7 +433,6 @@ class Sample extends React.Component {
     }
 
     toggle() {
-        console.log('Toggle');
         this.setState({show: !this.state.show});
         console.log(this.state.show);
     }
@@ -470,6 +475,8 @@ class Sample extends React.Component {
 
 ```js
 
+import {Card} from 'react-bootify';
+
 class Sample extends React.Component {
 
     constructor(props) {
@@ -480,28 +487,28 @@ class Sample extends React.Component {
     render() {
 
         return (
-                <Form>
-                    <Form.Row group>
-                        <Form.Col padding={2} width={{default:12, xs:12, sm:12, md:6}}>
-                            <Card padding={3}>
-                                <Form.Col>
-                                    <Form.Switch>Lorem ipsum dolor</Form.Switch>
-                                    <Form.Switch>Nam molestie aliquam</Form.Switch>
-                                </Form.Col>
-                            </Card>
-                        </Form.Col>
+            <Form>
+                <Form.Row group>
+                    <Form.Col padding={2} width={{default:12, xs:12, sm:12, md:6}}>
+                        <Card padding={3}>
+                            <Form.Col>
+                                <Form.Switch>Lorem ipsum dolor</Form.Switch>
+                                <Form.Switch>Nam molestie aliquam</Form.Switch>
+                            </Form.Col>
+                        </Card>
+                    </Form.Col>
 
-                        <Form.Col padding={2} width={{default:12, xs:12, sm:12, md:6}}>
-                            <Card padding={3}>
-                                <Form.Col>
-                                    <Form.Switch>Morbi eu</Form.Switch>
-                                    <Form.Switch>Pellentesque a</Form.Switch>
-                                </Form.Col>
-                            </Card>
-                        </Form.Col>
+                    <Form.Col padding={2} width={{default:12, xs:12, sm:12, md:6}}>
+                        <Card padding={3}>
+                            <Form.Col>
+                                <Form.Switch>Morbi eu</Form.Switch>
+                                <Form.Switch>Pellentesque a</Form.Switch>
+                            </Form.Col>
+                        </Card>
+                    </Form.Col>
 
-                    </Form.Row>
-                </Form>
+                </Form.Row>
+            </Form>
         );
     }
 }

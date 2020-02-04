@@ -51,6 +51,10 @@ Or maybe **materia**.
 
 Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswatch.
 
+## Road Map
+- Implement Bootstrap **Progress** and **Tooltip** components.
+- Better document properties and methods for each class.
+
 ## History
 - 2018-10-01 - Created. Nothing to see.
 - 2018-10-14 - Still nothing to see.
@@ -82,6 +86,7 @@ Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswa
 - 2020-02-03 - Changed properties in **Row** and **Col** to better reflect Bootstrap class names.
 - 2020-02-03 - **Row** and **Col** in **Container** are now separate components. **Container.Row** and **Container.Col** are still valid.
 - 2020-02-03 - **Grid** removed since it does not comply with Bootstrap naming convensions. Use **Container**.
+- 2020-02-04 - Updated documentation so latest version of [Styleguidist](https://www.npmjs.com/package/react-styleguidist) could be used.
 
 
 

@@ -20,6 +20,8 @@ Requires Bootstrap version 4.2.1 or later.
 
 ```js
 
+import {Button} from 'react-bootify';
+
 class Sample extends React.Component  {
 
     constructor(props) {
@@ -62,6 +64,8 @@ class Sample extends React.Component  {
 #### Placement top right
 
 ```js
+
+import {Tag, Button} from 'react-bootify';
 
 class Sample extends React.Component  {
 

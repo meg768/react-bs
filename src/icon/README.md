@@ -34,9 +34,10 @@ If you are using the [@svgr/webpack](https://www.npmjs.com/package/@svgr/webpack
 or [react-svg-loader](https://www.npmjs.com/package/react-svg-loader) SVG-loaders in WebPack, this may work...
 
 ```js 
-console.log('REQIRING');
+
+import {Tag} from 'react-bootify';
+
 var alarmFill = require("bootstrap-icons/icons/alarm-fill.svg");
-console.log(alarmFill);
 var alarm = require("bootstrap-icons/icons/alarm.svg");
 var calendar = require("bootstrap-icons/icons/calendar.svg");
 var alertCircle = require("bootstrap-icons/icons/alert-circle.svg");
@@ -54,6 +55,9 @@ var alertCircle = require("bootstrap-icons/icons/alert-circle.svg");
 Use the **src** property to display external icon files. An **<img/>** tag is used to display the icon.
 
 ```js 
+
+import {Tag} from 'react-bootify';
+
 <Tag>
     <Icon margin={2} src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width='2em' height='2em'/>
     <Icon margin={2} src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width='4em' height='4em'/>
@@ -67,6 +71,8 @@ Use the **src** property to display external icon files. An **<img/>** tag is us
 Here is a sample of the complete set of the Bootstrap Icons (Beta)
 
 ```js 
+
+import {Tag, Container, Row, Col} from 'react-bootify';
 
 function renderIcons() {
     var icons = [];

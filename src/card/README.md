@@ -32,6 +32,9 @@ import Card from 'react-bootify/components/card';
 ### Cards with colors
 
 ```js
+
+import {Container} from 'react-bootify';
+
 <div>
     <Container>
         <Container.Row>
@@ -75,6 +78,9 @@ import Card from 'react-bootify/components/card';
 
 
 ```js
+
+import {Container} from 'react-bootify';
+
 <div>
     <Container>
         <Container.Row>
@@ -115,6 +121,9 @@ import Card from 'react-bootify/components/card';
 
 
 ```js
+
+import {Container} from 'react-bootify';
+
 <div>
     <Container>
         <Container.Row>
@@ -155,6 +164,9 @@ import Card from 'react-bootify/components/card';
 
 
 ```js
+
+import {Container} from 'react-bootify';
+
 <div>
     <Container>
         <Container.Row>
@@ -196,6 +208,9 @@ import Card from 'react-bootify/components/card';
 
 
 ```js
+
+import {Container} from 'react-bootify';
+
 <div>
     <Container>
         <Container.Row>
@@ -237,6 +252,9 @@ import Card from 'react-bootify/components/card';
 
 
 ```js
+
+import {Container} from 'react-bootify';
+
 <div>
     <Container>
         <Container.Row>

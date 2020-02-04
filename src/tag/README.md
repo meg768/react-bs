@@ -94,19 +94,21 @@ This is using the Bootstrap classes **align-items-start** and **justify-content-
 
 ```js
 
-    var props = {color:'primary', margin:{x:1}};
+import {Button} from 'react-bootify';
 
-    <Tag border={props.color} rounded={true} style={{height:'6rem'}} display='flex' alignItems='start' justifyContent='end' padding={2} >
-        <Button {...props}>
-            Pax vobiscum
-        </Button>
-        <Button {...props}>
-            Nosa dostra
-        </Button>
-        <Button {...props}>
-            Quantala predum
-        </Button>
-    </Tag>
+var props = {color:'primary', margin:{x:1}};
+
+<Tag border={props.color} rounded={true} style={{height:'6rem'}} display='flex' alignItems='start' justifyContent='end' padding={2} >
+    <Button {...props}>
+        Pax vobiscum
+    </Button>
+    <Button {...props}>
+        Nosa dostra
+    </Button>
+    <Button {...props}>
+        Quantala predum
+    </Button>
+</Tag>
 
 ```
 
@@ -117,19 +119,21 @@ This is using the Bootstrap classes **align-items-end** and **justify-content-st
 
 ```js
 
-    var color = 'danger';
+import {Button} from 'react-bootify';
 
-    <Tag border={color} rounded={true} style={{height:'6rem'}} display='flex' alignItems='end' justifyContent='start' padding={2} >
-        <Button color={color} margin={{x:1}}>
-            Pax vobiscum
-        </Button>
-        <Button color={color} margin={{x:1}}>
-            Nosa dostra
-        </Button>
-        <Button color={color} margin={{x:1}}>
-            Quantala predum
-        </Button>
-    </Tag>
+var color = 'danger';
+
+<Tag border={color} rounded={true} style={{height:'6rem'}} display='flex' alignItems='end' justifyContent='start' padding={2} >
+    <Button color={color} margin={{x:1}}>
+        Pax vobiscum
+    </Button>
+    <Button color={color} margin={{x:1}}>
+        Nosa dostra
+    </Button>
+    <Button color={color} margin={{x:1}}>
+        Quantala predum
+    </Button>
+</Tag>
 
 ```
 
@@ -137,21 +141,24 @@ This is using the Bootstrap classes **align-items-end** and **justify-content-st
 
 This is using the Bootstrap classes **align-items-center** and **justify-content-center**.
 
+
 ```js
 
-    var color = 'secondary';
+import {Button} from 'react-bootify';
 
-    <Tag border={color} rounded={true} style={{height:'6rem'}} display='flex' alignItems='center' justifyContent='center' padding={2} >
-        <Button color={color}  margin={{x:1}}>
-            Pax vobiscum
-        </Button>
-        <Button color={color}  margin={{x:1}}>
-            Nosa dostra
-        </Button>
-        <Button color={color}  margin={{x:1}}>
-            Quantala predum
-        </Button>
-    </Tag>
+var color = 'secondary';
+
+<Tag border={color} rounded={true} style={{height:'6rem'}} display='flex' alignItems='center' justifyContent='center' padding={2} >
+    <Button color={color}  margin={{x:1}}>
+        Pax vobiscum
+    </Button>
+    <Button color={color}  margin={{x:1}}>
+        Nosa dostra
+    </Button>
+    <Button color={color}  margin={{x:1}}>
+        Quantala predum
+    </Button>
+</Tag>
 
 ```
 
@@ -162,23 +169,23 @@ Here is an example of different border styles, padding, margin and colors.
 
 ```js
 
-    <Tag border='primary' rounded={true} text='light' bg='info' padding={{left:3, right:3, bottom:2, top:2}}>
-        Primary border, rounded borders, light text color, info background color and some padding 
-    </Tag>
-    <hr/>
-    <Tag border='dark' rounded={{top:true}} bg='light' padding={2}>
-        Dark border, rounded top, light background color, padding 2
-    </Tag>
-    <hr/>
-    <Tag border='warning' padding={{left:3, right:3}} rounded margin={2}>
-        Border warning, left and right padding 3 and rounded corners.
-    </Tag>
-    <hr/>
+<Tag border='primary' rounded={true} text='light' bg='info' padding={{left:3, right:3, bottom:2, top:2}}>
+    Primary border, rounded borders, light text color, info background color and some padding 
+</Tag>
+<hr/>
+<Tag border='dark' rounded={{top:true}} bg='light' padding={2}>
+    Dark border, rounded top, light background color, padding 2
+</Tag>
+<hr/>
+<Tag border='warning' padding={{left:3, right:3}} rounded margin={2}>
+    Border warning, left and right padding 3 and rounded corners.
+</Tag>
+<hr/>
 
-    <Tag border='secondary' padding={3} text='right' bg='light'>
-        Border secondary, padding 3 and text aligned right.
-    </Tag>
-    <hr/>
+<Tag border='secondary' padding={3} text='right' bg='light'>
+    Border secondary, padding 3 and text aligned right.
+</Tag>
+<hr/>
 
 
 ```
@@ -186,22 +193,23 @@ Here is an example of different border styles, padding, margin and colors.
 ### Shadows
 
 ```js
+
  
-    <Tag shadow="none" rounded={true} border='muted' margin={2} padding={{left:4, right:4, y:2}}>
-        No shadow
-    </Tag>
+<Tag shadow="none" rounded={true} border='muted' margin={2} padding={{left:4, right:4, y:2}}>
+    No shadow
+</Tag>
 
-    <Tag shadow="sm" rounded="sm" border='muted' margin={2} padding={{left:4, right:4, y:2}}>
-        Small shadow
-    </Tag>
+<Tag shadow="sm" rounded="sm" border='muted' margin={2} padding={{left:4, right:4, y:2}}>
+    Small shadow
+</Tag>
 
-    <Tag shadow="md" rounded="md" border='muted' margin={2} padding={{left:4, right:4, y:2}}>
-        Default shadow
-    </Tag>
+<Tag shadow="md" rounded="md" border='muted' margin={2} padding={{left:4, right:4, y:2}}>
+    Default shadow
+</Tag>
 
-    <Tag shadow="lg" rounded="lg" border='muted' margin={2} padding={{left:4, right:4, y:2}}>
-        Large shadow
-    </Tag>
+<Tag shadow="lg" rounded="lg" border='muted' margin={2} padding={{left:4, right:4, y:2}}>
+    Large shadow
+</Tag>
 
 
 ```

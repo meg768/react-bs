@@ -10,6 +10,8 @@ import Badge from 'react-bootify/components/badge';
 
 ```js
 
+    import {Tag} from 'react-bootify';
+
     class Sample extends React.Component {
 
         constructor(props) {
@@ -41,6 +43,8 @@ import Badge from 'react-bootify/components/badge';
 ```
 
 ```js
+
+import {Tag} from '../index';
 
 <Tag>
     <h1>Example heading <Badge color="primary">New</Badge></h1>

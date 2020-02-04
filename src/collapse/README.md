@@ -11,6 +11,8 @@ import Collaspe from 'react-bootify/components/collaspe';
 
 ```js
 
+import {Button, Card} from 'react-bootify';
+
 class Sample extends React.Component  {
 
     constructor(props) {
@@ -53,6 +55,8 @@ class Sample extends React.Component  {
 ```
 
 ```js
+
+import {Button, Form, Card} from 'react-bootify';
 
 class SampleX extends React.Component  {
 

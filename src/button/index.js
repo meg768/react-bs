@@ -11,19 +11,26 @@ export default class Button extends React.Component  {
     }
 
     static propTypes = {
-        color      : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']),
-        tag        : PropTypes.string,
-        onClick    : PropTypes.func,
-        outline    : PropTypes.bool,
-        disabled   : PropTypes.bool
+        /** Color of button. One of ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'] */
+        color : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']),
+        /** Button tag */
+        tag : PropTypes.string,
+        /** onClick handler */
+        onClick : PropTypes.func,
+        /** Outline button */
+        outline : PropTypes.bool,
+        /** Enabled/disabled */
+        disabled : PropTypes.bool,
+        /** Button size. One of ['xs', 'sm', 'md', 'lg', 'xl'] */
+        size : PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
     };
 
     static defaultProps = {
-        color    : 'primary',
-        tag      : 'button',
-        size     : undefined,
-        outline  : false,
-        onClick  : null,
+        color : 'primary',
+        tag : 'button',
+        size : undefined,
+        outline : false,
+        onClick : null,
         disabled : false
     }
 

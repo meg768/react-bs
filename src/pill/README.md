@@ -10,21 +10,25 @@ import Pill from 'react-bootify/components/pill';
 
 ```js
 
-    var margin = {left:1, right:1};
+import {Tag} from 'react-bootify';
 
-    <Tag>
-        <Pill color="primary" margin={margin}>Primary</Pill>
-        <Pill color="secondary" margin={margin}>Secondary</Pill>
-        <Pill color="success" margin={margin}>Success</Pill>
-        <Pill color="danger" margin={margin}>Danger</Pill>
-        <Pill color="warning" margin={margin}>Warning</Pill>
-        <Pill color="info" margin={margin}>Info</Pill>
-        <Pill color="light" margin={margin}>Light</Pill>
-        <Pill color="dark" margin={margin}>Dark</Pill>
-    </Tag>
+var margin = {left:1, right:1};
+
+<Tag>
+    <Pill color="primary" margin={margin}>Primary</Pill>
+    <Pill color="secondary" margin={margin}>Secondary</Pill>
+    <Pill color="success" margin={margin}>Success</Pill>
+    <Pill color="danger" margin={margin}>Danger</Pill>
+    <Pill color="warning" margin={margin}>Warning</Pill>
+    <Pill color="info" margin={margin}>Info</Pill>
+    <Pill color="light" margin={margin}>Light</Pill>
+    <Pill color="dark" margin={margin}>Dark</Pill>
+</Tag>
 ```
 
 ```js
+
+import {Tag} from 'react-bootify';
 
 <Tag>
     <h1>Example heading <Pill color="primary">New</Pill></h1>

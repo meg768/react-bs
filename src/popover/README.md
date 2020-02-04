@@ -17,6 +17,8 @@ things happend on screen, like popups and modals, the popular library PopperJS i
 
 ```js
 
+import {Tag, Button} from 'react-bootify';
+
 class Sample extends React.Component {
 
     constructor(props) {
@@ -77,6 +79,8 @@ within the popover.
 
 ```js
 
+import {Tag} from 'react-bootify';
+
 class Sample extends React.Component {
 
     constructor(props) {
@@ -125,6 +129,8 @@ You may also make the popover **sticky**. This means you may only dismiss the po
 by clicking one the same button that triggered the display of the popover.
 
 ```js
+
+import {Tag, Button} from 'react-bootify';
 
 class Sample extends React.Component {
 

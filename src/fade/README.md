@@ -1,9 +1,9 @@
-
-This component uses the built in animations in Bootstrap to show and hide 
-components by using the **.fade** and **.show** class names. 
+### Example 
 
 
 ```js
+
+import {Tag, Button, Alert} from 'react-bootify';
 
 class Sample extends React.Component  {
 

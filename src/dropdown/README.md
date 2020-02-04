@@ -13,6 +13,8 @@ import Dropdown from 'react-bootify/components/dropdown';
 
 ```js
 
+import {Form, Button} from 'react-bootify';
+
 class Sample extends React.Component {
 
     constructor(props) {
@@ -66,6 +68,8 @@ class Sample extends React.Component {
 
 
 ```js
+
+import {Tag, Form, Button, Icon} from 'react-bootify';
 
 class Sample extends React.Component {
 
