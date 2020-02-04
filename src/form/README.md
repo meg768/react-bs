@@ -30,23 +30,23 @@ import Form from 'react-bootify/components/form';
 
 
     <Form >
-        <Form.Group row>
-            <Form.Col width={{sm:2}} text='right'>
+        <Form.Row group>
+            <Form.Col text='right'>
                 <Form.Label inline ><small>Company name</small></Form.Label>
             </Form.Col>
-            <Form.Col sm={10}>
+            <Form.Col>
                 <Form.Input type="text"/>
             </Form.Col>
-        </Form.Group>
+        </Form.Row>
 
-        <Form.Group row>
-            <Form.Col width={{sm:2}} text='right'>
+        <Form.Row group>
+            <Form.Col text='right'>
                 <Form.Label inline ><small>Bought at</small></Form.Label>
             </Form.Col>
-            <Form.Col width={{sm:10}}>
+            <Form.Col>
                 <Form.Input type="text"/>
             </Form.Col>
-        </Form.Group>
+        </Form.Row>
     </Form>
 
 ```
@@ -85,62 +85,62 @@ class Sample1 extends React.Component {
         return (
 
                 <Form >
-                    <Form.Group row>
-                        <Form.Col width={{sm:2}} text='right' >
+                    <Form.Row group>
+                        <Form.Col width={{default:4, sm:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>Ticker</small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col width={{sm:10}} text='right' >
+                        <Form.Col width={{default:8, sm:10}} text='right' >
                             <Form.Input type="text" id="ticker" placeholder="Ticker" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
-                    </Form.Group>
+                    </Form.Row>
 
-                    <Form.Group row>
-                        <Form.Col width={{sm:2}} text='right' >
+                    <Form.Row group>
+                        <Form.Col width={{default:4, sm:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>Company name</small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col width={{sm:10}}>
+                        <Form.Col width={{default:8, sm:10}}>
                             <Form.Input type="text" id="name" placeholder="Name" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
-                    </Form.Group>
+                    </Form.Row>
 
 
-                    <Form.Group row>
-                        <Form.Col width={{sm:2}} text='right' >
+                    <Form.Row group>
+                        <Form.Col width={{default:4, sm:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>Bought at</small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col width={{sm:10}}>
+                        <Form.Col width={{default:8, sm:10}}>
                             <Form.Input type="text" id="price" placeholder="Price" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
-                    </Form.Group>
+                    </Form.Row>
 
-                    <Form.Group row>
-                        <Form.Col width={{sm:2}} text='right' >
+                    <Form.Row group>
+                        <Form.Col width={{default:4, sm:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>
                                     Number of stocks
                                 </small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col width={{sm:10}}>
+                        <Form.Col width={{default:8, sm:10}}>
                             <Form.Input type="text" id="amount" placeholder="Amount" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
-                    </Form.Group>
+                    </Form.Row>
 
-                    <Form.Group row>
-                        <Form.Col width={{sm:2}} text='right' >
+                    <Form.Row group>
+                        <Form.Col width={{default:4, sm:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>
                                     Source
                                 </small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col width={{sm:10}}>
+                        <Form.Col width={{default:8, sm:10}}>
                             <Dropdown placement='bottom-start'>
                                 <Dropdown.Target>
                                     <Button outline color='secondary'>
@@ -164,34 +164,34 @@ class Sample1 extends React.Component {
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Form.Col>
-                    </Form.Group>
+                    </Form.Row>
 
 
-                    <Form.Group row >
-                        <Form.Col width={{sm:2}} text='right' padding={{y:0}}>
-                            <Form.Label  inline text='muted'>
-                                <small>Stop loss</small>
+                    <Form.Row group >
+
+                        <Form.Col width={{default:4, sm:2}} text='right' padding={{y:0}}>
+                            <Form.Label  inline text='muted' xpadding={{top:3}}>
+                                <Tag tag='small' align="baseline">Stop loss</Tag>
                             </Form.Label>
                         </Form.Col>
 
-                        <Form.Col width={{sm:10}}>
-                            <Form inline padding={{y:1}}>
-                                <Form.Radio placeholder="Ticker" text='muted'>
+                        <Form.Col width={{default:8, sm:10}}>
+                            <Form inline padding={{bottom:2}}>
+                                <Form.Radio text='muted'>
                                     Continous stop loss
                                 </Form.Radio>
-
                                 <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                                 <Form.Label text='muted'>%</Form.Label>
                             </Form>
 
-                            <Form inline padding={{y:1}}>
-                                <Form.Radio placeholder="" text='muted'>
+                            <Form inline padding={{bottom:2}}>
+                                <Form.Radio text='muted'>
                                     When price below
                                 </Form.Radio>
                                 <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                             </Form>
                             
-                            <Form inline padding={{y:1}}>
+                            <Form inline padding={{bottom:2}}>
                                 <Form.Radio placeholder="Ticker" text='muted'>
                                     When price dropped with more than 
                                 </Form.Radio>
@@ -199,12 +199,14 @@ class Sample1 extends React.Component {
                                 <Form.Label text='muted'>%</Form.Label>
                             </Form>
                         </Form.Col>
-                    </Form.Group>
+                    </Form.Row>
 
-                    <Form.Group text='right'>
-                        <Button color='secondary' outline margin={{right:1}}>Cancel</Button>
-                        <Button color='primary' margin={0} onClick={this.onSaveChanges.bind(this)} >Save changes</Button>
-                    </Form.Group>
+                    <Form.Row group text='right'>
+                        <Form.Col>
+                            <Button color='secondary' outline margin={{right:1}}>Cancel</Button>
+                            <Button color='primary' margin={{left:1}} onClick={this.onSaveChanges.bind(this)} >Save changes</Button>
+                        </Form.Col>
+                    </Form.Row>
                 </Form>
         );
     }
