@@ -4,13 +4,16 @@ series of Bootstrap class names.
 
 This includes
 
-* Borders - https://getbootstrap.com/docs/4.3/utilities/borders
-* Flex - https://getbootstrap.com/docs/4.3/utilities/flex
-* Vertical alignment - https://getbootstrap.com/docs/4.3/utilities/vertical-align
-* Spacing - https://getbootstrap.com/docs/4.3/utilities/spacing
-* Visibility - https://getbootstrap.com/docs/4.3/utilities/visibility
-* Display - https://getbootstrap.com/docs/4.3/utilities/display
-* Text alignment - https://getbootstrap.com/docs/4.3/utilities/text
+* Borders - https://getbootstrap.com/docs/4.4/utilities/borders
+* Colors - https://getbootstrap.com/docs/4.4/utilities/colors
+* Display - https://getbootstrap.com/docs/4.4/utilities/display
+* Flex - https://getbootstrap.com/docs/4.4/utilities/flex
+* Float - https://getbootstrap.com/docs/4.4/utilities/float
+* Shadows - https://getbootstrap.com/docs/4.4/utilities/shadows
+* Spacing - https://getbootstrap.com/docs/4.4/utilities/spacing
+* Text alignment - https://getbootstrap.com/docs/4.4/utilities/text
+* Vertical alignment - https://getbootstrap.com/docs/4.4/utilities/vertical-align
+* Visibility - https://getbootstrap.com/docs/4.4/utilities/visibility
 
 Every class (well almost) in this library is based upon this tag. So, when using a **Table**, **Propover** or a **Container**
 you may also use the **Tag** properies.
@@ -68,24 +71,24 @@ This generates the following.
 
 The following properties are supported.
 
+* [align](https://getbootstrap.com/docs/4.4/utilities/vertical-align)
+* [alignItems](https://getbootstrap.com/docs/4.4/utilities/flex/#align-items)
+* [bg](https://getbootstrap.com/docs/4.4/utilities/colors/#background-color)
+* [border](https://getbootstrap.com/docs/4.4/utilities/borders)
+* [display](https://getbootstrap.com/docs/4.4/utilities/display) 
+* [fixed](https://getbootstrap.com/docs/4.4/utilities/position)
+* [float](https://getbootstrap.com/docs/4.4/utilities/float)
+* [fontWeight](https://getbootstrap.com/docs/4.4/utilities/text/#font-weight-and-italics)
+* [invisible](https://getbootstrap.com/docs/4.4/utilities/visibility)
+* [justifyContent](https://getbootstrap.com/docs/4.4/utilities/flex/#justify-content)
+* [margin](https://getbootstrap.com/docs/4.4/utilities/spacing) 
+* [padding](https://getbootstrap.com/docs/4.4/utilities/spacing)
+* [position](https://getbootstrap.com/docs/4.4/utilities/position)
+* [rounded](https://getbootstrap.com/docs/4.4/utilities/borders/#border-radius)
+* [shadow](https://getbootstrap.com/docs/4.4/utilities/shadows)
 * tag
-* align
-* text 
-* bg
-* fontWeight
-* display 
-* margin 
-* padding
-* alignItems
-* justifyContent
-* rounded
-* invisible
-* visible
-* float
-* fixed
-* position
-* shadow
-* border
+* [text](https://getbootstrap.com/docs/4.4/utilities/text) 
+* [visible](https://getbootstrap.com/docs/4.4/utilities/visibility)
 
 ### Aligning items at top right
 
