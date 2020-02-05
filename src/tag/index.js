@@ -26,7 +26,6 @@ Tag.propTypes = {
     align            : PropTypes.oneOf(['top', 'middle', 'bottom', 'baseline', 'text-top', 'text-bottom']),
     alignItems       : PropTypes.any,
     bg               : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white']),
-    bg               : PropTypes.string,
     border           : PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.bool]),
     display          : PropTypes.oneOf(['none', 'inline', 'inline-block', 'block', 'table', 'table-cell', 'table-row', 'flex', 'inline-flex']),
     fixed            : PropTypes.any,

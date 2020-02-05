@@ -64,14 +64,14 @@ function transformProps(props) {
             className = classNames(className, name);
     }
 
-    // The text property may have several values
-    if (isString(text))
-        text = text.split(' ');
-
     ///////////////////////////////////////////////////////////////////////
 
     if (border != undefined) {
         addClass(`border`, true);
+
+        if (isString(border)) {
+            border = border.split(' ');
+        }
 
         if (isObject(border)) {
             addClass(`border-left`, border.left);
@@ -79,8 +79,13 @@ function transformProps(props) {
             addClass(`border-right`, border.right);
             addClass(`border-bottom`, border.bottom);
         }
+        else if (isArray(border)) {
+            border.forEach((item) => {
+                addClass(`border-${item}`, true);
+            });
+        }
         else {
-            addClass(`border-${border}`, border);
+            addClass(`border-${border}`, true);
         }
     
     }
@@ -88,6 +93,10 @@ function transformProps(props) {
     ///////////////////////////////////////////////////////////////////////
 
     if (padding != undefined) {
+        if (isString(padding)) {
+            padding = padding.split(' ');
+        }
+
         if (isObject(padding)) {
             addClass(`pl-${padding.left}`, padding.left != undefined);
             addClass(`pt-${padding.top}`, padding.top != undefined);
@@ -95,6 +104,11 @@ function transformProps(props) {
             addClass(`pb-${padding.bottom}`, padding.bottom != undefined);
             addClass(`px-${padding.x}`, padding.x != undefined);
             addClass(`py-${padding.y}`, padding.y != undefined);
+        }
+        else if (isArray(padding)) {
+            padding.forEach((item) => {
+                addClass(`p-${item}`, true);
+            });
         }
         else {
             addClass(`p-${padding}`, isString(padding) || isNumber(padding));
@@ -104,6 +118,10 @@ function transformProps(props) {
     ///////////////////////////////////////////////////////////////////////
 
     if (margin != undefined) {
+        if (isString(margin)) {
+            margin = margin.split(' ');
+        }
+
         if (isObject(margin)) {
             addClass(`ml-${margin.left}`, margin.left);
             addClass(`mt-${margin.top}`, margin.top);
@@ -111,6 +129,11 @@ function transformProps(props) {
             addClass(`mb-${margin.bottom}`, margin.bottom);
             addClass(`mx-${margin.x}`, margin.x);
             addClass(`my-${margin.y}`, margin.y);
+        }
+        else if (isArray(margin)) {
+            margin.forEach((item) => {
+                addClass(`m-${item}`, true);
+            });
         }
         else {
             addClass(`m-${margin}`, margin);
@@ -120,30 +143,50 @@ function transformProps(props) {
     ///////////////////////////////////////////////////////////////////////
 
     if (rounded != undefined) {
+        if (isString(rounded)) {
+            rounded = rounded.split(' ');
+        }
+
         if (isObject(rounded)) {
             addClass(`rounded-left`, rounded.left);
             addClass(`rounded-top`, rounded.top);
             addClass(`rounded-right`, rounded.right);
             addClass(`rounded-bottom`, rounded.bottom);
+            addClass(`rounded-pill`, rounded.pill);
+            addClass(`rounded-circle`, rounded.circle);
         }
-        else if (isNumber(rounded) || isString(rounded)) {
+        else if (isArray(rounded)) {
+            rounded.forEach((item) => {
+                addClass(`rounded-${item}`, true);
+            });
+        }
+        else if (isNumber(rounded)) {
             addClass(`rounded-${rounded}`, rounded);
         }
-        else if (rounded) {
+        else {
             addClass(`rounded`, true);
-
         }
     }
 
     ///////////////////////////////////////////////////////////////////////
 
     if (justifyContent != undefined) {
+        if (isString(justifyContent)) {
+            justifyContent = justifyContent.split(' ');
+        }
+
         if (isObject(justifyContent)) {
+            addClass(`justify-content-xs-${justifyContent.xs}`, justifyContent.xs);
             addClass(`justify-content-sm-${justifyContent.sm}`, justifyContent.sm);
             addClass(`justify-content-md-${justifyContent.md}`, justifyContent.md);
             addClass(`justify-content-lg-${justifyContent.lg}`, justifyContent.lg);
             addClass(`justify-content-xl-${justifyContent.xl}`, justifyContent.xl);
     
+        }
+        else if(isArray(justifyContent)) {
+            justifyContent.forEach((item) => {
+                addClass(`justify-content-${item}`, true);
+            });
         }
         else {
             addClass(`justify-content-${justifyContent}`, justifyContent);
@@ -151,6 +194,22 @@ function transformProps(props) {
     }
 
     ///////////////////////////////////////////////////////////////////////
+
+    if (text != undefined) {
+        if (isString(text)) {
+            text = text.split(' ');
+        }
+
+        if (isArray(text)) {
+            text.forEach((item) => {
+                addClass(`text-${item}`, true);
+            });
+        }
+    }
+
+    
+    ///////////////////////////////////////////////////////////////////////
+
 
     addClass(`align-content-${alignContent}`, isString(alignContent));
     addClass(`bg-${bg}`, isString(bg));
@@ -170,15 +229,6 @@ function transformProps(props) {
     ///////////////////////////////////////////////////////////////////////
 
 
-    // Special case for text...
-
-    if (isArray(text)) {
-        text.forEach((item) => {
-            addClass(`text-${item}`, isString(item));
-        });
-    }
-
-    ///////////////////////////////////////////////////////////////////////
 
     return {className:className, ...props};
     

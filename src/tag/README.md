@@ -176,7 +176,7 @@ Here is an example of different border styles, padding, margin and colors.
     Primary border, rounded borders, light text color, info background color and some padding 
 </Tag>
 <hr/>
-<Tag border='dark' rounded={{top:true}} bg='light' padding={2}>
+<Tag border='dark' rounded='top' bg='light' padding={2}>
     Dark border, rounded top, light background color, padding 2
 </Tag>
 <hr/>
