@@ -23,8 +23,11 @@ export default function Row(props) {
     );
 }
 
+Row.propTypes = {
+    cols: PropTypes.any
+};
+
 Row.defaultProps = {
-    tag: 'div'
 };
 
 
