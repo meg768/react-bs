@@ -7,6 +7,9 @@ All JavaScript classes and names are designed to correspond with Bootstrap's cla
 familiar with Bootstrap will feel confortable using this module and those who may not be familiar with it
 may find it simpler than using Bootstrap's raw class names.
 
+All components in this library are based on the [Tag](https://meg768.github.io/react-bootify/#tag) component.
+This means that you may use Bootstrap utility class names to modify the behaviour of every tag. 
+
 Documentation is sparse but there are alot of examples.
 
 This module is still not ready for public use and may change in the future.
