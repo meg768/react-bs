@@ -217,3 +217,34 @@ Here is an example of different border styles, padding, margin and colors.
 ```
 
 
+### Rounded
+
+
+```js
+
+var style = {width:'4em', height:'4em'};
+var props = {margin:{top:1, bottom:1, right:1, left:1}, display:'inline-block', bg:'info', border:'dark', style:style};
+
+<Tag alignItems='baseline' display='inline'>
+    <Tag  rounded='sm' {...props}></Tag>
+    <Tag  rounded='lg' {...props}></Tag>
+    <Tag  rounded='top' {...props}></Tag>
+    <Tag  rounded='left' {...props}></Tag>
+</Tag>
+```
+
+### Order
+
+Experimental
+
+
+```js
+
+var style = {width:'4em', height:'4em'};
+var props = {margin:{top:1, bottom:1, right:1, left:1}, display:'inline-block', bg:'info', border:'dark', style:style};
+
+<Tag >
+    <Tag  order={{sm:0, lg:0}}  {...props}></Tag>
+    <Tag  order='sm-0 lg-0'  {...props}></Tag>
+</Tag>
+```

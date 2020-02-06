@@ -57,7 +57,7 @@ function isFloat(n) {
 
 function transformProps(props) {
 
-    var {className, text, bg, flex, fontWeight, shadow, fixed, position, justifyContent, visible, invisible, alignItems, alignContent, float, align, rounded, margin, border, padding, ...props} = props;
+    var {className, order, text, bg, flex, fontWeight, shadow, fixed, position, justifyContent, visible, invisible, alignItems, alignContent, float, align, rounded, margin, border, padding, ...props} = props;
 
     // Display
     var {d, display, ...props} = props;
@@ -69,8 +69,9 @@ function transformProps(props) {
     var {p, pl, pr, pt, pb, px, py, ...props} = props;
 
     function addClass(name, condition) {
-        if (condition)
+        if (condition) {
             className = classNames(className, name);
+        }
     }
 
     function addClasses(prefix, prop) {
@@ -92,7 +93,7 @@ function transformProps(props) {
             addClass(`${prefix}`, prop);
         }
         else if (prop != undefined) {
-            addClass(`${prefix}-${prop}`, prop);
+            addClass(`${prefix}-${prop}`, true);
         }
     }
 
@@ -131,6 +132,12 @@ function transformProps(props) {
     
     ///////////////////////////////////////////////////////////////////////
 
+    if (display != undefined) {
+        d = display;
+    }
+    
+    ///////////////////////////////////////////////////////////////////////
+
 
     addClasses('m', m);
     addClasses('mb', mb);
@@ -149,7 +156,6 @@ function transformProps(props) {
     addClasses('py', py);
 
     addClasses('d', d);
-    addClasses('d', display);
 
     addClass('border', border); /* ?! */ 
     addClasses('border', border);
@@ -169,6 +175,7 @@ function transformProps(props) {
     addClasses('shadow', shadow);
     addClasses('text', text);
     addClasses('visible', visible);
+    addClasses('order', order);
 
     return {className:className, ...props};
     
