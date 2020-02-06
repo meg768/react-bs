@@ -1,12 +1,8 @@
 
 @import "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
 
-
-
 .zoom { 
     transition: all .2s ease-in-out; 
-    
-
 }
 
 .zoom:hover {

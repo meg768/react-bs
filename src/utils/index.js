@@ -57,178 +57,118 @@ function isFloat(n) {
 
 function transformProps(props) {
 
-    var {className, text, bg, fontWeight, shadow, fixed, position, justifyContent, visible, invisible, display, alignItems, alignContent, float, align, rounded, margin, border, padding, ...props} = props;
+    var {className, text, bg, flex, fontWeight, shadow, fixed, position, justifyContent, visible, invisible, alignItems, alignContent, float, align, rounded, margin, border, padding, ...props} = props;
+
+    // Display
+    var {d, display, ...props} = props;
+
+    // Margins
+    var {m, ml, mr, mt, mb, mx, my, ...props} = props;
+
+    // Padding
+    var {p, pl, pr, pt, pb, px, py, ...props} = props;
 
     function addClass(name, condition) {
         if (condition)
             className = classNames(className, name);
     }
 
-    ///////////////////////////////////////////////////////////////////////
-
-    if (border != undefined) {
-        addClass(`border`, true);
-
-        if (isString(border)) {
-            border = border.split(' ');
+    function addClasses(prefix, prop) {
+        if (isString(prop)) {
+            prop = prop.split(' ');
         }
 
-        if (isObject(border)) {
-            addClass(`border-left`, border.left);
-            addClass(`border-top`, border.top);
-            addClass(`border-right`, border.right);
-            addClass(`border-bottom`, border.bottom);
-        }
-        else if (isArray(border)) {
-            border.forEach((item) => {
-                addClass(`border-${item}`, true);
+        if (isArray(prop)) {
+            prop.forEach((item) => {
+                addClass(`${prefix}-${item}`, true);
             });
         }
-        else {
-            addClass(`border-${border}`, true);
+        else if (isObject(prop)) {
+            for (var propName in prop) {
+                addClasses(`${prefix}-${propName}`, prop[propName]);
+            }
         }
-    
+        else if (isBoolean(prop)) {
+            addClass(`${prefix}`, prop);
+        }
+        else if (prop != undefined) {
+            addClass(`${prefix}-${prop}`, prop);
+        }
     }
-    
+
     ///////////////////////////////////////////////////////////////////////
 
     if (padding != undefined) {
-        if (isString(padding)) {
-            padding = padding.split(' ');
-        }
-
         if (isObject(padding)) {
-            addClass(`pl-${padding.left}`, padding.left != undefined);
-            addClass(`pt-${padding.top}`, padding.top != undefined);
-            addClass(`pr-${padding.right}`, padding.right != undefined);
-            addClass(`pb-${padding.bottom}`, padding.bottom != undefined);
-            addClass(`px-${padding.x}`, padding.x != undefined);
-            addClass(`py-${padding.y}`, padding.y != undefined);
-        }
-        else if (isArray(padding)) {
-            padding.forEach((item) => {
-                addClass(`p-${item}`, true);
-            });
+            pb = padding.bottom;
+            pl = padding.left;
+            pr = padding.right;
+            pt = padding.top;
+            px = padding.x;
+            py = padding.y;
         }
         else {
-            addClass(`p-${padding}`, isString(padding) || isNumber(padding));
-        }
+            p = padding;
+        }    
     }
  
     ///////////////////////////////////////////////////////////////////////
 
     if (margin != undefined) {
-        if (isString(margin)) {
-            margin = margin.split(' ');
-        }
-
         if (isObject(margin)) {
-            addClass(`ml-${margin.left}`, margin.left);
-            addClass(`mt-${margin.top}`, margin.top);
-            addClass(`mr-${margin.right}`, margin.right);
-            addClass(`mb-${margin.bottom}`, margin.bottom);
-            addClass(`mx-${margin.x}`, margin.x);
-            addClass(`my-${margin.y}`, margin.y);
-        }
-        else if (isArray(margin)) {
-            margin.forEach((item) => {
-                addClass(`m-${item}`, true);
-            });
+            mb = margin.bottom;
+            ml = margin.left;
+            mr = margin.right;
+            mt = margin.top;
+            mx = margin.x;
+            my = margin.y;
         }
         else {
-            addClass(`m-${margin}`, margin);
+            m = margin;
         }
+    
     }
     
     ///////////////////////////////////////////////////////////////////////
 
-    if (rounded != undefined) {
-        if (isString(rounded)) {
-            rounded = rounded.split(' ');
-        }
 
-        if (isObject(rounded)) {
-            addClass(`rounded-left`, rounded.left);
-            addClass(`rounded-top`, rounded.top);
-            addClass(`rounded-right`, rounded.right);
-            addClass(`rounded-bottom`, rounded.bottom);
-            addClass(`rounded-pill`, rounded.pill);
-            addClass(`rounded-circle`, rounded.circle);
-        }
-        else if (isArray(rounded)) {
-            rounded.forEach((item) => {
-                addClass(`rounded-${item}`, true);
-            });
-        }
-        else if (isNumber(rounded)) {
-            addClass(`rounded-${rounded}`, rounded);
-        }
-        else {
-            addClass(`rounded`, true);
-        }
-    }
+    addClasses('m', m);
+    addClasses('mb', mb);
+    addClasses('ml', ml);
+    addClasses('mr', mr);
+    addClasses('mt', mt);
+    addClasses('mx', mx);
+    addClasses('my', my);
 
-    ///////////////////////////////////////////////////////////////////////
+    addClasses('p', p);
+    addClasses('pb', pb);
+    addClasses('pl', pl);
+    addClasses('pr', pr);
+    addClasses('pt', pt);
+    addClasses('px', px);
+    addClasses('py', py);
 
-    if (justifyContent != undefined) {
-        if (isString(justifyContent)) {
-            justifyContent = justifyContent.split(' ');
-        }
+    addClasses('d', d);
+    addClasses('d', display);
 
-        if (isObject(justifyContent)) {
-            addClass(`justify-content-xs-${justifyContent.xs}`, justifyContent.xs);
-            addClass(`justify-content-sm-${justifyContent.sm}`, justifyContent.sm);
-            addClass(`justify-content-md-${justifyContent.md}`, justifyContent.md);
-            addClass(`justify-content-lg-${justifyContent.lg}`, justifyContent.lg);
-            addClass(`justify-content-xl-${justifyContent.xl}`, justifyContent.xl);
-    
-        }
-        else if(isArray(justifyContent)) {
-            justifyContent.forEach((item) => {
-                addClass(`justify-content-${item}`, true);
-            });
-        }
-        else {
-            addClass(`justify-content-${justifyContent}`, justifyContent);
-        }
-    }
+    addClass('border', border); /* ?! */ 
+    addClasses('border', border);
 
-    ///////////////////////////////////////////////////////////////////////
-
-    if (text != undefined) {
-        if (isString(text)) {
-            text = text.split(' ');
-        }
-
-        if (isArray(text)) {
-            text.forEach((item) => {
-                addClass(`text-${item}`, true);
-            });
-        }
-    }
-
-    
-    ///////////////////////////////////////////////////////////////////////
-
-
-    addClass(`align-content-${alignContent}`, isString(alignContent));
-    addClass(`bg-${bg}`, isString(bg));
-    addClass(`d-${display}`, isString(display));
-    addClass(`align-${align}`, isString(align));
-    addClass(`position-${position}`, isString(position));
-    addClass(`float-${float}`, isString(float));
-    addClass(`fixed-${fixed}`, isString(fixed));
-    addClass(`align-items-${alignItems}`, isString(alignItems));
-    addClass(`rounded`, isBoolean(rounded) || isString(rounded));
-    addClass(`visible`, visible);
-    addClass(`invisible`, invisible);
-    addClass(`shadow`, isBoolean(shadow));
-    addClass(`shadow-${shadow}`, isString(shadow));
-    addClass(`font-weight-${fontWeight}`, isString(fontWeight));
-
-    ///////////////////////////////////////////////////////////////////////
-
-
+    addClasses('align-content', alignContent);
+    addClasses('align-items', alignItems);
+    addClasses('align', align);
+    addClasses('bg', bg);
+    addClasses('fixed', fixed);
+    addClasses('flex', flex);
+    addClasses('float', float);
+    addClasses('font-weight', fontWeight);
+    addClasses('invisible', invisible);
+    addClasses('justify-content', justifyContent);
+    addClasses('position', position);
+    addClasses('rounded', rounded);
+    addClasses('shadow', shadow);
+    addClasses('text', text);
+    addClasses('visible', visible);
 
     return {className:className, ...props};
     

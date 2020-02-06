@@ -101,7 +101,7 @@ import {Button} from 'react-bootify';
 
 var props = {color:'primary', margin:{x:1}};
 
-<Tag border={props.color} rounded={true} style={{height:'6rem'}} display='flex' alignItems='start' justifyContent='end' padding={2} >
+<Tag border={props.color} rounded={true} style={{height:'6rem'}} display='flex' alignItems='start' justifyContent={{sm:'end', lg:'start'}} padding={2} >
     <Button {...props}>
         Pax vobiscum
     </Button>
@@ -197,7 +197,6 @@ Here is an example of different border styles, padding, margin and colors.
 
 ```js
 
- 
 <Tag shadow="none" rounded={true} border='muted' margin={2} padding={{left:4, right:4, y:2}}>
     No shadow
 </Tag>
