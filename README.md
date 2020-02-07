@@ -87,6 +87,5 @@ Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswa
 - 2020-02-03 - **Row** and **Col** in **Container** are now separate components. **Container.Row** and **Container.Col** are still valid.
 - 2020-02-03 - **Grid** removed since it does not comply with Bootstrap naming convensions. Use **Container**.
 - 2020-02-04 - Updated documentation so latest version of [Styleguidist](https://www.npmjs.com/package/react-styleguidist) could be used.
-- 2020-02-05 - Added **Progress** component but still some work to do.
-- 2020-02-05 - Improved parsing of **Tag** properties.
+- 2020-02-05 - Added **Progress** component.
 - 2020-02-06 - Added parsing for more Boostrap utility class names such as **m, mr, mb, mt, ml, p, pr, pl, pt, pt** etc...

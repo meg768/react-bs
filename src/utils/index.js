@@ -5,10 +5,7 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import PopperJS from 'popper.js';
 
-
 var _uniqueID = 100;
-
-
 
 function isType(obj, type) {
 	return Object.prototype.toString.call(obj) == '[object ' + type + ']';
@@ -57,7 +54,7 @@ function isFloat(n) {
 
 function transformProps(props) {
 
-    var {className, order, text, bg, flex, fontWeight, shadow, fixed, position, justifyContent, visible, invisible, alignItems, alignContent, float, align, rounded, margin, border, padding, ...props} = props;
+    var {className, sticky, order, text, bg, flex, fontWeight, shadow, fixed, position, justifyContent, visible, invisible, alignItems, alignContent, float, align, rounded, margin, border, padding, ...props} = props;
 
     // Display
     var {d, display, ...props} = props;
@@ -173,6 +170,7 @@ function transformProps(props) {
     addClasses('position', position);
     addClasses('rounded', rounded);
     addClasses('shadow', shadow);
+    addClasses('sticky', sticky);
     addClasses('text', text);
     addClasses('visible', visible);
     addClasses('order', order);
