@@ -117,20 +117,16 @@ function transformProps(props) {
             pl = padding.left;
             pr = padding.right;
             pt = padding.top;
-            px = padding.x;
-            py = padding.y;
+            px = padding.x || padding.horizontal;
+            py = padding.y || padding.vertical;
 
             if (padding.vertical) {
                 console.warn('Padding property vertical is invalid in <Tag/>. Use y instead.');
-                py = padding.vertical;
             }
 
             if (padding.horizontal) {
                 console.warn('Padding property horizontal is invalid in <Tag/>. Use x instead.');
-                px = padding.horizontal;
             }
-
-
         }
         else {
             p = padding;
