@@ -4,16 +4,7 @@ import Tag from '../tag';
 
 
 
-/**
- * 
- * ---------------
- * sfdlöäksdfgölXX
- * 
- * @param {*} props  klajsdhfklajshdfX
- * @public
- */
-export  function Progress(props) {
-
+export default function Progress(props) {
 
     var {className, children, ...props} = props;
 
@@ -28,13 +19,6 @@ export  function Progress(props) {
 
 
 
-/**
- * 
- * asödflksdöäflks  l ds sdf f ds 
- * 
- * @param {object} props
- * @public
- */
 Progress.Bar = function(props) {
 
     var {className, striped, style, role, min, max, value, children, ...props} = props;
@@ -64,12 +48,6 @@ Progress.Bar = function(props) {
 }
 
 
-/**
- * 
- * asldkfjalösdkfjööfdg sadfölk sdfgsdöflgkj sdflk 
- * 
- * @public
- */
 Progress.Bar.propTypes = {
     /** Min value */
     min: PropTypes.any,
@@ -87,6 +65,3 @@ Progress.Bar.defaultProps = {
     role: 'progressbar'
 };
 
-
-//module.exports = Progress;
-//export default Progress;
