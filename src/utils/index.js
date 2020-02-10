@@ -113,6 +113,13 @@ function transformProps(props) {
     if (padding != undefined) {
         if (isObject(padding)) {
 
+            pb = padding.bottom;
+            pl = padding.left;
+            pr = padding.right;
+            pt = padding.top;
+            px = padding.x;
+            py = padding.y;
+
             if (padding.vertical) {
                 console.warn('Padding property vertical is invalid in <Tag/>. Use y instead.');
                 py = padding.vertical;
@@ -123,12 +130,7 @@ function transformProps(props) {
                 px = padding.horizontal;
             }
 
-            pb = padding.bottom;
-            pl = padding.left;
-            pr = padding.right;
-            pt = padding.top;
-            px = padding.x;
-            py = padding.y;
+
         }
         else {
             p = padding;
