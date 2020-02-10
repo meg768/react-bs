@@ -74,7 +74,7 @@ function transformProps(props) {
 
     if (textColor) {
         console.warn('textColor property is invalid in Tag. Use text instead.');
-        text = clasNames(text, textColor);
+        text = classNames(text, textColor);
     }
 
     function addClass(name, condition) {
