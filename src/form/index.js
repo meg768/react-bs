@@ -1,4 +1,4 @@
-import {React, classNames, PropTypes, uniqueID} from '../utils';
+import {isObject, isString, React, classNames, PropTypes, uniqueID} from '../utils';
 import Container from '../container';
 import Tag from '../tag';
 
