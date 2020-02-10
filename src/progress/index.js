@@ -2,11 +2,17 @@ import {React, PropTypes, classNames} from '../utils';
 import Tag from '../tag';
 
 
-/**
- * Description Progress
- */
 
-var Progress = (props) =>  {
+
+/**
+ * 
+ * ---------------
+ * sfdlöäksdfgölXX
+ * 
+ * @param {*} props  klajsdhfklajshdfX
+ * @public
+ */
+export  function Progress(props) {
 
 
     var {className, children, ...props} = props;
@@ -21,10 +27,15 @@ var Progress = (props) =>  {
 };
 
 
+
 /**
- * Description Progress.Bar
+ * 
+ * asödflksdöäflks  l ds sdf f ds 
+ * 
+ * @param {object} props
+ * @public
  */
-Progress.Bar = (props) => {
+Progress.Bar = function(props) {
 
     var {className, striped, style, role, min, max, value, children, ...props} = props;
 
@@ -52,6 +63,13 @@ Progress.Bar = (props) => {
 
 }
 
+
+/**
+ * 
+ * asldkfjalösdkfjööfdg sadfölk sdfgsdöflgkj sdflk 
+ * 
+ * @public
+ */
 Progress.Bar.propTypes = {
     /** Min value */
     min: PropTypes.any,
@@ -70,5 +88,5 @@ Progress.Bar.defaultProps = {
 };
 
 
-
-export default Progress;
+//module.exports = Progress;
+//export default Progress;

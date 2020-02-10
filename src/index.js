@@ -17,11 +17,15 @@ import Card from './card';
 import Nav from './nav';
 import NavBar from './navbar';
 import Icon from './icon';
+import Icons from './icons';
 import Row from './row';
 import Col from './col';
+import Pill from './pill';
+import Badge from './badge';
+import Progress from './progress';
 
 export {
     Tag, Popper, Button, Form, ListGroup, Fade, Collapse,
     Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown,
-    Spinner, Toast, Card, Nav, NavBar, Icon
+    Spinner, Toast, Card, Nav, NavBar, Icon, Icons, Pill, Badge, Progress
 };
