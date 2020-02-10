@@ -5,6 +5,27 @@ export default function Col(props) {
 
     var {className, col, width, offset, ...props} = props;
 
+    // Backward compatability
+    var {xs, sm, md, lg, xl, ...props} = props;
+
+    function fix(name, prop) {
+        if (isObject(prop)) {
+            console.warn(`Property ${name} is invalid in <Col/>. Use width and/or offset instead.`);
+            className = classNames(className, prop.offset ? `offset-${name}-${prop.offset}` : undefined);
+            className = classNames(className, prop.width  ? `col-${name}-${prop.width}`     : undefined);
+        }
+        else if (prop != undefined) {
+            console.warn(`Property ${name} is invalid in <Col/>. Use width and/or offset instead.`);
+            className = classNames(className, `col-${name}-${prop}`);
+        }
+    }
+
+    fix('xs', xs);
+    fix('sm', sm);
+    fix('md', md);
+    fix('lg', lg);
+    fix('xl', xl);
+    
     if (width && !col)
         col = width;
 

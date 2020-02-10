@@ -65,6 +65,18 @@ function transformProps(props) {
     // Padding
     var {p, pl, pr, pt, pb, px, py, ...props} = props;
 
+    var {textAlign, textColor, ...props} = props;
+
+    if (textAlign) {
+        console.warn('textAlign property is invalid in Tag. Use align instead.');
+        align = classNames(align, textAlign);
+    }
+
+    if (textColor) {
+        console.warn('textColor property is invalid in Tag. Use text instead.');
+        text = clasNames(text, textColor);
+    }
+
     function addClass(name, condition) {
         if (condition) {
             className = classNames(className, name);
