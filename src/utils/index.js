@@ -65,17 +65,19 @@ function transformProps(props) {
     // Padding
     var {p, pl, pr, pt, pb, px, py, ...props} = props;
 
+    // Backward compatability
     var {textAlign, textColor, ...props} = props;
 
     if (textAlign) {
-        console.warn('textAlign property is invalid in Tag. Use align instead.');
+        console.warn('Property textAlign property is invalid in <Tag/>. Use align instead.');
         align = classNames(align, textAlign);
     }
 
     if (textColor) {
-        console.warn('textColor property is invalid in Tag. Use text instead.');
+        console.warn('Property textColor is invalid in <Tag/>. Use text instead.');
         text = classNames(text, textColor);
     }
+
 
     function addClass(name, condition) {
         if (condition) {
@@ -110,6 +112,17 @@ function transformProps(props) {
 
     if (padding != undefined) {
         if (isObject(padding)) {
+
+            if (padding.vertical) {
+                console.warn('Padding property vertical is invalid in <Tag/>. Use y instead.');
+                py = padding.vertical;
+            }
+
+            if (padding.horizontal) {
+                console.warn('Padding property horizontal is invalid in <Tag/>. Use x instead.');
+                px = padding.horizontal;
+            }
+
             pb = padding.bottom;
             pl = padding.left;
             pr = padding.right;
