@@ -33,7 +33,7 @@ import {Tag} from 'react-bootify';
 
 <Form >
     <Form.Row group>
-        <Form.Col text='right'>
+        <Form.Col text='right' width={{xs:4, sm:3, md:2}}>
             <Form.Label inline ><small>Company name</small></Form.Label>
         </Form.Col>
         <Form.Col>
@@ -42,7 +42,7 @@ import {Tag} from 'react-bootify';
     </Form.Row>
 
     <Form.Row group>
-        <Form.Col text='right'>
+        <Form.Col text='right' width={{xs:4, sm:3, md:2}}>
             <Form.Label inline ><small>Bought at</small></Form.Label>
         </Form.Col>
         <Form.Col>
@@ -55,7 +55,7 @@ import {Tag} from 'react-bootify';
 
 ```js
 
-import {Tag, Dropdown, Button} from 'react-bootify';
+import {Container, Tag, Dropdown, Button, Card} from 'react-bootify';
 
 class Sample1 extends React.Component {
 
@@ -89,61 +89,62 @@ class Sample1 extends React.Component {
 
                 <Form >
                     <Form.Row group>
-                        <Form.Col width={{default:4, sm:2}} text='right' >
+                        <Form.Col width={{xs:4, sm:3, md:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>Ticker</small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col width={{default:8, sm:10}} text='right' >
+                        <Form.Col width={{xs:8, sm:9, md:10}} text='right' >
                             <Form.Input type="text" id="ticker" placeholder="Ticker" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Row>
 
                     <Form.Row group>
-                        <Form.Col width={{default:4, sm:2}} text='right' >
+                        <Form.Col width={{xs:4, sm:3, md:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>Company name</small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col width={{default:8, sm:10}}>
+                        <Form.Col width={{xs:8, sm:9, md:10}}>
                             <Form.Input type="text" id="name" placeholder="Name" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Row>
 
 
                     <Form.Row group>
-                        <Form.Col width={{default:4, sm:2}} text='right' >
+                        <Form.Col width={{xs:4, sm:3, md:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>Bought at</small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col width={{default:8, sm:10}}>
+                        <Form.Col width={{xs:8, sm:9, md:10}}>
                             <Form.Input type="text" id="price" placeholder="Price" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Row>
 
                     <Form.Row group>
-                        <Form.Col width={{default:4, sm:2}} text='right' >
+                        <Form.Col width={{xs:4, sm:3, md:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>
                                     Number of stocks
                                 </small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col width={{default:8, sm:10}}>
+                        <Form.Col width={{xs:8, sm:9, md:10}}>
                             <Form.Input type="text" id="amount" placeholder="Amount" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Row>
 
                     <Form.Row group>
-                        <Form.Col width={{default:4, sm:2}} text='right' >
+                        <Form.Col width={{xs:4, sm:3, md:2}} text='right' >
                             <Form.Label inline text='muted'>
                                 <small>
                                     Source
                                 </small>
                             </Form.Label>
                         </Form.Col>
-                        <Form.Col width={{default:8, sm:10}}>
+
+                        <Form.Col width={{xs:8, sm:9, md:10}}>
                             <Dropdown placement='bottom-start'>
                                 <Dropdown.Target>
                                     <Button outline color='secondary'>
@@ -170,40 +171,58 @@ class Sample1 extends React.Component {
                     </Form.Row>
 
 
-                    <Form.Row group >
+                    <Form.Row group>
 
-                        <Form.Col width={{default:4, sm:2}} text='right' padding={{y:0}}>
-                            <Form.Label  inline text='muted'>
-                                <Tag tag='small' align="baseline">Stop loss</Tag>
-                            </Form.Label>
+                        <Form.Col width={{xs:4, sm:3, md:2}}>
                         </Form.Col>
 
-                        <Form.Col width={{default:8, sm:10}}>
-                            <Form inline padding={{bottom:2}}>
-                                <Form.Radio text='muted'>
-                                    Continous stop loss
-                                </Form.Radio>
-                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
-                                <Form.Label text='muted'>%</Form.Label>
-                            </Form>
+                        <Form.Col width={{xs:8, sm:9, md:10}}>
+                                <Form.Row group>
+                                    <Form.Col width={{xs:12, lg:6}} padding={{bottom:2}}>
+                                        <Card>
+                                            <Card.Header style={{lineHeight:'50%'}}>
+                                                <Tag tag='small' text='muted'>Stop Loss</Tag>
+                                            </Card.Header>
+                                            <Card.Body> 
+                                                <Form inline padding={{bottom:2}} >
+                                                    <Form.Radio text='muted'>
+                                                        Continous stop loss
+                                                    </Form.Radio>
+                                                    <Form.Input style={{width:'4rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
+                                                    <Form.Label text='muted'>%</Form.Label>
+                                                </Form>
 
-                            <Form inline padding={{bottom:2}}>
-                                <Form.Radio text='muted'>
-                                    When price below
-                                </Form.Radio>
-                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
-                            </Form>
+                                                <Form inline padding={{bottom:2}}>
+                                                    <Form.Radio text='muted'>
+                                                        When price below
+                                                    </Form.Radio>
+                                                    <Form.Input style={{width:'4rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
+                                                </Form>
                             
-                            <Form inline padding={{bottom:2}}>
-                                <Form.Radio placeholder="Ticker" text='muted'>
-                                    When price dropped with more than 
-                                </Form.Radio>
-                                <Form.Input style={{width:'5rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
-                                <Form.Label text='muted'>%</Form.Label>
-                            </Form>
+                                                <Form inline padding={{bottom:2}}>
+                                                    <Form.Radio placeholder="Ticker" text='muted'>
+                                                        Price dropped more than 
+                                                    </Form.Radio>
+                                                    <Form.Input style={{width:'4rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
+                                                    <Form.Label text='muted'>%</Form.Label>
+                                                </Form>
+                                            </Card.Body>
+                                        </Card>
+                                    </Form.Col>
+                                    <Form.Col width={{xs:12, lg:6}} padding={{bottom:2}}>
+                                        <Card>
+                                            <Card.Header style={{lineHeight:'50%'}}>
+                                                <Tag tag='small' text='muted'>Other options</Tag>
+                                            </Card.Header>
+                                            <Card.Body>
+                                                ...
+                                            </Card.Body>
+                                        </Card>
+                                    </Form.Col>
+                                </Form.Row>
+
                         </Form.Col>
                     </Form.Row>
-
                     <Form.Row group text='right'>
                         <Form.Col>
                             <Button color='secondary' outline margin={{right:1}}>Cancel</Button>
@@ -379,7 +398,7 @@ class Sample extends React.Component {
                     </Form.Row>
 
                     <Form.Row >
-                        <Form.Col padding={{top:3}} width={{default:12, xs:12, sm:12, md:8, lg:9, xl:9}}>
+                        <Form.Col padding={{top:3}} width={{xs:12, sm:12, md:8, lg:9, xl:9}}>
                             <Card>
                                 <Card.Body>
                                     <Form.Radio id='radioA' checked={this.state.option=='A'} onChange={this.onChange}>
@@ -391,7 +410,7 @@ class Sample extends React.Component {
                                 </Card.Body>
                             </Card>
                         </Form.Col>
-                        <Form.Col padding={{top:3}} width={{default:12, xs:12, sm:12, md:4, lg:3, xl:3}}>
+                        <Form.Col padding={{top:3}} width={{xs:12, sm:12, md:4, lg:3, xl:3}}>
                             <Card>
                                 <Card.Body>
                                     <Form.Checkbox id='checkBoxA' checked={this.state.checkBoxA} onChange={this.onChange}>
@@ -489,7 +508,7 @@ class Sample extends React.Component {
         return (
             <Form>
                 <Form.Row group>
-                    <Form.Col padding={2} width={{default:12, xs:12, sm:12, md:6}}>
+                    <Form.Col padding={2} width={{xs:12, sm:12, md:6}}>
                         <Card padding={3}>
                             <Form.Col>
                                 <Form.Switch>Lorem ipsum dolor</Form.Switch>
@@ -498,7 +517,7 @@ class Sample extends React.Component {
                         </Card>
                     </Form.Col>
 
-                    <Form.Col padding={2} width={{default:12, xs:12, sm:12, md:6}}>
+                    <Form.Col padding={2} width={{xs:12, sm:12, md:6}}>
                         <Card padding={3}>
                             <Form.Col>
                                 <Form.Switch>Morbi eu</Form.Switch>

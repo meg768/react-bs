@@ -38,7 +38,7 @@ import {Container} from 'react-bootify';
 <div>
     <Container>
         <Container.Row>
-            <Container.Col xs={12} sm={6}>
+            <Container.Col width={{xs:12, sm:6}}>
                 <Card margin={{bottom:1}} text='white' bg='primary'>
                     <Card.Header>
                         Header
@@ -53,7 +53,7 @@ import {Container} from 'react-bootify';
                     </Card.Body>
                 </Card>
             </Container.Col>
-            <Container.Col xs={12} sm={6}>
+            <Container.Col width={{xs:12, sm:6}}>
                 <Card margin={{bottom:1}} border='primary'>
                     <Card.Header>
                         Header
@@ -84,7 +84,7 @@ import {Container} from 'react-bootify';
 <div>
     <Container>
         <Container.Row>
-            <Container.Col xs={12} sm={6}>
+            <Container.Col width={{xs:12, sm:6}}>
                 <Card margin={{bottom:1}} text='white' bg='secondary'>
                     <Card.Header>
                         Header
@@ -99,7 +99,7 @@ import {Container} from 'react-bootify';
                     </Card.Body>
                 </Card>
             </Container.Col>
-            <Container.Col xs={12} sm={6}>
+            <Container.Col width={{xs:12, sm:6}}>
                 <Card margin={{bottom:1}} border='secondary'>
                     <Card.Header>
                         Header
@@ -127,7 +127,7 @@ import {Container} from 'react-bootify';
 <div>
     <Container>
         <Container.Row>
-            <Container.Col xs={12} sm={6}>
+            <Container.Col width={{xs:12, sm:6}}>
                 <Card margin={{bottom:1}} text='white' bg='success'>
                     <Card.Header>
                         Header
@@ -142,7 +142,7 @@ import {Container} from 'react-bootify';
                     </Card.Body>
                 </Card>
             </Container.Col>
-            <Container.Col xs={12} sm={6}>
+            <Container.Col width={{xs:12, sm:6}}>
                 <Card margin={{bottom:1}} border='success'>
                     <Card.Header>
                         Header
@@ -170,7 +170,7 @@ import {Container} from 'react-bootify';
 <div>
     <Container>
         <Container.Row>
-            <Container.Col xs={12} sm={6}>
+            <Container.Col width={{xs:12, sm:6}}>
                 <Card margin={{bottom:1}} text='white' bg='danger'>
                     <Card.Header>
                         Header
@@ -185,7 +185,7 @@ import {Container} from 'react-bootify';
                     </Card.Body>
                 </Card>
             </Container.Col>
-            <Container.Col xs={12} sm={6}>
+            <Container.Col width={{xs:12, sm:6}}>
                 <Card margin={{bottom:1}} border='danger'>
                     <Card.Header>
                         Header
@@ -214,7 +214,7 @@ import {Container} from 'react-bootify';
 <div>
     <Container>
         <Container.Row>
-            <Container.Col xs={12} sm={6}>
+            <Container.Col width={{xs:12, sm:6}}>
                 <Card margin={{bottom:1}} text='white' bg='warning'>
                     <Card.Header>
                         Header
@@ -229,7 +229,7 @@ import {Container} from 'react-bootify';
                     </Card.Body>
                 </Card>
             </Container.Col>
-            <Container.Col xs={12} sm={6}>
+            <Container.Col width={{xs:12, sm:6}}>
                 <Card margin={{bottom:1}} border='warning'>
                     <Card.Header>
                         Header
@@ -258,7 +258,7 @@ import {Container} from 'react-bootify';
 <div>
     <Container>
         <Container.Row>
-            <Container.Col xs={12} sm={6}>
+            <Container.Col width={{xs:12, sm:6}}>
                 <Card margin={{bottom:1}} text='white' bg='info'>
                     <Card.Header>
                         Header
@@ -273,7 +273,7 @@ import {Container} from 'react-bootify';
                     </Card.Body>
                 </Card>
             </Container.Col>
-            <Container.Col xs={12} sm={6}>
+            <Container.Col width={{xs:12, sm:6}}>
                 <Card margin={{bottom:1}} border='info'>
                     <Card.Header>
                         Header

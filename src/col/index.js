@@ -32,9 +32,7 @@ export default function Col(props) {
     className = classNames(className, 'col');
 
     if (isObject(col)) {
-        className = classNames(className, col.default ? `col-${col.default}` : undefined);
-
-        className = classNames(className, col.xs ? `col-xs-${col.xs}` : undefined);
+        className = classNames(className, col.xs ? `col-${col.xs}` : undefined);
         className = classNames(className, col.sm ? `col-sm-${col.sm}` : undefined);
         className = classNames(className, col.md ? `col-md-${col.md}` : undefined);
         className = classNames(className, col.lg ? `col-lg-${col.lg}` : undefined);
@@ -45,7 +43,7 @@ export default function Col(props) {
     }
 
     if (isObject(offset)) {
-        className = classNames(className, offset.xs ? `offset-xs-${offset.xs}` : undefined);
+        className = classNames(className, offset.xs ? `offset-${offset.xs}` : undefined);
         className = classNames(className, offset.sm ? `offset-sm-${offset.sm}` : undefined);
         className = classNames(className, offset.md ? `offset-md-${offset.md}` : undefined);
         className = classNames(className, offset.lg ? `offset-lg-${offset.lg}` : undefined);
