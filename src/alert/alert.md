@@ -8,11 +8,15 @@ import {Alert} from 'react-bootify';
 import Alert from 'react-bootify/components/alert';
 ```
 
+
 ### Simple alert
 
 
 ```js
 
+import {Alert} from 'react-bootify';
+
+<div>
     <Alert color='primary'>
         No discere nostrum vix, vim.
     </Alert>
@@ -32,7 +36,7 @@ import Alert from 'react-bootify/components/alert';
     <Alert color='warning'>
         Ne eam falli dictas officiis ius.
     </Alert>
-
+ 
     <Alert color='info'>
         Cibo corpora dissentiet an vis, vel appetere.
     </Alert>
@@ -44,13 +48,17 @@ import Alert from 'react-bootify/components/alert';
     <Alert color='dark'>
         Id erat fastidii vis.
     </Alert>
-
+</div>
 
  ```
 ### Dismissable alerts
 
 By adding the **dismiss** property, a dismiss button will be added to the alert.
+
 ```js
+
+import {Alert} from 'react-bootify';
+
 <div>
     <Alert dismiss color='warning'>
         Has cibo omittam percipitur an, no duo erat placerat oporteat.
@@ -65,6 +73,8 @@ button is clicked and it will not dismiss itself. It is up to the **dismiss** fu
 ### Alert with a body
 
 ```js
+
+import {Alert} from 'react-bootify';
 
 <div>
     <Alert color='primary'>
@@ -81,15 +91,17 @@ button is clicked and it will not dismiss itself. It is up to the **dismiss** fu
 
 ```js
 
-    <Alert color='primary'>
-        <Alert.Header>
-            Ei vim aeque
-        </Alert.Header>
-        <Alert.Separator>
-        </Alert.Separator>
-        <Alert.Body>
-            In has iisque consequuntur, verear hendrerit no sea, per mandamus convenire evertitur et. Sensibus voluptatum ea has. Putant equidem scriptorem.
-        </Alert.Body>
-    </Alert>
+import {Alert} from 'react-bootify';
+
+<Alert color='primary'>
+    <Alert.Header>
+        Ei vim aeque
+    </Alert.Header>
+    <Alert.Separator>
+    </Alert.Separator>
+    <Alert.Body>
+        In has iisque consequuntur, verear hendrerit no sea, per mandamus convenire evertitur et. Sensibus voluptatum ea has. Putant equidem scriptorem.
+    </Alert.Body>
+</Alert>
 
  ```

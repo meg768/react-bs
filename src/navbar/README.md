@@ -12,7 +12,7 @@ import NavBar from 'react-bootify/components/navbar';
 
 ```js
 
-import {Tag, Nav, Dropdown} from 'react-bootify';
+import {Tag, Nav, NavBar, Dropdown} from 'react-bootify';
 
 class Sample extends React.Component  {
 	constructor(props) {
@@ -96,7 +96,7 @@ class Sample extends React.Component  {
 
 ```js
 
-import {Tag, Nav} from 'react-bootify';
+import {Tag, Nav, NavBar} from 'react-bootify';
 
 class Sample extends React.Component  {
 	constructor(props) {
@@ -164,7 +164,7 @@ class Sample extends React.Component  {
 
 ```js
 
-import {Tag, Nav, Form} from 'react-bootify';
+import {Tag, Nav, NavBar, Form} from 'react-bootify';
 
 class Sample extends React.Component  {
 	constructor(props) {
@@ -238,7 +238,7 @@ class Sample extends React.Component  {
 
 ```js
 
-import {Tag, Nav} from 'react-bootify';
+import {Tag, Nav, NavBar} from 'react-bootify';
 
 class Sample extends React.Component  {
 	constructor(props) {

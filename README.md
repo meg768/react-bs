@@ -7,9 +7,6 @@ All JavaScript classes and names are designed to correspond with Bootstrap's cla
 familiar with Bootstrap will feel confortable using this module and those who may not be familiar with it
 may find it simpler than using Bootstrap's raw class names.
 
-All components in this library are based on the [Tag](https://meg768.github.io/react-bootify/#!/Tag) component.
-This means that you may use Bootstrap utility class names to modify the behaviour of every component. 
-
 Documentation is sparse but there are alot of examples.
 
 This module is still not ready for public use and may change in the future.
@@ -89,3 +86,5 @@ Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswa
 - 2020-02-04 - Updated documentation so latest version of [Styleguidist](https://www.npmjs.com/package/react-styleguidist) could be used.
 - 2020-02-05 - Added **Progress** component.
 - 2020-02-06 - Added parsing for more Boostrap utility class names such as **m, mr, mb, mt, ml, p, pr, pl, pt, pt** etc...
+- 2020-02-13 - Began work with documentation per class/tag. Alert first out. Mutch more work to do.
+
