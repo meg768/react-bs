@@ -5,7 +5,7 @@
 
 import {Alert} from 'react-bootify';
 
-<Alert color='primary'>
+<Alert alert='primary'>
     <Alert.Header>
         Ei vim aeque
     </Alert.Header>

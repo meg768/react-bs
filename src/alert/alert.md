@@ -17,35 +17,35 @@ import Alert from 'react-bootify/components/alert';
 import {Alert} from 'react-bootify';
 
 <div>
-    <Alert color='primary'>
+    <Alert alert='primary'>
         No discere nostrum vix, vim.
     </Alert>
 
-    <Alert color='secondary'>
+    <Alert alert='secondary'>
         Cum in mundi docendi, dicat.
     </Alert>
 
-    <Alert color='success'>
+    <Alert alert='success'>
         Noster vocent epicurei cu est, te vix.
     </Alert>
 
-    <Alert color='danger'>
+    <Alert alert='danger'>
         Agam tempor necessitatibus id has, eu mel liber.
     </Alert>
 
-    <Alert color='warning'>
+    <Alert alert='warning'>
         Ne eam falli dictas officiis ius.
     </Alert>
  
-    <Alert color='info'>
+    <Alert alert='info'>
         Cibo corpora dissentiet an vis, vel appetere.
     </Alert>
 
-    <Alert color='light'>
+    <Alert alert='light'>
         Ea eum minimum.
     </Alert>
 
-    <Alert color='dark'>
+    <Alert alert='dark'>
         Id erat fastidii vis.
     </Alert>
 </div>
@@ -53,20 +53,20 @@ import {Alert} from 'react-bootify';
  ```
 ### Dismissable alerts
 
-By adding the **dismiss** property, a dismiss button will be added to the alert.
+By adding the **dismisable** property, a dismiss button will be added to the alert.
 
 ```js
 
 import {Alert} from 'react-bootify';
 
 <div>
-    <Alert dismiss color='warning'>
+    <Alert dismissable alert='warning'>
         Has cibo omittam percipitur an, no duo erat placerat oporteat.
     </Alert>
 </div>
 ```
 
-If the **dismiss** property is a function, it will be called when the dismiss 
+If the **dismisable** property is a function, it will be called when the dismiss 
 button is clicked and it will not dismiss itself. It is up to the **dismiss** function.
 
 
@@ -77,7 +77,7 @@ button is clicked and it will not dismiss itself. It is up to the **dismiss** fu
 import {Alert} from 'react-bootify';
 
 <div>
-    <Alert color='primary'>
+    <Alert alert='primary'>
         <Alert.Body>
             Vix an perfecto consequuntur, altera nostrum intellegam ex mel in.
         </Alert.Body>
@@ -93,7 +93,7 @@ import {Alert} from 'react-bootify';
 
 import {Alert} from 'react-bootify';
 
-<Alert color='primary'>
+<Alert alert='primary'>
     <Alert.Header>
         Ei vim aeque
     </Alert.Header>

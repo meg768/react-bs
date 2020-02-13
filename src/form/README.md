@@ -472,7 +472,7 @@ class Sample extends React.Component {
                 </Form.Row>
                 <Fade show={this.state.show}>
                     <Form.Row>
-                        <Alert color='warning' dismiss={this.toggle.bind(this)}>
+                        <Alert alert='warning' dismiss={this.toggle.bind(this)}>
                             <Alert.Header>
                                 Ei vim aeque
                             </Alert.Header>

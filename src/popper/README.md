@@ -4,7 +4,7 @@
 
 import {Alert} from 'react-bootify';
 
-<Alert color='info'>
+<Alert alert='info'>
     No documentation yet...
 </Alert>
 

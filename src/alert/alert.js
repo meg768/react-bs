@@ -25,7 +25,7 @@ export default class Alert extends React.Component  {
          * Alert type. May be one of primary, secondary, success, danger, warning, info, light or dark.
          */
         alert       : PropTypes.string,
-        dismiss     : PropTypes.any,
+        dismissable : PropTypes.any,
         role        : PropTypes.any,
         /**
          * Default tag
@@ -37,7 +37,7 @@ export default class Alert extends React.Component  {
         alert       : 'info',
         role        : 'alert',
         tag         : 'div',
-        dismiss     : false
+        dismissable : false
     };
 
     onDismiss() {
@@ -53,27 +53,31 @@ export default class Alert extends React.Component  {
         if (this.state.dismissed)
             return null;
 
-        var {dismiss, dismissible, tag, color, alert, role, children, className, ...props} = this.props;
+        var {dismiss, dismissable, tag, color, alert, role, children, className, ...props} = this.props;
+
 
         if (color) {
             console.warn(`Use property alert istead of color in Alert.`);
             alert = color;
         }
 
-        if (dismiss) {
+        if (isFunction(dismiss)) {
+            dismissable = true;
+        }
+
+        else if (dismiss) {
             console.warn(`Use property dismissable istead of dismiss in Alert.`);
             dismissible = dismiss;
 
         }
 
         className = classNames(className, {'alert': true});
-        className = classNames(className, {'alert-dismissible': dismissable != undefined});
+        className = classNames(className, dismissable ? `alert-dismissible`: undefined);
         className = classNames(className, alert ? `alert-${alert}` : undefined);
-        console.log(className);
         
         var dismissButton = null;
 
-        if (dismiss) {
+        if (dismissable) {
             dismissButton = (
                 <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={this.onDismiss}>
                     <span aria-hidden="true">&times;</span>
