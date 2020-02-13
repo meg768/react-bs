@@ -69,7 +69,10 @@ Tag.propTypes = {
     alignContent: PropTypes.any,
     /** https://getbootstrap.com/docs/4.4/utilities/flex/#align-items */
     alignItems: PropTypes.any,
-    /** https://getbootstrap.com/docs/4.4/utilities/colors */
+    /** 
+     * Specifies background color. See https://getbootstrap.com/docs/4.4/utilities/colors/#background-color
+     * 
+     * */
     bg: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white']),
     /** https://getbootstrap.com/docs/4.4/utilities/borders */
     border: PropTypes.any,

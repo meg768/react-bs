@@ -15,6 +15,9 @@ export default function Component(props)  {
 };
 
 Component.propTypes = {
+    /**
+     * Default tag
+     */
     tag: PropTypes.string
 };
 

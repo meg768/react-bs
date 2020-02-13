@@ -62,8 +62,20 @@ Col.defaultProps = {
 };
 
 Col.propTypes = {
-    col    : PropTypes.any,
-    offset : PropTypes.any,
+
+    /**
+     * Same as **width**. See below.
+     */
+    col: PropTypes.any,
+
+    /**
+     * Specifies column offset. May be an integer or an object specifying **{xs:12, sm:8, md:6, lg:5, xl:3}**
+     */
+    offset: PropTypes.any,
+
+    /**
+     * Specifies width of column. May be an integer or an object specifying **{xs:12, sm:8, md:6, lg:5, xl:3}**
+     */
     width  : PropTypes.any
 };
 

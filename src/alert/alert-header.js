@@ -3,7 +3,7 @@ import Tag from '../tag';
 
 /**
  * 
- * Header
+ * A header for the alert. Defaults to a **h5** tag.
  * 
  * @visibleName Alert.Header
  * 
@@ -16,11 +16,17 @@ export default function Component(props) {
 
 
 Component.propTypes = {
+    /**
+     * Default tag
+     */
     tag: PropTypes.string,
+
+
     className: PropTypes.string
 };
 
 Component.defaultProps = {
+
     tag: 'h5',
     className: 'alert-heading'
 };

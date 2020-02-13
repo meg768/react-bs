@@ -4,6 +4,11 @@ import AlertBody from './alert-body';
 import AlertSeparator from './alert-separator';
 import AlertHeader from './alert-header';
 
+/**
+ * 
+ * 
+ * See https://getbootstrap.com/docs/4.4/components/alerts for more information
+ */
 export default class Alert extends React.Component  {
 
     constructor(props) {
@@ -16,13 +21,20 @@ export default class Alert extends React.Component  {
     }
 
     static propTypes = {
-        color       : PropTypes.string,
+        /**
+         * Alert type. May be one of primary, secondary, success, danger, warning, info, light or dark.
+         */
+        alert       : PropTypes.string,
         dismiss     : PropTypes.any,
+        role        : PropTypes.any,
+        /**
+         * Default tag
+         */
         tag         : PropTypes.string
     };
 
     static defaultProps = {
-        color       : 'info',
+        alert       : 'info',
         role        : 'alert',
         tag         : 'div',
         dismiss     : false
@@ -41,12 +53,24 @@ export default class Alert extends React.Component  {
         if (this.state.dismissed)
             return null;
 
-        var {dismiss, tag, color, role, children, className, ...props} = this.props;
+        var {dismiss, dismissible, tag, color, alert, role, children, className, ...props} = this.props;
+
+        if (color) {
+            console.warn(`Use property alert istead of color in Alert.`);
+            alert = color;
+        }
+
+        if (dismiss) {
+            console.warn(`Use property dismissable istead of dismiss in Alert.`);
+            dismissible = dismiss;
+
+        }
 
         className = classNames(className, {'alert': true});
-        className = classNames(className, {'alert-dismissible': dismiss != undefined});
-        className = classNames(className, {[`alert-${color}`]:color});
-
+        className = classNames(className, {'alert-dismissible': dismissable != undefined});
+        className = classNames(className, alert ? `alert-${alert}` : undefined);
+        console.log(className);
+        
         var dismissButton = null;
 
         if (dismiss) {
