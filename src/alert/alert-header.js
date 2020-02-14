@@ -1,4 +1,7 @@
-import {React, PropTypes, classNames, isFunction} from '../utils';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import Tag from '../tag';
 
 /**
@@ -11,23 +14,20 @@ import Tag from '../tag';
 
 
 export default function Component(props) {
-    return <Tag {...props}/>;
+    var {className, ...props} = props;
+
+    className = classNames(className, 'alert-heading');
+
+    return <Tag className={className} {...props}/>;
 };
 
 
 Component.propTypes = {
-    /**
-     * Default tag
-     */
+    /** Default tag */
     tag: PropTypes.string,
-
-
-    className: PropTypes.string
 };
 
 Component.defaultProps = {
-
-    tag: 'h5',
-    className: 'alert-heading'
+    tag: 'h5'
 };
 

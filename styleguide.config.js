@@ -2,84 +2,11 @@
 var Path = require('path');
 var fs = require('fs');
 
-
-/*
-function getJS(path) {
-
-    var files = [];
-
-
-    fs.readdirSync(path).forEach((file) => {
-        var fileName = Path.join(path, file);
-        var parts = Path.parse(fileName);
-        var stat = fs.statSync(fileName);
-
-//        console.log('FILE NAME', fileName, parts);
-
-        if (stat.isDirectory()) {
-        }
-        else {
-            if (parts.ext == '.js') {
-
-                files.push(fileName);
-
-            }
-        }
-    });
-
-    return files;
-
-
-}
-
-function getFiles(path) {
-
-    var files = [];
-
-
-    fs.readdirSync(path).forEach((file) => {
-        var fileName = Path.join(path, file);
-        var parts = Path.parse(fileName);
-        var stat = fs.statSync(fileName);
-
-//        console.log('FILE NAME', fileName, parts);
-
-        if (stat.isDirectory()) {
-
-            getFiles(fileName).forEach((file) => {
-                files.push(file);
-            });
-        }
-        else {
-            if (parts.ext == '.js') {
-
-                console.log(`./${fileName}, `);
-                files.push(`./${fileName}`);
-
-            }
-        }
-    });
-
-    return files;
-
-
-}
-
-function sortFiles(files) {
-
-    
-}
-
-
-var files = getFiles('./src');
-console.log(files);
-
-*/
 module.exports = {
 
-    usageMode: 'expand',
+    // usageMode: 'expand',
 
-    skipComponentsWithoutExample: true,
+    skipComponentsWithoutExample: false,
 
 
     components: [
@@ -90,7 +17,14 @@ module.exports = {
 
         './src/badge/index.js',
         './src/button/index.js',
-        './src/card/index.js',
+
+        './src/card/card.js',
+        './src/card/card-body.js',
+        './src/card/card-header.js',
+        './src/card/card-subtitle.js',
+        './src/card/card-text.js',
+        './src/card/card-title.js',
+
         './src/col/index.js',
         './src/collapse/index.js',
         './src/container/index.js',
@@ -108,7 +42,12 @@ module.exports = {
         './src/pill/index.js',
         './src/popover/index.js',
         './src/popper/index.js',
-        './src/progress/index.js',
+
+
+        './src/progress/progress.js',
+        './src/progress/progress-bar.js',
+
+
         './src/row/index.js',
         './src/spinner/index.js',
         './src/table/index.js',

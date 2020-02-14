@@ -1,4 +1,9 @@
-import {React, Transition, PropTypes, isArray} from '../utils';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import Transition from 'react-transition-group/Transition';
+
+import {isArray} from '../utils';
 
 
 function debug() {

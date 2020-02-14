@@ -1,18 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
+
 import Tag from '../tag';
 
 /**
  * 
- * @visibleName Alert.Separator
+ * Specifies the body of a card.
  * 
+ * @visibleName Card.Body
  */
+
 export default function Component(props) {
 
+    var {tag, className, ...props} = props;
+
+    className = classNames(className, 'card-body');
+
     return (
-        <Tag {...props}/>
+        <Tag tag={tag} className={className} {...props}/>
     );
-};
+
+}
 
 Component.propTypes = {
     /** Default tag */
@@ -20,5 +30,6 @@ Component.propTypes = {
 };
 
 Component.defaultProps = {
-    tag: 'hr'
+    tag: 'div'
 };
+

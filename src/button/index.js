@@ -1,4 +1,7 @@
-import {React, PropTypes, classNames} from '../utils';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import Tag from '../tag';
 
 
@@ -11,7 +14,7 @@ export default class Button extends React.Component  {
     }
 
     static propTypes = {
-        /** Color of button. One of ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'] */
+        /** Color of button. */ 
         color : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']),
         /** Button tag */
         tag : PropTypes.string,

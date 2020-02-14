@@ -1,11 +1,17 @@
-import {React, PropTypes, classNames, isFunction} from '../utils';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
+import {isFunction} from '../utils';
 import Tag from '../tag';
+
 import AlertBody from './alert-body';
 import AlertSeparator from './alert-separator';
 import AlertHeader from './alert-header';
 
 /**
  * 
+ * Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
  * 
  * See https://getbootstrap.com/docs/4.4/components/alerts for more information
  */
@@ -21,23 +27,21 @@ export default class Alert extends React.Component  {
     }
 
     static propTypes = {
-        /**
-         * Alert type. May be one of primary, secondary, success, danger, warning, info, light or dark.
-         */
-        alert       : PropTypes.string,
-        dismissable : PropTypes.any,
-        role        : PropTypes.any,
-        /**
-         * Default tag
-         */
-        tag         : PropTypes.string
+        /** Alert type. */
+        color : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']),
+        /** Dismissable appearance */
+        dismiss : PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
+        /** Role */
+        role : PropTypes.any,
+        /** Default tag */
+        tag : PropTypes.string
     };
 
     static defaultProps = {
-        alert       : 'info',
-        role        : 'alert',
-        tag         : 'div',
-        dismissable : false
+        color : 'info',
+        role : 'alert',
+        tag : 'div',
+        dismiss : false
     };
 
     onDismiss() {
@@ -53,38 +57,21 @@ export default class Alert extends React.Component  {
         if (this.state.dismissed)
             return null;
 
-        var {dismiss, dismissable, tag, color, alert, role, children, className, ...props} = this.props;
-
-
-        if (color) {
-            console.warn(`Use property alert istead of color in Alert.`);
-            alert = color;
-        }
-
-        if (isFunction(dismiss)) {
-            dismissable = true;
-        }
-
-        else if (dismiss) {
-            console.warn(`Use property dismissable istead of dismiss in Alert.`);
-            dismissible = dismiss;
-
-        }
+        var {dismiss, tag, color, role, children, className, ...props} = this.props;
 
         className = classNames(className, {'alert': true});
-        className = classNames(className, dismissable ? `alert-dismissible`: undefined);
-        className = classNames(className, alert ? `alert-${alert}` : undefined);
+        className = classNames(className, dismiss ? `alert-dismissible`: undefined);
+        className = classNames(className, alert ? `alert-${color}` : undefined);
         
         var dismissButton = null;
 
-        if (dismissable) {
+        if (dismiss) {
             dismissButton = (
                 <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={this.onDismiss}>
                     <span aria-hidden="true">&times;</span>
                 </button>
             );
         }
-
 
         return (
             <Tag tag={tag} className={className} role={role} {...props}>
