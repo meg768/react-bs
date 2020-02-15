@@ -31,7 +31,6 @@ Tag.defaultProps = {
     bg: undefined,
     border: undefined,
     className: undefined,
-    d: undefined,
     display: undefined,
     fixed: undefined,
     flex: undefined,
@@ -39,23 +38,9 @@ Tag.defaultProps = {
     fontWeight: undefined,
     invisible: undefined,
     justifyContent: undefined,
-    m: undefined,
     margin: undefined,
-    mb: undefined,
-    ml: undefined,
-    mr: undefined,
-    mt: undefined,
-    mx: undefined,
-    my: undefined,
-    p: undefined,
     padding: undefined,
-    pb: undefined,
-    pl: undefined,
     position: undefined,
-    pr: undefined,
-    pt: undefined,
-    px: undefined,
-    py: undefined,
     rounded: undefined,
     shadow: undefined,
     text: undefined,
@@ -64,7 +49,7 @@ Tag.defaultProps = {
 };
 
 Tag.propTypes = {
-
+    /** Default tag */
     tag: PropTypes.any,
 
     /** Vertical alignment*/
@@ -72,38 +57,24 @@ Tag.propTypes = {
     /** Aligning content */
     alignContent: PropTypes.oneOf(['start', 'end', 'center', 'around', 'stretch']),
     alignItems: PropTypes.any,
-    bg: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white']),
-    /** https://getbootstrap.com/docs/4.4/utilities/borders */
-    border: PropTypes.any,
-    className: PropTypes.any,
-    d: PropTypes.oneOf(['none', 'inline', 'inline-block', 'block', 'table', 'table-cell', 'table-row', 'flex', 'inline-flex']),
+    /** Background color */
+    bg: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white', 'muted']),
+    border: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white', 'muted']),
+    className: PropTypes.string,
     display: PropTypes.oneOf(['none', 'inline', 'inline-block', 'block', 'table', 'table-cell', 'table-row', 'flex', 'inline-flex']),
     fixed: PropTypes.any,
     /** Flex display, use display="flex" */
     flex: PropTypes.oneOf([PropTypes.object, 'nowrap', 'wrap', 'wrap-reverse', 'sm-nowrap', 'sm-wrap', 'sm-wrap-reverse', 'md-nowrap', 'md-wrap', 'md-wrap-reverse', 'lg-nowrap', 'lg-wrap', 'lg-wrap-reverse', 'xl-nowrap', 'xl-wrap', 'xl-wrap-reverse']),
-    float: PropTypes.any, 
+    float: PropTypes.string, 
     fontWeight: PropTypes.any,
     invisible: PropTypes.any,
     justifyContent: PropTypes.any,
-    m: PropTypes.any,
-    margin: PropTypes.any,
-    mb: PropTypes.any,
-    ml: PropTypes.any,
-    mr: PropTypes.any,
-    mt: PropTypes.any,
-    mx: PropTypes.any,
-    my: PropTypes.any,
-    p: PropTypes.any,
-    padding: PropTypes.any,
-    pb: PropTypes.any,
-    pl: PropTypes.any,
-    position: PropTypes.any,
-    pr: PropTypes.any,
-    pt: PropTypes.any,
-    px: PropTypes.any,
-    py: PropTypes.any,
-    rounded: PropTypes.any,
-    shadow: PropTypes.any,
+    margin: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.number]),
+    padding: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.string]),
+    position: PropTypes.oneOf(['static', 'relative', 'absolute', 'fixed']),
+    /** Rounded border */
+    rounded: PropTypes.oneOf([true, false, 'sm', 'lg', 'top', 'right', 'bottom', 'left', 'circle', 'pill', '0']),
+    shadow: PropTypes.oneOf([true, false, 'none', 'sm', 'lg']),
     text: PropTypes.any,
     visible: PropTypes.any    
     

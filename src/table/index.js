@@ -58,11 +58,11 @@ export default class Table extends React.Component  {
 
 Table.Row = (props) => {
 
-    var {className, bg, color, ...other} = props;
+    var {className, bg, color, ...props} = props;
 
     className = classNames(className, {[`table-${color}`]:color});
 
-    return <Tag tag='tr' style={{textAlign:'left'}} className={className} {...other}/>
+    return <Tag tag='tr' className={className} {...props}/>
 }
 
 Table.Col = function(props)  {
@@ -74,12 +74,12 @@ Table.Col = function(props)  {
 }
 
 Table.Header = function(props)  {
-    var {className, light, dark, ...other} = props;
+    var {className, light, dark, ...props} = props;
 
     className = classNames(className, {'thead-dark': dark});
     className = classNames(className, {'thead-light': light});
 
-    return <Tag tag='thead' className={className} {...other}/>
+    return <Tag tag='thead' className={className} {...props}/>
 }
 
 Table.Body = function(props)  {

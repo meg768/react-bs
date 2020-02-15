@@ -4,26 +4,23 @@ series of Bootstrap class names.
 
 This includes
 
-* Borders - https://getbootstrap.com/docs/4.4/utilities/borders
-* Colors - https://getbootstrap.com/docs/4.4/utilities/colors
-* Display - https://getbootstrap.com/docs/4.4/utilities/display
-* Flex - https://getbootstrap.com/docs/4.4/utilities/flex
-* Float - https://getbootstrap.com/docs/4.4/utilities/float
-* Shadows - https://getbootstrap.com/docs/4.4/utilities/shadows
-* Spacing - https://getbootstrap.com/docs/4.4/utilities/spacing
-* Text alignment - https://getbootstrap.com/docs/4.4/utilities/text
-* Vertical alignment - https://getbootstrap.com/docs/4.4/utilities/vertical-align
-* Visibility - https://getbootstrap.com/docs/4.4/utilities/visibility
+* Borders
+* Colors
+* Display
+* Flex
+* Float
+* Shadows
+* Spacing
+* Text alignment
+* Vertical alignment
+* Visibility
 
-Every class (well almost) in this library is based upon this tag. So, when using a **Table**, **Propover** or a **Container**
-you may also use the **Tag** properies.
+See https://getbootstrap.com/docs/4.4/utilities for more information
 
-### Supported properties
+Every class (well almost) in this library is based upon this tag. So, when using a **Table**, **Propover** or a **Container** you may also use the **Tag** properies.
 
 The **Tag** has a number of properties that map to Bootstrap class names.
 For instance all the **.text-left**, **.text-right**, **.text-center** may be written as **text={value}** as tag properties.
-
-#### Example
 
 The following code
 
@@ -69,26 +66,35 @@ This generates the following.
 ```
 
 
-The following properties are supported.
+### Vertical alignment
 
-* [align](https://getbootstrap.com/docs/4.4/utilities/vertical-align)
-* [alignItems](https://getbootstrap.com/docs/4.4/utilities/flex/#align-items)
-* [bg](https://getbootstrap.com/docs/4.4/utilities/colors/#background-color)
-* [border](https://getbootstrap.com/docs/4.4/utilities/borders)
-* [display](https://getbootstrap.com/docs/4.4/utilities/display) 
-* [fixed](https://getbootstrap.com/docs/4.4/utilities/position)
-* [float](https://getbootstrap.com/docs/4.4/utilities/float)
-* [fontWeight](https://getbootstrap.com/docs/4.4/utilities/text/#font-weight-and-italics)
-* [invisible](https://getbootstrap.com/docs/4.4/utilities/visibility)
-* [justifyContent](https://getbootstrap.com/docs/4.4/utilities/flex/#justify-content)
-* [margin](https://getbootstrap.com/docs/4.4/utilities/spacing) 
-* [padding](https://getbootstrap.com/docs/4.4/utilities/spacing)
-* [position](https://getbootstrap.com/docs/4.4/utilities/position)
-* [rounded](https://getbootstrap.com/docs/4.4/utilities/borders/#border-radius)
-* [shadow](https://getbootstrap.com/docs/4.4/utilities/shadows)
-* tag
-* [text](https://getbootstrap.com/docs/4.4/utilities/text) 
-* [visible](https://getbootstrap.com/docs/4.4/utilities/visibility)
+Easily change the vertical alignment of inline, inline-block, inline-table, and table cell elements.
+
+Change the alignment of elements with the vertical-alignment utilities. Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.
+
+Choose from **baseline**, **top**, **middle**, **bottom**, **text-bottom**, and **text-top** as needed.
+
+```js
+import {Container, Table, Row, Col} from 'react-bootify';
+
+<Container>
+    <Table style={{height:'6em'}}>
+        <Table.Body>
+            <Table.Row>
+                <Table.Col align='baseline'>baseline</Table.Col>
+                <Table.Col align='top'>top</Table.Col>
+                <Table.Col align='middle'>middle</Table.Col>
+                <Table.Col align='bottom'>bottom</Table.Col>
+                <Table.Col align='text-top'>text-top</Table.Col>
+                <Table.Col align='text-bottom'>text-bottom</Table.Col>
+            </Table.Row>
+        </Table.Body>
+    </Table>
+
+</Container>
+
+```
+
 
 ### Aligning items at top right
 
@@ -205,7 +211,7 @@ Here is an example of different border styles, padding, margin and colors.
     Small shadow
 </Tag>
 
-<Tag shadow="md" rounded="md" border='muted' margin={2} padding={{left:4, right:4, y:2}}>
+<Tag shadow rounded border='muted' margin={2} padding={{left:4, right:4, y:2}}>
     Default shadow
 </Tag>
 
