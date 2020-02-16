@@ -1,4 +1,8 @@
-import {React, PropTypes, isObject, isNumber, isString, classNames} from '../utils';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
+import {isObject, isNumber, isString} from '../utils';
 import Tag from '../tag';
 
 export default function Row(props) {

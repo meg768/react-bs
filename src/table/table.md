@@ -7,30 +7,32 @@ import Table from 'react-bootify/components/table';
 ```
 
 ```js
+
+
 <Table>
   <Table.Header>
     <Table.Row>
-      <Table.Col header scope="col">#</Table.Col>
-      <Table.Col header scope="col">First</Table.Col>
-      <Table.Col header scope="col">Last</Table.Col>
-      <Table.Col header scope="col">Handle</Table.Col>
+      <Table.Col header>#</Table.Col>
+      <Table.Col header >First</Table.Col>
+      <Table.Col header >Last</Table.Col>
+      <Table.Col header >Handle</Table.Col>
     </Table.Row>
   </Table.Header>
   <Table.Body>
     <Table.Row>
-      <Table.Col header scope="row">1</Table.Col>
+      <Table.Col header>1</Table.Col>
       <Table.Col>Mark</Table.Col>
       <Table.Col>Otto</Table.Col>
       <Table.Col>@mdo</Table.Col>
     </Table.Row>
     <Table.Row>
-      <Table.Col header scope="row">2</Table.Col>
+      <Table.Col header>2</Table.Col>
       <Table.Col>Jacob</Table.Col>
       <Table.Col>Thornton</Table.Col>
       <Table.Col>@fat</Table.Col>
     </Table.Row>
     <Table.Row>
-      <Table.Col header scope="row">3</Table.Col>
+      <Table.Col header>3</Table.Col>
       <Table.Col>Larry</Table.Col>
       <Table.Col>the Bird</Table.Col>
       <Table.Col>@twitter</Table.Col>

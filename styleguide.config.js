@@ -50,7 +50,13 @@ module.exports = {
 
         './src/row/index.js',
         './src/spinner/index.js',
-        './src/table/index.js',
+
+        './src/table/table.js',
+        './src/table/body.js',
+        './src/table/col.js',
+        './src/table/header.js',
+        './src/table/row.js',
+        
         './src/tag/index.js',
         './src/toast/index.js',
         './src/utils/index.js'
