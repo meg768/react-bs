@@ -4,7 +4,7 @@ var fs = require('fs');
 
 module.exports = {
 
-    // usageMode: 'expand',
+    usageMode: 'expand',
 
     skipComponentsWithoutExample: false,
 
