@@ -37,8 +37,17 @@ module.exports = {
         './src/jumbotron/index.js',
         './src/list-group/index.js',
         './src/modal/index.js',
-        './src/nav/index.js',
-        './src/navbar/index.js',
+
+        './src/nav/nav.js',
+        './src/nav/item.js',
+        './src/nav/link.js',
+
+        './src/navbar/navbar.js',
+        './src/navbar/brand.js',
+        './src/navbar/collapse.js',
+        './src/navbar/nav.js',
+        './src/navbar/toggler.js',
+
         './src/pill/index.js',
         './src/popover/index.js',
         './src/popper/index.js',
@@ -58,7 +67,13 @@ module.exports = {
         './src/table/row.js',
         
         './src/tag/index.js',
-        './src/toast/index.js',
+
+        './src/toast/toast.js',
+        './src/toast/body.js',
+        './src/toast/header.js',
+        './src/toast/subtitle.js',
+        './src/toast/title.js',
+        
         './src/utils/index.js'
     ],
 
