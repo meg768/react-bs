@@ -1,4 +1,8 @@
-import {React, PropTypes, classNames, isNumber, isString} from '../utils';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
+import {isNumber, isString} from '../utils';
 import Tag from '../tag';
 
 export default function Spinner(props)  {

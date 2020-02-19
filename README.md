@@ -75,7 +75,6 @@ Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswa
 - 2020-01-17 - Padding and margin values **horizontal** and **vertical** have been changed to **x** and **y** to better reflect Bootstrap notation.
 - 2020-01-17 - Fixed documentation error as of how you may import individual component to minimize size. 
 - 2020-01-17 - Now using Bootstrap 4.4.1. 
-- 2020-01-25 - Removed some obsolete properties in **Tag**. 
 - 2020-01-25 - **Tag** does no longer modify the style of an element. 
 - 2020-01-28 - Added **Icon** to display bootstrap-icons. Experimental. Removed **Glyph** since it had no purpose.
 - 2020-01-30 - Updated sample with the current icon set from [Bootstrap Icons](https://icons.getbootstrap.com)
@@ -85,6 +84,6 @@ Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswa
 - 2020-02-03 - **Grid** removed since it does not comply with Bootstrap naming convensions. Use **Container**.
 - 2020-02-04 - Updated documentation so latest version of [Styleguidist](https://www.npmjs.com/package/react-styleguidist) could be used.
 - 2020-02-05 - Added **Progress** component.
-- 2020-02-06 - Added parsing for more Boostrap utility class names such as **m, mr, mb, mt, ml, p, pr, pl, pt, pt** etc...
+- 2020-02-06 - Added parsing for more Boostrap utility class names such as **m, mr, mb, mt, ml, p, pr, pl, pt, pt**. Not documented. Intended for advanced users.
 - 2020-02-19 - Updated documentation.
 

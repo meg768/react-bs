@@ -1,5 +1,6 @@
-import {React, PropTypes, classNames} from '../utils';
-import Tag from '../tag';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';import Tag from '../tag';
 
 export default function Badge(props)  {
     var {color, pill, className, ...props} = props;

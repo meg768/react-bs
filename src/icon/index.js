@@ -1,4 +1,7 @@
-import {React, PropTypes, isObject, isString, isFunction} from '../utils';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import {isString, isFunction} from '../utils';
 import Tag from '../tag';
 
 export default function Icon(props) {

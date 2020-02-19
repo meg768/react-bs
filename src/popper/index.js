@@ -1,4 +1,7 @@
-import {React, PropTypes, PopperJS} from '../utils';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import PopperJS from 'popper.js';
 
 function debug() {
     console.log.apply(null, arguments);

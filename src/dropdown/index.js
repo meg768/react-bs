@@ -1,4 +1,8 @@
-import {React, ReactDOM, PropTypes, classNames, PopperJS} from '../utils';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import ReactDOM from 'react-dom';
+import PopperJS from 'popper.js';
 import Fade from '../fade';
 import Tag from '../tag';
 

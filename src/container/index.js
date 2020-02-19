@@ -1,4 +1,6 @@
-import {React, PropTypes, isObject, isNumber, isString, classNames} from '../utils';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Tag from '../tag';
 import Row from '../row';
 import Col from '../col';

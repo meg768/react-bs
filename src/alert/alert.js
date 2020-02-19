@@ -5,15 +5,14 @@ import classNames from 'classnames';
 import {isFunction} from '../utils';
 import Tag from '../tag';
 
-import AlertBody from './alert-body';
-import AlertSeparator from './alert-separator';
-import AlertHeader from './alert-header';
+import Body from './body';
+import Separator from './separator';
+import Header from './header';
 
 /**
  * 
  * Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
  * 
- * See https://getbootstrap.com/docs/4.4/components/alerts for more information
  */
 export default class Alert extends React.Component  {
 
@@ -27,10 +26,10 @@ export default class Alert extends React.Component  {
     }
 
     static propTypes = {
-        /** Alert type. */
-        color : PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']),
-        /** Dismissable appearance */
-        dismiss : PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
+        /** [Color of alert](https://getbootstrap.com/docs/4.4/components/alerts/#examples) */
+        color : PropTypes.any,
+        /** [Dismissable appearance](https://getbootstrap.com/docs/4.4/components/alerts/#dismissing)*/
+        dismiss : PropTypes.any,
         /** Role */
         role : PropTypes.any,
         /** Default tag */
@@ -84,6 +83,6 @@ export default class Alert extends React.Component  {
     }
 };
 
-Alert.Header = AlertHeader;
-Alert.Separator = AlertSeparator;
-Alert.Body = AlertBody;
+Alert.Header = Header;
+Alert.Separator = Separator;
+Alert.Body = Body;
