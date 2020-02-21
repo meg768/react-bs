@@ -85,5 +85,5 @@ Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswa
 - 2020-02-04 - Updated documentation so latest version of [Styleguidist](https://www.npmjs.com/package/react-styleguidist) could be used.
 - 2020-02-05 - Added **Progress** component.
 - 2020-02-06 - Added parsing for more Boostrap utility class names such as **m, mr, mb, mt, ml, p, pr, pl, pt, pt**. Not documented. Intended for advanced users.
-- 2020-02-19 - Updated documentation.
+- 2020-02-21 - Updated documentation.
 
