@@ -37,7 +37,7 @@ export default class Modal extends React.Component {
 
         if (isOpen != undefined) {
             show = isOpen;
-            console.error('Property isOpen is obsolete. Use show instead.');
+            console.warn('Property Modal.isOpen is obsolete. Use Modal.show instead.');
         }
 
         className = classNames(className, {'modal': true});

@@ -1,55 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
-import {isObject, isNumber, isString, isBoolean, isArray, transformProps} from '../utils';
+import {transformProps} from '../utils';
 
-export default class Tag extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+const Tag = React.forwardRef((props, ref) => {
+    var {tag : Component, ...props} = transformProps(props);
 
-    render() {
-        var {tag : TheTag, children, ...props} = transformProps(this.props);
+    return (
+        <Component ref={ref} {...props}/>
+    );            
 
-        return (
-            <TheTag {...props}>
-                {children}
-            </TheTag>
-        );            
-    }
-
-}
+});
 
 Tag.defaultProps = {
-    tag: 'div',
-
-    align: undefined,
-    alignContent: undefined,
-    alignItems: undefined,
-    bg: undefined,
-    border: undefined,
-    className: undefined,
-    display: undefined,
-    fixed: undefined,
-    flex: undefined,
-    float: undefined, 
-    fontWeight: undefined,
-    invisible: undefined,
-    justifyContent: undefined,
-    margin: undefined,
-    padding: undefined,
-    position: undefined,
-    rounded: undefined,
-    shadow: undefined,
-    text: undefined,
-    visible: undefined    
-
+    tag: 'div' 
 };
 
 Tag.propTypes = {
-    /** Default tag */
+    /** 
+     * 
+     * Default tag
+     * 
+     * */ 
+
     tag: PropTypes.any,
 
     /** [Vertical alignment](https://getbootstrap.com/docs/4.4/utilities/vertical-align) */
@@ -89,3 +63,6 @@ Tag.propTypes = {
     
 };
 
+
+
+export default Tag;

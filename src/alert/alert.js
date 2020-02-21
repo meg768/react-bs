@@ -14,75 +14,65 @@ import Header from './header';
  * Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
  * 
  */
-export default class Alert extends React.Component  {
 
-    constructor(props) {
-        super(props);
+const Alert = React.forwardRef((props, ref) => {
 
-        this.state = {};
-        this.state.dismissed = false;
+    var {dismissable, show, dismiss, tag, color, role, children, className, ...props} = props;
 
-        this.onDismiss = this.onDismiss.bind(this);
-    }
+    if (!show)
+        return undefined;
 
-    static propTypes = {
-        /** [Color of alert](https://getbootstrap.com/docs/4.4/components/alerts/#examples) */
-        color : PropTypes.any,
-        /** [Dismissable appearance](https://getbootstrap.com/docs/4.4/components/alerts/#dismissing)*/
-        dismiss : PropTypes.any,
-        /** Role */
-        role : PropTypes.any,
-        /** Default tag */
-        tag : PropTypes.string
-    };
-
-    static defaultProps = {
-        color : 'info',
-        role : 'alert',
-        tag : 'div',
-        dismiss : false
-    };
-
-    onDismiss() {
-
-        if (isFunction(this.props.dismiss))
-            this.props.dismiss();
-        else
-            this.setState({dismissed:true});
-
-    }
-
-    render() {
-        if (this.state.dismissed)
-            return null;
-
-        var {dismiss, tag, color, role, children, className, ...props} = this.props;
-
-        className = classNames(className, {'alert': true});
-        className = classNames(className, dismiss ? `alert-dismissible`: undefined);
-        className = classNames(className, alert ? `alert-${color}` : undefined);
+    className = classNames(className, {'alert': true});
+    className = classNames(className, dismissable ? `alert-dismissible`: undefined);
+    className = classNames(className, color ? `alert-${color}` : undefined);
+    
+    var dismissButton = null;
         
-        var dismissButton = null;
+    if (dismiss) {
+        if (!isFunction(dismiss))
+            dismiss = () => {};
 
-        if (dismiss) {
-            dismissButton = (
-                <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={this.onDismiss}>
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            );
-        }
-
-        return (
-            <Tag tag={tag} className={className} role={role} {...props}>
-                {dismissButton}
-                {children}
-            </Tag>
-
+        dismissButton = (
+            <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={dismiss}>
+                <span aria-hidden="true">&times;</span>
+            </button>
         );
-
     }
+
+    return (
+        <Tag ref={ref} tag={tag} className={className} role={role} {...props}>
+            {dismissButton}
+            {children}
+        </Tag>
+
+    );
+
+});
+
+Alert.propTypes = {
+    /** [Color of alert](https://getbootstrap.com/docs/4.4/components/alerts/#examples) */
+    color : PropTypes.any,
+    /** [Dismissable appearance](https://getbootstrap.com/docs/4.4/components/alerts/#dismissing) */
+    dismiss : PropTypes.func,
+    /** Visible state */
+    show : PropTypes.bool,
+    /** Role */
+    role : PropTypes.any,
+    /** Default tag */
+    tag : PropTypes.string
 };
+
+Alert.defaultProps = {
+    color : 'info',
+    role : 'alert',
+    tag : 'div',
+    show: true,
+    dismissable : false
+};
+
 
 Alert.Header = Header;
 Alert.Separator = Separator;
 Alert.Body = Body;
+
+export default Alert;

@@ -48,7 +48,6 @@ Spinner.propTypes = {
 Spinner.defaultProps = {
     type     : 'border',
     role     : 'status',
-    children : 'Loading...',
-    size     : undefined
+    children : 'Loading...'
 }
 

@@ -5,7 +5,27 @@ import Tag from '../tag';
 import Row from '../row';
 import Col from '../col';
 
-export default function Container(props) {
+/**
+ * 
+ * Container
+ */
+const Container = React.forwardRef((props, ref) => {
+    var {className, fluid, sm, md, lg, xl, ...props} = props;
+
+    className = classNames(className, {'container' : true});
+    className = classNames(className, {'container-fluid' : fluid});
+    className = classNames(className, {'container-sm' : sm});
+    className = classNames(className, {'container-md' : md});
+    className = classNames(className, {'container-lg' : lg});
+    className = classNames(className, {'container-xl' : xl});
+
+    return (
+        <Tag className={className} {...props}/>
+    );
+
+});
+
+function dfgContainer(props) {
 
     var {className, fluid, sm, md, lg, xl, ...props} = props;
 
@@ -33,3 +53,5 @@ Container.defaultProps = {
 
 Container.Col = Col;
 Container.Row = Row; 
+
+export default Container;

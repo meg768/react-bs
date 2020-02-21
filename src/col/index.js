@@ -6,7 +6,7 @@ import Tag from '../tag';
 
 export default function Col(props) {
 
-    var {className, col, width, offset, ...props} = props;
+    var {className, col, width, span, offset, ...props} = props;
 
     // Backward compatability
     var {xs, sm, md, lg, xl, ...props} = props;
@@ -28,8 +28,11 @@ export default function Col(props) {
     fix('md', md);
     fix('lg', lg);
     fix('xl', xl);
-    
-    if (width && !col)
+
+    if (!col && span)
+        col = span;
+
+    if (!col && width)
         col = width;
 
     className = classNames(className, 'col');
@@ -67,19 +70,14 @@ Col.defaultProps = {
 Col.propTypes = {
 
     /**
-     * Same as **width**. See below.
-     */
-    col: PropTypes.any,
-
-    /**
      * Specifies column offset. May be an integer or an object specifying **{xs:12, sm:8, md:6, lg:5, xl:3}**
      */
     offset: PropTypes.any,
 
     /**
-     * Specifies width of column. May be an integer or an object specifying **{xs:12, sm:8, md:6, lg:5, xl:3}**
+     * Specifies column span (width). May be an integer or an object specifying **{xs:12, sm:8, md:6, lg:5, xl:3}**
      */
-    width  : PropTypes.any
+    span : PropTypes.any
 };
 
 
