@@ -3,6 +3,26 @@ import PropTypes from 'prop-types';
 
 import {transformProps} from '../utils';
 
+/** 
+ * 
+ * The **Tag** is a central part of this library and acts like a base class for transforming properties into a valid
+ * series of Bootstrap class names.
+ *
+ * This includes
+ *
+ * * Borders
+ * * Colors
+ * * Display
+ * * Flex
+ * * Float
+ * * Shadows
+ * * Spacing
+ * * Text alignment
+ * * Vertical alignment
+ * * Visibility
+ * 
+ * 
+ */
 
 const Tag = React.forwardRef((props, ref) => {
     var {tag : Component, ...props} = transformProps(props);

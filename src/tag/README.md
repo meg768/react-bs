@@ -1,20 +1,4 @@
 
-The **Tag** is a central part of this library and acts like a base class for transforming properties into a valid
-series of Bootstrap class names.
-
-This includes
-
-* Borders
-* Colors
-* Display
-* Flex
-* Float
-* Shadows
-* Spacing
-* Text alignment
-* Vertical alignment
-* Visibility
-
 See https://getbootstrap.com/docs/4.4/utilities for more information
 
 Every class (well almost) in this library is based upon this tag. So, when using a **Table**, **Propover** or a **Container** you may also use the **Tag** properies.

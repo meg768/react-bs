@@ -3,8 +3,15 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Badge from '../badge';
 
-export default function Pill(props)  {
-    var {className, ...props} = props;
-    return Badge({className:classNames(className, 'badge-pill'), ...props});
-};
+/**
+ * 
+ * A Pill is simply a __Badge__ with the __pill__ property set to true.
+ * 
+ */
+var Pill = React.forwardRef((props, ref) => {
+    return (
+        <Badge ref={ref} {...props} pill={true}/>
+    );
+});
 
+export default Pill;

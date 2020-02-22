@@ -71,20 +71,56 @@ var Col = React.forwardRef((props, ref) => {
     );
 });
 
+
+
 Col.defaultProps = {
 };
 
 Col.propTypes = {
+    /**
+     * Specifies column offset. May be an integer or an object specifying offsets for different displays.
+     * 
+     * Specify offset for all devices with the following.
+     * 
+     * ``` 
+     * <Col offset={6}>
+     * ...
+     * </Col>
+     * ```
+     * 
+     * Specify offset for specific devices.
+     * 
+     * ``` 
+     * <Col offset={{xs:12, sm:8, md:6, lg:5, xl:3}}>
+     * ...
+     * </Col>
+     * ```
+     * 
+     */
+    offset: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
 
     /**
-     * Specifies column offset. May be an integer or an object specifying **{xs:12, sm:8, md:6, lg:5, xl:3}**
+     * 
+     * Specifies column span (or width) of a column. May be an integer or an object specifying offsets for different displays.
+     * 
+     * Specify span for all devices with the following.
+     * 
+     * ``` 
+     * <Col span={6}>
+     * ...
+     * </Col>
+     * ```
+     * 
+     * Specify span for specific devices.
+     * 
+     * ``` 
+     * <Col span={{xs:12, sm:8, md:6, lg:5, xl:3}}>
+     * ...
+     * </Col>
+     * ```
+     * 
      */
-    offset: PropTypes.any,
-
-    /**
-     * Specifies column span (width). May be an integer or an object specifying **{xs:12, sm:8, md:6, lg:5, xl:3}**
-     */
-    span : PropTypes.any
+    span: PropTypes.oneOfType([PropTypes.object, PropTypes.number])
 };
 
 
