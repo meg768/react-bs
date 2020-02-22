@@ -12,8 +12,8 @@ Documentation is sparse but there are alot of examples.
 This module is still not ready for public use and may change in the future.
 If planning something commercially, please consider the following packages.
 
--- [reactstrap](https://www.npmjs.com/package/reactstrap)
--- [react-bootstrap](https://www.npmjs.com/package/react-bootstrap)
+* [reactstrap](https://www.npmjs.com/package/reactstrap)
+* [react-bootstrap](https://www.npmjs.com/package/react-bootstrap)
 
 ## Installation
 
