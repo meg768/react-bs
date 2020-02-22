@@ -4,9 +4,16 @@ import classNames from 'classnames';
 import {isObject, isNumber, isString} from '../utils';
 import Tag from '../tag';
 
-export default function Col(props) {
+/**
+ * The __Col__ component is used for creating columns in a __Row__.
+ * 
+ * See [Bootstrap documentation](https://getbootstrap.com/docs/4.4/layout/overview) for more information on layout.
+ * 
+ */
 
-    var {className, col, width, span, offset, ...props} = props;
+var Col = React.forwardRef((props, ref) => {
+
+    var {className, ref, col, width, span, offset, ...props} = props;
 
     // Backward compatability
     var {xs, sm, md, lg, xl, ...props} = props;
@@ -60,9 +67,9 @@ export default function Col(props) {
     }
 
     return (
-        <Tag className={className} {...props}/>
+        <Tag ref={ref} className={className} {...props}/>
     );
-}
+});
 
 Col.defaultProps = {
 };
@@ -81,7 +88,4 @@ Col.propTypes = {
 };
 
 
-
-
-
-
+export default Col;

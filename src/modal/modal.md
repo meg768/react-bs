@@ -1,3 +1,4 @@
+### Usage
 
 ```js static
 import {Modal} from 'react-bootify';

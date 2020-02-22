@@ -1,7 +1,7 @@
 # react-bootify
 Another minimalistic Bootstrap layer for React.
 
-The objective with this project is to use Bootstrap CSS only and not using jQuery or any other dependant.
+The objective with this project is to use Bootstrap CSS only - skipping Bootstraps JavaScript.
 
 All JavaScript classes and names are designed to correspond with Bootstrap's class names. Hopefully, anyone
 familiar with Bootstrap will feel confortable using this module and those who may not be familiar with it
@@ -10,8 +10,10 @@ may find it simpler than using Bootstrap's raw class names.
 Documentation is sparse but there are alot of examples.
 
 This module is still not ready for public use and may change in the future.
-If planning something commercially, please look into https://www.npmjs.com/package/reactstrap 
-or https://www.npmjs.com/package/react-bootstrap.
+If planning something commercially, please consider the following packages.
+
+-- [reactstrap](https://www.npmjs.com/package/reactstrap)
+-- [react-bootstrap](https://www.npmjs.com/package/react-bootstrap)
 
 ## Installation
 
@@ -85,5 +87,5 @@ Find out more at https://bootswatch.com and https://www.bootstrapcdn.com/bootswa
 - 2020-02-04 - Updated documentation so latest version of [Styleguidist](https://www.npmjs.com/package/react-styleguidist) could be used.
 - 2020-02-05 - Added **Progress** component.
 - 2020-02-06 - Added parsing for more Boostrap utility class names such as **m, mr, mb, mt, ml, p, pr, pl, pt, pt**. Not documented. Intended for advanced users.
-- 2020-02-21 - Updated documentation.
+- 2020-02-22 - Updated documentation.
 

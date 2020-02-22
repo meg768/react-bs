@@ -41,7 +41,11 @@ var components = [
     './src/list-group/list-group.js',
     './src/list-group/item.js',
 
-    './src/modal/index.js',
+    './src/modal/modal.js',
+    './src/modal/body.js',
+    './src/modal/footer.js',
+    './src/modal/header.js',
+    './src/modal/title.js',
 
     './src/nav/nav.js',
     './src/nav/item.js',

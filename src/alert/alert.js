@@ -53,7 +53,7 @@ Alert.propTypes = {
     /** [Color of alert](https://getbootstrap.com/docs/4.4/components/alerts/#examples) */
     color : PropTypes.any,
     /** [Dismissable appearance](https://getbootstrap.com/docs/4.4/components/alerts/#dismissing) */
-    dismiss : PropTypes.func,
+    dismiss : PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
     /** Visible state */
     show : PropTypes.bool,
     /** Role */

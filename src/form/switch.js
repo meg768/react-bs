@@ -29,7 +29,7 @@ function Switch(props) {
 
 Switch.propTypes = {
     /** Default tag */
-    tag: PropTypes.any
+    tag: PropTypes.string
 };
 
 Switch.defaultProps = {
