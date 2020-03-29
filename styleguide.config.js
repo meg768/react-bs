@@ -36,6 +36,11 @@ var components = [
 
     './src/icon/index.js',
     './src/icons/index.js',
+
+    './src/input/input.js',
+    './src/input/range.js',
+    './src/input/switch.js',
+   
     './src/jumbotron/index.js',
 
     './src/list-group/list-group.js',

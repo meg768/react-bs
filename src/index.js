@@ -23,9 +23,10 @@ import Col from './col';
 import Pill from './pill';
 import Badge from './badge';
 import Progress from './progress';
+import Input from './input';
 
 export {
     Tag, Popper, Button, Form, ListGroup, Fade, Collapse,
     Jumbotron, Alert, Table, Container, Row, Col, Popover, Dropdown,
-    Spinner, Toast, Card, Nav, NavBar, Icon, Icons, Pill, Badge, Progress
+    Spinner, Toast, Card, Nav, NavBar, Icon, Icons, Pill, Badge, Progress, Input
 };
