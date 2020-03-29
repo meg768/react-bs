@@ -54,7 +54,7 @@ function isFloat(n) {
 
 function transformProps(props) {
 
-    var {bootify, className, sticky, order, text, bg, flex, fontWeight, shadow, fixed, position, justifyContent, visible, invisible, alignItems, alignContent, float, align, rounded, margin, border, padding, ...props} = props;
+    var {raw, className, sticky, order, text, bg, flex, fontWeight, shadow, fixed, position, justifyContent, visible, invisible, alignItems, alignContent, float, align, rounded, margin, border, padding, ...props} = props;
 
     // Display
     var {d, display, ...props} = props;
@@ -198,7 +198,7 @@ function transformProps(props) {
     addClasses('visible', visible);
     addClasses('order', order);
 
-    return {className:classNames(className, bootify), ...props};
+    return {className:classNames(className, raw), ...props};
     
 }
 

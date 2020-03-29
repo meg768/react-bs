@@ -52,13 +52,22 @@ Tag.propTypes = {
     alignContent: PropTypes.any,
     /** [Align items](https://getbootstrap.com/docs/4.4/utilities/flex/#align-items) */
     alignItems: PropTypes.any,
-    /** [Background color](https://getbootstrap.com/docs/4.4/utilities/colors/#background-color) */
-    bg: PropTypes.any,
-    /** [Border](https://getbootstrap.com/docs/4.4/utilities/borders/#border-color) */
-    border: PropTypes.any,
+    /**
+     * [Background color](https://getbootstrap.com/docs/4.4/utilities/colors/#background-color) 
+     * One of primary, secondary, success, danger, warning, info, light, dark.
+     * */
+    bg: PropTypes.string,
+    /**
+     * 
+     * 
+     * [Border](https://getbootstrap.com/docs/4.4/utilities/borders/#border-color). 
+     * One of primary, secondary, success, danger, warning, info, light, dark.
+     * 
+     * */
+    border: PropTypes.string,
     className: PropTypes.string,
     /** [Display](https://getbootstrap.com/docs/4.4/utilities/display) */
-    display: PropTypes.any,
+    display: PropTypes.string,
     fixed: PropTypes.any,
     /** Flex display, use display="flex" */
     flex: PropTypes.oneOf([PropTypes.object, 'nowrap', 'wrap', 'wrap-reverse', 'sm-nowrap', 'sm-wrap', 'sm-wrap-reverse', 'md-nowrap', 'md-wrap', 'md-wrap-reverse', 'lg-nowrap', 'lg-wrap', 'lg-wrap-reverse', 'xl-nowrap', 'xl-wrap', 'xl-wrap-reverse']),
@@ -72,14 +81,17 @@ Tag.propTypes = {
     margin: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.number]),
     padding: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.string]),
     position: PropTypes.oneOf(['static', 'relative', 'absolute', 'fixed']),
-    /** Rounded border */
-    rounded: PropTypes.oneOf([true, false, 'sm', 'lg', 'top', 'right', 'bottom', 'left', 'circle', 'pill', '0']),
+    /** Rounded border - sm, lg, top, right, bottom, left, circle, pill, 0 */
+    rounded: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
     /** [Shadows](https://getbootstrap.com/docs/4.4/utilities/shadows) */
     shadow: PropTypes.any,
     /**  Generates Bootstraps [text](https://getbootstrap.com/docs/4.4/utilities/text) class names. */
     text: PropTypes.any,
     /** [Visibility](https://getbootstrap.com/docs/4.4/utilities/visibility) */
-    visible: PropTypes.any    
+    visible: PropTypes.any    ,
+
+    /** Raw Bootstrap class names to be appended */
+    raw: PropTypes.string
     
 };
 
