@@ -6,11 +6,12 @@ import Tag from '../tag';
 import Group from './group';
 import Row from './row';
 import Col from './col';
-import Input from './input';
-import Checkbox from './checkbox';
-import Switch from './switch';
 import Label from './label';
-import Radio from './radio';
+
+import Checkbox from '../input/checkbox';
+import Input from '../input/input';
+import Switch from '../input/switch';
+import Radio from '../input/radio';
 
 
 function Form(props)  {
@@ -31,14 +32,15 @@ Form.defaultProps = {
     inline: false
 }
 
-Form.Switch = Switch;
-Form.Checkbox = Checkbox;
-Form.Radio = Radio;
 Form.Label = Label;
-Form.Input = Input;
 Form.Col = Col;
 Form.Row = Row;
 Form.Group = Group;
+
+Form.Input = Input;
+Form.Switch = Switch;
+Form.Checkbox = Checkbox;
+Form.Radio = Radio;
 
 
 export default Form;

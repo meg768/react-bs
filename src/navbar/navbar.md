@@ -164,7 +164,7 @@ class Sample extends React.Component  {
 
 ```js
 
-import {Tag, Nav, NavBar, Form} from 'react-bootify';
+import {Tag, Nav, NavBar, Form, Input} from 'react-bootify';
 
 class Sample extends React.Component  {
 	constructor(props) {
@@ -214,7 +214,7 @@ class Sample extends React.Component  {
                     <NavBar.Nav>
                         <Nav.Item>
                             <Form>
-                                <Form.Switch>Debug mode</Form.Switch>
+                                <Input.Switch>Debug mode</Input.Switch>
                             </Form>
                         </Nav.Item>
                     </NavBar.Nav>

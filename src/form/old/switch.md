@@ -2,7 +2,7 @@
 
 ```js
 
-import {Form, Tag} from 'react-bootify';
+import {Form, Input, Tag} from 'react-bootify';
 
 class Sample extends React.Component {
 
@@ -23,14 +23,14 @@ class Sample extends React.Component {
             <Form>
                 <Form.Row padding={2}>
                     <Form.Col>
-                        <Form.Switch checked={this.state.checked} onChange={this.toggle.bind(this)}>
+                        <Input.Switch checked={this.state.checked} onChange={this.toggle.bind(this)}>
                             Enabled switch
-                        </Form.Switch>
+                        </Input.Switch>
                     </Form.Col>
                     <Form.Col>
-                        <Form.Switch disabled>
+                        <Input.Switch disabled>
                             Disabled switch
-                        </Form.Switch>
+                        </Input.Switch>
                     </Form.Col>
                 </Form.Row>
             </Form>

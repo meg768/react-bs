@@ -25,21 +25,20 @@ var components = [
     './src/dropdown/index.js',
     './src/fade/index.js',
 
-    './src/form/form.js',
-    './src/form/checkbox.js',
+    './src/form/index.js',
+    './src/form/group.js',
     './src/form/col.js',
-    './src/form/input.js',
     './src/form/label.js',
-    './src/form/radio.js',
     './src/form/row.js',
-    './src/form/switch.js',
 
     './src/icon/index.js',
     './src/icons/index.js',
 
-    './src/input/input.js',
-    './src/input/range.js',
+    './src/input/index.js',
+    './src/input/checkbox.js',
     './src/input/switch.js',
+    './src/input/radio.js',
+    './src/input/range.js',
    
     './src/jumbotron/index.js',
 

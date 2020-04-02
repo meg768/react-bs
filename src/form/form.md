@@ -11,14 +11,14 @@ import Form from 'react-bootify/components/form';
 
 ```js
 
-import {Tag} from 'react-bootify';
+import {Tag, Form, Input} from 'react-bootify';
 
 <Form inline>
     <Form.Group>
         <Form.Label>
             Password
         </Form.Label>
-        <Form.Input type="password" margin={{left:3, right:3}}/>
+        <Input type="password" margin={{left:3, right:3}}/>
         <Tag tag='small' text='muted' id="passwordHelpInline">
             Must be 8-20 characters long.
         </Tag>
@@ -30,6 +30,7 @@ import {Tag} from 'react-bootify';
 
 ```js
 
+import {Tag, Form, Input} from 'react-bootify';
 
 <Form >
     <Form.Row group>
@@ -37,7 +38,7 @@ import {Tag} from 'react-bootify';
             <Form.Label inline ><small>Company name</small></Form.Label>
         </Form.Col>
         <Form.Col>
-            <Form.Input type="text"/>
+            <Input type="text"/>
         </Form.Col>
     </Form.Row>
 
@@ -46,7 +47,7 @@ import {Tag} from 'react-bootify';
             <Form.Label inline ><small>Bought at</small></Form.Label>
         </Form.Col>
         <Form.Col>
-            <Form.Input type="text"/>
+            <Input type="text"/>
         </Form.Col>
     </Form.Row>
 </Form>
@@ -55,7 +56,7 @@ import {Tag} from 'react-bootify';
 
 ```js
 
-import {Container, Tag, Dropdown, Button, Card} from 'react-bootify';
+import {Container, Tag, Input, Dropdown, Button, Card} from 'react-bootify';
 
 class Sample1 extends React.Component {
 
@@ -95,7 +96,7 @@ class Sample1 extends React.Component {
                             </Form.Label>
                         </Form.Col>
                         <Form.Col width={{xs:8, sm:9, md:10}} text='right' >
-                            <Form.Input type="text" id="ticker" placeholder="Ticker" onChange={this.onTextChange.bind(this)}/>
+                            <Input type="text" id="ticker" placeholder="Ticker" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Row>
 
@@ -106,7 +107,7 @@ class Sample1 extends React.Component {
                             </Form.Label>
                         </Form.Col>
                         <Form.Col width={{xs:8, sm:9, md:10}}>
-                            <Form.Input type="text" id="name" placeholder="Name" onChange={this.onTextChange.bind(this)}/>
+                            <Input type="text" id="name" placeholder="Name" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Row>
 
@@ -118,7 +119,7 @@ class Sample1 extends React.Component {
                             </Form.Label>
                         </Form.Col>
                         <Form.Col width={{xs:8, sm:9, md:10}}>
-                            <Form.Input type="text" id="price" placeholder="Price" onChange={this.onTextChange.bind(this)}/>
+                            <Input type="text" id="price" placeholder="Price" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Row>
 
@@ -131,7 +132,7 @@ class Sample1 extends React.Component {
                             </Form.Label>
                         </Form.Col>
                         <Form.Col width={{xs:8, sm:9, md:10}}>
-                            <Form.Input type="text" id="amount" placeholder="Amount" onChange={this.onTextChange.bind(this)}/>
+                            <Input type="text" id="amount" placeholder="Amount" onChange={this.onTextChange.bind(this)}/>
                         </Form.Col>
                     </Form.Row>
 
@@ -188,22 +189,22 @@ class Sample1 extends React.Component {
                                                     <Form.Radio text='muted'>
                                                         Continous stop loss
                                                     </Form.Radio>
-                                                    <Form.Input style={{width:'4rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
+                                                    <Input style={{width:'4rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                                                     <Form.Label text='muted'>%</Form.Label>
                                                 </Form>
 
                                                 <Form inline padding={{bottom:2}}>
-                                                    <Form.Radio text='muted'>
+                                                    <Input.Radio text='muted'>
                                                         When price below
-                                                    </Form.Radio>
-                                                    <Form.Input style={{width:'4rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
+                                                    </Input.Radio>
+                                                    <Input style={{width:'4rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                                                 </Form>
                             
                                                 <Form inline padding={{bottom:2}}>
                                                     <Form.Radio placeholder="Ticker" text='muted'>
                                                         Price dropped more than 
                                                     </Form.Radio>
-                                                    <Form.Input style={{width:'4rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
+                                                    <Input style={{width:'4rem'}} margin={{left:2, right:2}} type="text" placeholder=""/>
                                                     <Form.Label text='muted'>%</Form.Label>
                                                 </Form>
                                             </Card.Body>
@@ -244,6 +245,7 @@ class Sample1 extends React.Component {
 
 ```js
 
+import {Form, Input} from 'react-bootify';
 
 class Sample extends React.Component {
 
@@ -280,7 +282,7 @@ class Sample extends React.Component {
                         <Form.Col>
                             <Form.Group>
                                 <Form.Label>Symbol</Form.Label>
-                                <Form.Input type="text" readOnly id="symbol" value={this.state.stock.symbol} onChange={this.onChange}/>
+                                <Input type="text" readOnly id="symbol" value={this.state.stock.symbol} onChange={this.onChange}/>
                             </Form.Group>
                         </Form.Col>
                     </Form.Row>
@@ -288,7 +290,7 @@ class Sample extends React.Component {
                         <Form.Col>
                             <Form.Group>
                                 <Form.Label>Name</Form.Label>
-                                <Form.Input type="text" disabled={this.state.loading} value={this.state.stock.name} placeholder="Name" onChange={this.onChange}/>
+                                <Input type="text" disabled={this.state.loading} value={this.state.stock.name} placeholder="Name" onChange={this.onChange}/>
                             </Form.Group>
                         </Form.Col>
                     </Form.Row>
@@ -296,13 +298,13 @@ class Sample extends React.Component {
                         <Form.Col width={{md:6}}>
                             <Form.Group>
                                 <Form.Label >Industry</Form.Label>
-                                <Form.Input id='industry' type="text" disabled={this.state.loading} value={this.state.stock.industry} placeholder="Industry" onChange={this.onChange}/>
+                                <Input id='industry' type="text" disabled={this.state.loading} value={this.state.stock.industry} placeholder="Industry" onChange={this.onChange}/>
                             </Form.Group>
                         </Form.Col>
                         <Form.Col width={{md:6}}>
                             <Form.Group>
                                 <Form.Label >Sector</Form.Label>
-                                <Form.Input id='sector' type="text" disabled={this.state.loading} value={this.state.stock.sector} placeholder="Sector" onChange={this.onChange}/>
+                                <Input id='sector' type="text" disabled={this.state.loading} value={this.state.stock.sector} placeholder="Sector" onChange={this.onChange}/>
                             </Form.Group>
                         </Form.Col>
                     </Form.Row>
@@ -311,13 +313,13 @@ class Sample extends React.Component {
                         <Form.Col width={{md:6}}>
                             <Form.Group>
                                 <Form.Label >Exchange</Form.Label>
-                                <Form.Input id='exchange' type="text" disabled={this.state.loading} value={this.state.stock.exchange} placeholder="Industry" onChange={this.onChange}/>
+                                <Input id='exchange' type="text" disabled={this.state.loading} value={this.state.stock.exchange} placeholder="Industry" onChange={this.onChange}/>
                             </Form.Group>
                         </Form.Col>
                         <Form.Col width={{md:6}}>
                             <Form.Group>
                                 <Form.Label >Type</Form.Label>
-                                <Form.Input id='type' type="text" disabled={this.state.loading} value={this.state.stock.type} placeholder="Type" onChange={this.onChange}/>
+                                <Input id='type' type="text" disabled={this.state.loading} value={this.state.stock.type} placeholder="Type" onChange={this.onChange}/>
                             </Form.Group>
                         </Form.Col>
                     </Form.Row>
@@ -336,7 +338,7 @@ class Sample extends React.Component {
 
 ```js
 
-import {Tag, Card} from 'react-bootify';
+import {Tag, Form, Input, Card} from 'react-bootify';
 
 class Sample extends React.Component {
 
@@ -393,7 +395,7 @@ class Sample extends React.Component {
                     <Form.Row>
                         <Form.Col>
                             <Form.Label >Utiquus</Form.Label>
-                            <Form.Input id='text' type="text" value={this.state.text} onChange={this.onChange}/>
+                            <Input id='text' type="text" value={this.state.text} onChange={this.onChange}/>
                         </Form.Col>
                     </Form.Row>
 
@@ -440,7 +442,7 @@ class Sample extends React.Component {
 
 ```js
 
-import {Tag, Fade, Alert} from 'react-bootify';
+import {Tag, Input, Fade, Alert} from 'react-bootify';
 
 class Sample extends React.Component {
 
@@ -463,11 +465,11 @@ class Sample extends React.Component {
             <Form>
                 <Form.Row padding={2}>
                     <Form.Col>
-                        <Form.Switch checked={this.state.show} onChange={this.toggle.bind(this)}>
+                        <Input.Switch checked={this.state.show} onChange={this.toggle.bind(this)}>
                             <Tag text={this.state.show ? 'warning' : undefined}>
                                 {this.state.show ? 'Warning displayed' : 'Display warning'}
                             </Tag>
-                        </Form.Switch>
+                        </Input.Switch>
                     </Form.Col>
                 </Form.Row>
                 <Fade show={this.state.show}>
@@ -494,7 +496,7 @@ class Sample extends React.Component {
 
 ```js
 
-import {Card} from 'react-bootify';
+import {Card, Form, Input} from 'react-bootify';
 
 class Sample extends React.Component {
 
@@ -511,8 +513,8 @@ class Sample extends React.Component {
                     <Form.Col padding={2} width={{xs:12, sm:12, md:6}}>
                         <Card padding={3}>
                             <Form.Col>
-                                <Form.Switch>Lorem ipsum dolor</Form.Switch>
-                                <Form.Switch>Nam molestie aliquam</Form.Switch>
+                                <Input.Switch>Lorem ipsum dolor</Input.Switch>
+                                <Input.Switch>Nam molestie aliquam</Input.Switch>
                             </Form.Col>
                         </Card>
                     </Form.Col>
@@ -520,8 +522,8 @@ class Sample extends React.Component {
                     <Form.Col padding={2} width={{xs:12, sm:12, md:6}}>
                         <Card padding={3}>
                             <Form.Col>
-                                <Form.Switch>Morbi eu</Form.Switch>
-                                <Form.Switch>Pellentesque a</Form.Switch>
+                                <Input.Switch>Morbi eu</Input.Switch>
+                                <Input.Switch>Pellentesque a</Input.Switch>
                             </Form.Col>
                         </Card>
                     </Form.Col>
