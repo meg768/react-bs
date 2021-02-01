@@ -20,7 +20,7 @@ const Alert = React.forwardRef((props, ref) => {
     var {dismissable, show, dismiss, tag, color, role, children, className, ...props} = props;
 
     if (!show)
-        return undefined;
+        return null;
 
     className = classNames(className, {'alert': true});
     className = classNames(className, dismissable ? `alert-dismissible`: undefined);
